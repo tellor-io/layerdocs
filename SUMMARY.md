@@ -2,4 +2,5 @@
 
 * [Welcome](README.md)
 * [Public Testnet Guide](public-testnet-guide/README.md)
-  * [Becoming a Validator](public-testnet-guide/becoming-a-validator.md)
+  * [Local Testing](public-testnet-guide/local-testing.md)
+  * [Testing on AWS](public-testnet-guide/testing-on-aws.md)
