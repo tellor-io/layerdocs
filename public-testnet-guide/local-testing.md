@@ -2,7 +2,7 @@
 
 ## Tellor Layer Public Testnet Guide: Running a Validator Locally
 
-This guide will walk you through setting up and running a validator locally for the Tellor Layer Public Testnet. Ensure you meet the requirements and follow the steps carefully.
+This guide will walk you through setting up and running a validator locally for the Tellor Layer Public Testnet.&#x20;
 
 {% hint style="warning" %}
 ### Requirements
