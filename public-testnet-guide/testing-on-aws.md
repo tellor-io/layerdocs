@@ -1,4 +1,4 @@
-# Becoming a Validator
+# Testing on AWS
 
 ## Running a Validator using an AWS EC2 Instance
 
@@ -182,7 +182,7 @@
 1.  **Run the Start Script**:
 
     ```sh
-    sh ./start_scripts/start_one_node_aws.sh
+     sh join_chain_new_node_linux.sh
     ```
 2. **Verify Setup**:
    * Once the chain is running, navigate to `https://{domain-name}.com/` to see the Swagger API page.
