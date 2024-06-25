@@ -1,10 +1,8 @@
----
-description: Welcome to the Tellor Layer Public Testnet guides!
----
-
-# Becoming a Validator
+# Public Testnet Participation
 
 ## Overview
+
+In preparation for Tellor Layer's launch to mainnet we look to the public to test out the chain by becoming a testnet validator and reporter.
 
 ### What is a Validator?&#x20;
 
@@ -24,8 +22,9 @@ Validators in the Tellor Layer network play a crucial role in maintaining the bl
 3. **Technical Knowledge:** A good understanding of blockchain technology and the specific requirements of the Tellor Layer network.
 4. **Commitment to Uptime:** Validators must ensure high availability and uptime to avoid penalties and maintain the network's stability.
 
-**Risk and Reward:**
+## What is a Reporter
 
-* **Rewards:** Validators earn rewards through block proposals, transaction fees, and inflationary rewards. The rewards are proportional to their stake and the accuracy of their work.
-* **Risks:** Validators face the risk of slashing, which can occur if they act maliciously, validate incorrect data, or fail to maintain uptime. Slashing results in the loss of a portion or all of their staked TRB tokens. The severity of the penalty depends on the infraction's nature (warning, minor infraction, major infraction).
+Reporters are responsible for submitting data values for various queries on the Tellor Layer network. They play a key role in providing accurate and timely data, which is aggregated and used by the network.
+
+
 

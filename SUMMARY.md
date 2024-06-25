@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Tellor Layer Documentation](README.md)
-* [Becoming a Validator](becoming-a-validator/README.md)
-  * [Local Testing](becoming-a-validator/local-testing.md)
-  * [Testing on AWS](becoming-a-validator/testing-on-aws.md)
+* [Welcome](README.md)
+* [Public Testnet Participation](public-testnet-participation/README.md)
+  * [Local Testing](public-testnet-participation/local-testing.md)
+  * [Testing on AWS](public-testnet-participation/testing-on-aws.md)
