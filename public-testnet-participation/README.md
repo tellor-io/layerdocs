@@ -6,7 +6,7 @@ In preparation for Tellor Layer's launch to mainnet we look to the public to tes
 
 ### What is a Validator?&#x20;
 
-Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain.
+Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain.  The number of total validators is capped at 100.
 
 **Responsibilities of a Validator:**
 
@@ -24,7 +24,7 @@ Validators in the Tellor Layer network play a crucial role in maintaining the bl
 
 ## What is a Reporter
 
-Reporters are responsible for submitting data values for various queries on the Tellor Layer network. They play a key role in providing accurate and timely data, which is aggregated and used by the network.
+Reporters are responsible for submitting data values for various queries on the Tellor Layer network.  As with validators, reporters must also stake to participate and submit data values for rewards. They play the key role in the Tellor Layer chain of providing accurate and timely data, which is aggregated and used by the network.
 
 
 
