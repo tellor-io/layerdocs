@@ -2,7 +2,23 @@
 
 ## The Guide: Starting a Layer Node and Becoming a Validator
 
-**Steps for Starting a Layer Node Using the Provided Shell Scripts**
+### Pre-requisites
+
+* A local or cloud system running linux or macos
+* Golang v1.22
+* jq, yq, and sed for running the scripts:
+  * Install jq
+    * For mac: brew install jq
+    * For linux Ubuntu: sudo apt-get install jq
+  * Install yq
+    * For mac: brew install yq
+    * For linux Ubuntu: sudo apt-get install yq
+  * Install sed
+    * For mac: brew install sed
+    * For linux: sudo apt-get install sed
+* Testnet TRB for staking a validator. Feel free to request some layer test TRB in the public discord #developers channel, or try the token bridge from the Sepolia testnet playground.
+
+### **Steps for Starting a Layer Node Using the Provided Shell Scripts**
 
 {% hint style="warning" %}
 <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
