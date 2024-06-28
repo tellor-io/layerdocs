@@ -4,6 +4,10 @@
 
 **Steps for Starting a Layer Node Using the Provided Shell Scripts**
 
+{% hint style="warning" %}
+<mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
+{% endhint %}
+
 1.  **Clone the Layer Repository:**
 
     ```sh
@@ -19,25 +23,19 @@
     ```sh
     /layer_scripts/join_chain_new_node_{desired OS}
     ```
-4.  **Edit the Following Variables:**
+4. **Edit the Following Variables:**
+   * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
+   * `KEYRING_BACKEND`: Set to `test` by default but can be configured here.
+   * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
+   * `NODE_NAME`: Set to your name or whatever name you choose (e.g., “bill”).
+   *   `TELLORNODE_ID`: Set to the unquoted node ID of the seed node. The node ID can be found by running:
 
-    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
-    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here.
+       ```sh
+       curl tellornode.com:26657/status
+       ```
 
-    > <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
-
-
-
-    * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
-    * `NODE_NAME`: Set to your name or whatever name you choose (e.g., “bill”).
-    *   `TELLORNODE_ID`: Set to the unquoted node ID of the seed node. The node ID can be found by running:
-
-        ```sh
-        curl tellornode.com:26657/status
-        ```
-
-        Replace “tellornode.com” with the URL for your seed node if different.
-    * `LAYERD_NODE_HOME`: This is set automatically based on your input for `NODE_NAME`. This is the directory where you can find the layer config files and your test key.
+       Replace “tellornode.com” with the URL for your seed node if different.
+   * `LAYERD_NODE_HOME`: This is set automatically based on your input for `NODE_NAME`. This is the directory where you can find the layer config files and your test key.
 
 
 
