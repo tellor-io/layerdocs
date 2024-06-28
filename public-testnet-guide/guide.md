@@ -115,7 +115,9 @@
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
     ```
 
+{% hint style="success" %}
 **Additional Resources**
 
 * **Template Checklist:** [Google Sheets Checklist](https://docs.google.com/spreadsheets/d/1wT6nSM60KU6JD5PGHiKxPhUgwL0DQtOC-Rfo6BTitN8/edit#gid=0)
 * **Project Checklists Folder:** [Google Drive Folder](https://drive.google.com/drive/u/1/folders/10Ixjl4fP7A7ZT-bPdIeTq9kI9XKkrvx\_)
+{% endhint %}
