@@ -16,7 +16,7 @@
   * Install sed
     * For mac: brew install sed
     * For linux: sudo apt-get install sed
-* Testnet TRB for staking a validator. Feel free to request some layer test TRB in the public discord #developers channel, or try the token bridge from the Sepolia testnet playground.
+* Testnet TRB for staking a validator. Feel free to request some layer test TRB in the public discord #developers channel, or [try the token bridge from the Sepolia testnet playground](guide.md#getting-testnet-trb).
 
 ### **Steps for Starting a Layer Node Using the Provided Shell Scripts**
 
@@ -27,19 +27,31 @@
 1.  **Clone the Layer Repository:**
 
     ```sh
-    git clone https://github.com/tellor-io/layer
+    git clone https://github.com/tellor-io/layer -b public-testnet
     ```
 2.  **Change Active Directory:**
 
     ```sh
     cd layer
     ```
-3.  **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
+3. **Create a file named** `secrets.json` in the layer folder.
+4.  **Set an alchemy api key for eth rpc.** \
+    The file, secrets.json, should contain a single line (replace with your own Alchemy API key): \
+
+
+    ```json
+    {
+        "eth_api_key": "your_api_key"
+    }
+    ```
+
+
+5.  **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
 
     ```sh
     /layer_scripts/join_chain_new_node_{desired OS}
     ```
-4. **Edit the Following Variables:**
+6. **Edit the Following Variables:**
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here.
    * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
@@ -90,20 +102,23 @@
 
 **Steps for Becoming a Validator**
 
-1. **Get Some Layer Testnet TRB:** Request in the public Discord #developers channel or use the token bridge from the Sepolia testnet playground.
-2.  **Verify That You Have a Funded Address:**
+Once you have a working node, you can try being a validator and competing for rewards.
+
+This is where you will need to have some layer testnet TRB. Feel free to request in the public [discord](https://discord.gg/tellor) #developers channel, or [try the token bridge from the Sepolia testnet playground.](guide.md#getting-testnet-trb)
+
+1.  **Verify That You Have a Funded Address:**
 
     ```sh
     curl http://tellornode.com:1317/cosmos/bank/v1beta1/balances/{your address}
     ```
-3.  **Retrieve Your Validator Public Key:** With `layer` as the active directory, use the command:
+2.  **Retrieve Your Validator Public Key:** With `layer` as the active directory, use the command:
 
     ```sh
     ./layerd comet show-validator --home ~/.layer/{node_name}
     ```
 
     This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
-4.  **Create a Validator Configuration File:** Create a file named `~/layer/validator.json` and paste the following JSON object into it:
+3.  **Create a Validator Configuration File:** Create a file named `~/layer/validator.json` and paste the following JSON object into it:
 
     ```json
     {
@@ -120,16 +135,25 @@
         "min-self-delegation": "1"
     }
     ```
-5.  **Create Your Validator:** Run the following command (make sure you leave enough TRB for gas fees):
+4.  **Create Your Validator:** Run the following command (make sure you leave enough TRB for gas fees):
 
     ```sh
     ./layerd tx staking create-validator ./validator.json --from {YOUR ADDRESS} --home ~/.layer/{NODE_NAME} --chain-id layer --node="http://tellornode.com:26657"
     ```
-6.  **Verify Your Validator Creation:** Ensure your validator was created successfully using the command:
+5.  **Verify Your Validator Creation:** Ensure your validator was created successfully using the command:
 
     ```sh
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
     ```
+
+### Getting Testnet TRB
+
+You can mint Layer Testnet TRB using the Sepolia Tellor Playground contract’s “faucet” command:\
+[https://sepolia.etherscan.io/address/0x3251838bd813fdf6a97D32781e011cce8D225d59#writeContract\
+\
+](https://sepolia.etherscan.io/address/0x3251838bd813fdf6a97D32781e011cce8D225d59#writeContract)Once you have TRBP in your wallet, head over to the Layer Testnet bridge:\
+[https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract\
+](https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract)
 
 {% hint style="success" %}
 **Additional Resources**
