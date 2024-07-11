@@ -15,6 +15,10 @@
 **Note:** Oracle data reporting is not ready for public testing at this time.
 {% endhint %}
 
+{% hint style="danger" %}
+**Disclaimer:** Please note that participation in the Tellor Layer public testnet involves using experimental software. While this environment is intended for testing purposes, users should be aware that if they intend to participate in mainnet validating or reporting on Tellor Layer, they will incur fees and be required to stake TRB. This process carries the risk of losing funds if errors are made. Proceed with caution and ensure you understand the responsibilities and risks associated with participation.
+{% endhint %}
+
 #### What is a Validator?&#x20;
 
 Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain.  The number of total validators is capped at 100.
