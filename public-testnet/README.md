@@ -16,7 +16,7 @@
 {% endhint %}
 
 {% hint style="danger" %}
-**Disclaimer:** Please note that participation in the Tellor Layer public testnet involves using experimental software. While this environment is intended for testing purposes, users should be aware that if they intend to participate in mainnet validating or reporting on Tellor Layer, they will incur fees and be required to stake TRB. This process carries the risk of losing funds if errors are made. Proceed with caution and ensure you understand the responsibilities and risks associated with participation.
+**Disclaimer:** Please note that participation in the Tellor Layer public testnet involves using experimental software. While this environment is intended for testing purposes, users should be aware that if they intend to participate in mainnet validating or reporting on Tellor Layer, they will incur fees and be required to stake TRB. This process carries the risk of losing funds if errors are made. Proceed with caution and ensure you understand the responsibilities and risks associated with participation.  **\*Never use accounts / keys / wallets that hold mainnet funds as your address for testing!**
 {% endhint %}
 
 #### What is a Validator?&#x20;
