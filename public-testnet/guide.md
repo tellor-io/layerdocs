@@ -1,11 +1,16 @@
-# Guide
+# Public Testnet Guide
 
-## The Guide: Starting a Layer Node and Becoming a Validator
+### *Note: This is a guide for setting up a Tellor Layer public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!*
+
+This guide has three sections:
+1. Run a Tellor Layer node.
+2. Stake and become a Validator
+3. Create a reporter (and unjail if needed)
 
 ### Pre-requisites
 
-* A local or cloud system running linux or macos
-* Golang v1.22
+* A local or cloud system running linux (or mac os with the mac scripts)
+* Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq, yq, and sed for running the scripts:
   * Install jq
     * For mac: brew install jq
@@ -16,8 +21,8 @@
   * Install sed
     * For mac: brew install sed
     * For linux: sudo apt-get install sed
-* Testnet TRB for staking a validator. Feel free to request some layer test TRB in the public discord #developers channel, or [try the token bridge from the Sepolia testnet playground](guide.md#getting-testnet-trb).
 
+## Part 1: Run a Layer Node
 ### **Steps for Starting a Layer Node Using the Provided Shell Scripts**
 
 {% hint style="warning" %}
@@ -49,101 +54,161 @@
 5.  **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
 
     ```sh
-    /layer_scripts/join_chain_new_node_{desired OS}
+    layer_scripts/join_chain_new_node_linux.sh
     ```
-6. **Edit the Following Variables:**
+    Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
+
+6. **Edit Variables:**
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
-   * `KEYRING_BACKEND`: Set to `test` by default but can be configured here.
+   * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
    * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
    * `NODE_NAME`: Set to your name or whatever name you choose (e.g., “bill”).
-   *   `TELLORNODE_ID`: Set to the unquoted node ID of the seed node. The node ID can be found by running:
+   * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
+   * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$NODE_NAME"
+
+    Not: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
 
        ```sh
        curl tellornode.com:26657/status
        ```
 
-       Replace “tellornode.com” with the URL for your seed node if different.
-   * `LAYERD_NODE_HOME`: This is set automatically based on your input for `NODE_NAME`. This is the directory where you can find the layer config files and your test key.
+7. **Important Things to Know Before Running the Script:**
+   *   When you start the script (which you haven't done yet),***a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.*** It will look something like this:
+
+    {% code fullWidth="true" %}
+    ```
+    - address: tellor1mh2ua3w8yq5ldeewsdhpg0cazhr7gtcllr6j0j
+    name: bill
+    pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Ag+lE4VGW6CpE/TiMnb3zJ6pyETVHobj5Bd5F3OuRW7/"}'
+    type: local
 
 
+    **Important** write this mnemonic phrase in a safe place.
+    It is the only way to recover your account if you ever forget your password.
 
-1. **Preparation Before Running the Script:**
-   *   When you start the script, a test wallet key pair/mnemonic will be created and printed in the terminal. There will be a pause allowing you to copy it before the node log starts up. It will look something like this:
+    eagle actress venue redacted style redacted potato still redacted final redacted increase redacted parent panda vapor redacted redacted twelve summer redacted redacted redacted redacted
+    ```
+    {% endcode %}
 
-       {% code fullWidth="true" %}
-       ```
-       - address: tellor1v7pj7k067hzzxxn9nngdg6wfnw978tnyv2e2n
-         name: bill
-         pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Ar9mM1r3El8+/qaWT9sVlcHwDwHe/b0iSq4yRSxZnTd"}'
-         type: local
-       ```
-       {% endcode %}
-   * Make sure you copy this wallet if you don’t have another plan for creating your validator wallet.
-   * The script will start a node with the reporter daemon turned off by default. This is useful for testing if you can successfully run and sync the layer node, participate in consensus, and receive rewards.
-2. **Run the Script:**
-   *   Give the script permission to run:
+    * **The script should only be run once, or if you want to start over from scratch!** It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script.
+
+8. **Run the Script:**
+   *   Give the script permission to execute:
 
        ```sh
-       chmod +x /layer_scripts/join_chain_new_node_{linux/mac}.sh
+       chmod +x /layer_scripts/join_chain_new_node_linux.sh
        ```
    *   Run it:
 
        ```sh
-       ./layer_scripts/join_chain_new_node_{linux/mac}.sh
+       ./layer_scripts/join_chain_new_node_linux.sh
        ```
    * Wait for the chain to sync. Some errors are expected as the chain starts up, but the log should start moving very quickly once the node starts downloading blocks.
-   *   Once the log slows down again, it is likely synced. You can verify that your node is synced using:
+
+   * Once the log slows down again, it is likely synced. You can verify that your node is synced using:
 
        ```sh
-       curl {localhost/your new node URL}:26657/status
+       curl localhost:26657/status
        ```
 
        If `sync_info.catching_up` is `False`, the node is synced! Well done!
 
-**Steps for Becoming a Validator**
+**Part 2: Becoming a Validator**
 
-Once you have a working node, you can try being a validator and competing for rewards.
+Once you have a working node, you can try running a validator and competing for rewards.
 
-This is where you will need to have some layer testnet TRB. Feel free to request in the public [discord](https://discord.gg/tellor) #developers channel, or [try the token bridge from the Sepolia testnet playground.](guide.md#getting-testnet-trb)
+You will need to have some layer testnet TRB into your validator account (see step 7 above). Feel free to send a request in the public [discord](https://discord.gg/tellor) #testing-layer channel, or [try the token bridge from the Sepolia testnet playground.](guide.md#getting-testnet-trb)
 
 1.  **Verify That You Have a Funded Address:**
 
     ```sh
-    curl http://tellornode.com:1317/cosmos/bank/v1beta1/balances/{your address}
+    ./layerd query bank balance $NODE_NAME loya --chain-id layer
     ```
-2.  **Retrieve Your Validator Public Key:** With `layer` as the active directory, use the command:
+2.  **Retrieve Your Validator Public Key:** With your `layer` folder as the active directory, use the command:
 
     ```sh
-    ./layerd comet show-validator --home ~/.layer/{node_name}
+    ./layerd comet show-validator --home $LAYERD_NODE_HOME
     ```
 
     This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
-3.  **Create a Validator Configuration File:** Create a file named `~/layer/validator.json` and paste the following JSON object into it:
 
+    Note: Your nodes home directory variable `LAYERD_NODE_HOME` needs to be set prior to running ./layerd commands when you're outside the scripts. [You can load variables into all new bash windows by adding the export commands to your shell's .bashrc file](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) (.zshrc on mac). 
+
+3.  **Edit the Validator Configuration File:** 
+    Open `~/layer/validator.json`:
     ```json
     {
-        "pubkey": {PASTE THE PUBKEY RETURNED IN STEP 3},
-        "amount": "AMOUNT OF LOYA YOU WANT TO STAKE",
-        "moniker": "NODE MONIKER",
-        "identity": "",
-        "website": "",
-        "security": "",
-        "details": "",
+        "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c+EuycPpudgiyVl6guYG9oyPSImHHJz1z0Pg4ODKveo="},
+        "amount": "100000000000loya",
+        "moniker": "billmoniker",
+        "identity": "optional identity signature (ex. UPort or Keybase)",
+        "website": "validator's (optional) website",
+        "security": "validator's (optional) security contact email",
+        "details": "validator's (optional) details",
         "commission-rate": "0.1",
         "commission-max-rate": "0.2",
         "commission-max-change-rate": "0.01",
         "min-self-delegation": "1"
     }
     ```
-4.  **Create Your Validator:** Run the following command (make sure you leave enough TRB for gas fees):
+    - Edit the `"pubkey"` to match yours from step 2. 
+    - Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. For example if you want to stake 599 TRB: `"amount": "599000000loya"`.
+    - Edit `"moniker"` to be the moniker you chose for running your node start script. (this is the "name" of your validator)
+
+    {% hint style="warning" %}
+    <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas. </mark>
+    {% endhint %}
+
+4.  **Create Your Validator:**
+    Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly. 
+
+    At the time of writing, a few things need to happen (in order) to successfully start a validator. You will need to:
+    1) Make the create-validator tx.
+    2) Count to 10.
+    3) Restart your node using a ./layerd command *not the script*.
+
+    Before you continue, set the layer script variables in your new window: 
 
     ```sh
-    ./layerd tx staking create-validator ./validator.json --from {YOUR ADDRESS} --home ~/.layer/{NODE_NAME} --chain-id layer --node="http://tellornode.com:26657"
+    export LAYER_NODE_URL=54.166.101.67 \
+    && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
+    && export KEYRING_BACKEND="test" \
+    && export NODE_MONIKER="bobmoniker" \
+    && export NODE_NAME="bob" \
+    && export AMOUNT_IN_TRB=10000 \
+    && export AMOUNT_IN_LOYA="1000000000loya" \
+    && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
     ```
-5.  **Verify Your Validator Creation:** Ensure your validator was created successfully using the command:
+    Use `printenv` to double check that all the commands are set correctly.
 
+
+
+    1) Run the following command:
+    ```sh
+    ./layerd tx staking create-validator ./validator.json --from $NODE_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
+    ```
+    2) count to 10
+    3) In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
+    ```sh
+    ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --p2p.seeds "$TELLORNODE_ID@$LAYER_NODE_URL:26656"
+    ```
+
+5.  **Verify Your Validator Creation:** 
+    Ensure your validator was created successfully using the command:
     ```sh
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
+    ```
+    If status is `3`, you are a validator and you're not jailed. Awesome!
+    If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
+
+    **Become a Reporter**
+    Once you’re successfully running a validator, you’re almost a reporter already! Just aone more command:
+    ```sh
+    ./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
+    ```
+    Restart your node again, but this time we will change the command a bit to turn on the price daemon:
+    ```sh
+    ./layerd start --home ~/.layer/bill --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
     ```
 
 ### Getting Testnet TRB
