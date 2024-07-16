@@ -221,7 +221,7 @@ Restart your node again, but this time we will change the command a bit to turn 
 ## Steps to unjail:
 Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs. Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
 
-1. stop your node / validator / reporter and start it back up as a node / validator (turning off the reporter):
+1. stop your node / validator / reporter with and start it back up as a node / validator (turning off the reporter):
 
     ```
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
@@ -247,8 +247,3 @@ You can mint Layer Testnet TRB using the Sepolia Tellor Playground contract’s 
 ](https://sepolia.etherscan.io/address/0x3251838bd813fdf6a97D32781e011cce8D225d59#writeContract)Once you have TRBP in your wallet, head over to the Layer Testnet bridge:\
 [https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract\
 ](https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract)
-
-}**Additional Resources**
-
-* **Template Checklist:** [Google Sheets Checklist](https://docs.google.com/spreadsheets/d/1wT6nSM60KU6JD5PGHiKxPhUgwL0DQtOC-Rfo6BTitN8/edit#gid=0)
-* **Project Checklists Folder:** [Google Drive Folder](https://drive.google.com/drive/u/1/folders/10Ixjl4fP7A7ZT-bPdIeTq9kI9XKkrvx\_)
