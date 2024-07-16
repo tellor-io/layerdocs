@@ -139,17 +139,17 @@ Use `printenv` to double check that all the commands are set correctly.
 1.  **Verify That You Have a Funded Address:**
 
 ```sh
-    ./layerd query bank balance $NODE_NAME loya --chain-id layer
+./layerd query bank balance $NODE_NAME loya --chain-id layer
 ```
 2.  **Retrieve Your Validator Public Key:** 
 With your `layer` folder as the active directory, use the command:
 ```sh
-    ./layerd comet show-validator --home $LAYERD_NODE_HOME
+./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
-    This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
+This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
 
-    Note: Your nodes home directory variable `LAYERD_NODE_HOME` needs to be set prior to running ./layerd commands when you're outside the scripts. [You can load variables into all new bash windows by adding the export commands to your shell's .bashrc file](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) (.zshrc on mac). 
+Note: Your nodes home directory variable `LAYERD_NODE_HOME` needs to be set prior to running ./layerd commands when you're outside the scripts. [You can load variables into all new bash windows by adding the export commands to your shell's .bashrc file](https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) (.zshrc on mac). 
 
 3.  **Edit the Validator Configuration File:** 
 Open `~/layer/validator.json`:
