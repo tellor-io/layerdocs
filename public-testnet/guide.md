@@ -73,7 +73,6 @@ This guide has three sections:
 7. **Important Things to Know Before Running the Script:**
    *   When you start the script (which you haven't done yet),***a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.*** It will look something like this:
 
-    {% code fullWidth="true" %}
     ```
     - address: tellor1mh2ua3w8yq5ldeewsdhpg0cazhr7gtcllr6j0j
     name: bill
@@ -86,7 +85,6 @@ This guide has three sections:
 
     eagle actress venue redacted style redacted potato still redacted final redacted increase redacted parent panda vapor redacted redacted twelve summer redacted redacted redacted redacted
     ```
-    {% endcode %}
 
     * **The script should only be run once, or if you want to start over from scratch!** It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script.
 
@@ -116,6 +114,20 @@ This guide has three sections:
 Once you have a working node, you can try running a validator and competing for rewards.
 
 You will need to have some layer testnet TRB into your validator account (see step 7 above). Feel free to send a request in the public [discord](https://discord.gg/tellor) #testing-layer channel, or [try the token bridge from the Sepolia testnet playground.](guide.md#getting-testnet-trb)
+
+Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly.  Now, set the layer script variables in your new window: 
+
+    ```sh
+    export LAYER_NODE_URL=54.166.101.67 \
+    && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
+    && export KEYRING_BACKEND="test" \
+    && export NODE_MONIKER="bobmoniker" \
+    && export NODE_NAME="bob" \
+    && export AMOUNT_IN_TRB=10000 \
+    && export AMOUNT_IN_LOYA="1000000000loya" \
+    && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
+    ```
+    Use `printenv` to double check that all the commands are set correctly.
 
 1.  **Verify That You Have a Funded Address:**
 
@@ -153,34 +165,15 @@ You will need to have some layer testnet TRB into your validator account (see st
     - Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. For example if you want to stake 599 TRB: `"amount": "599000000loya"`.
     - Edit `"moniker"` to be the moniker you chose for running your node start script. (this is the "name" of your validator)
 
-    {% hint style="warning" %}
     <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas. </mark>
-    {% endhint %}
 
 4.  **Create Your Validator:**
-    Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly. 
-
     At the time of writing, a few things need to happen (in order) to successfully start a validator. You will need to:
     1) Make the create-validator tx.
     2) Count to 10.
     3) Restart your node using a ./layerd command *not the script*.
 
-    Before you continue, set the layer script variables in your new window: 
-
-    ```sh
-    export LAYER_NODE_URL=54.166.101.67 \
-    && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
-    && export KEYRING_BACKEND="test" \
-    && export NODE_MONIKER="bobmoniker" \
-    && export NODE_NAME="bob" \
-    && export AMOUNT_IN_TRB=10000 \
-    && export AMOUNT_IN_LOYA="1000000000loya" \
-    && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
-    ```
-    Use `printenv` to double check that all the commands are set correctly.
-
-
-
+    Let's go!
     1) Run the following command:
     ```sh
     ./layerd tx staking create-validator ./validator.json --from $NODE_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
