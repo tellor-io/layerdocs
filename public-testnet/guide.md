@@ -97,7 +97,7 @@ curl tellornode.com:26657/status
    *   Give the script permission to execute:
 
      ```sh
-    chmod +x /layer_scripts/join_chain_new_node_linux.sh
+    chmod +x layer_scripts/join_chain_new_node_linux.sh
     ```
 
    *   Run it:
