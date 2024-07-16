@@ -134,7 +134,7 @@ export LAYER_NODE_URL=54.166.101.67 \
 && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
 ```
 
-    Use `printenv` to double check that all the commands are set correctly.
+Use `printenv` to double check that all the commands are set correctly.
 
 1.  **Verify That You Have a Funded Address:**
 
