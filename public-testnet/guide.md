@@ -45,9 +45,7 @@ This guide has three sections:
 
 
     ```json
-    {
-        "eth_api_key": "your_api_key"
-    }
+    "eth_api_key": "your_api_key"
     ```
 
 
@@ -66,11 +64,11 @@ This guide has three sections:
    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$NODE_NAME"
 
-    Not: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
+    Note: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
 
-       ```sh
-       curl tellornode.com:26657/status
-       ```
+    ```sh
+    curl tellornode.com:26657/status
+    ```
 
 7. **Important Things to Know Before Running the Script:**
    *   When you start the script (which you haven't done yet),***a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.*** It will look something like this:
