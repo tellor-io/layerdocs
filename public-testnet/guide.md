@@ -31,29 +31,31 @@ This guide has three sections:
 
 1.  **Clone the Layer Repository:**
 
-    ```sh
-    git clone https://github.com/tellor-io/layer -b public-testnet
-    ```
+```sh
+git clone https://github.com/tellor-io/layer -b public-testnet
+```
+
 2.  **Change Active Directory:**
 
-    ```sh
-    cd layer
-    ```
+```sh
+cd layer
+```
+
 3. **Create a file named** `secrets.json` in the layer folder.
 4.  **Set an alchemy api key for eth rpc.** \
     The file, secrets.json, should contain a single line (replace with your own Alchemy API key): \
 
 
-    ```json
-    "eth_api_key": "your_api_key"
-    ```
+```json
+"eth_api_key": "your_api_key"
+```
 
 
 5.  **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
 
-    ```sh
-    layer_scripts/join_chain_new_node_linux.sh
-    ```
+```sh
+layer_scripts/join_chain_new_node_linux.sh
+```
     Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
 
 6. **Edit Variables:**
@@ -66,14 +68,14 @@ This guide has three sections:
 
     Note: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
 
-    ```sh
-    curl tellornode.com:26657/status
-    ```
+```sh
+curl tellornode.com:26657/status
+```
 
 7. **Important Things to Know Before Running the Script:**
    *   When you start the script (which you haven't done yet),***a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.*** It will look something like this:
 
-    ```
+```sh
     - address: tellor1mh2ua3w8yq5ldeewsdhpg0cazhr7gtcllr6j0j
     name: bill
     pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Ag+lE4VGW6CpE/TiMnb3zJ6pyETVHobj5Bd5F3OuRW7/"}'
@@ -84,16 +86,17 @@ This guide has three sections:
     It is the only way to recover your account if you ever forget your password.
 
     eagle actress venue redacted style redacted potato still redacted final redacted increase redacted parent panda vapor redacted redacted twelve summer redacted redacted redacted redacted
-    ```
+```
 
     * **The script should only be run once, or if you want to start over from scratch!** It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script.
 
 8. **Run the Script:**
    *   Give the script permission to execute:
 
-       ```sh
-       chmod +x /layer_scripts/join_chain_new_node_linux.sh
-       ```
+     ```sh
+    chmod +x /layer_scripts/join_chain_new_node_linux.sh
+    ```
+
    *   Run it:
 
        ```sh
@@ -103,11 +106,11 @@ This guide has three sections:
 
    * Once the log slows down again, it is likely synced. You can verify that your node is synced using:
 
-       ```sh
-       curl localhost:26657/status
-       ```
+    ```
+    curl localhost:26657/status
+    ```
 
-       If `sync_info.catching_up` is `False`, the node is synced! Well done!
+    If `sync_info.catching_up` is `False`, the node is synced! Well done!
 
 ## Part 2: Becoming a Validator
 
@@ -117,7 +120,7 @@ You will need to have some layer testnet TRB into your validator account (see st
 
 Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly.  Now, set the layer script variables in your new window: 
 
-    ```
+    ```sh
     export LAYER_NODE_URL=54.166.101.67 \
     && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
     && export KEYRING_BACKEND="test" \
@@ -132,14 +135,14 @@ Keep your node running. Open another window on your layer machine and load up yo
 
 1.  **Verify That You Have a Funded Address:**
 
-    ```sh
+```sh
     ./layerd query bank balance $NODE_NAME loya --chain-id layer
-    ```
-2.  **Retrieve Your Validator Public Key:** With your `layer` folder as the active directory, use the command:
-
-    ```sh
+```
+2.  **Retrieve Your Validator Public Key:** 
+With your `layer` folder as the active directory, use the command:
+```sh
     ./layerd comet show-validator --home $LAYERD_NODE_HOME
-    ```
+```
 
     This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
 
@@ -147,6 +150,7 @@ Keep your node running. Open another window on your layer machine and load up yo
 
 3.  **Edit the Validator Configuration File:** 
 Open `~/layer/validator.json`:
+
     ```json
     {
         "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c+EuycPpudgiyVl6guYG9oyPSImHHJz1z0Pg4ODKveo="},
@@ -170,47 +174,49 @@ Open `~/layer/validator.json`:
 
 4.  **Create Your Validator:**
 At the time of writing, a few things need to happen (in order) to successfully start a validator. You will need to:
-    1) Make the create-validator tx.
-    2) Count to 10.
-    3) Restart your node using a ./layerd command *not the script*.
+    1. Make the create-validator tx.
+    2. Count to 10.
+    3. Restart your node using a ./layerd command *not the script*.
 
     Let's go!
-    1) Run the following command:
-    ```sh
-    ./layerd tx staking create-validator ./validator.json --from $NODE_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
-    ```
-    2) count to 10
-    3) In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
-    ```sh
-    ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --p2p.seeds "$TELLORNODE_ID@$LAYER_NODE_URL:26656"
-    ```
+    1. Run the following command:
+
+        ```sh
+        ./layerd tx staking create-validator ./validator.json --from $NODE_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
+        ```
+    2. count to 10
+    3. In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
+
+        ```sh
+        ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --p2p.seeds "$TELLORNODE_ID@$LAYER_NODE_URL:26656"
+        ```
 
 5.  **Verify Your Validator Creation:** 
 Ensure your validator was created successfully using the command:
+
     ```sh
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
     ```
 
-    If status is `3`, you are a validator and you're not jailed. Awesome!
-    If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
+If status is `3`, you are a validator and you're not jailed. Awesome!
+If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
 
 ## Part 2: Becoming a Reporter (and maybe unjail a little bit...)
 
 Once you’re successfully running a validator, you’re almost a reporter already! Just aone more command:
-    ``
+
+    ```sh
     ./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
     ```
 
 Restart your node again, but this time we will change the command a bit to turn on the price daemon:
 
-    ```
+    ```sh
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
     ```
 
 ## Steps to unjail:
-Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs.
-
-Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
+Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs. Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
 
 1. stop your node / validator / reporter and start it back up as a node / validator (turning off the reporter):
 
