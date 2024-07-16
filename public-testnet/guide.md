@@ -191,15 +191,10 @@ At the time of writing, a few things need to happen (in order) to successfully s
 
     Then, run:
 
-    ```sh
-    echo "$VALIDATOR_JSON" > ./validator.json
-    ```
-
     Let's go!
     1. Run the following commands:
 
         ```sh
-        echo "$VALIDATOR_JSON" > ./validator.json
         ./layerd tx staking create-validator ./validator.json --from tellorvaloperYOUR_ADDRESS_HERE --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
         ```
 
