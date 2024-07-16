@@ -6,7 +6,7 @@
 
 ## [Public Testnet](public-testnet/)
 
-In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of [participating as a validator](public-testnet/guide.md) and \*reporter. &#x20;
+In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of [participating as a validator](public-testnet/run-a-layer-node.md) and \*reporter. &#x20;
 
 \*Reporter guide coming soon!
 

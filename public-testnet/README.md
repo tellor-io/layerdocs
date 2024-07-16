@@ -2,13 +2,14 @@
 
 ## Join the Public Testnet
 
-**In this guide we we'll cover the necessary steps to:**
+This guide has three sections:
 
-1. Configure a Tellor Layer node and join the network using setup scripts.
-2. Use the node to stake test TRB as a **Layer validator** and earn rewards.
+1. Run a Tellor Layer node.
+2. Stake and become a Validator
+3. Create a reporter (and unjail if needed)
 
 {% hint style="warning" %}
-**Note:** This is a guide for setting up a Tellor Layer public testnet node. Care is taken to provide clarity on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!&#x20;
+**Note:** _This is a guide for setting up a Tellor Layer public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!_
 {% endhint %}
 
 {% hint style="info" %}
