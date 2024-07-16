@@ -191,7 +191,7 @@ At the time of writing, a few things need to happen (in order) to successfully s
     3. In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
 
         ```sh
-        ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --p2p.seeds "$TELLORNODE_ID@$LAYER_NODE_URL:26656"
+        ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
         ```
 
 5.  **Verify Your Validator Creation:** 
