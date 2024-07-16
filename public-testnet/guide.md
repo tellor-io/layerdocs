@@ -88,7 +88,7 @@ curl tellornode.com:26657/status
     eagle actress venue redacted style redacted potato still redacted final redacted increase redacted parent panda vapor redacted redacted twelve summer redacted redacted redacted redacted
 ```
 
-    * **The script should only be run once, or if you want to start over from scratch!** It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script.
+*The script should only be run once, or if you want to start over from scratch! It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script.*
 
 8. **Run the Script:**
    *   Give the script permission to execute:
