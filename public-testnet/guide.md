@@ -58,7 +58,8 @@ cd layer
 ```sh
 layer_scripts/join_chain_new_node_linux.sh
 ```
-    Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
+
+Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
 
 6. **Edit Variables:**
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
@@ -247,7 +248,7 @@ You can mint Layer Testnet TRB using the Sepolia Tellor Playground contract’s 
 [https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract\
 ](https://sepolia.etherscan.io/address/0x7a261EAa9E8033B1337554df59bD462ca4A251FA#writeContract)
 
-{% hint style="success" %}**Additional Resources**
+}**Additional Resources**
 
 * **Template Checklist:** [Google Sheets Checklist](https://docs.google.com/spreadsheets/d/1wT6nSM60KU6JD5PGHiKxPhUgwL0DQtOC-Rfo6BTitN8/edit#gid=0)
-* **Project Checklists Folder:** [Google Drive Folder](https://drive.google.com/drive/u/1/folders/10Ixjl4fP7A7ZT-bPdIeTq9kI9XKkrvx\_){% endhint %}
+* **Project Checklists Folder:** [Google Drive Folder](https://drive.google.com/drive/u/1/folders/10Ixjl4fP7A7ZT-bPdIeTq9kI9XKkrvx\_)
