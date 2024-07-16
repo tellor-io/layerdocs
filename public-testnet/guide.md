@@ -117,7 +117,7 @@ You will need to have some layer testnet TRB into your validator account (see st
 
 Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly.  Now, set the layer script variables in your new window: 
 
-    ```sh
+    ```
     export LAYER_NODE_URL=54.166.101.67 \
     && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
     && export KEYRING_BACKEND="test" \
@@ -127,6 +127,7 @@ Keep your node running. Open another window on your layer machine and load up yo
     && export AMOUNT_IN_LOYA="1000000000loya" \
     && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
     ```
+
     Use `printenv` to double check that all the commands are set correctly.
 
 1.  **Verify That You Have a Funded Address:**
@@ -189,6 +190,7 @@ Ensure your validator was created successfully using the command:
     ```sh
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
     ```
+
     If status is `3`, you are a validator and you're not jailed. Awesome!
     If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
 
@@ -198,7 +200,9 @@ Ensure your validator was created successfully using the command:
     ```
     ./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
     ```
+
     Restart your node again, but this time we will change the command a bit to turn on the price daemon:
+
     ```
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
     ```
@@ -209,13 +213,16 @@ Layer testnet is still experimental, and jailing can happen for various reasons 
 Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
 
     1. stop your node / validator / reporter and start it back up as a node / validator (turning off the reporter):
+
     ```
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
     ```
+
     2. enter the unjail the command:
     ```
     ./layerd tx slashing unjail --from $NODE_NAME --chain-id layer --yes
     ```
+
     3. Restart the node with reporter daemon turned on:
     ```
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
