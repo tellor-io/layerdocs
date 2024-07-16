@@ -47,7 +47,9 @@ cd layer
 
 
 ```json
+{
 "eth_api_key": "your_api_key"
+}
 ```
 
 
@@ -205,15 +207,15 @@ If status is `2`, you created your validator, but it was jailed (it's ok, you ca
 
 Once you’re successfully running a validator, you’re almost a reporter already! Just aone more command:
 
-    ```sh
-    ./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
-    ```
+```sh
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
+```
 
 Restart your node again, but this time we will change the command a bit to turn on the price daemon:
 
-    ```sh
-    ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
-    ```
+```sh
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
+```
 
 ## Steps to unjail:
 Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs. Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
