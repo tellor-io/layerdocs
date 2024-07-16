@@ -181,12 +181,28 @@ At the time of writing, a few things need to happen (in order) to successfully s
     2. Count to 10.
     3. Restart your node using a ./layerd command *not the script*.
 
+    Before we start do these things, we need to find your validator address. It's different from your normal "tellor" prefix address. Use the command:
+
+    ```sh
+    ./layerd keys show $NODE_NAME --home $LAYERD_NODE_HOME --bech val
+    ```
+
+    The output will be your validator address with the "tellorvaloper" prefix. This is the address to use in your create-validator tx. Copy it for use in your create validator command.
+
+    Then, run:
+
+    ```sh
+    echo "$VALIDATOR_JSON" > ./validator.json
+    ```
+
     Let's go!
-    1. Run the following command:
+    1. Run the following commands:
 
         ```sh
-        ./layerd tx staking create-validator ./validator.json --from $NODE_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
+        echo "$VALIDATOR_JSON" > ./validator.json
+        ./layerd tx staking create-validator ./validator.json --from tellorvaloperYOUR_ADDRESS_HERE --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
         ```
+
     2. count to 10
     3. In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
 
