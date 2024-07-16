@@ -219,11 +219,13 @@ Read all steps first because you have about 4 minutes to do everything or you wi
     ```
 
     2. enter the unjail the command:
+
     ```
     ./layerd tx slashing unjail --from $NODE_NAME --chain-id layer --yes
     ```
 
     3. Restart the node with reporter daemon turned on:
+
     ```
     ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
     ```
