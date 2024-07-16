@@ -123,16 +123,16 @@ You will need to have some layer testnet TRB into your validator account (see st
 
 Keep your node running. Open another window on your layer machine and load up your variables with the values used when your ran the join chain script. Leave the node running, but have it open so that you can use both windows quickly.  Now, set the layer script variables in your new window: 
 
-    ```sh
-    export LAYER_NODE_URL=54.166.101.67 \
-    && export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
-    && export KEYRING_BACKEND="test" \
-    && export NODE_MONIKER="bobmoniker" \
-    && export NODE_NAME="bob" \
-    && export AMOUNT_IN_TRB=10000 \
-    && export AMOUNT_IN_LOYA="1000000000loya" \
-    && export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
-    ```
+```sh
+export LAYER_NODE_URL=54.166.101.67 \
+&& export TELLORNODE_ID=9007e2991e7f07a016559aed4685f4ba0619c631 \
+&& export KEYRING_BACKEND="test" \
+&& export NODE_MONIKER="bobmoniker" \
+&& export NODE_NAME="bob" \
+&& export AMOUNT_IN_TRB=10000 \
+&& export AMOUNT_IN_LOYA="1000000000loya" \
+&& export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
+```
 
     Use `printenv` to double check that all the commands are set correctly.
 
