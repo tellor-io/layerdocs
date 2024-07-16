@@ -192,7 +192,7 @@ Keep your node running. Open another window on your layer machine and load up yo
     If status is `3`, you are a validator and you're not jailed. Awesome!
     If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
 
-    **Become a Reporter**
+##  **Become a Reporter**
     Once you’re successfully running a validator, you’re almost a reporter already! Just aone more command:
     ```sh
     ./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $NODE_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
