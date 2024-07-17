@@ -3,48 +3,35 @@
 ### *Note: This is a guide for setting up a Tellor Layer public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!*
 
 This guide has three sections:
-1. Run a Tellor Layer node.
-2. Stake and become a Validator
-3. Create a reporter (and unjail if needed)
+1. Build and Configure layerd
+2. Run a Tellor Layer node.
+3. Stake and become a Validator
+4. Create a reporter (and unjail if needed)
 
 ### Pre-requisites
 
 * A local or cloud system running linux (or mac os with the mac scripts)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
-* jq, yq, and sed for running the scripts:
-  * Install jq
-    * For mac: brew install jq
-    * For linux Ubuntu: sudo apt-get install jq
-  * Install yq
-    * For mac: brew install yq
-    * For linux Ubuntu: sudo apt-get install yq
-  * Install sed
-    * For mac: brew install sed
-    * For linux: sudo apt-get install sed
+* jq
+* yq
+* sed
 
-## Part 1: Run a Layer Node
-### **Steps for Starting a Layer Node Using the Provided Shell Scripts**
-
-{% hint style="warning" %}
-<mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
-{% endhint %}
-
-1.  **Clone the Layer Repository:**
+## Part 1: Build and Configure layerd
+There are 7 steps in this part.
+1. Clone the Layer repo and change directory to `layer`:
 
 ```sh
-git clone https://github.com/tellor-io/layer -b public-testnet
+git clone https://github.com/tellor-io/layer -b public-testnet && cd layer
 ```
 
-2.  **Change Active Directory:**
+2. **An ethereum RPC is used for reporting tellor bridge transactions.**
+Using your favorite text editor, create a file called `secrets.json`:
 
 ```sh
-cd layer
+nano secrets.json
 ```
 
-3. **Create a file named** `secrets.json` in the layer folder.
-4.  **Set an alchemy api key for eth rpc.** \
-    The file, secrets.json, should contain a single line (replace with your own Alchemy API key): \
-
+Add this code to the file, replacing `your_api_key` with your Alchemy api key: 
 
 ```json
 {
@@ -52,16 +39,10 @@ cd layer
 }
 ```
 
+Close the file with `crtl^x` `y` to save your changes.
 
-5.  **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
-
-```sh
-layer_scripts/join_chain_new_node_linux.sh
-```
-
-Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
-
-6. **Edit Variables:**
+3. **Add variables to .bashrc**
+Layer needs some information about your setup to be able to run. For the purposes of this guide we will use the following variables:
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
    * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
@@ -69,11 +50,32 @@ Note: If you're using a mac, use the corrisponding scripts for mac. If windows, 
    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$NODE_NAME"
 
-    Note: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
+It's usually easiest to add them as exports in your `.bashrc` or `zshrc` file so that they are automatically loaded in new windows. Open your `.bashrc` file and add these lines at the end:
 
 ```sh
-curl tellornode.com:26657/status
+# layer
+export LAYER_NODE_URL=54.166.101.67
+export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
+export KEYRING_BACKEND="test"
+export NODE_MONIKER="bobmoniker"
+export ACCOUNT_NAME="bob"
+export LAYERD_NODE_HOME="$HOME/.layer/$NODE_NAME"
 ```
+
+*Note: We may need to reset the chain a few more times while we cook. This causes the `TELLORNODE_ID` to change. You can check the current correct id with:*
+
+    ```sh
+    curl tellornode.com:26657/status
+    ```
+
+4. Create an account on Layer
+You will need an account on layer to hold your TRB tokens that you will stake to become a validator reporter.
+
+## Part 2: Run a Layer Node
+
+{% hint style="warning" %}
+<mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
+{% endhint %}
 
 7. **Important Things to Know Before Running the Script:**
    *   When you start the script (which you haven't done yet),***a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.*** It will look something like this:
@@ -201,6 +203,7 @@ Ensure your validator was created successfully using the command:
     ```sh
     ./layerd query staking validator $(./layerd keys show $NODE_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
     ```
+    
 
 If status is `3`, you are a validator and you're not jailed. Awesome!
 If status is `2`, you created your validator, but it was jailed (it's ok, you can probably unjail later).
