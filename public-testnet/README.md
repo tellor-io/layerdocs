@@ -31,6 +31,19 @@ Validators in the Tellor Layer network play a crucial role in maintaining the bl
 3. **Block Proposal:** Validators propose new blocks and ensure that all committed transactions are included.
 4. **Signing:** Validators sign aggregated data values, ensuring their correctness before they are relayed to other chains.
 
+**Reporters are responsible for:**
+
+* Submitting values for data requests (queries) that are subject to validation and disputes.
+
+{% hint style="info" %}
+[**Note** ](#user-content-fn-1)[^1]- validators can be reporters but not all reporters will be validators.
+{% endhint %}
+
+\
+
+
 
 
 ### &#x20;
+
+[^1]: 
