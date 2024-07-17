@@ -49,7 +49,7 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 Close the file with `crtl^x` `y` to save your changes.
 
 4. **Add variables to .bashrc**
-*Setting variables in .bashrc is not required, but it helps to avoid errors because the variables are set on terminal startup.* 
+*Setting variables in .bashrc is not required, but it helps to avoid many common errors.* 
 
 Here is a list of variables we will use in this guide and a short description of their purpose:
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.

@@ -55,7 +55,7 @@ Open `~/layer/validator.json`:
 4.  **Create Your Validator:**
 A few things need to happen (in order) to successfully start a layer validator. 
 You will:
-1. Make the create-validator tx.
+1. Do the create-validator tx.
 2. Count to 10.
 3. Restart your node.
 
@@ -77,7 +77,7 @@ You will:
 Ensure your validator was created successfully using the command:
 
     ```sh
-    ./layerd query staking validator $(./layerd keys show $ACCOUNT_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME) --output json | jq
+    ./layerd query staking validator $(./layerd keys show $ACCOUNT_NAME --bech val --address --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME)
     ```
 
 
@@ -89,7 +89,7 @@ If status is `2`, you created your validator, but it was jailed (it's ok, you ca
 Once you’re successfully running a validator, you’re almost a reporter already! Just aone more command:
 
 ```sh
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend test --chain-id layer --home $LAYERD_NODE_HOME
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME
 ```
 
 Restart your node again, but this time we will change the command a bit to turn on the price daemon:
