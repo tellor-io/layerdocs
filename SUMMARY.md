@@ -6,3 +6,4 @@
   * [Getting Testnet TRB](public-testnet/getting-testnet-trb.md)
   * [Becoming a Validator](public-testnet/becoming-a-validator.md)
   * [Start a Reporter](public-testnet/start-a-reporter.md)
+* [Set up a Keplr Wallet](set-up-a-keplr-wallet.md)
