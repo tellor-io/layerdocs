@@ -103,21 +103,21 @@ Layer testnet is still experimental, and jailing can happen for various reasons 
 
 1. stop your node / validator / reporter with and start it back up as a node / validator (turning off the reporter):
 
-    ```
-    ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
-    ```
+```sh
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
+```
 
 2. enter the unjail the command:
 
-    ```
-    ./layerd tx slashing unjail --from $ACCOUNT_NAME --chain-id layer --yes
-    ```
+```sh
+./layerd tx slashing unjail --from $ACCOUNT_NAME --chain-id layer --yes
+```
 
 3. Restart the node with reporter daemon turned on:
 
-    ```
-    ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
-    ```
+```sh
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
+```
 
 ### Getting Testnet TRB
 

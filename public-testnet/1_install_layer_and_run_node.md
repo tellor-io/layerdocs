@@ -48,9 +48,9 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 Close the file with `crtl^x` `y` to save your changes.
 
-4. **Add variables to .bashrc**
+4. **Add variables to .bashrc (or .zshrc)**
 *Setting variables in .bashrc is not required, but it helps to avoid many common errors.* 
-
+ds
 Here is a list of variables we will use in this guide and a short description of their purpose:
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
@@ -88,7 +88,7 @@ curl tellornode.com:26657/status
 5. **Initialize a named config folder**
 
 ```sh
-./layerd init $NODE_MONIKER --chain-id layer --home ~/.layer/$ACCOUNT_NAME
+./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
 ```
 
 
