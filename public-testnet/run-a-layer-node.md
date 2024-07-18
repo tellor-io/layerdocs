@@ -39,7 +39,8 @@ git clone https://github.com/tellor-io/layer -b public-testnet && cd layer
 go build ./cmd/layerd
 ```
 
-3. **An ethereum RPC is used for reporting tellor bridge transactions.** Using your favorite text editor, create a file called `secrets.json`:
+3. **An ethereum RPC is used for reporting tellor bridge transactions**\
+   Using your favorite text editor, create a file called `secrets.json`:
 
 ```sh
 nano secrets.json
@@ -55,9 +56,10 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-4. **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._&#x20;
+4. **Add variables to .bashrc (or .zshrc)** \
+   _Setting variables in .bashrc or .zshrc is not required, but it helps to avoid many common errors._&#x20;
 
-Open your `.bashrc` or `zshrc` file:
+Open your `.bashrc` or `.zshrc` file:
 
 ```sh
 nano ~/.bashrc # if linux
@@ -83,8 +85,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.\
 Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
 _Note: We may need to reset the chain a few more times while we cook. This causes the_ \
-_`TELLORNODE_ID` to change. You can check the current correct id with:_\
-
+_`TELLORNODE_ID` to change. You can check the current correct id with:_
 
 <pre class="language-sh"><code class="lang-sh"><strong>curl tellornode.com:26657/status
 </strong></code></pre>
@@ -103,7 +104,8 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_\
 ./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
 ```
 
-7. **Create an account on Layer** You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
+7. **Create an account on Layer**\
+   You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
 
 {% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
@@ -133,7 +135,7 @@ If you already have an account / pnemonic Import your account with the command: 
 `./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME`
 {% endhint %}
 
-8. **Add your address to your \~/.bashrc or .zshrc file** Open it with:
+8. **Add your address to your \~/.bashrc or .zshrc file.** Open it with:
 
 ```sh
 nano ~/.bashrc # if linux
@@ -148,7 +150,8 @@ export TELLOR_ADDRESS=tellor1asdfc5cqnt68k376g7fvasdfh6w4qy9et6asdf
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-9. **Create and Run the configure\_layer script** We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
+9. **Create and Run the configure\_layer script** \
+   We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
 **If on linux:**
 
