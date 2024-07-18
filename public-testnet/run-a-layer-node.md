@@ -170,7 +170,9 @@ chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 
 ### Start your Layer Node!
 
-_**Before starting your node, it's a good idea to think about how you want to run it so that the process does not get killed accidentally.**_ [_**GNU screen**_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _**is a great option for beginners. More advanced setups can be achieved using systemd.**_
+{% hint style="success" %}
+_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
+{% endhint %}
 
 Run the command:
 
@@ -178,4 +180,4 @@ Run the command:
 ./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
 ```
 
-If your node is configured correctly, you should see the node connecting to endopoints before rapidly downloading blocks. congrats!
+If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks. congrats!
