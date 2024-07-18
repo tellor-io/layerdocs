@@ -57,6 +57,8 @@ Here is a list of variables we will use in this guide and a short description of
    * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT_NAME"
+   * `TELLOR_ADDRESS`: the tellor prefix address for your account
+   * `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
 
 Open your `.bashrc` or `zshrc` file:
 
@@ -75,7 +77,11 @@ export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"
 export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
+export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
+export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
 ```
+
+Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)
 Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
@@ -97,7 +103,6 @@ curl tellornode.com:26657/status
 ```sh
 ./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
 ```
-
 
 5. **Create an account on Layer**
 You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
@@ -126,7 +131,23 @@ Import your account with the command:
 ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ``` 
 
-6. **Run the configure_layer script**
+6. **Add your address to your ~/.bashrc or .zshrc file**
+Open it with:
+
+```sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
+```
+
+set TELLOR_ADDRESS to your tellor prefix address like:
+
+```sh
+export TELLOR_ADDRESS=tellor1asdfc5cqnt68k376g7fvasdfh6w4qy9et6asdf
+```
+
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
+7. **Create and Run the configure_layer script**
 We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
 **If on linux:**

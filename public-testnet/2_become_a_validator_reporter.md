@@ -21,7 +21,7 @@ If `"catching_up": false`, your node is synced!
 2. **Check if your address has funds**
 
 ```sh
-./layerd query bank balance $ACCOUNT_NAME loya --chain-id layer
+./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layer
 ```
 
 3. While we're at it, let's grab your "tellorvaloper" prefix address also:
@@ -32,7 +32,23 @@ If `"catching_up": false`, your node is synced!
 
 *This will output the "tellorvaloper" prefix address for your account. It is used for validator commands and is different from the "tellor" prefix address that is used for sending and recieving TRB. Copy this "tellorvaloper" prefix address and keep it in the same place where you can copy it later.*
 
-4.  **Retrieve Your Validator Public Key:** 
+4. **Add your tellorvaloper address to your ~/.bashrc or .zshrc file**
+Open it with:
+
+```sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
+```
+
+set TELLORVALOPER_ADDRESS to your tellor prefix address like:
+
+```sh
+export TELLORVALOPER_ADDRESS=tellorvaloper1asdfc5cqnasdf376g7fv9whph6w4qy9e74asdf
+```
+
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
+5.  **Retrieve Your Validator Public Key:** 
 With your `layer` folder as the active directory, use the command:
 
 ```sh
@@ -42,7 +58,7 @@ With your `layer` folder as the active directory, use the command:
 This returns your validator pubkey. (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
 Copy it and keep it in a safe place. You will need it in the next step.
 
-5.  **Edit the Validator Configuration File:** 
+6.  **Edit the Validator Configuration File:** 
 Open `~/layer/validator.json`:
 
     ```json
@@ -60,14 +76,14 @@ Open `~/layer/validator.json`:
         "min-self-delegation": "1"
     }
     ```
-- Edit `"pubkey"` to match yours from step 2. 
+- Edit `"pubkey"` to match yours from step 4. 
 - Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. 
     (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
 - Edit `"moniker"` to match your node moniker variable.
 
     <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas. </mark>
 
-6.  **Create Your Validator:**
+7.  **Create Your Validator:**
 A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
 
 You will need to do a, b, and c carefully:
@@ -75,21 +91,21 @@ a. Do the create-validator tx in command window
 b. Count to 10
 c. Restart your node in the node window
 
-    Let's go!
-    a. Run the following command to create-validator:
+Let's go!
+a. Run the following command to create-validator:
 
-        ```sh
-        ./layerd tx staking create-validator ./validator.json --from $ACCOUNT_NAME --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000" --yes
-        ```
+```sh
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
+```
 
-    b. count to 10 and open the node window
-    c. In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
+b. count to 10 and open the node window
+c. In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
 
-        ```sh
-        ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
-        ```
+```sh
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
+```
 
-5.  **Verify Your Validator Creation:** 
+8.  **Verify Your Validator Creation:** 
 Ensure your validator was created successfully using the command:
 
     ```sh
@@ -126,7 +142,7 @@ Layer testnet is still experimental, and jailing can happen for various reasons 
 2. enter the unjail the command:
 
 ```sh
-./layerd tx slashing unjail --from $ACCOUNT_NAME --chain-id layer --yes
+./layerd tx slashing unjail --from $TELLOR_ADDRESS --chain-id layer --home $LAYERD_NODE_HOME --keyring-backend test --keyring-dir $LAYERD_NODE_HOME
 ```
 
 3. Restart the node with reporter daemon turned on:
