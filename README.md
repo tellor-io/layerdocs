@@ -1,7 +1,11 @@
 # Introduction
 
+## What is Tellor Layer?
+
+Tellor Layer is a stand alone L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It works by using a network of staked parties who are crypto-economically incentivized to honestly report requested data. &#x20;
+
 {% hint style="info" %}
-_Tellor Layer_ _is a stand alone L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It works by using a network of staked parties who are crypto-economically incentivized to honestly report requested data.  For more in-depth information, checkout the_ [_Tellor Layer tech paper_](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) _and our_ [_ADRs_](https://github.com/tellor-io/layer/tree/main/adr)_._
+For more in-depth information, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
 ## Public Testnet
@@ -21,7 +25,7 @@ Validators in the Tellor Layer network play a crucial role in maintaining the bl
 
 #### **Reporters are responsible for:**
 
-* Submitting values for data requests (queries) that are subject to validation and disputes.  \*Validators can be reporters but not all reporters will be validators.
+* **Submitting values** for data requests (queries) that are subject to validation and disputes.  \*Validators can be reporters but not all reporters will be validators.
 
 
 
