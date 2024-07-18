@@ -120,17 +120,19 @@ Import your account with the command:
 ``` 
 
 6. **Run the configure_layer script (or manually replace config files)**
-We need to change the config files a bit using the provided `configure_layer.sh` shell script. 
-Download the script onto your computer:
+We need to change the config files a bit using the provided `configure_layer.sh` shell script. Save the script into your layer folder. 
+With layer as your active direcory:
 
 ```sh
-wget path/configure_layer.sh # (change path accordingly)
+wget configure_layer_nix.sh #if linux
+wget configure_layer_mac.sh #if mac
 ```
 
 Give it permission to execute and run it:
 
 ```sh
-chmod +x configure_layer.sh && ./configure_layer.sh # (change path accordingly)
+chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh
+chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
 ```
 
 Alternatively, you can download the configured config files [here](link). If using this method: 
