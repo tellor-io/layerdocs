@@ -4,26 +4,21 @@
 
 This guide has three sections:
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Run a Layer Node</mark></td><td></td><td></td><td><a href="run-a-layer-node.md">run-a-layer-node.md</a></td></tr><tr><td><mark style="color:red;">Become a Validator</mark></td><td></td><td></td><td><a href="become-a-validator.md">become-a-validator.md</a></td></tr><tr><td><mark style="color:green;">Create Reporter</mark></td><td></td><td></td><td><a href="create-a-reporter.md">create-a-reporter.md</a></td></tr></tbody></table>
+{% content-ref url="run-a-layer-node.md" %}
+[run-a-layer-node.md](run-a-layer-node.md)
+{% endcontent-ref %}
+
+{% content-ref url="become-a-validator.md" %}
+[become-a-validator.md](become-a-validator.md)
+{% endcontent-ref %}
+
+{% content-ref url="create-a-reporter.md" %}
+[create-a-reporter.md](create-a-reporter.md)
+{% endcontent-ref %}
 
 {% hint style="success" %}
 Please take the time to <mark style="color:green;">**review all information**</mark> in this guide and acclimate yourself before beginning.
 {% endhint %}
-
-### What is a Validator?&#x20;
-
-Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain.  The number of total validators is capped at 100.
-
-### **Responsibilities of a Validator:**
-
-1. **Transaction Validation:** Validators validate transactions and add them to the chain.
-2. **Consensus Participation:** They participate in the consensus mechanism to agree on the state of the chain.
-3. **Block Proposal:** Validators propose new blocks and ensure that all committed transactions are included.
-4. **Signing:** Validators sign aggregated data values, ensuring their correctness before they are relayed to other chains.
-
-### **Reporters are responsible for:**
-
-* Submitting values for data requests (queries) that are subject to validation and disputes.  \*Validators can be reporters but not all reporters will be validators.
 
 {% hint style="warning" %}
 <mark style="color:orange;">**Note:**</mark> _This is a guide for setting up a Tellor Layer public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!_

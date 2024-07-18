@@ -8,5 +8,20 @@
 
 In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of [participating as a validator](public-testnet/run-a-layer-node.md) and [reporter](public-testnet/create-a-reporter.md). &#x20;
 
+### What is a Validator?&#x20;
+
+Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain.  The number of total validators is capped at 100.
+
+### **Responsibilities of a Validator:**
+
+1. **Transaction Validation:** Validators validate transactions and add them to the chain.
+2. **Consensus Participation:** They participate in the consensus mechanism to agree on the state of the chain.
+3. **Block Proposal:** Validators propose new blocks and ensure that all committed transactions are included.
+4. **Signing:** Validators sign aggregated data values, ensuring their correctness before they are relayed to other chains.
+
+### **Reporters are responsible for:**
+
+* Submitting values for data requests (queries) that are subject to validation and disputes.  \*Validators can be reporters but not all reporters will be validators.
+
 
 
