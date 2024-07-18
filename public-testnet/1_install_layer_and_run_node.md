@@ -145,22 +145,18 @@ nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
 
 Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
-Give your new script permission to execute and run it:
+Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
 
 ```sh
 chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
 
-## Run a Layer Node!
+## Start your Layer Node!
 
-*Before starting your node, think about how you want to run it so that the process does not get killed accidentally. [GNU screen](https://www.youtube.com/watch?v=3S3I9lT6eKE) is a great option for beginners. More advanced setups can be achieved using systemd (link).
+***Before starting your node, it's a good idea to think about how you want to run it so that the process does not get killed accidentally. [GNU screen](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) is a great option for beginners. More advanced setups can be achieved using systemd.***
 
-If you're not sure what to do, create a 
-
-Make sure to load your node variables. (use `source ~/.bashrc` if necessary)
-
-Then run the command:
+Run the command:
 
 ```sh
 ./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
@@ -168,7 +164,3 @@ Then run the command:
 
 If your node is configured correctly, you should see the node connecting to endopoints before rapidly downloading blocks. congrats!
 
-Troubleshooting:
-
-Connectivity Errors (no handshake, etc...)
-- Check if you have any other processes that are using ports 26657, 26656, 6060, 26658, 
