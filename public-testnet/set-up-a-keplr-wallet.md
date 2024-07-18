@@ -7,25 +7,25 @@ description: >-
 
 # Set up a Keplr Wallet
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-17 at 8.37.17 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.37.17 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 1 - Installation
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-17 at 8.40.51 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.40.51 AM.png" alt=""><figcaption></figcaption></figure>
 
-Go to Keplr's extension download for[ Chrome or Brave](https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en); [Firefox](public-testnet/run-a-layer-node.md)&#x20;
+Go to Keplr's extension download for[ Chrome or Brave](https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en); [Firefox](run-a-layer-node.md)&#x20;
 
 Then, in following window pop-up, select \[Add extension] and it will be automatically added to your  browser.
 
 Once the extension is added, you may need to select the puzzle icon on the top right of your Chrome browser
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-17 at 8.50.09 AM.png" alt=""><figcaption><p>click the puzzle icon</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.50.09 AM.png" alt=""><figcaption><p>click the puzzle icon</p></figcaption></figure>
 
 and then select the Keplr pin to have the Keplr icon link be visible in your browser bar.
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-17 at 8.48.17 AM.png" alt=""><figcaption><p>Pin your Keplr Chrome extension</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.48.17 AM.png" alt=""><figcaption><p>Pin your Keplr Chrome extension</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-17 at 8.50.33 AM.png" alt=""><figcaption><p>Keplr is now on your browser bar</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.50.33 AM.png" alt=""><figcaption><p>Keplr is now on your browser bar</p></figcaption></figure>
 
 ## Next, you'll need to create an account to access the wallet's features.&#x20;
 
@@ -35,7 +35,7 @@ Click on the Keplr icon on your browser extension bar to open the wallet creatio
 
 Click on 'Create new wallet'
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 **Step 3: Create a new wallet**
 
@@ -45,7 +45,7 @@ For higher security we would recommend registering via recovery phrase.\
 \
 If you are a beginner and are less experienced with self-custodial wallets, you can also choose to sign up with your Google or Apple IDs. (However, note that a compromised Google or Apple account can lead to loss of funds)
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Step 4: New Recovery Phrase
 
