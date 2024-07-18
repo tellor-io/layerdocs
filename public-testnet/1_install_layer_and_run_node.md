@@ -15,6 +15,7 @@ This guide has three sections:
 * jq
 * yq
 * sed
+* wget
 
 ## Part 1: Build and Configure layerd
 There are 7 steps in this part.
