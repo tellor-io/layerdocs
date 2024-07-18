@@ -2,17 +2,13 @@
 
 ## Welcome to the Public Testnet Guide
 
-
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td></td><td></td><td><a href="run-a-layer-node.md">run-a-layer-node.md</a></td></tr><tr><td></td><td></td><td></td><td><a href="become-a-validator.md">become-a-validator.md</a></td></tr><tr><td></td><td></td><td></td><td><a href="create-a-reporter.md">create-a-reporter.md</a></td></tr></tbody></table>
-
 This guide has three sections:
 
-1. Run a Tellor Layer node.
-2. Stake and become a Validator
-3. Create a reporter (and unjail if needed)
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Run a Layer Node</mark></td><td></td><td></td><td><a href="run-a-layer-node.md">run-a-layer-node.md</a></td></tr><tr><td><mark style="color:red;">Become a Validator</mark></td><td></td><td></td><td><a href="become-a-validator.md">become-a-validator.md</a></td></tr><tr><td><mark style="color:green;">Create Reporter</mark></td><td></td><td></td><td><a href="create-a-reporter.md">create-a-reporter.md</a></td></tr></tbody></table>
 
-**Please take the time to review all information in this guide and acclimate yourself before beginning.**
+{% hint style="success" %}
+Please take the time to <mark style="color:green;">**review all information**</mark> in this guide and acclimate yourself before beginning.
+{% endhint %}
 
 ### What is a Validator?&#x20;
 
