@@ -9,8 +9,14 @@ You will need to have some layer testnet TRB. Feel free to send us your tellor p
 ***It helps to have quick access to the node window and the commands window as you go though the steps (to avoid jailing).***
 
 1.  **Check if your node is synced:**
-If you cannot read the log as it's being printed, the node still syncing. 
-Syncing can a while (>1hr) so please be patient and wait until your node is ready before you proceed.
+Run the command
+
+```sh
+./layerd status
+```
+
+If `"catching_up": true`, your node is not synced.
+If `"catching_up": false`, your node is synced!
 
 2. **Check if your address has funds**
 

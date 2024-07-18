@@ -50,7 +50,6 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 4. **Add variables to .bashrc (or .zshrc)**
 *Setting variables in .bashrc is not required, but it helps to avoid many common errors.* 
-ds
 Here is a list of variables we will use in this guide and a short description of their purpose:
    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
@@ -59,7 +58,14 @@ Here is a list of variables we will use in this guide and a short description of
    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT_NAME"
 
-Open your `.bashrc` or `zshrc` file and add these lines at the end. replace "bob" with the values you choose:
+Open your `.bashrc` or `zshrc` file:
+
+```sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
+```
+
+Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT_NAME to whatever you'd like to call your wallet account:
 
 ```sh
 # layer
@@ -71,7 +77,8 @@ export ACCOUNT_NAME="bob"
 export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
 ```
 
-Restart your terminal, or use `source ~/.bashrc` before you continue.
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)
+Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
 *Note: We may need to reset the chain a few more times while we cook. This causes the `TELLORNODE_ID` to change. You can check the current correct id with:*
 
