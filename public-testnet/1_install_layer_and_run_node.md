@@ -47,7 +47,7 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 }
 ```
 
-Close the file with `crtl^x` `y` to save your changes.
+Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 4. **Add variables to .bashrc (or .zshrc)**
 *Setting variables in .bashrc is not required, but it helps to avoid many common errors.* 
@@ -120,28 +120,37 @@ Import your account with the command:
 ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ``` 
 
-6. **Run the configure_layer script (or manually replace config files)**
-We need to change the config files a bit using the provided `configure_layer.sh` shell script. Save the script into your layer folder. 
-With layer as your active direcory:
+6. **Run the configure_layer script**
+We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
+
+**If on linux:**
+- Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_nix.sh), select all and copy the code to your clipboard. 
+
+- create the script file locally:
 
 ```sh
-wget https://github.com/tellor-io/layerdocs/blob/update-guide-working/public-testnet/configure_layer_nix.sh #if linux
-wget https://github.com/tellor-io/layerdocs/blob/update-guide-working/public-testnet/configure_layer_mac.sh #if mac
+nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
 ```
 
-Give it permission to execute and run it:
+Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+**If on Mac:**
+- Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_mac.sh), select all and copy the code to your clipboard. 
+
+- create the script file locally:
+
+```sh
+nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
+```
+
+Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+Give your new script permission to execute and run it:
 
 ```sh
 chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
-
-Alternatively, you can download the configured config files from this repo. If using this method: 
-- First open up config.toml and relpace `moniker = "billmoniker"` with your node moniker.
-- Navigate to `~/.layer/config` and replace app.toml, client.toml, and config.toml with the properly configured configs.
-- Navigate to `~/.layer/$ACCOUNT_NAME/config` and replace the files there also.
-
-If you've completed the install layer section, you're ready to try running a layer node!
 
 ## Run a Layer Node!
 

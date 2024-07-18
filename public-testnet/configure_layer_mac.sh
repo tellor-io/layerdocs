@@ -3,9 +3,6 @@
 # clear the terminal
 clear
 
-# Stop execution if any command fails
-set -e
-
 # set variables in your .zshrc before starting this script!
 source ~/.zshrc
 
