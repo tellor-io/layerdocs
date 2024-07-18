@@ -1,43 +1,36 @@
 # Run a Layer Node
 
-#### Pre-requisites
+### Pre-requisites
 
 * A local or cloud system running linux (or mac os with the mac scripts)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
-* jq, yq, and sed for running the scripts:
-  * Install jq
-    * For mac: brew install jq
-    * For linux Ubuntu: sudo apt-get install jq
-  * Install yq
-    * For mac: brew install yq
-    * For linux Ubuntu: sudo apt-get install yq
-  * Install sed
-    * For mac: brew install sed
-    * For linux: sudo apt-get install sed
+* jq
+* yq
+* sed
 
-### Part 1: Run a Layer Node
+## Part 1: Build and Configure layerd
 
-#### **Steps for Starting a Layer Node Using the Provided Shell Scripts**
+There are 7 steps in this part.
 
-{% hint style="warning" %}
-<mark style="color:blue;">**Note:**</mark> <mark style="color:blue;">The test backend is not recommended for production use with real funds. Always handle mnemonics/keys with extreme care, even if it’s just a testnet address.</mark>
-{% endhint %}
-
-1. **Clone the Layer Repository:**
+1. Clone the Layer repo and change directory to `layer`:
 
 ```sh
-git clone https://github.com/tellor-io/layer -b public-testnet
+git clone https://github.com/tellor-io/layer -b public-testnet && cd layer
 ```
 
-2. **Change Active Directory:**
+2. Build layerd with the command:
 
 ```sh
-cd layer
+go build ./cmd/layerd
 ```
 
-3. **Create a file named** `secrets.json` in the layer folder.
-4. **Set an alchemy api key for eth rpc.**\
-   The file, secrets.json, should contain a single line (replace with your own Alchemy API key): \\
+3. **An ethereum RPC is used for reporting tellor bridge transactions.** Using your favorite text editor, create a file called `secrets.json`:
+
+```sh
+nano secrets.json
+```
+
+Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 ```json
 {
@@ -45,70 +38,144 @@ cd layer
 }
 ```
 
-5. **Open the Script:** Using your favorite text editor (like nano, vim, or code), open:
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
+4. **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._ Here is a list of variables we will use in this guide and a short description of their purpose:
+   * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
+   * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
+   * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
+   * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
+   * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
+   * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT\_NAME"
+   * `TELLOR_ADDRESS`: the tellor prefix address for your account
+   * `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
+
+Open your `.bashrc` or `zshrc` file:
 
 ```sh
-layer_scripts/join_chain_new_node_linux.sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
 ```
 
-Note: If you're using a mac, use the corrisponding scripts for mac. If windows, use the linux scripts with Ubuntu or Debian WSL.
+Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
 
-6.  **Edit Variables:**
+```sh
+# layer
+export LAYER_NODE_URL=54.166.101.67
+export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
+export KEYRING_BACKEND="test"
+export NODE_MONIKER="bobmoniker"
+export ACCOUNT_NAME="bob"
+export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
+export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
+export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
+```
 
-    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
-    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
-    * `NODE_MONIKER`: Set to whatever you use for the node name + “moniker” at the end (e.g., “billmoniker”).
-    * `NODE_NAME`: Set to your name or whatever name you choose (e.g., “bill”).
-    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
-    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$NODE\_NAME"
+Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-    Note: The provided node ID will be incorrect if the test chain was restarted. This can be checked by running:
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
+
+_Note: We may need to reset the chain a few more times while we cook. This causes the `TELLORNODE_ID` to change. You can check the current correct id with:_
 
 ```sh
 curl tellornode.com:26657/status
 ```
 
-7. **Important Things to Know Before Running the Script:**
-   * When you start the script (which you haven't done yet),_**a test wallet key pair/mnemonic will be created and printed in the terminal. You will need this address to run your validator. There will be a pause allowing you to copy it before it's burried by the node log.**_ It will look something like this:
+4. **Initialize config folders**
 
 ```sh
-    - address: tellor1mh2ua3w8yq5ldeewsdhpg0cazhr7gtcllr6j0j
-    name: bill
-    pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Ag+lE4VGW6CpE/TiMnb3zJ6pyETVHobj5Bd5F3OuRW7/"}'
-    type: local
-
-
-    **Important** write this mnemonic phrase in a safe place.
-    It is the only way to recover your account if you ever forget your password.
-
-    eagle actress venue redacted style redacted potato still redacted final redacted increase redacted parent panda vapor redacted redacted twelve summer redacted redacted redacted redacted
+./layerd init layer --chain-id layer
 ```
 
-_The script should only be run once, or if you want to start over from scratch! It is intended to be used to delete your old chain and to configure the chain and start it all at once (for testing). Once your node is running, it can be restarted with a `./layerd start` command like the last command in start script._
+5. **Initialize a named config folder**
 
-8.  **Run the Script:**
+```sh
+./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
+```
 
-    * Give the script permission to execute:
-
-    ```sh
-    chmod +x layer_scripts/join_chain_new_node_linux.sh
-    ```
-
-    *   Run it:
-
-        ```sh
-        ./layer_scripts/join_chain_new_node_linux.sh
-        ```
-    * Wait for the chain to sync. Some errors are expected as the chain starts up, but the log should start moving very quickly once the node starts downloading blocks.
-    * Once the log slows down again, it is likely synced. You can verify that your node is synced using:
-
-    ```
-    curl localhost:26657/status
-    ```
-
-    If `sync_info.catching_up` is `False`, the node is synced! Well done!
+5. **Create an account on Layer** You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
 
 {% hint style="info" %}
-Make sure to keep your node running before moving on to setting up a validator!
+<mark style="color:blue;">**Security Tips:**</mark> \
+1\. The test backend is not recommended for production use with real funds because the keys are stored as plain text. Always use a secure keyring-backend option for real funds! \
+2\. Handle mnemonics/keys with extreme care, even if it’s just a testnet address! \
+3\. Never use an address that holds real mainnet funds for testing!
 {% endhint %}
 
+You can check accounts any time with:
+
+```sh
+./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+```
+
+**If you do not yet have an account / mnemonic** Generate a new key pair with the command:
+
+```sh
+./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+```
+
+**Be sure to copy the entire output with the mnemonic and keep it in a very safe place!**
+
+**If you already have an account / pnemonic** Import your account with the command: (You will be prompted to input your mnemonic)
+
+```sh
+./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+```
+
+6. **Add your address to your \~/.bashrc or .zshrc file** Open it with:
+
+```sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
+```
+
+set TELLOR\_ADDRESS to your tellor prefix address like:
+
+```sh
+export TELLOR_ADDRESS=tellor1asdfc5cqnt68k376g7fvasdfh6w4qy9et6asdf
+```
+
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
+7. **Create and Run the configure\_layer script** We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
+
+**If on linux:**
+
+* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.
+* create the script file locally:
+
+```sh
+nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
+```
+
+Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+**If on Mac:**
+
+* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
+* create the script file locally:
+
+```sh
+nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
+```
+
+Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
+
+```sh
+chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
+chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
+```
+
+### Start your Layer Node!
+
+_**Before starting your node, it's a good idea to think about how you want to run it so that the process does not get killed accidentally.**_ [_**GNU screen**_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _**is a great option for beginners. More advanced setups can be achieved using systemd.**_
+
+Run the command:
+
+```sh
+./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
+```
+
+If your node is configured correctly, you should see the node connecting to endopoints before rapidly downloading blocks. congrats!
