@@ -12,9 +12,11 @@ Restart your node again, but this time we will change the command a bit to turn 
 ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
 ```
 
-> Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs.&#x20;
+## Jailing
 
-## Steps to unjail:
+Layer testnet is still experimental, and jailing can happen for various reasons while we work out the kinks. Make sure your terminal window (shell) has all the variables loaded before trying to build txs.&#x20;
+
+### Steps to unjail:
 
 {% hint style="info" %}
 Read all steps first because you have about 4 minutes to do everything or you will be jailed again for inactivity:
