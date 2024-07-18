@@ -6,7 +6,7 @@
 
 ## Public Testnet
 
-In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of [participating as a validator](public-testnet/run-a-layer-node.md) and [reporter](public-testnet/create-a-reporter.md). &#x20;
+In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of running a node, and participating as a validator and reporter. &#x20;
 
 ### What is a Validator?&#x20;
 
