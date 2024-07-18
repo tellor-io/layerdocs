@@ -1,12 +1,12 @@
 # Part 2: Become a Validator
 
-Once you have a working node, you can try running a validator.
+*Once you've got your node running and synced, you're ready to become a validator!*
 
 You will need to have some layer testnet TRB. Feel free to send us your tellor prefixed address / request in the public [discord](https://discord.gg/tellor) #testing-layer channel, or [try the token bridge from the Sepolia testnet playground.](guide.md#getting-testnet-trb)
 
-Keep your node running. Open up another screen or terminal winodw on your layer machine. If you added the variables to your .bashrc file they should load autmatically. 
+***Setup Note: Open up another screen or terminal window on your layer machine for doing the validator steps. If you followed the install guide and added the variables to your .bashrc file, you should be able to copy / paste the commands in this documentation to stake your validator.*** 
 
-*Note: You will need to have quick access to the node window and new window as you go though the steps.*
+***It helps to have quick access to the node window and the commands window as you go though the steps (to avoid jailing).***
 
 1.  **Check if your node is synced:**
 If you cannot read the log as it's being printed, the node still syncing. 
@@ -33,9 +33,8 @@ With your `layer` folder as the active directory, use the command:
 ./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
-This returns your validator pubkey /
-(e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`). /
-Copy this for the next step.
+This returns your validator pubkey. (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`).
+Copy it and keep it in a safe place. You will need it in the next step.
 
 5.  **Edit the Validator Configuration File:** 
 Open `~/layer/validator.json`:
@@ -62,22 +61,23 @@ Open `~/layer/validator.json`:
 
     <mark style="color:blue;">**Note:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas. </mark>
 
-4.  **Create Your Validator:**
-A few things need to happen (in order) to successfully start a layer validator. 
-You will:
-1. Do the create-validator tx.
-2. Count to 10.
-3. Restart your node.
+6.  **Create Your Validator:**
+A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
+
+You will need to do a, b, and c carefully:
+a. Do the create-validator tx in command window
+b. Count to 10
+c. Restart your node in the node window
 
     Let's go!
-    1. Run the following commands:
+    a. Run the following command to create-validator:
 
         ```sh
-        ./layerd tx staking create-validator ./validator.json --from $ACCOUNT_NAME --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000"
+        ./layerd tx staking create-validator ./validator.json --from $ACCOUNT_NAME --home $LAYERD_NODE_HOME --chain-id layer --node="http://localhost:26657" --gas "400000" --yes
         ```
 
-    2. count to 10
-    3. In your node window, use `ctrl^c` to stop the node. Use this command to start it back up:
+    b. count to 10 and open the node window
+    c. In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
 
         ```sh
         ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
