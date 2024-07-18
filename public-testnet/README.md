@@ -2,6 +2,10 @@
 
 ## Welcome to the Public Testnet Guide
 
+
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td></td><td></td><td><a href="run-a-layer-node.md">run-a-layer-node.md</a></td></tr><tr><td></td><td></td><td></td><td><a href="become-a-validator.md">become-a-validator.md</a></td></tr><tr><td></td><td></td><td></td><td><a href="create-a-reporter.md">create-a-reporter.md</a></td></tr></tbody></table>
+
 This guide has three sections:
 
 1. Run a Tellor Layer node.
