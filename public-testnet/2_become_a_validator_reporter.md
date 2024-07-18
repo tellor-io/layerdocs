@@ -18,16 +18,26 @@ Syncing can a while (>1hr) so please be patient and wait until your node is read
 ./layerd query bank balance $ACCOUNT_NAME loya --chain-id layer
 ```
 
-2.  **Retrieve Your Validator Public Key:** 
+3. While we're at it, let's grab your "tellorvaloper" prefix address also:
+
+```sh
+./layerd keys show $ACCOUNT_NAME --bech val --home $LAYERD_NODE_HOME
+```
+
+*This will output the "tellorvaloper" prefix address for your account. It is used for validator commands and is different from the "tellor" prefix address that is used for sending and recieving TRB. Copy this "tellorvaloper" prefix address and keep it in the same place where you can copy it later.*
+
+4.  **Retrieve Your Validator Public Key:** 
 With your `layer` folder as the active directory, use the command:
 
 ```sh
 ./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
-This returns your validator pubkey (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`). Copy this for the next step.
+This returns your validator pubkey /
+(e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`). /
+Copy this for the next step.
 
-3.  **Edit the Validator Configuration File:** 
+5.  **Edit the Validator Configuration File:** 
 Open `~/layer/validator.json`:
 
     ```json
