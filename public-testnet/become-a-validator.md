@@ -62,7 +62,12 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 ./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
-This returns your validator pubkey. (e.g., `{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`). Copy it and keep it in a safe place. You will need it in the next step.
+This returns your validator pubkey.  For example:\
+`{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`
+
+{% hint style="warning" %}
+Copy it and keep it in a safe place. You will need it in the next step.
+{% endhint %}
 
 6.  **Edit the Validator Configuration File**\
     Open `~/layer/validator.json`:
