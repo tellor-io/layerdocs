@@ -86,11 +86,11 @@ This returns your validator pubkey. (e.g., `{"@type":"/cosmos.crypto.ed25519.Pub
 7. **Create Your Validator:** A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
 
 {% hint style="warning" %}
-<mark style="color:red;">You will need the next 3 steps carefully:</mark>&#x20;
+<mark style="color:red;">These next steps are time sensitive so do them carefully:</mark>&#x20;
 
-* Do the create-validator tx in command window
+* Do the create-validator tx in **command window**
 * Count to 10&#x20;
-* Restart your node in the node window
+* Restart your node in the **node window**
 {% endhint %}
 
 * Run the following command to create-validator:
