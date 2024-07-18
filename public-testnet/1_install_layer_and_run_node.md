@@ -57,7 +57,7 @@ Here is a list of variables we will use in this guide and a short description of
    * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
    * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
-   * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$NODE_NAME"
+   * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT_NAME"
 
 Open your `.bashrc` or `zshrc` file and add these lines at the end. replace "bob" with the values you choose:
 
@@ -97,27 +97,27 @@ You will need a "wallet" account on layer to hold your TRB tokens that you will 
 
 <mark style="color:blue;">**Security Tips:**</mark> <mark style="color:blue;"></mark><mark style="color:blue;">1. The test backend is not recommended for production use with real funds because the keys are stored as plain text. Always use a secure keyring-backend option for real funds! 2. Handle mnemonics/keys with extreme care, even if it’s just a testnet address! 3. Never use an address that holds real mainnet funds for testing!</mark>
 
-    You can check accounts any time with:
+You can check accounts any time with:
 
-    ```sh
-    ./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
-    ```
+```sh
+./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+```
 
 **If you do not yet have an account / mnemonic**
-    Generate a new key pair with the command:
+Generate a new key pair with the command:
 
-    ```sh
-    ./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
-    ```
-    **Be sure to copy the entire output with the mnemonic and keep it in a very safe place!**
+```sh
+./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+```
+**Be sure to copy the entire output with the mnemonic and keep it in a very safe place!**
 
 **If you already have an account / pnemonic**
-    Import your account with the command:
-    (You will be prompted to input your mnemonic)
+Import your account with the command:
+(You will be prompted to input your mnemonic)
 
-    ```sh
-    ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
-    ``` 
+```sh
+./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+``` 
 
 6. **Run the configure_layer script (or manually replace config files)**
 We need to change the config files a bit using the provided `configure_layer.sh` shell script. 
@@ -144,6 +144,8 @@ If you've completed the install layer section, you're ready to try running a lay
 
 *Before starting your node, think about how you want to run it so that the process does not get killed accidentally. GNU screen(link) is a great option for beginners. More advanced setups can be achieved using systemd (link).
 
+If you're not sure what to do, create a 
+
 Make sure to load your node variables. (use `source ~/.bashrc` if necessary)
 
 Then run the command:
@@ -153,3 +155,8 @@ Then run the command:
 ```
 
 If your node is configured correctly, you should see the node connecting to endopoints before rapidly downloading blocks. congrats!
+
+Troubleshooting:
+
+Connectivity Errors (no handshake, etc...)
+- Check if you have any other processes that are using ports 26657, 26656, 6060, 26658, 

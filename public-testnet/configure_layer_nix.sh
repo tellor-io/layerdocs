@@ -6,7 +6,7 @@ clear
 # Stop execution if any command fails
 set -e
 
-# Stop execution if any command fails
+# set variables in your .bashrc before starting this script!
 source ~/.bashrc
 
 echo "Change denom to loya in config files..."
@@ -53,6 +53,7 @@ echo "Getting genesis from runnning node....."
 curl $LAYER_NODE_URL:26657/genesis | jq '.result.genesis' > ~/.layer/config/genesis.json
 curl $LAYER_NODE_URL:26657/genesis | jq '.result.genesis' > ~/.layer/$ACCOUNT_NAME/config/genesis.json
 
+echo "Running Tellor node id: $TELLORNODE_ID"
 sed -i 's/seeds = ""/seeds = "'$TELLORNODE_ID'@'$LAYER_NODE_URL':26656"/g' ~/.layer/$ACCOUNT_NAME/config/config.toml
 sed -i 's/persistent_peers = ""/persistent_peers = "'$TELLORNODE_ID'@'$LAYER_NODE_URL':26656"/g' ~/.layer/$ACCOUNT_NAME/config/config.toml
 
