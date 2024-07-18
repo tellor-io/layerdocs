@@ -121,7 +121,7 @@ If you do not yet have an account / mnemonic Generate a new key pair with the co
 ```
 
 {% hint style="warning" %}
-Be sure to copy the entire output with the mnemonic and keep it in a very safe place!
+Be sure to <mark style="color:orange;">**copy the entire output**</mark> with the mnemonic and keep it in a very safe place!
 {% endhint %}
 
 If you already have an account / pnemonic Import your account with the command: (You will be prompted to input your mnemonic)
