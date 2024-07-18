@@ -124,18 +124,18 @@ We need to change the config files a bit using the provided `configure_layer.sh`
 With layer as your active direcory:
 
 ```sh
-wget configure_layer_nix.sh #if linux
-wget configure_layer_mac.sh #if mac
+wget https://github.com/tellor-io/layerdocs/blob/update-guide-working/public-testnet/configure_layer_nix.sh #if linux
+wget https://github.com/tellor-io/layerdocs/blob/update-guide-working/public-testnet/configure_layer_mac.sh #if mac
 ```
 
 Give it permission to execute and run it:
 
 ```sh
-chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh
-chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
+chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
+chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
 
-Alternatively, you can download the configured config files [here](link). If using this method: 
+Alternatively, you can download the configured config files from this repo. If using this method: 
 - First open up config.toml and relpace `moniker = "billmoniker"` with your node moniker.
 - Navigate to `~/.layer/config` and replace app.toml, client.toml, and config.toml with the properly configured configs.
 - Navigate to `~/.layer/$ACCOUNT_NAME/config` and replace the files there also.
@@ -144,7 +144,7 @@ If you've completed the install layer section, you're ready to try running a lay
 
 ## Run a Layer Node!
 
-*Before starting your node, think about how you want to run it so that the process does not get killed accidentally. GNU screen(link) is a great option for beginners. More advanced setups can be achieved using systemd (link).
+*Before starting your node, think about how you want to run it so that the process does not get killed accidentally. [GNU screen](https://www.youtube.com/watch?v=3S3I9lT6eKE) is a great option for beginners. More advanced setups can be achieved using systemd (link).
 
 If you're not sure what to do, create a 
 
@@ -153,7 +153,7 @@ Make sure to load your node variables. (use `source ~/.bashrc` if necessary)
 Then run the command:
 
 ```sh
-./layerd start --home $LAYERD_NODE_HOME --api.swagger --price-daemon-enabled=false
+./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
 ```
 
 If your node is configured correctly, you should see the node connecting to endopoints before rapidly downloading blocks. congrats!
