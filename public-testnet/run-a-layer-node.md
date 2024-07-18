@@ -8,17 +8,32 @@
 * yq
 * sed
 
-## Part 1: Build and Configure layerd
+{% hint style="info" %}
+<mark style="color:blue;">Here is a list of variables we will use in this guide and a short description of their purpose:</mark>
 
-There are 7 steps in this part.
+* `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
+* `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
+* `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
+* `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
+* `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
+* `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT\_NAME"
+* `TELLOR_ADDRESS`: the tellor prefix address for your account
+* `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
+{% endhint %}
 
-1. Clone the Layer repo and change directory to `layer`:
+## Initial Setup&#x20;
+
+### Build and Configure layerd
+
+There are 9 steps in this part.
+
+1. **Clone the Layer repo and change directory to `layer`:**
 
 ```sh
 git clone https://github.com/tellor-io/layer -b public-testnet && cd layer
 ```
 
-2. Build layerd with the command:
+2. **Build layerd with the command:**
 
 ```sh
 go build ./cmd/layerd
@@ -40,75 +55,55 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-4.  **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._ \
+4. **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._&#x20;
+
+Open your `.bashrc` or `zshrc` file:
+
+```sh
+nano ~/.bashrc # if linux
+nano ~/.zshrc # if mac
+```
+
+Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
+
+```sh
+# layer
+export LAYER_NODE_URL=54.166.101.67
+export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
+export KEYRING_BACKEND="test"
+export NODE_MONIKER="bobmoniker"
+export ACCOUNT_NAME="bob"
+export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
+export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
+export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
+```
+
+Exit nano with `ctrl^x` then enter `y` to save the changes.\
+\
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
+
+_Note: We may need to reset the chain a few more times while we cook. This causes the_ \
+_`TELLORNODE_ID` to change. You can check the current correct id with:_\
 
 
-    Open your `.bashrc` or `zshrc` file:\
+<pre class="language-sh"><code class="lang-sh"><strong>curl tellornode.com:26657/status
+</strong></code></pre>
 
+5. **Initialize config folder**
 
-    ```sh
-    nano ~/.bashrc # if linux
-    nano ~/.zshrc # if mac
-    ```
-
-    \
-    Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:\
-
-
-    ```sh
-    # layer
-    export LAYER_NODE_URL=54.166.101.67
-    export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
-    export KEYRING_BACKEND="test"
-    export NODE_MONIKER="bobmoniker"
-    export ACCOUNT_NAME="bob"
-    export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
-    export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
-    export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
-    ```
-
-    \
-    Exit nano with `ctrl^x` then enter `y` to save the changes.\
-
-
-    {% hint style="info" %}
-    Here is a list of variables we will use in this guide and a short description of their purpose:
-
-    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
-    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
-    * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
-    * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
-    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
-    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT\_NAME"
-    * `TELLOR_ADDRESS`: the tellor prefix address for your account
-    * `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
-    {% endhint %}
-
-    \
-    Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
-
-    _Note: We may need to reset the chain a few more times while we cook. This causes the_ \
-    _`TELLORNODE_ID` to change. You can check the current correct id with:_\
-
-
-    ```sh
-    curl tellornode.com:26657/status
-    ```
-5. **Initialize config folder**\
-
-6. **Initialize a named config folder**
-
+{% code fullWidth="false" %}
 ```sh
 ./layerd init layer --chain-id layer
 ```
+{% endcode %}
 
-
+6. **Initialize named config folder**
 
 ```sh
 ./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
 ```
 
-5. **Create an account on Layer** You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
+7. **Create an account on Layer** You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
 
 {% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
@@ -117,27 +112,28 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 3\. Never use an address that holds real mainnet funds for testing!
 {% endhint %}
 
-You can check accounts any time with:
-
-```sh
-./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
-```
-
-**If you do not yet have an account / mnemonic** Generate a new key pair with the command:
+If you do not yet have an account / mnemonic Generate a new key pair with the command:
 
 ```sh
 ./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ```
 
-**Be sure to copy the entire output with the mnemonic and keep it in a very safe place!**
+{% hint style="warning" %}
+Be sure to copy the entire output with the mnemonic and keep it in a very safe place!
+{% endhint %}
 
-**If you already have an account / pnemonic** Import your account with the command: (You will be prompted to input your mnemonic)
+If you already have an account / pnemonic Import your account with the command: (You will be prompted to input your mnemonic)
 
 ```sh
 ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ```
 
-6. **Add your address to your \~/.bashrc or .zshrc file** Open it with:
+{% hint style="info" %}
+<mark style="color:blue;">You can check accounts any time with:</mark> \
+`./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME`
+{% endhint %}
+
+8. **Add your address to your \~/.bashrc or .zshrc file** Open it with:
 
 ```sh
 nano ~/.bashrc # if linux
@@ -152,7 +148,7 @@ export TELLOR_ADDRESS=tellor1asdfc5cqnt68k376g7fvasdfh6w4qy9et6asdf
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-7. **Create and Run the configure\_layer script** We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
+9. **Create and Run the configure\_layer script** We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
 **If on linux:**
 
@@ -183,7 +179,7 @@ chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
 
-### Start your Layer Node!
+## Start your Layer Node!
 
 {% hint style="success" %}
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
@@ -195,4 +191,4 @@ Run the command:
 ./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
 ```
 
-If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks. congrats!
+If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks.   Please allow time for the node to sync before moving onto setting up a validator.\
