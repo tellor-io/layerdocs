@@ -1,8 +1,6 @@
 # Getting Testnet TRB
 
-Once you have a working node, you can try running a validator and competing for rewards.
-
-You will need to have some layer testnet TRB into your validator account (see step 7 in Running a node). Feel free to send a request in the public [discord](https://discord.gg/tellor) #testing-layer channel, or try the token bridge from the Sepolia testnet playground:
+**Validators are required to stake.**  You will need to have some layer testnet TRB into your validator account (see step 7 in Running a node). Feel free to send a request in the public [discord](https://discord.gg/tellor) #testing-layer channel, or try the token bridge from the Sepolia testnet playground:
 
 ### Minting Testnet TRB
 

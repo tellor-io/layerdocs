@@ -40,54 +40,69 @@ Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-4. **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._ Here is a list of variables we will use in this guide and a short description of their purpose:
-   * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
-   * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
-   * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
-   * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
-   * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
-   * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT\_NAME"
-   * `TELLOR_ADDRESS`: the tellor prefix address for your account
-   * `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
+4.  **Add variables to .bashrc (or .zshrc)** _Setting variables in .bashrc is not required, but it helps to avoid many common errors._ \
 
-Open your `.bashrc` or `zshrc` file:
 
-```sh
-nano ~/.bashrc # if linux
-nano ~/.zshrc # if mac
-```
+    Open your `.bashrc` or `zshrc` file:\
 
-Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
 
-```sh
-# layer
-export LAYER_NODE_URL=54.166.101.67
-export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
-export KEYRING_BACKEND="test"
-export NODE_MONIKER="bobmoniker"
-export ACCOUNT_NAME="bob"
-export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
-export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
-export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
-```
+    ```sh
+    nano ~/.bashrc # if linux
+    nano ~/.zshrc # if mac
+    ```
 
-Exit nano with `ctrl^x` then enter `y` to save the changes.
+    \
+    Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:\
 
-Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
-_Note: We may need to reset the chain a few more times while we cook. This causes the `TELLORNODE_ID` to change. You can check the current correct id with:_
+    ```sh
+    # layer
+    export LAYER_NODE_URL=54.166.101.67
+    export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
+    export KEYRING_BACKEND="test"
+    export NODE_MONIKER="bobmoniker"
+    export ACCOUNT_NAME="bob"
+    export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
+    export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
+    export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
+    ```
 
-```sh
-curl tellornode.com:26657/status
-```
+    \
+    Exit nano with `ctrl^x` then enter `y` to save the changes.\
 
-4. **Initialize config folders**
+
+    {% hint style="info" %}
+    Here is a list of variables we will use in this guide and a short description of their purpose:
+
+    * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
+    * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
+    * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
+    * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
+    * `TELLORNODE_ID`: Set to the unquoted node ID of the seed node.
+    * `LAYERD_NODE_HOME`: Should be set to "$HOME/.layer/$ACCOUNT\_NAME"
+    * `TELLOR_ADDRESS`: the tellor prefix address for your account
+    * `TELLORVALOPER_ADDRESS`: the tellorvaloper prefix address for your account
+    {% endhint %}
+
+    \
+    Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
+
+    _Note: We may need to reset the chain a few more times while we cook. This causes the_ \
+    _`TELLORNODE_ID` to change. You can check the current correct id with:_\
+
+
+    ```sh
+    curl tellornode.com:26657/status
+    ```
+5. **Initialize config folder**\
+
+6. **Initialize a named config folder**
 
 ```sh
 ./layerd init layer --chain-id layer
 ```
 
-5. **Initialize a named config folder**
+
 
 ```sh
 ./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
