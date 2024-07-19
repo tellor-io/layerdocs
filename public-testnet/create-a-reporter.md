@@ -5,7 +5,7 @@ _Once you’re successfully running a validator, you’re almost a reporter alre
 This section assumes that you have a [node](run-a-layer-node.md) / [validator](become-a-validator.md) already. Run the command:
 
 ```bash
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
 ```
 
 Restart your node again, changing `--price-daemon-enabled` to be `true` to turn on the price daemon:
