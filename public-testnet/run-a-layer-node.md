@@ -113,10 +113,10 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 <mark style="color:blue;">**Security Tips:**</mark> \
 1\. This guide uses the "test" backend because this is a testnet guide. Always use a secure [keyring-backend option like os, file, or pass](https://docs.cosmos.network/v0.46/run-node/keyring.html) if you're handling real money! \
 2\. Handle mnemonics/keys with extreme care, even if it’s just a testnet address! \
-3\. Never use an address that holds real mainnet funds for testing!
+3\. Never use an address that holds real "mainnet" funds for testing!
 {% endhint %}
 
-If you do not yet have an account / mnemonic Generate a new key pair with the command:
+If you do not yet have an account / mnemonic phrase, Generate a new key pair with the command:
 
 ```sh
 ./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
@@ -126,7 +126,7 @@ If you do not yet have an account / mnemonic Generate a new key pair with the co
 Be sure to <mark style="color:orange;">**copy the entire output**</mark> with the mnemonic and keep it in a very safe place!
 {% endhint %}
 
-If you already have an account / pnemonic Import your account with the command: (You will be prompted to input your mnemonic)
+If you already have an account with it's mnemonic phrase Import your account with the command: (You will be prompted to input your mnemonic)
 
 ```sh
 ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME

@@ -15,7 +15,7 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 
 1. **Check if your node is synced:** Run the command
 
-```
+```bash
 ./layerd status
 ```
 
@@ -24,13 +24,13 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 
 2. **Check if your address has funds:**
 
-```
+```bash
 ./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layer
 ```
 
 This outputs something like:
 
-```
+```bash
 balance:
   amount: "0"
   denom: loya
@@ -41,13 +41,13 @@ If you need testnet TRB, see the [Getting Testnet TRB](getting-testnet-trb.md) s
 3. **Retrieve Your Validator Public Key**\
    With your `layer` folder as the active directory, use the command:
 
-```
+```bash
 ./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
 This returns your validator pubkey.  The pubkey looks like this:
 
-```
+```bash
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}
 ```
 
@@ -57,13 +57,13 @@ Copy the pubkey to your clipboard for step 4.
 
 Create (or edit) the validator.json file:
 
-```
+```bash
 nano validator.json
 ```
 
 Edit or add the following code:
 
-```
+```json
 {
     "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c+EuycPpudgiyVl6guYG9oyPSImHHJz1z0Pg4ODKveo="},
     "amount": "100000000loya",
@@ -99,21 +99,21 @@ Edit or add the following code:
 
 * Run the following command to create-validator:
 
-```
+```bash
 ./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer
 ```
 
 * **count to 10** as you open the node window.
 * In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
 
-```
+```bash
 ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
 ```
 
 6. **Verify Your Validator Creation**\
    Ensure your validator was created successfully using the command replacing your\_validator\_address:
 
-```
+```bash
 ./layerd query staking validator $TELLORVALOPER_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer
 ```
 
