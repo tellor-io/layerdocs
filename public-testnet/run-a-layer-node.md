@@ -2,7 +2,11 @@
 
 ### Pre-requisites
 
-* A local or cloud system running linux (or mac os with the mac scripts)
+* A local or cloud system running linux, or macOS. If on windows, use WSL. \
+  Minimum system specs (at time of writing):\
+  \- quad-core cpu\
+  \- 16gb ram\
+  \- 64gb nvme (or cloud) storage (much more will be needed later)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
 * yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
