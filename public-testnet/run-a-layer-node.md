@@ -4,12 +4,12 @@
 
 * A local or cloud system running linux (or mac os with the mac scripts)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
-* jq
-* yq
-* sed
+* jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
+* yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
+* sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
 
 {% hint style="info" %}
-<mark style="color:blue;">Here is a list of variables we will use in this guide and a short description of their purpose:</mark>
+<mark style="color:blue;">Here is a list of variables we will set starting in step 4 (refer to these descriptions as needed):</mark>
 
 * `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
 * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
