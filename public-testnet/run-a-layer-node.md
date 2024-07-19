@@ -5,7 +5,7 @@
 * A local or cloud system running linux, or macOS. If on windows, use WSL. \
   Minimum system specs (at time of writing):\
   \- quad-core cpu\
-  \- 16gb ram\
+  \- 8gb ram\
   \- 64gb nvme (or cloud) storage (much more will be needed later)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
