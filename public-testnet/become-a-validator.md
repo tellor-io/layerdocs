@@ -8,7 +8,7 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 {% endhint %}
 
 {% hint style="info" %}
-_<mark style="color:blue;">**Setup Note:**</mark>** ****Open a new terminal window or screen for performing the validator steps. You will need to keep your node running.** It helps to have quick access to the node window and the commands window as you go though the steps._
+<mark style="color:blue;">**Setup Note:**</mark> Open a new terminal window or screen for running `./layerd` commands. You will need to keep your node running, and It helps to have quick access to the node window and the commands window as you go though the steps.
 {% endhint %}
 
 ## Validator Setup
@@ -45,15 +45,23 @@ If you need testnet TRB, see the [Getting Testnet TRB](getting-testnet-trb.md) s
 ./layerd comet show-validator --home $LAYERD_NODE_HOME
 ```
 
-This returns your validator pubkey.  For example:\
-`{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}`
+This returns your validator pubkey.  The pubkey looks like this:
 
-{% hint style="warning" %}
-Copy it and keep it in a safe place. You will need it in the next step.
-{% endhint %}
+```
+{"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}
+```
 
-4. **Edit the Validator Configuration File**\
-   Open `~/layer/validator.json`:
+Copy the pubkey to your clipboard for step 4.
+
+4. **Edit the Validator Configuration File**&#x20;
+
+Create (or edit) the validator.json file:
+
+```
+nano validator.json
+```
+
+Edit or add the following code:
 
 ```
 {
@@ -92,7 +100,7 @@ Copy it and keep it in a safe place. You will need it in the next step.
 * Run the following command to create-validator:
 
 ```
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
+./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer
 ```
 
 * **count to 10** as you open the node window.
@@ -110,6 +118,6 @@ Copy it and keep it in a safe place. You will need it in the next step.
 ```
 
 If status is `3`...awesome! \
-If status is `2`...still great!.\
+If status is `2`...still great!\
 \
 If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! You can unjail with steps shown in the [next section.](create-a-reporter.md)
