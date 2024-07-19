@@ -76,21 +76,19 @@ export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"
 export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
-export TELLOR_ADDRESS= # your tellor prefix address (we will add it later)
-export TELLORVALOPER_ADDRESS= #your tellorvaloper address (we will add it later)
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.\
 \
 Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
-_Note: We may need to reset the chain a few more times while we cook. This causes the_ \
+_Note: We may need to reset the chain again as we are still cooking. This causes the_ \
 _`TELLORNODE_ID` to change. You can check the current correct id with:_
 
 <pre class="language-sh"><code class="lang-sh"><strong>curl tellornode.com:26657/status
 </strong></code></pre>
 
-5. **Initialize config folder**
+5. **Initialize .layer folder in your home directory**
 
 {% code fullWidth="false" %}
 ```sh
@@ -109,7 +107,7 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 
 {% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
-1\. The test backend is not recommended for production use with real funds because the keys are stored as plain text. Always use a secure keyring-backend option for real funds! \
+1\. This guide uses the "test" backend because this is a testnet guide. Always use a secure [keyring-backend option like os, file, or pass](https://docs.cosmos.network/v0.46/run-node/keyring.html) if you're handling real money! \
 2\. Handle mnemonics/keys with extreme care, even if it’s just a testnet address! \
 3\. Never use an address that holds real mainnet funds for testing!
 {% endhint %}
@@ -135,22 +133,26 @@ If you already have an account / pnemonic Import your account with the command: 
 `./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME`
 {% endhint %}
 
-8. **Add your address to your \~/.bashrc or .zshrc file.** Open it with:
+8. **Export your addresses.** Your wallet account has two important addresses. First, get the "tellor" prefix address, which is used to send and receive tokens. Copy it and keep it in a safe place:
 
-```sh
-nano ~/.bashrc # if linux
-nano ~/.zshrc # if mac
+```bash
+./layerd keys show $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ```
 
-set TELLOR\_ADDRESS to your tellor prefix address like:
+Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which is used for validator commands. Copy it and keep it in a safe place:
 
-```sh
-export TELLOR_ADDRESS=tellor1asdfc5cqnt68k376g7fvasdfh6w4qy9et6asdf
+```bash
+./layerd keys show $ACCOUNT_NAME --bech val --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ```
 
-Exit nano with `ctrl^x` then enter `y` to save the changes.
+Add these addresses to your `.bashrc` or `.zshrc` file. Be sure to replace `your_tellor_prefix_address` and `your_tellorvaloper_prefix_address` in your command:
 
-9. **Create and Run the configure\_layer script** \
+```bash
+echo 'export TELLOR_ADDRESS=your_tellor_prefix_address' >> ~/.bashrc #.zshrc if mac
+echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bashrc #.zshrc if mac
+```
+
+9. **Create and Run the configure\_layer script**\
    We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
 **If on linux:**
