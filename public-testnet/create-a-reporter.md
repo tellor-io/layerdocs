@@ -29,7 +29,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 1. stop your node / validator / reporter with and start it back up as a node / validator (turning off the reporter):
 
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
 ```
 
 2. enter the unjail the command:
@@ -41,7 +41,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 3. Restart the node with reporter daemon turned on:
 
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
 ```
 
 \
