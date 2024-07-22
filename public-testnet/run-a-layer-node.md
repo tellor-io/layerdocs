@@ -34,7 +34,7 @@ There are 9 steps in this part.
 1. **Clone the Layer repo and change directory to `layer`:**
 
 ```sh
-git clone https://github.com/tellor-io/layer -b public-testnet && cd layer
+git clone https://github.com/tellor-io/layer -b layer-testnet && cd layer
 ```
 
 2. **Build layerd with the command:**
@@ -75,7 +75,7 @@ Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to 
 ```sh
 # layer
 export LAYER_NODE_URL=54.166.101.67
-export TELLORNODE_ID=72a0284c589e1e11823c27580bfbcbaa32a769e7
+export TELLORNODE_ID=70fad99957fca428a08d2e52d04195f15dff8d9b
 export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"

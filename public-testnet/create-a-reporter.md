@@ -11,7 +11,7 @@ This section assumes that you have a [node](run-a-layer-node.md) / [validator](b
 Restart your node again, changing `--price-daemon-enabled` to be `true` to turn on the price daemon:
 
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false
+./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
 ```
 
 ## Jailing (and unjail-ing)
