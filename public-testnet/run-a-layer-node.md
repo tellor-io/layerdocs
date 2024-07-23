@@ -197,7 +197,7 @@ _<mark style="color:green;">**Before starting your node**</mark><mark style="col
 Run the command:
 
 ```sh
-./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME
+./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME --key-name $ACCOUNT_NAME
 ```
 
 If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks.   Please allow time for the node to sync before moving onto setting up a validator.\
