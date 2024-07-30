@@ -6,10 +6,9 @@
   Minimum system specs (at time of writing):\
   \- quad-core cpu\
   \- 8gb ram\
-  \- 64gb nvme (or cloud) storage (much more will be needed later)
+  \- 128gb+ nvme (or cloud) storage for the test chain (much more will be needed later)
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
-* yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
 
 {% hint style="info" %}
@@ -34,7 +33,7 @@ There are 9 steps in this part.
 1. **Clone the Layer repo and change directory to `layer`:**
 
 ```sh
-git clone https://github.com/tellor-io/layer -b layer-testnet && cd layer
+git clone https://github.com/tellor-io/layer -b release/v0.x && cd layer
 ```
 
 2. **Build layerd with the command:**
@@ -74,8 +73,8 @@ Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to 
 
 ```sh
 # layer
-export LAYER_NODE_URL=54.166.101.67
-export TELLORNODE_ID=70fad99957fca428a08d2e52d04195f15dff8d9b
+export LAYER_NODE_URL=tellorlayer.com
+export TELLORNODE_ID=24f122520ccbee0fac50a3df1fe89314ca274caa
 export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"
@@ -89,7 +88,7 @@ Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)
 _Note: We may need to reset the chain again as we are still cooking. This causes the_ \
 _`TELLORNODE_ID` to change. You can check the current correct id with:_
 
-<pre class="language-sh"><code class="lang-sh"><strong>curl tellornode.com:26657/status
+<pre class="language-sh"><code class="lang-sh"><strong>curl tellorlayer.com:26657/status
 </strong></code></pre>
 
 5. **Initialize .layer folder in your home directory**
@@ -156,30 +155,32 @@ echo 'export TELLOR_ADDRESS=your_tellor_prefix_address' >> ~/.bashrc #.zshrc if 
 echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bashrc #.zshrc if mac
 ```
 
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
+
 9. **Create and Run the configure\_layer script**\
    We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
 **If on linux:**
 
-* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.
 * create the script file locally:
 
 ```sh
 nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
 ```
 
-Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.&#x20;
+* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
 **If on Mac:**
 
-* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
 * create the script file locally:
 
 ```sh
 nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
 ```
 
-Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
+* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
 Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
 
