@@ -46,15 +46,13 @@ go build ./cmd/layerd
    Using your favorite text editor, create a file called `secrets.json`:
 
 ```sh
-nano secrets.json
+nano secrets.yaml
 ```
 
 Add this code to the file, replacing `your_api_key` with your Alchemy api key:
 
 ```json
-{
-"eth_api_key": "your_api_key"
-}
+eth_api_key: "your_api_key"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
