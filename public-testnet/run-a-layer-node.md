@@ -43,7 +43,7 @@ go build ./cmd/layerd
 ```
 
 3. **An ethereum RPC is used for reporting tellor bridge transactions**\
-   Using your favorite text editor, create a file called `secrets.json`:
+   Using your favorite text editor, create a file called `secrets.yaml`:
 
 ```sh
 nano secrets.yaml
