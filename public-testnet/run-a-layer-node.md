@@ -6,7 +6,7 @@
   Minimum system specs (at time of writing):\
   \- quad-core cpu\
   \- 8gb ram\
-  \- 128gb+ nvme (or cloud) storage for the test chain (much more will be needed later)
+  \- 64gb nvme (or cloud) storage if pruning "everything"
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
@@ -49,10 +49,10 @@ go build ./cmd/layerd
 nano secrets.yaml
 ```
 
-Add this code to the file, replacing `your_api_key` with your Alchemy api key:
+Add this code to the file, replacing \`your\_eth\_mainnet\_rpc\_url\` with the url of a reliable ethereum mainnet rpc:
 
 ```json
-eth_api_key: "your_api_key"
+eth_rpc_url: "wss://your_eth_mainnet_rpc_url"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
