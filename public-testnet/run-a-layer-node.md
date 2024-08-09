@@ -6,7 +6,7 @@
   Minimum system specs (at time of writing):\
   \- quad-core cpu\
   \- 8gb ram\
-  \- 64gb nvme (or cloud) storage if pruning "everything"
+  \- 128gb-2tb nvme storage depending on how you will run your node
 * Golang v1.22 (install instrauctions [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
