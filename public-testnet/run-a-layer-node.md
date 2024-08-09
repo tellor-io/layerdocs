@@ -49,10 +49,10 @@ go build ./cmd/layerd
 nano secrets.yaml
 ```
 
-Add this code to the file, replacing \`your\_eth\_mainnet\_rpc\_url\` with the url of a reliable ethereum mainnet rpc:
+Add this code to the file, replacing \`your\_sepolia\_testnet\_rpc\_url\` with the url of a reliable sepolia rpc:
 
 ```json
-eth_rpc_url: "wss://your_eth_mainnet_rpc_url"
+eth_rpc_url: "wss://your_sepolia_testnet_rpc_url"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
