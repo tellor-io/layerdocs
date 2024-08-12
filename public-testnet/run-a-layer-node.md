@@ -72,7 +72,7 @@ Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to 
 ```sh
 # layer
 export LAYER_NODE_URL=tellorlayer.com
-export TELLORNODE_ID=24f122520ccbee0fac50a3df1fe89314ca274caa
+export TELLORNODE_ID=18f58b3bc1756ad3872b00b349429fd4f56d2b34
 export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"
@@ -93,14 +93,14 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 
 {% code fullWidth="false" %}
 ```sh
-./layerd init layer --chain-id layer
+./layerd init layer --chain-id layertest-1
 ```
 {% endcode %}
 
 6. **Initialize named config folder**
 
 ```sh
-./layerd init $ACCOUNT_NAME --chain-id layer --home ~/.layer/$ACCOUNT_NAME
+./layerd init $ACCOUNT_NAME --chain-id layertest-1 --home ~/.layer/$ACCOUNT_NAME
 ```
 
 7. **Create an account on Layer**\
@@ -186,6 +186,8 @@ Give your new script permission to execute and run it to replace the default con
 chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
+
+You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](https://app.gitbook.com/o/-MFXSaNHbs8RgP8-7mnZ/s/s90SVtIdiQ8dmMsqriIa/\~/changes/61/public-testnet/how-to-use-state-sync) before you continue.&#x20;
 
 ## Start your Layer Node!
 

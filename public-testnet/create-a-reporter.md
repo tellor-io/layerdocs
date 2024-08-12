@@ -5,7 +5,7 @@ _Once you’re successfully running a validator, you’re almost a reporter alre
 This section assumes that you have a [node](run-a-layer-node.md) / [validator](become-a-validator.md) already. Run the command:
 
 ```bash
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layer --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layertest-1 --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
 ```
 
 Restart your node again, changing `--price-daemon-enabled` to be `true` to turn on the price daemon:
@@ -35,7 +35,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 2. enter the unjail the command:
 
 ```bash
-./layerd tx slashing unjail --from $TELLOR_ADDRESS --chain-id layer --home $LAYERD_NODE_HOME --keyring-backend test --keyring-dir $LAYERD_NODE_HOME
+./layerd tx slashing unjail --from $TELLOR_ADDRESS --chain-id layertest-1 --home $LAYERD_NODE_HOME --keyring-backend test --keyring-dir $LAYERD_NODE_HOME
 ```
 
 3. Restart the node with reporter daemon turned on:

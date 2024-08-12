@@ -25,7 +25,7 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 2. **Check if your address has funds:**
 
 ```bash
-./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layer
+./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-1
 ```
 
 This outputs something like:
@@ -100,7 +100,7 @@ Edit or add the following code:
 * Run the following command to create-validator:
 
 ```bash
-./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer
+./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1
 ```
 
 * **count to 10** as you open the node window.
@@ -114,7 +114,7 @@ Edit or add the following code:
    Ensure your validator was created successfully using the command replacing your\_validator\_address:
 
 ```bash
-./layerd query staking validator $TELLORVALOPER_ADDRESS --home $LAYERD_NODE_HOME --chain-id layer
+./layerd query staking validator $TELLORVALOPER_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1
 ```
 
 If status is `3`...awesome! \
