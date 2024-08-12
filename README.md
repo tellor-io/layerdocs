@@ -8,9 +8,9 @@ Tellor Layer is a stand alone L1 built using the cosmos sdk for the purpose of c
 For more in-depth information, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
-## Public Testnet
+## Antietam Testnet
 
-In preparation for Tellor Layer's launch to mainnet we are conducting a public testnet in order to test the processes of running a node, and participating as a validator and reporter. &#x20;
+In preparation for Tellor Layer's launch to mainnet we are conducting a series of public testnets, the first is called Antietam, with the goal of testing the functionality and processes of running a node, and participating as a validator and reporter.   &#x20;
 
 ### What is a Validator?&#x20;
 
