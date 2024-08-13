@@ -33,7 +33,7 @@ There are 9 steps in this part.
 1. **Clone the Layer repo, change directory to `layer.:`**
 
 ```sh
-git clone https://github.com/tellor-io/layer -b release/v0.x && git checkout 2da00fa && cd layer
+git clone https://github.com/tellor-io/layer -b v0.2.1 && cd layer
 ```
 
 2. **Build layerd with the command:**
