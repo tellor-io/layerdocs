@@ -4,8 +4,8 @@
 
 ### Minting Testnet TRB
 
-You can mint Layer Testnet TRB using this [Sepolia Tellor Playground ](https://sepolia.etherscan.io/address/0x3251838bd813fdf6a97D32781e011cce8D225d59#writeContract)contract’s “faucet” command.
+You can mint Layer Testnet TRB using this [Sepolia Tellor Playground](https://sepolia.etherscan.io/address/0xceBa0609797251395CFB420a1540E58b6be0828d#writeContract) contract’s “faucet” command.
 
 ### Bridging to Layer Testnet
 
-Once you have TRBP in your wallet, head over to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x33ECe02327a3f90C0B2C84Cd8Ce3c380c04aB6D6#writeContract).
+Once you have TRBP in your wallet, head over to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x1AaF421491171930e71fb032B765DF252CE3F97e#writeContract).
