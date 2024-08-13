@@ -189,7 +189,7 @@ chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
 ```
 
-You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](https://app.gitbook.com/o/-MFXSaNHbs8RgP8-7mnZ/s/s90SVtIdiQ8dmMsqriIa/\~/changes/61/public-testnet/how-to-use-state-sync) before you continue.&#x20;
+You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](how-to-use-state-sync.md) before you continue.&#x20;
 
 ## Start your Layer Node!
 
