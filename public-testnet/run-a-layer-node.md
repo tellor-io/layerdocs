@@ -125,9 +125,11 @@ Be sure to <mark style="color:orange;">**copy the entire output**</mark> with th
 
 If you already have an account with it's mnemonic phrase Import your account with the command: (You will be prompted to input your mnemonic)
 
+{% code overflow="wrap" %}
 ```sh
 ./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
 ```
+{% endcode %}
 
 {% hint style="info" %}
 <mark style="color:blue;">You can check accounts any time with:</mark> \
