@@ -8,3 +8,4 @@
   * [Getting Testnet TRB](public-testnet/getting-testnet-trb.md)
   * [Set up a Keplr Wallet](public-testnet/set-up-a-keplr-wallet.md)
   * [How to use State Sync](public-testnet/how-to-use-state-sync.md)
+  * [Delegate to a Validator](public-testnet/delegate-to-a-validator.md)
