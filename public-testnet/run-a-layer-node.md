@@ -150,10 +150,12 @@ Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which
 
 Add these addresses to your `.bashrc` or `.zshrc` file. Be sure to replace `your_tellor_prefix_address` and `your_tellorvaloper_prefix_address` in your command:
 
+{% code overflow="wrap" %}
 ```bash
 echo 'export TELLOR_ADDRESS=your_tellor_prefix_address' >> ~/.bashrc #.zshrc if mac
 echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bashrc #.zshrc if mac
 ```
+{% endcode %}
 
 Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
@@ -199,8 +201,10 @@ _<mark style="color:green;">**Before starting your node**</mark><mark style="col
 
 Run the command:
 
+{% code overflow="wrap" %}
 ```sh
 ./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME --key-name $ACCOUNT_NAME
 ```
+{% endcode %}
 
 If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks.   Please allow time for the node to sync before moving onto setting up a validator.\
