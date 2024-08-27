@@ -33,7 +33,7 @@ There are 9 steps in this part.
 1. **Clone the Layer repo, change directory to `layer.:`**
 
 ```sh
-git clone https://github.com/tellor-io/layer -b v0.2.1 && cd layer
+git clone https://github.com/tellor-io/layer -b v0.3.0 && cd layer
 ```
 
 2. **Build layerd with the command:**
@@ -57,7 +57,7 @@ eth_rpc_url: "wss://your_sepolia_testnet_rpc_url"
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-4. **Add variables to .bashrc (or .zshrc)** \
+4. **Add variables to .bashrc (or .zshrc)**\
    _Setting variables in .bashrc or .zshrc is not required, but it helps to avoid many common errors._&#x20;
 
 Open your `.bashrc` or `.zshrc` file:
