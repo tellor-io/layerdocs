@@ -10,17 +10,17 @@ description: >-
 
 * Follow the [Run a Layer Node](run-a-layer-node.md) section but do not start the node. We need to change some config files to turn on state sync.&#x20;
 
-_Tip: If you have already started syncing and you want to start over with a state sync, you will need to delete all of the .db folders and the snapshots folder from \~/.layer/$ACCOUNT\_NAME/data folder:_
+_Tip: If you have already started syncing and you want to start over with a state sync, you will need to delete all of the .db folders and the snapshots folder from \~/.layer/data folder:_
 
 ```sh
 # deletes chain data for resyncing
-rm -rf ~/.layer/$ACCOUNT_NAME/data/application.db; \
-rm -rf ~/.layer/$ACCOUNT_NAME/data/blockstore.db; \
-rm -rf ~/.layer/$ACCOUNT_NAME/data/cs.wal; \
-rm -rf ~/.layer/$ACCOUNT_NAME/data/evidence.db; \
-rm -rf ~/.layer/$ACCOUNT_NAME/data/snapshots
-rm -rf ~/.layer/$ACCOUNT_NAME/data/state.db
-rm -rf ~/.layer/$ACCOUNT_NAME/data/tx_index.db
+rm -rf ~/.layer/data/application.db; \
+rm -rf ~/.layer/data/blockstore.db; \
+rm -rf ~/.layer/data/cs.wal; \
+rm -rf ~/.layer/data/evidence.db; \
+rm -rf ~/.layer/data/snapshots
+rm -rf ~/.layer/data/state.db
+rm -rf ~/.layer/data/tx_index.db
 ```
 
 1. **Find a good trusted height:**\
@@ -44,7 +44,7 @@ Copy this block and hash and keep it handy for the next step.
 Open your config file with your favorite text editor or nano:
 
 ```sh
-nano ~/.layer/$ACCOUNT_NAME/config/config.toml
+nano ~/.layer/config/config.toml
 ```
 
 Scroll or search the document and edit the variables as shown here:
