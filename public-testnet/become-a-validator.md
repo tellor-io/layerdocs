@@ -42,7 +42,7 @@ If you need testnet TRB, see the [Getting Testnet TRB](getting-testnet-trb.md) s
    With your `layer` folder as the active directory, use the command:
 
 ```bash
-./layerd comet show-validator --home $LAYERD_NODE_HOME
+./layerd comet show-validator
 ```
 
 This returns your validator pubkey.  The pubkey looks like this:
@@ -101,7 +101,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1 --fees 1000loya
+./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --chain-id layertest-1 --fees 1000loya
 ```
 {% endcode %}
 
@@ -110,7 +110,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
+./layerd start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --home $HOME/.layer --key-name $ACCOUNT_NAME
 ```
 {% endcode %}
 
@@ -119,7 +119,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd query staking validator $TELLORVALOPER_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1
+./layerd query staking validator $TELLORVALOPER_ADDRESS --chain-id layertest-1
 ```
 {% endcode %}
 

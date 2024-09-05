@@ -97,12 +97,39 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 ```
 {% endcode %}
 
-6. **Initialize named config folder**
+6.  **Create and Run the configure\_layer script**\
+    We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
 
-```sh
-./layerd init $ACCOUNT_NAME --chain-id layertest-1 --home ~/.layer/$ACCOUNT_NAME
-```
+    **If on linux:**
 
+    * create the script file locally:
+
+    ```sh
+    nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
+    ```
+
+    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.&#x20;
+    * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+    **If on Mac:**
+
+    * create the script file locally:
+
+    ```sh
+    nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
+    ```
+
+    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
+    * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+
+    Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
+
+    ```sh
+    chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
+    chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
+    ```
+
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](how-to-use-state-sync.md) before you continue.&#x20;
 7. **Create an account on Layer**\
    You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
 
@@ -116,7 +143,7 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 If you do not yet have an account / mnemonic phrase, Generate a new key pair with the command:
 
 ```sh
-./layerd keys add $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+./layerd keys add $ACCOUNT_NAME
 ```
 
 {% hint style="warning" %}
@@ -127,25 +154,25 @@ If you already have an account with it's mnemonic phrase Import your account wit
 
 {% code overflow="wrap" %}
 ```sh
-./layerd keys add $ACCOUNT_NAME --recover=true --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+./layerd keys add $ACCOUNT_NAME --recover=true
 ```
 {% endcode %}
 
 {% hint style="info" %}
 <mark style="color:blue;">You can check accounts any time with:</mark> \
-`./layerd keys list --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME`
+`./layerd keys list`
 {% endhint %}
 
 8. **Export your addresses.** Your wallet account has two important addresses. First, get the "tellor" prefix address, which is used to send and receive tokens. Copy it and keep it in a safe place:
 
 ```bash
-./layerd keys show $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+./layerd keys show $ACCOUNT_NAME
 ```
 
 Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which is used for validator commands. Copy it and keep it in a safe place:
 
 ```bash
-./layerd keys show $ACCOUNT_NAME --bech val --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME
+./layerd keys show $ACCOUNT_NAME --bech val
 ```
 
 Add these addresses to your `.bashrc` or `.zshrc` file. Be sure to replace `your_tellor_prefix_address` and `your_tellorvaloper_prefix_address` in your command:
@@ -159,40 +186,6 @@ echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bash
 
 Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
-9. **Create and Run the configure\_layer script**\
-   We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
-
-**If on linux:**
-
-* create the script file locally:
-
-```sh
-nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
-```
-
-* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.&#x20;
-* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
-
-**If on Mac:**
-
-* create the script file locally:
-
-```sh
-nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
-```
-
-* Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
-* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
-
-Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
-
-```sh
-chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
-chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
-```
-
-You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](how-to-use-state-sync.md) before you continue.&#x20;
-
 ## Start your Layer Node!
 
 {% hint style="success" %}
@@ -203,7 +196,7 @@ Run the command:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --api.swagger --price-daemon-enabled=false --home $LAYERD_NODE_HOME --key-name $ACCOUNT_NAME
+./layerd start --api.swagger --price-daemon-enabled=false --key-name $ACCOUNT_NAME
 ```
 {% endcode %}
 

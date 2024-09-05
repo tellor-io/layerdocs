@@ -30,7 +30,7 @@ Use the command:
 
 ```sh
 export LATEST_HEIGHT=$(curl -s tellorlayer.com:26657/block | jq -r .result.block.header.height); \
-export TRUSTED_HEIGHT=$((LATEST_HEIGHT - 2000)); \ # current block - 1 hour
+export TRUSTED_HEIGHT=$((LATEST_HEIGHT)); \ # current block - 1 hour
 export TRUSTED_HASH=$(curl -s "tellorlayer.com:26657/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
 echo $TRUSTED_HEIGHT $TRUSTED_HASH
 ```

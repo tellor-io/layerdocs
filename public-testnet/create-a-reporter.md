@@ -6,7 +6,7 @@ This section assumes that you have a [node](run-a-layer-node.md) / [validator](b
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id layertest-1 --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME --fees 1000loya
+./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --chain-id layertest-1 --fees 1000loya
 ```
 {% endcode %}
 
@@ -14,7 +14,7 @@ Restart your node again, changing `--price-daemon-enabled` to be `true` to turn 
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
+./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --home $HOME/.layer --key-name $ACCOUNT_NAME
 ```
 {% endcode %}
 
@@ -34,7 +34,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
+./layerd start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --home $HOME/.layer --key-name $ACCOUNT_NAME
 ```
 {% endcode %}
 
@@ -42,7 +42,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx slashing unjail --from $TELLOR_ADDRESS --chain-id layertest-1 --home $LAYERD_NODE_HOME --keyring-backend test --keyring-dir $LAYERD_NODE_HOME --fees 1000loya
+./layerd tx slashing unjail --from $TELLOR_ADDRESS --chain-id layertest-1 --fees 1000loya
 ```
 {% endcode %}
 
@@ -50,7 +50,7 @@ Read all steps first because you have about 4 minutes to do everything or you wi
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
+./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --home $HOME/.layer --key-name $ACCOUNT_NAME
 ```
 {% endcode %}
 
