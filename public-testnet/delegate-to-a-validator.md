@@ -12,7 +12,7 @@ Follow these steps to delegate your tokens on the test chain. We will use a remo
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx staking delegate tellorvaloper_address_of_delegate 10000000loya --gas auto --from $ACCOUNT_NAME --node=http://tellornode.com:26657 --chain-id layertest-1
+./layerd tx staking delegate tellorvaloper_address_of_delegate 10000000loya --gas auto --from $ACCOUNT_NAME --node=http://tellornode.com:26657 --chain-id layertest-1 --fees 1000loya
 ```
 {% endcode %}
 

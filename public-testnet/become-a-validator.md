@@ -99,23 +99,29 @@ Edit or add the following code:
 
 * Run the following command to create-validator:
 
+{% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1
+./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1 --fees 1000loya
 ```
+{% endcode %}
 
 * **count to 10** as you open the node window.
 * In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
 
+{% code overflow="wrap" %}
 ```bash
 ./layerd start --home $LAYERD_NODE_HOME --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false
 ```
+{% endcode %}
 
 6. **Verify Your Validator Creation**\
    Ensure your validator was created successfully using the command replacing your\_validator\_address:
 
+{% code overflow="wrap" %}
 ```bash
 ./layerd query staking validator $TELLORVALOPER_ADDRESS --home $LAYERD_NODE_HOME --chain-id layertest-1
 ```
+{% endcode %}
 
 If status is `3`...awesome! \
 If status is `2`...still great!\

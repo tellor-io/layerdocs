@@ -44,7 +44,7 @@ Open a new terminal on your layer node machine and use the command (replacing `3
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx bridge claim-deposit $ACCOUNT_NAME 3 0 --chain-id layertest-1 --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME
+./layerd tx bridge claim-deposit $ACCOUNT_NAME 3 0 --chain-id layertest-1 --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME --fees 1000loya
 ```
 {% endcode %}
 
