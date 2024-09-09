@@ -14,7 +14,7 @@
 {% hint style="info" %}
 <mark style="color:blue;">Here is a list of variables we will set starting in step 4 (refer to these descriptions as needed):</mark>
 
-* `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellornode.com.
+* `LAYER_NODE_URL`: Set to the unquoted URL (or public IPv4 address) of a seed node, like tellorlayer.com.
 * `KEYRING_BACKEND`: Set to `test` by default but can be configured here. (test works fine)
 * `NODE_MONIKER`: Set to whatever you'd like to use for your validator's public readable name (e.g "bob").
 * `ACCOUNT_NAME`: Set to your name or whatever name you choose (like “bill” or "ruth").
