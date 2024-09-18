@@ -2,7 +2,8 @@
 
 * [Introduction](README.md)
 * [Public Testnet](public-testnet/README.md)
-  * [Run a Layer Node](public-testnet/run-a-layer-node.md)
+  * [Run a Layer Node](public-testnet/run-a-layer-node/README.md)
+    * [Syncing from Genesis with Cosmovisor](public-testnet/run-a-layer-node/syncing-from-genesis-with-cosmovisor.md)
   * [Become a Validator](public-testnet/become-a-validator.md)
   * [Create a Reporter](public-testnet/create-a-reporter.md)
   * [Getting Testnet TRB](public-testnet/getting-testnet-trb.md)

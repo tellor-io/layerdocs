@@ -8,7 +8,7 @@ description: >-
 
 ### Pre-requisites
 
-* Follow the [Run a Layer Node](run-a-layer-node.md) section but do not start the node. We need to change some config files to turn on state sync.&#x20;
+* Follow the [Run a Layer Node](run-a-layer-node/) section but do not start the node. We need to change some config files to turn on state sync.&#x20;
 
 _Tip: If you have already started syncing and you want to start over with a state sync, you will need to delete all of the .db folders and the snapshots folder from \~/.layer/data folder:_
 
@@ -65,4 +65,4 @@ Be sure to replace the trust\_height and trust\_hash with the block number and h
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.\
 \
-Now head back to[ Run a Layer Node](run-a-layer-node.md) and start your node! If state sync is configured successfully it should sync very quickly so you can start testing.
+Now head back to[ Run a Layer Node](run-a-layer-node/) and start your node! If state sync is configured successfully it should sync very quickly so you can start testing.

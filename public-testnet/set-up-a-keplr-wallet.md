@@ -13,7 +13,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-07-17 at 8.40.51 AM.png" alt=""><figcaption></figcaption></figure>
 
-Go to Keplr's extension download for[ Chrome or Brave](https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en); [Firefox](run-a-layer-node.md)&#x20;
+Go to Keplr's extension download for[ Chrome or Brave](https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en); [Firefox](run-a-layer-node/)&#x20;
 
 Then, in following window pop-up, select \[Add extension] and it will be automatically added to your  browser.
 

@@ -129,7 +129,7 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](how-to-use-state-sync.md) before you continue.&#x20;
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](../how-to-use-state-sync.md) before you continue.&#x20;
 7. **Create an account on Layer**\
    You will need a "wallet" account on layer to hold your TRB tokens that you will stake to become a validator reporter.
 
@@ -184,20 +184,4 @@ echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bash
 ```
 {% endcode %}
 
-Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
-
-## Start your Layer Node!
-
-{% hint style="success" %}
-_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
-{% endhint %}
-
-Run the command:
-
-{% code overflow="wrap" %}
-```sh
-./layerd start --api.swagger --price-daemon-enabled=false --key-name $ACCOUNT_NAME
-```
-{% endcode %}
-
-If your node is configured correctly, you should see the node connecting to end points before rapidly downloading blocks.   Please allow time for the node to sync before moving onto setting up a validator.\
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)\
