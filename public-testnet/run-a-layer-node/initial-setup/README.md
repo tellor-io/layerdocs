@@ -1,19 +1,4 @@
-# Run a Layer Node
-
-### Pre-requisites
-
-* A local or cloud system running linux, or macOS. If on windows, use WSL. \
-  Minimum system specs (at time of writing):\
-  \- quad-core cpu\
-  \- 16gb RAM\
-  \- 256gb-2tb nvme storage depending on how you will run your node
-* Golang v1.23 (install instructions [here](https://go.dev/doc/install))
-* jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
-* sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
-
-{% hint style="info" %}
-## Initial Setup&#x20;
-{% endhint %}
+# Initial Setup
 
 ### Build and Configure layerd
 
@@ -118,4 +103,4 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](initial-setup/state-sync-setup-optional.md) before you continue. \
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](state-sync-setup-optional.md) before you continue.&#x20;

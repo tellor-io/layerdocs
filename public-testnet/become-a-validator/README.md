@@ -13,16 +13,7 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 
 ## Validator Setup
 
-1. **Check if your node is synced:** Run the command
-
-```bash
-./layerd status
-```
-
-* If `"catching_up": true`, your node is not synced.&#x20;
-* If `"catching_up": false`, your node is synced!
-
-2. **Check if your address has funds:**
+1. **Check if your address has funds:**
 
 ```bash
 ./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-1
@@ -126,4 +117,4 @@ Edit or add the following code:
 If status is `3`...awesome! \
 If status is `2`...still great!\
 \
-If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! You can unjail with steps shown in the [next section.](create-a-reporter.md)
+If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! You can unjail with steps shown in the [next section.](../create-a-reporter.md)

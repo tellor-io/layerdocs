@@ -2,7 +2,7 @@
 
 _Once you’re successfully running a validator, you’re almost a reporter already!_&#x20;
 
-This section assumes that you have a [node](run-a-layer-node/) / [validator](become-a-validator.md) already. Run the command:
+This section assumes that you have a [node](run-a-layer-node/) already. Run the command:
 
 {% code overflow="wrap" %}
 ```bash

@@ -2,10 +2,6 @@
 
 Follow these steps to delegate your tokens on the test chain. We will use a remote rpc so that you do not need to run a node; however, it is still necessary to build `layerd` locally and configure accounts so that you can run layer commands.
 
-### Pre-requisites
-
-* Follow the Run a Layer Node section of the docs, but stop and come back right before you start a the node. (delegators do not need to run a node unless desired for local rpc)
-
 ### Create the delegate tx
 
 1. The following is an example command:

@@ -8,8 +8,8 @@ This guide has three sections:
 [run-a-layer-node](run-a-layer-node/)
 {% endcontent-ref %}
 
-{% content-ref url="become-a-validator.md" %}
-[become-a-validator.md](become-a-validator.md)
+{% content-ref url="become-a-validator/" %}
+[become-a-validator](become-a-validator/)
 {% endcontent-ref %}
 
 {% content-ref url="create-a-reporter.md" %}

@@ -1,14 +1,4 @@
----
-description: >-
-  This is a step by step guide for using state sync when you're starting up a
-  local or report light node.
----
-
-# How to use State Sync
-
-### Pre-requisites
-
-* Follow the [Run a Layer Node](run-a-layer-node/) section but do not start the node. We need to change some config files to turn on state sync.&#x20;
+# State Sync Setup (optional)
 
 _Tip: If you have already started syncing and you want to start over with a state sync, you will need to delete all of the .db folders and the snapshots folder from \~/.layer/data folder:_
 
@@ -30,7 +20,7 @@ Use the command:
 
 ```sh
 export LATEST_HEIGHT=$(curl -s tellorlayer.com:26657/block | jq -r .result.block.header.height); \
-export TRUSTED_HEIGHT=$((LATEST_HEIGHT)); \ # current block - 1 hour
+export TRUSTED_HEIGHT=$((LATEST_HEIGHT-2000)); \ # current block - 1 hour
 export TRUSTED_HASH=$(curl -s "tellorlayer.com:26657/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
 echo $TRUSTED_HEIGHT $TRUSTED_HASH
 ```
@@ -63,6 +53,4 @@ trust_period = "168h0m0s"
 
 Be sure to replace the trust\_height and trust\_hash with the block number and hash from step 1.
 
-Exit nano with `ctrl^x` then enter `y` to save the changes.\
-\
-Now head back to[ Run a Layer Node](run-a-layer-node/) and start your node! If state sync is configured successfully it should sync very quickly so you can start testing.
+Exit nano with `ctrl^x` then enter `y` to save the changes.
