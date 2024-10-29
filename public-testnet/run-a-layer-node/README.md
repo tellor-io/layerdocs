@@ -7,7 +7,7 @@
   \- quad-core cpu\
   \- 16gb RAM\
   \- 256gb-2tb nvme storage depending on how you will run your node
-* Golang v1.23 (install instructions [here](https://go.dev/doc/install))
+* Golang (install latest version [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
 
@@ -22,7 +22,7 @@ There are 9 steps in this part.
 1. **Clone the Layer repo, change directory to `layer`**
 
 ```sh
-git clone https://github.com/tellor-io/layer -b v0.6.1 && cd layer
+git clone https://github.com/tellor-io/layer -b v1.5.0 && cd layer
 ```
 
 2. **Build layerd with the command:**
@@ -31,17 +31,18 @@ git clone https://github.com/tellor-io/layer -b v0.6.1 && cd layer
 go build ./cmd/layerd
 ```
 
-3. **An ethereum RPC is used for reporting tellor bridge transactions**\
+3. **An ethereum RPC is requred for reporting bridge requests on layer.**\
    Using your favorite text editor, create a file called `secrets.yaml`:
 
 ```sh
-nano secrets.yaml
+nano secrets.yaml.example
 ```
 
-Add this code to the file, replacing \`your\_sepolia\_testnet\_rpc\_url\` with the url of a reliable sepolia rpc:
+Replacing \`your\_sepolia\_testnet\_rpc\_url\` with the url of a reliable sepolia rpc, and add the token bridge contract address as shown here:
 
 ```json
 eth_rpc_url: "wss://your_sepolia_testnet_rpc_url"
+token_bridge_contract: "0x31F1f15541ea781e170F40A3eEdcfcaC837aFa12"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -65,7 +66,6 @@ export TELLORNODE_ID=18f58b3bc1756ad3872b00b349429fd4f56d2b34
 export KEYRING_BACKEND="test"
 export NODE_MONIKER="bobmoniker"
 export ACCOUNT_NAME="bob"
-export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.\
@@ -82,7 +82,7 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
 
 {% code fullWidth="false" %}
 ```sh
-./layerd init layer --chain-id layertest-1
+./layerd init layer --chain-id layertest-2
 ```
 {% endcode %}
 
