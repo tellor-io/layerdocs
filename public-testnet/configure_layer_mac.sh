@@ -7,8 +7,11 @@ clear
 set -e
 
 # set variables in your .bashrc before starting this script!
+source ~/.bashrc
+
 export LAYER_NODE_URL=tellorlayer.com
-export TELLORNODE_ID=18f58b3bc1756ad3872b00b349429fd4f56d2b34
+export TELLORNODE_ID=b0dff39942b90880c040e302bfa37b2239dddc1b
+export KEYRING_BACKEND="test"
 
 echo "Change denom to loya in config files..."
 sed -i '' 's/([0-9]+)stake/1loya/g' ~/.layer/config/app.toml
@@ -39,9 +42,9 @@ sed -i '' 's/^enable-unsafe-cors = false/enable-unsafe-cors = true/g' ~/.layer/c
 
 # Modify keyring-backend in client.toml for node
 echo "Modifying keyring-backend in client.toml for node..."
-sed -i '' 's/^keyring-backend = "os"/keyring-backend = "'test'"/g' ~/.layer/config/client.toml
+sed -i '' 's/^keyring-backend = "os"/keyring-backend = "'$KEYRING_BACKEND'"/g' ~/.layer/config/client.toml
 # update for main dir as well. why is this needed?
-sed -i '' 's/keyring-backend = "os"/keyring-backend = "'test'"/g' ~/.layer/config/client.toml
+sed -i '' 's/keyring-backend = "os"/keyring-backend = "'$KEYRING_BACKEND'"/g' ~/.layer/config/client.toml
 
 rm -f ~/.layer/config/genesis.json
 # get genesis file from running node's rpc
