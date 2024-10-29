@@ -41,16 +41,11 @@ nano ~/.bashrc # if linux
 nano ~/.zshrc # if mac
 ```
 
-Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
+Add this line to the end of this file. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
 
 ```sh
 # layer
-export LAYER_NODE_URL=tellorlayer.com
-export TELLORNODE_ID=18f58b3bc1756ad3872b00b349429fd4f56d2b34
-export KEYRING_BACKEND="test"
-export NODE_MONIKER="bobmoniker"
-export ACCOUNT_NAME="bob"
-export LAYERD_NODE_HOME="$HOME/.layer/$ACCOUNT_NAME"
+export ACCOUNT_NAME="not_spuddy"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.\
@@ -103,4 +98,10 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](state-sync-setup-optional.md) before you continue.&#x20;
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](state-sync-setup-optional.md) before you continue. \
+
+7. Start a layer node for development:
+
+```
+./layerd start
+```
