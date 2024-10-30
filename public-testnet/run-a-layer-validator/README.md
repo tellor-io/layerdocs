@@ -1,14 +1,12 @@
-# Become a Validator
+---
+description: Follow the steps to become a Layer testnet validator.
+---
 
-**Once you've got your node running and synced, you're ready to become a validator!**
+# Run a Layer Validator
 
 {% hint style="success" %}
-<mark style="color:green;">**You will need to have some layer testnet TRB.**</mark>  \
-See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
-{% endhint %}
-
-{% hint style="info" %}
-<mark style="color:blue;">**Setup Note:**</mark> Open a new terminal window or screen for running `./layerd` commands. You will need to keep your node running, and It helps to have quick access to the node window and the commands window as you go though the steps.
+<mark style="color:green;">**You will need a node that's fully synced and an account that has a balance (loya).**</mark>  \
+See our [instructions on getting testnet TRB for help.](../run-layer/bridge-trbp-from-sepolia.md)&#x20;
 {% endhint %}
 
 ## Validator Setup
@@ -16,7 +14,7 @@ See our [instructions on getting testnet TRB for help.](getting-testnet-trb.md)
 1. **Check if your address has funds:**
 
 ```bash
-./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-1
+./layerd query bank balance $ACCOUNT_NAME loya
 ```
 
 This outputs something like:
@@ -27,7 +25,7 @@ balance:
   denom: loya
 ```
 
-If you need testnet TRB, see the [Getting Testnet TRB](getting-testnet-trb.md) section!
+If you need testnet TRB, see the [Getting Testnet TRB](../run-layer/bridge-trbp-from-sepolia.md) section!
 
 3. **Retrieve Your Validator Public Key**\
    With your `layer` folder as the active directory, use the command:
@@ -36,7 +34,7 @@ If you need testnet TRB, see the [Getting Testnet TRB](getting-testnet-trb.md) s
 ./layerd comet show-validator
 ```
 
-This returns your validator pubkey.  The pubkey looks like this:
+This returns your validator pubkey.  Should look like this:
 
 ```bash
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}
@@ -44,7 +42,7 @@ This returns your validator pubkey.  The pubkey looks like this:
 
 Copy the pubkey to your clipboard for step 4.
 
-4. **Edit the Validator Configuration File**&#x20;
+4. **Edit the Validator Configuration File**
 
 Create (or edit) the validator.json file:
 
@@ -57,8 +55,8 @@ Edit or add the following code:
 ```json
 {
     "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c+EuycPpudgiyVl6guYG9oyPSImHHJz1z0Pg4ODKveo="},
-    "amount": "100000000loya",
-    "moniker": "billmoniker",
+    "amount": "69666420loya",
+    "moniker": "yourmoniker",
     "identity": "optional identity signature (ex. UPort or Keybase)",
     "website": "validator's (optional) website",
     "security": "validator's (optional) security contact email",
@@ -72,7 +70,7 @@ Edit or add the following code:
 
 * Edit `"pubkey"` to match yours from step 4.
 * Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
-* Edit `"moniker"` to match your node moniker variable.
+* Edit `"moniker"` with a name you choose for your validator node.
 
 {% hint style="info" %}
 <mark style="color:blue;">**Note:**</mark> TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.

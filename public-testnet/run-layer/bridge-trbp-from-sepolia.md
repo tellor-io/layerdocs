@@ -1,13 +1,12 @@
 ---
 description: >-
-  Feel free to send a request with your tellor address in the public discord
-  #testing-layer channel, or try the token bridge from the Sepolia testnet
-  playground:
+  Follow the steps to practice bridging Tellor "playground"  TRB (TRBP) from
+  Sepolia testnet:
 ---
 
-# Getting Testnet TRB
+# Bridge TRBP from Sepolia
 
-### 1. Mint Testnet TRB
+### 1. Mint TRBP ("playground" TRB)
 
 You can mint Layer Testnet TRB using this [Sepolia Tellor Playground](https://sepolia.etherscan.io/address/0x76402D74e79459157bb5581487F50f05439914C9#writeContract) contract’s “faucet” command. Connect your wallet, click the function `5. faucet`, put your sepolia ethereum address in the \_user field, click write and confirm your transaction.\
 
@@ -28,7 +27,7 @@ Set spender to the bridge contract address: `0x31F1f15541ea781e170F40A3eEdcfcaC8
 ### 3. Make the bridge request (depositToLayer)
 
 Once you have TRBP in your wallet, head over to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x1AaF421491171930e71fb032B765DF252CE3F97e#writeContract). Connect your wallet and click function `3. depositToLayer`. Set the amount to the amount of TRBP that you want to bridge, e.g. 100000000000000000000 (100 TRBP + 18 decimals).\
-Set \_layerRecipient to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](../run-layer/).
+Set \_layerRecipient to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](./).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 11.47.26 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet.</p></figcaption></figure>
 
