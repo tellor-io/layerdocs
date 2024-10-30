@@ -9,6 +9,7 @@
   \- 256gb-2tb nvme storage depending on how you will run your node
 * Golang (install latest version [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
+* yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
 
 {% hint style="info" %}
@@ -47,38 +48,7 @@ token_bridge_contract: "0x31F1f15541ea781e170F40A3eEdcfcaC837aFa12"
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-4. **Add variables to .bashrc (or .zshrc)**\
-   _Setting variables in .bashrc or .zshrc is not required, but it helps to avoid many common errors._&#x20;
-
-Open your `.bashrc` or `.zshrc` file:
-
-```sh
-nano ~/.bashrc # if linux
-nano ~/.zshrc # if mac
-```
-
-Add these lines at the end, editing `NODE_MONIKER` be to whatever you'd like to name your node. Edit the ACCOUNT\_NAME to whatever you'd like to call your wallet account:
-
-```sh
-# layer
-export LAYER_NODE_URL=tellorlayer.com
-export TELLORNODE_ID=18f58b3bc1756ad3872b00b349429fd4f56d2b34
-export KEYRING_BACKEND="test"
-export NODE_MONIKER="bobmoniker"
-export ACCOUNT_NAME="bob"
-```
-
-Exit nano with `ctrl^x` then enter `y` to save the changes.\
-\
-Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
-
-_Note: We may need to reset the chain again as we are still cooking. This causes the_ \
-_`TELLORNODE_ID` to change. You can check the current correct id with:_
-
-<pre class="language-sh"><code class="lang-sh"><strong>curl tellorlayer.com:26657/status
-</strong></code></pre>
-
-5. **Initialize .layer folder in your home directory**
+4. **Initialize .layer folder in your home directory**
 
 {% code fullWidth="false" %}
 ```sh
@@ -118,4 +88,19 @@ _`TELLORNODE_ID` to change. You can check the current correct id with:_
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](initial-setup/state-sync-setup-optional.md) before you continue. \
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](initial-setup/state-sync-setup-optional.md) before you continue.&#x20;
+7. Start your layer node:
+
+```
+./layerd start
+```
+
+You should now see your log quickly downloading blocks!
+
+8. Check if you're fully synced. Open another terminal window and use the command:
+
+```
+./layerd status
+```
+
+You should see a json formated list of information about your running node. If you see `catching_up":false}` that means that you're node is fully synced and ready to use!
