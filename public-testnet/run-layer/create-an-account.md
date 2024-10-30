@@ -1,12 +1,14 @@
+---
+description: >-
+  Follow the steps to make a layer account that can be used to receive funds
+  from the bridge (or the faucet) for transacting on layer.
+---
+
 # Create an Account
 
 {% hint style="info" %}
-You will need a "wallet" account on layer to run a node even if you do not intend to recieve tokens or create a validator. (The `--key-name` flag is required when starting layerd.)
-{% endhint %}
-
-{% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
-1\. This guide uses the "test" backend because this is a testnet guide. Always use a secure [keyring-backend option like os, file, or pass](https://docs.cosmos.network/v0.46/run-node/keyring.html) if you're handling real money.\
+1\. This guide uses the "test" backend because this is a testnet guide. Use a more secure option if you're handling real money.\
 2\. Handle mnemonics/keys with extreme care, even if it’s just a testnet address.\
 3\. Never use an address that holds real funds for testing.
 {% endhint %}
@@ -41,7 +43,7 @@ Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which
 ./layerd keys show $ACCOUNT_NAME --bech val
 ```
 
-Add these addresses to your `.bashrc` or `.zshrc` file. Be sure to replace `your_tellor_prefix_address` and `your_tellorvaloper_prefix_address` in your command:
+It can be useful to add these addresses to your `.bashrc` or `.zshrc` file. Be sure to replace `your_tellor_prefix_address` and `your_tellorvaloper_prefix_address` in your command:
 
 {% code overflow="wrap" %}
 ```bash

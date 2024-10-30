@@ -1,4 +1,10 @@
-# Run a Layer Node
+---
+description: >-
+  Tellor layer is a proof of stake network open to everyone who wants to run a
+  validator or be a reporter.
+---
+
+# Run Layer
 
 ### Pre-requisites
 
@@ -88,7 +94,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](initial-setup/state-sync-setup-optional.md) before you continue.&#x20;
+    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](state-sync-setup-optional.md) before you continue.&#x20;
 7. Start your layer node:
 
 ```

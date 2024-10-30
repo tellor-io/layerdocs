@@ -2,7 +2,7 @@
 
 ## Prerequisites:
 
-* A Layer node machine configured like [this](../).
+* A Layer node machine configured like [this](./).
 
 ## Build and configure Cosmovisor
 

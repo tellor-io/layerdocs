@@ -4,8 +4,8 @@
 
 This guide has three sections:
 
-{% content-ref url="run-a-layer-node/" %}
-[run-a-layer-node](run-a-layer-node/)
+{% content-ref url="run-layer/" %}
+[run-layer](run-layer/)
 {% endcontent-ref %}
 
 {% content-ref url="become-a-validator/" %}
