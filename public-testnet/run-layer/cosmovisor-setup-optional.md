@@ -35,7 +35,7 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 4. Gather binaries. You can clone the repo and create a build at each tag, or download them from the repo. For each release, select the binary that matches your OS / cpu architecture. (e.g. "Darwin\_arm64" for macOS,"Linux\_x86\_x64" for most cloud machines...)&#x20;
 
-We will save them to a folder called binaries, but you can keep them anywhere you like. Download each binary to it's own folder:
+We will save them to a folder called binaries, but you can keep them anywhere you like. Download each binary to it's own folder. (**This command is just an example, so be sure that you know which binaries to get before you start! If you're not sure, ask in our discord)**:
 
 {% code overflow="wrap" %}
 ```sh
@@ -58,3 +58,11 @@ To check that these downloaded and extracted correctly: `ls ~/binaries`
 ./cosmovisor add-upgrade v0.3.0 ~/binaries/v0.3.0/layerd
 # ...
 ```
+
+6. To start your node with cosmovisor managing upgrades:
+
+{% code overflow="wrap" %}
+```sh
+cosmovisor run start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
+```
+{% endcode %}
