@@ -8,15 +8,26 @@ description: >-
 
 ### Pre-requisites
 
-* A local or cloud system running linux, or macOS. If on windows, use WSL. \
-  Minimum system specs (at time of writing):\
-  \- quad-core cpu\
-  \- 16gb RAM\
-  \- 256gb-2tb nvme storage depending on how you will run your node
+* A local or cloud system running linux, or macOS. If on windows, use WSL.&#x20;
 * Golang (install latest version [here](https://go.dev/doc/install))
 * jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
 * yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
 * sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
+
+### Recommended Machine Specs
+
+**If running a node for personal RPC (developer):**
+
+* A modern cpu with at least 4 cores
+* ram: 16 gb&#x20;
+* storage: 500gb+ (solid state)
+
+**If running a validator / reporter:**
+
+* A modern cpu with at least 8 cores / threads
+* ram: 32 gb&#x20;
+* storage: 500gb+ @ nvme gen3
+* network: 500mb/s DL, 100mb/s UL (the faster the better)
 
 {% hint style="info" %}
 ## Initial Setup&#x20;
@@ -94,8 +105,11 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
     ```
 
-    You're now ready to start your node with default sync settings. If you want to do a state sync, do the additional config steps [here](state-sync-setup-optional.md) before you continue.&#x20;
-7. Start your layer node:
+    You're now ready to start your node with default sync settings.
+
+_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
+
+6. Start your layer node:
 
 ```
 ./layerd start
