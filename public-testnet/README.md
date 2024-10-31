@@ -12,8 +12,8 @@ This guide has three sections:
 [run-a-layer-validator](run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="create-a-reporter.md" %}
-[create-a-reporter.md](create-a-reporter.md)
+{% content-ref url="run-the-data-reporter.md" %}
+[run-the-data-reporter.md](run-the-data-reporter.md)
 {% endcontent-ref %}
 
 {% hint style="success" %}

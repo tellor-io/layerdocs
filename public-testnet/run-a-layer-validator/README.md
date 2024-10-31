@@ -6,7 +6,7 @@ description: Follow the steps to become a Layer testnet validator.
 
 {% hint style="success" %}
 <mark style="color:green;">**You will need a node that's fully synced and an account that has a balance (loya).**</mark>  \
-See our [instructions on getting testnet TRB for help.](../run-layer/bridge-trbp-from-sepolia.md)&#x20;
+See our [instructions on getting testnet TRB for help.](../run-layer/bridge-trbp-from-sepolia-optional.md)&#x20;
 {% endhint %}
 
 ## Validator Setup
@@ -27,7 +27,7 @@ balance:
   denom: loya
 ```
 
-If you need testnet TRB, see the [Getting Testnet TRB](../run-layer/bridge-trbp-from-sepolia.md) section!
+If you need testnet TRB, see the [Getting Testnet TRB](../run-layer/bridge-trbp-from-sepolia-optional.md) section!
 
 3. **Retrieve Your Validator Public Key**\
    With your `layer` folder as the active directory, use the command:
@@ -92,6 +92,14 @@ Edit or add the following code:
 ```
 {% endcode %}
 
+6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
+
+```sh
+./layerd start --key-name $ACCOUNT_NAME
+```
+
+You should see the log quickly catch up. Are you a validator now?
+
 6. **Verify Your Validator Creation**\
    Ensure your validator was created successfully using the command replacing your\_validator\_address:
 
@@ -104,4 +112,4 @@ Edit or add the following code:
 If status is `3`...awesome! \
 If status is `2`...still great!\
 \
-If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! You can unjail with steps shown in the [next section.](../create-a-reporter.md)
+If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! This is what testnets are for. You can unjail with steps shown in the [next section.](../run-the-data-reporter.md)
