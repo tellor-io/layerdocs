@@ -81,14 +81,14 @@ Edit or add the following code:
 5. **Create Your Validator:** A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
 
 {% hint style="info" %}
-<mark style="color:blue;">**S**</mark><mark style="color:blue;">**taking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
+<mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
 {% endhint %}
 
 * Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --chain-id layertest-2 --fees 1000loya --yes
+./layerd tx staking create-validator ./validator.json --from $ACCOUNT_NAME --fees 5loya --yes
 ```
 {% endcode %}
 
@@ -97,7 +97,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd query staking validator $TELLORVALOPER_ADDRESS --chain-id layertest-2
+./layerd query staking validator $ACCOUNT_NAME
 ```
 {% endcode %}
 

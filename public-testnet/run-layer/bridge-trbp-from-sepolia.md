@@ -49,14 +49,14 @@ Open a terminal on your layer node machine and use the command (replacing `3` wi
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx bridge claim-deposit $ACCOUNT_NAME 3 0 --chain-id layertest-1 --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME --fees 1000loya
+./layerd tx bridge claim-deposit $ACCOUNT_NAME 3 0 --chain-id layertest-2 --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME --fees 5loya
 ```
 {% endcode %}
 
 You should see your new balance when you run the command:
 
 ```sh
-./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-1
+./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-2
 ```
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 12.27.20 PM.png" alt=""><figcaption></figcaption></figure>
