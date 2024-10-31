@@ -1,8 +1,78 @@
 ---
-description: Example commands for common actions with all required flags.
+description: >-
+  Example commands for common actions with all required flags. If you can't find
+  it here, try `--help`
 ---
 
 # Commands Reference
+
+## querying the RPC&#x20;
+
+Use `./layerd query` commands to find detailed information on the state of the chain.
+
+```bash
+Querying subcommands
+
+Usage:
+  layerd query [flags]
+  layerd query [command]
+
+Aliases:
+  query, q
+
+Available Commands:
+  auth                Querying commands for the auth module
+  authz               Querying commands for the authz module
+  bank                Querying commands for the bank module
+  block               Query for a committed block by height, hash, or event(s)
+  bridge              Querying commands for the bridge module
+  comet-validator-set Get the full CometBFT validator set at given height
+  consensus           Querying commands for the consensus module
+  dispute             Querying commands for the dispute module
+  distribution        Querying commands for the distribution module
+  evidence            Querying commands for the evidence module
+  feegrant            Querying commands for the feegrant module
+  globalfee           Querying commands for the global fee module
+  gov                 Querying commands for the gov module
+  group               Querying commands for the group module
+  ibc                 Querying commands for the IBC module
+  ibc-transfer        IBC fungible token transfer query subcommands
+  interchain-accounts IBC interchain accounts query subcommands
+  oracle              Querying commands for the oracle module
+  registry            Querying commands for the registry module
+  reporter            Querying commands for the reporter module
+  slashing            Querying commands for the slashing module
+  staking             Querying commands for the staking module
+  tx                  Query for a transaction by hash, "<addr>/<seq>" combination or comma-separated signatures in a committed block
+  tx                  Query for a transaction by hash, "<addr>/<seq>" combination or comma-separated signatures in a committed block
+  txs                 Query for paginated transactions that match a set of events
+  upgrade             Querying commands for the upgrade module
+
+Flags:
+      --chain-id string   The network chain ID
+  -h, --help              help for query
+
+Global Flags:
+      --home string         directory for config and data (default "/Users/sloetter/.layer")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic|disabled or '*:<level>,<key>:<level>') (default "info")
+      --log_no_color        Disable colored logs
+      --trace               print out full stack trace on errors
+
+Use "layerd query [command] --help" for more information about a command.
+```
+
+examples:
+
+```bash
+# to check rewards
+# delegator-addr should be a tellor prefix address
+# validator-addr should be a tellorvaloper prefix address
+# both addresses are required even if validator and reporter are same account
+./layerd query distribution rewards-by-validator [delegator-addr] [validator-addr]
+```
+
+## Building and Signing Transactions
 
 To send tokens:
 
