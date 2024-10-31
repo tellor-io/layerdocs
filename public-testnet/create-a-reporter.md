@@ -2,11 +2,11 @@
 
 _Once you’re successfully running a validator, you’re almost a reporter already!_&#x20;
 
-This section assumes that you have a [node](run-layer/) already. Run the command:
+This section assumes that you have a [node](run-layer/) and [validator](run-a-layer-validator/) running already. Run the command:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx reporter create-reporter "100000000000000000" "1000000" --from $ACCOUNT_NAME --chain-id layertest-1 --fees 1000loya
+./layerd tx reporter create-reporter "200000" "1000000" --from darth_vader --chain-id layertest-2 --fees 10loya --yes
 ```
 {% endcode %}
 

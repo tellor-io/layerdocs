@@ -11,7 +11,9 @@ See our [instructions on getting testnet TRB for help.](../run-layer/bridge-trbp
 
 ## Validator Setup
 
-1. **Check if your address has funds:**
+_**You will need a fully synced node to use as your validator. If you don't have a node, it's ok! You can learn how to set one up**_ [_**here**_](../run-layer/)_**.**_
+
+1. **Open up a new terminal window on your node machine and check if your address has funds:**
 
 ```bash
 ./layerd query bank balance $ACCOUNT_NAME loya
@@ -78,28 +80,15 @@ Edit or add the following code:
 
 5. **Create Your Validator:** A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
 
-{% hint style="warning" %}
-<mark style="color:red;">**These next steps are time sensitive so do them carefully:**</mark>&#x20;
-
-* Do the create-validator tx in command window
-* Count to 10&#x20;
-* Restart your node in the node window
+{% hint style="info" %}
+<mark style="color:blue;">**S**</mark><mark style="color:blue;">**taking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
 {% endhint %}
 
 * Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --chain-id layertest-1 --fees 1000loya
-```
-{% endcode %}
-
-* **count to 10** as you open the node window.
-* In your node window, use `ctrl^c` to stop the node. Enter this command to start it back up:
-
-{% code overflow="wrap" %}
-```bash
-./layerd start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --home $HOME/.layer --key-name $ACCOUNT_NAME
+./layerd tx staking create-validator ./validator.json --from $TELLOR_ADDRESS --chain-id layertest-2 --fees 1000loya --yes
 ```
 {% endcode %}
 
@@ -108,7 +97,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd query staking validator $TELLORVALOPER_ADDRESS --chain-id layertest-1
+./layerd query staking validator $TELLORVALOPER_ADDRESS --chain-id layertest-2
 ```
 {% endcode %}
 
