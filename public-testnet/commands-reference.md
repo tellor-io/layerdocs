@@ -22,6 +22,7 @@ To delegate to a validator:
 
 {% code overflow="wrap" %}
 ```bash
+# delegating voting power to tellor18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97
 ./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjmfzjv2yz733n9fycxdz2m6 123000000loya --from $ACCOUNT_NAME --fees 5loya --chain-id layertest-2
 ```
 {% endcode %}
@@ -30,7 +31,8 @@ To select a reporter with your bonded token power (must be delegated to a valida
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q --from selector_guy --chain-id layertest-2 --fees 10loya --node=http://layer-node.com:26758
+# selecting tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q
+./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q --from $ACCOUNT_NAME --chain-id layertest-2 --fees 5loya --node=http://layer-node.com:26758
 ```
 {% endcode %}
 
