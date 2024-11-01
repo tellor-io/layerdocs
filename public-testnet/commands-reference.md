@@ -6,6 +6,8 @@ description: >-
 
 # Commands Reference
 
+_<mark style="color:blue;">**Use the node flag like**</mark><mark style="color:blue;">** **</mark><mark style="color:blue;">**`--node=http://tellorlayer.com:26657`**</mark><mark style="color:blue;">** **</mark><mark style="color:blue;">**to pass in an rpc if you're not running a local node.**</mark>_
+
 ## querying the RPC&#x20;
 
 Use `./layerd query` commands to find detailed information on the state of the chain.
@@ -62,11 +64,10 @@ Global Flags:
 Use "layerd query [command] --help" for more information about a command.
 ```
 
-examples:
+### examples:
 
-```bash
-# to check balance. Use a tellor address or your local account name.
-# e.g. for tellor1p8xk2xqwgszmerk83dvjszddp5adqs5hwaupjt
+<pre class="language-bash"><code class="lang-bash"><strong># to check balance. Use a tellor address or your local account name.
+</strong># e.g. for tellor1p8xk2xqwgszmerk83dvjszddp5adqs5hwaupjt
 ./layerd query bank balance tellor1p8xk2xqwgszmerk83dvjszddp5adqs5hwaupjt loya
 
 # get a list of validators and their status
@@ -109,62 +110,86 @@ examples:
 ./layerd query tx --type=hash 9CE91600D5291C0CD267F950AC254AA469FE97C8444EFE9EC8E9E41BD4DEE523
 
 
+</code></pre>
+
+## Making Transactions
+
+Use `./layerd tx` to transact on layer.
+
+```bash
+./layerd tx --help
+Transactions subcommands
+
+Usage:
+  layerd tx [flags]
+  layerd tx [command]
+
+Available Commands:
+                      
+  auth                Transactions commands for the auth module
+  authz               Authorization transactions subcommands
+  bank                Bank transaction subcommands
+  bridge              Transactions commands for the bridge module
+  broadcast           Broadcast transactions generated offline
+  consensus           Transactions commands for the consensus module
+  decode              Decode a binary encoded transaction string
+  dispute             Transactions commands for the dispute module
+  distribution        Distribution transactions subcommands
+  encode              Encode transactions generated offline
+  evidence            Evidence transaction subcommands
+  feegrant            Feegrant transactions sub-commands
+  globalfee           Transactions commands for the globalfee module
+  gov                 Governance transactions subcommands
+  group               Group transaction subcommands
+  ibc                 IBC transaction subcommands
+  ibc-transfer        IBC fungible token transfer transaction subcommands
+  interchain-accounts IBC interchain accounts transaction subcommands
+  mint                Transactions commands for the mint module
+  multi-sign          Generate multisig signatures for transactions generated offline
+  oracle              Transactions commands for the oracle module
+  registry            Transactions commands for the registry module
+  reporter            Transactions commands for the reporter module
+  sign                Sign a transaction generated offline
+  sign-batch          Sign transaction batch files
+  slashing            Transactions commands for the slashing module
+  staking             Staking transaction subcommands
+  upgrade             Upgrade transaction subcommands
+  validate-signatures validate transactions signatures
+  vesting             Vesting transaction subcommands
+
+Flags:
+      --chain-id string   The network chain ID
+  -h, --help              help for tx
+
+Global Flags:
+      --home string         directory for config and data (default "/home/spuddy/.layer")
+      --log_format string   The logging format (json|plain) (default "plain")
+      --log_level string    The logging level (trace|debug|info|warn|error|fatal|panic|disabled or '*:<level>,<key>:<level>') (default "info")
+      --log_no_color        Disable colored logs
+      --trace               print out full stack trace on errors
+
+Use "layerd tx [command] --help" for more information about a command.
 ```
 
-## Building and Signing Transactions
-
-To send tokens:
-
-```
-./layerd tx bank send $ACCOUNT_NAME <recipients_address> <amount>loya --fees 5loya
-```
-
-Add the `--node` flag to any command if you don't have a local node. Here's a full example of a send tx for 123 TRB using remote RPC:
+### examples:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx bank send $ACCOUNT_NAME tellor18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97 123000000loya --fees 10loya --node=http://tellorlayer.com:26657
-```
-{% endcode %}
+# to send TRB tokens (demoninated in loya)
+# balances of loya have 6 decimals on layer
+# e.g. sending 123 TRB to tellor18wjwgr0j8pv4ekkpntdylftwz8ml97
+./layerd tx bank send $ACCOUNT_NAME tellor18wjwgr0j8pv4ekkpntdylftwz8ml97 123000000loya --fees 5loya
 
-To request withdraw of your tokens from layer to sepolia. In this example, the layer address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`:
+# to delegate to a validator
+# e.g. delegate voting power to tellor18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97
+./layerd tx staking delegate tellorvaloper18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97 123000000loya --from $ACCOUNT_NAME --fees 5loya --chain-id layertest-2
 
-{% code overflow="wrap" %}
-```bash
-./layerd tx bridge withdraw-tokens tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5 7660794eF8f978Ea0922DC29B4d93e1fc94A 69010069loya --fees 5loya
-```
-{% endcode %}
-
-To delegate to a validator:
-
-{% code overflow="wrap" %}
-```bash
-# delegating voting power to tellor18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97
-./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjmfzjv2yz733n9fycxdz2m6 123000000loya --from $ACCOUNT_NAME --fees 5loya --chain-id layertest-2
-```
-{% endcode %}
-
-To select a reporter with your bonded token power (must be delegated to a validator first):
-
-{% code overflow="wrap" %}
-```bash
+# select (like delegating to) a reporter
+# account must be delegated to a validator first
 # selecting tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q
 ./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q --from $ACCOUNT_NAME --chain-id layertest-2 --fees 5loya --node=http://layer-node.com:26758
 ```
 {% endcode %}
 
-To start layer as a validator /reporter:
 
-{% code overflow="wrap" %}
-```sh
-./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME --home ~/.layer
-```
-{% endcode %}
 
-Start layer with cosmovisor:
-
-{% code overflow="wrap" %}
-```sh
-./cosmovisor run start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME --home ~/.layer
-```
-{% endcode %}

@@ -6,7 +6,7 @@ description: Follow the steps to become a Layer testnet validator.
 
 {% hint style="success" %}
 <mark style="color:green;">**You will need a node that's fully synced and an account that has a balance (loya).**</mark>  \
-See our [instructions on getting testnet TRB for help.](../run-layer/bridge-trbp-from-sepolia-optional.md)&#x20;
+See our [instructions on getting testnet TRB for help.](../manage-accounts/bridge-trbp-from-sepolia-optional.md)&#x20;
 {% endhint %}
 
 ## Validator Setup
@@ -27,7 +27,7 @@ balance:
   denom: loya
 ```
 
-If you need testnet TRB, see the [Getting Testnet TRB](../run-layer/bridge-trbp-from-sepolia-optional.md) section!
+If you need testnet TRB, see the [Getting Testnet TRB](../manage-accounts/bridge-trbp-from-sepolia-optional.md) section!
 
 3. **Retrieve Your Validator Public Key**\
    With your `layer` folder as the active directory, use the command:
