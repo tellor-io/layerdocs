@@ -78,7 +78,27 @@ examples:
 # get a list of reporters
 ./layerd query reporter reporters
 
-# to check rewards
+# get a list of their reportrs
+# e.g. for tellor1d8rrlk20qqxd69xl2zen503x7uux0wnl
+./layerd query oracle get-reportsby-reporter tellor1d8rrlk20qqxd69xl2zen503x7uux0wnl
+
+# check the reporter address that your account is selecting
+# any address may also be used instead of $ACCOUNT_NAME
+./layerd query reporter selector-reporter $ACCOUNT_NAME
+
+# get governance information
+./layerd query gov proposals
+
+# get gov proposal vote tallies
+./layerd query gov tally 1
+
+# get list of open dispute IDs
+./layerd query dispute open-disputes
+
+# query record of disputes with more information
+./layerd query dispute disputes
+
+# check rewards
 # delegator-addr should be a tellor prefix address
 # validator-addr should be a tellorvaloper prefix address
 # both addresses are required even if validator and reporter are same account
