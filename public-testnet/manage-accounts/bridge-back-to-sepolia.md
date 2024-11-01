@@ -45,3 +45,5 @@ This will print information about the report. Copy the timestamp for the next st
 ./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-2 --fees 50loya --yes
 ```
 {% endcode %}
+
+Once the reporters/validators attest to your withdraw request, all that is left is to wait for the relayer to prove your withdraw and the bridge contract will send the tokens to your sepolia address!
