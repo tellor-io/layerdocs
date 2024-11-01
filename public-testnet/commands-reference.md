@@ -65,11 +65,30 @@ Use "layerd query [command] --help" for more information about a command.
 examples:
 
 ```bash
+# to check balance. Use a tellor address or your local account name.
+# e.g. for tellor1p8xk2xqwgszmerk83dvjszddp5adqs5hwaupjt
+./layerd query bank balance tellor1p8xk2xqwgszmerk83dvjszddp5adqs5hwaupjt loya
+
+# get a list of validators and their status
+./layerd query staking validators
+
+# get info about a validator by it's moniker. 
+./layerd query staking validators | grep -A 5 "bob_moniker"
+
+# get a list of reporters
+./layerd query reporter reporters
+
 # to check rewards
 # delegator-addr should be a tellor prefix address
 # validator-addr should be a tellorvaloper prefix address
 # both addresses are required even if validator and reporter are same account
 ./layerd query distribution rewards-by-validator [delegator-addr] [validator-addr]
+
+# to examine a transaction (tx)
+# example for tx hash 9CE91600D5291C0CD267F950AC254AA469FE97C8444EFE9EC8E9E41BD4DEE523
+./layerd query tx --type=hash 9CE91600D5291C0CD267F950AC254AA469FE97C8444EFE9EC8E9E41BD4DEE523
+
+
 ```
 
 ## Building and Signing Transactions
