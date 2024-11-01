@@ -4,7 +4,7 @@ description: >-
   Sepolia testnet:
 ---
 
-# Bridge TRBP from Sepolia (optional)
+# Bridge TRBP from Sepolia
 
 ### 1. Mint TRBP ("playground" TRB)
 
@@ -45,11 +45,11 @@ There's a 12 hour delay to secure deposits. While you are waiting, your bridge t
 
 ### 5. Claim the Tokens on Layer
 
-Open a terminal on your layer node machine and use the command (replacing `3` with your actual `depositId`):
+Open a terminal on your layer node machine and use the command (replacing 212 your `depositId`):
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx bridge claim-deposit $ACCOUNT_NAME 3 0 --chain-id layertest-2 --keyring-backend $KEYRING_BACKEND --home $LAYERD_NODE_HOME --keyring-dir $LAYERD_NODE_HOME --fees 5loya
+./layerd tx bridge claim-deposit $TELLOR_ADDRESS 212 0 --from $ACCOUNT_NAME --chain-id layertest-2 --fees 5loya
 ```
 {% endcode %}
 
