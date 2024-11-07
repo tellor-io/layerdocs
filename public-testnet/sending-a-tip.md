@@ -15,4 +15,4 @@ The command for sending a tip looks like this:
 ```
 {% endcode %}
 
-The query\_data shown here is for usdc-usd-spot . To generate query\_data for the query that you need, check out the ["querybuilder" tool here.](https://tellor.io/queryidstation/)&#x20;
+_The query\_data shown here is for usdc-usd-spot . To generate query\_data for the query that you need, check out the_ [_"querybuilder" tool here._](https://tellor.io/queryidstation/)&#x20;

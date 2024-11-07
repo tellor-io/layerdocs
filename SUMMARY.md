@@ -14,4 +14,5 @@
   * [Delegate to a Validator](public-testnet/delegate-to-a-validator.md)
   * [Select a reporter](public-testnet/select-a-reporter.md)
   * [Sending a Tip](public-testnet/sending-a-tip.md)
+  * [Optimistic (manual) Reporting](public-testnet/optimistic-manual-reporting.md)
   * [Commands Reference](public-testnet/commands-reference.md)
