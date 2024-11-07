@@ -13,4 +13,5 @@
   * [Run the Data Reporter](public-testnet/run-the-data-reporter.md)
   * [Delegate to a Validator](public-testnet/delegate-to-a-validator.md)
   * [Select a reporter](public-testnet/select-a-reporter.md)
+  * [Sending a Tip](public-testnet/sending-a-tip.md)
   * [Commands Reference](public-testnet/commands-reference.md)

@@ -179,15 +179,6 @@ Use "layerd tx [command] --help" for more information about a command.
 # balances of loya have 6 decimals on layer
 # e.g. sending 123 TRB to tellor18wjwgr0j8pv4ekkpntdylftwz8ml97
 ./layerd tx bank send $ACCOUNT_NAME tellor18wjwgr0j8pv4ekkpntdylftwz8ml97 123000000loya --fees 5loya
-
-# to delegate to a validator
-# e.g. delegate voting power to tellor18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97
-./layerd tx staking delegate tellorvaloper18wjwgr0j8pv4ektdaxvzsykpntdylftwz8ml97 123000000loya --from $ACCOUNT_NAME --fees 5loya --chain-id layertest-2
-
-# select (like delegating to) a reporter
-# account must be delegated to a validator first
-# selecting tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q
-./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhlv32wx0g6r743vv4q --from $ACCOUNT_NAME --chain-id layertest-2 --fees 5loya --node=http://layer-node.com:26758
 ```
 {% endcode %}
 
