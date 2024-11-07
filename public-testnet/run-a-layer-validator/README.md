@@ -18,7 +18,7 @@ Replace $ACCOUNT\_NAME with whatever name you chose for your account.&#x20;
 
 \-Or-
 
-Set your the name of your account as a system variable:\
+Set the name of your account as a system variable:\
 `export ACCOUNT_NAME="example-name"`
 {% endhint %}
 
