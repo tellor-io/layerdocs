@@ -13,6 +13,10 @@ See our [instructions on getting testnet TRB for help.](../manage-accounts/bridg
 
 _**You will need a fully synced node to use as your validator. If you don't have a node, it's ok! You can learn how to set one up**_ [_**here**_](../run-layer/)_**.**_
 
+{% hint style="info" %}
+Replace $ACCOUNT\_NAME with whatever name you chose for your account. Or
+{% endhint %}
+
 1. **Open up a new terminal window on your node machine and check if your address has funds:**
 
 ```bash
