@@ -40,9 +40,6 @@ nano ~/.layer/config/config.toml
 Scroll or search the document and edit the variables as shown here:
 
 ```toml
-# [p2p]
-seed_mode = true
-
 # [statesync]
 enable = true
 #...
