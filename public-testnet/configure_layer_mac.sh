@@ -7,7 +7,7 @@ clear
 set -e
 
 # set variables in your .bashrc before starting this script!
-source ~/.bashrc
+source ~/.zshrc
 
 export LAYER_NODE_URL=tellorlayer.com
 export TELLORNODE_ID=b0dff39942b90880c040e302bfa37b2239dddc1b
