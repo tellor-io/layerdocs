@@ -40,10 +40,11 @@ There are 9 steps in this part.
 1. **Clone the Layer repo, change directory to `layer`**
 
 ```sh
+# for genesis sync
 git clone https://github.com/tellor-io/layer -b v1.5.0 && cd layer
 ```
 
-2. **Build layerd with the command:**
+2. **Build `layerd` with the command:**
 
 ```sh
 go build ./cmd/layerd
@@ -109,17 +110,36 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
 
+{% hint style="info" %}
+_**If you want to do a state sync, do not start your node yet!**_ \
+_**Go**_ [_**here**_](state-sync-setup-optional.md) _**and do the**_ [_**State Sync Setup Steps.**_](state-sync-setup-optional.md)
+{% endhint %}
+
+{% hint style="info" %}
+If you want to do a genesis sync (takes longer but it always works), continue with the steps below.
+{% endhint %}
+
 6. Start your layer node:
 
-```
+```bash
 ./layerd start
 ```
 
 You should now see your log quickly downloading blocks!
 
-8. Check if you're fully synced. Open another terminal window and use the command:
+7. Upgrade the binary when syncing halts. The binary that you need will be visible in the log.
 
+```bash
+# for binary v1.6.0
+git checkout main && git pull && git checkout v1.6.0 && go build ./cmd/layerd
 ```
+
+After you build the new binary, kill and restart your node.\
+_This must be done for all upgrades since genesis._
+
+7. Check if you're fully synced. Open another terminal window and use the command:
+
+```bash
 ./layerd status
 ```
 

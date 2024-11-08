@@ -45,6 +45,7 @@ seed_mode = true
 
 # [statesync]
 enable = true
+#...
 rpc_servers = "http://tellorlayer.com:26657,http://tellorlayer.com:26657"
 trust_height = 137949
 trust_hash = "F23E2ACAFF92FFEDE14CC9949A60F50E7C6D5A2D40BC9C838DF523944063294D"
@@ -54,3 +55,18 @@ trust_period = "168h0m0s"
 Be sure to replace the trust\_height and trust\_hash with the block number and hash from step 1.
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
+
+3. Upgrade your binary to the current version:
+
+{% code overflow="wrap" %}
+```bash
+# use binary v1.6.0
+git checkout main && git pull && git checkout v1.6.0 && go build ./cmd/layerd
+```
+{% endcode %}
+
+3. Start your node:
+
+```
+./layerd start
+```
