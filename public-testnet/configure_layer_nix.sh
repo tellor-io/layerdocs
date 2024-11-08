@@ -12,7 +12,7 @@ source ~/.bashrc
 export LAYER_NODE_URL=tellorlayer.com
 export TELLORNODE_ID=b0dff39942b90880c040e302bfa37b2239dddc1b
 export KEYRING_BACKEND="test"
-export PEERS="6a5ab45eea6ebd53eea5da79293c53d3ba9244d0@54.183.89.163:26656,b0dff39942b90880c040e302bfa37b2239dddc1b@54.209.172.1:26656,de33dfeeebe49930f51a09e6e9994e1288c6bb69@18.222.23.49:26757,0d38bda3729bbd4a30ed8d602d569548f60824e9@3.147.56.107:26757"
+export PEERS="6a5ab45eea6ebd53eea5da79293c53d3ba9244d0@54.183.89.163:26656,b0dff39942b90880c040e302bfa37b2239dddc1b@54.209.172.1:26656,de33dfeeebe49930f51a09e6e9994e1288c6bb69@18.222.23.49:26656,0d38bda3729bbd4a30ed8d602d569548f60824e9@3.147.56.107:26656"
 
 echo "Change denom to loya in config files..."
 sed -i 's/([0-9]+)stake/1loya/g' ~/.layer/config/app.toml
