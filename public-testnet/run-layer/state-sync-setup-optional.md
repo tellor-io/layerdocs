@@ -13,14 +13,13 @@ rm -rf ~/.layer/data/state.db
 rm -rf ~/.layer/data/tx_index.db
 ```
 
-1. **Find a good trusted height:**\
-   _Note: The trusted height in production should be set to 21 days before current block to make sure all validators are honest. However, at the time of writing the chain is not yet 21 days old! We will instead use one hour._
+1. **Find a working `TRUSTED_HEIGHT`**
 
 Use the command:
 
 ```sh
 export LATEST_HEIGHT=$(curl -s tellorlayer.com:26657/block | jq -r .result.block.header.height); \
-export TRUSTED_HEIGHT=$((LATEST_HEIGHT-2000)); \ # current block - 1 hour
+export TRUSTED_HEIGHT=$((LATEST_HEIGHT-8000)); \ # current block - 1 hour
 export TRUSTED_HASH=$(curl -s "tellorlayer.com:26657/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
 echo $TRUSTED_HEIGHT $TRUSTED_HASH
 ```
