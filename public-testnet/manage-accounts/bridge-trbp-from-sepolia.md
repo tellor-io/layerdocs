@@ -8,7 +8,7 @@ description: >-
 
 ### 1. Mint TRBP ("playground" TRB)
 
-You can mint Layer Testnet TRB using this [Sepolia Tellor Playground](https://sepolia.etherscan.io/address/0x76402D74e79459157bb5581487F50f05439914C9#writeContract) contract’s “faucet” command. Connect your wallet, click the function `5. faucet`, put your sepolia ethereum address in the \_user field, click write and confirm your transaction.\
+You can mint Layer Testnet TRB using this [Sepolia Tellor Playground](https://sepolia.etherscan.io/address/0x9414151ec45a6e8bdb32b950069577e38a66ee00) contract’s “faucet” command. Connect your wallet, click the function `5. faucet`, put your sepolia ethereum address in the \_user field, click write and confirm your transaction.\
 
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 11.36.39 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet.</p></figcaption></figure>
@@ -20,7 +20,9 @@ _Note: TRBP contract address for layer is different from the sepolia TRB token u
 ### 2. Approve the bridge contract
 
 Click on function `2. approve`. \
-Set spender to the bridge contract address: `0x31F1f15541ea781e170F40A3eEdcfcaC837aFa12` Set \_amount to whatever makes sense: `1000000000000000000000`
+Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0xFC1C57F1E466605e3Dd40840bC3e7DdAa400528c) address: 0xFC1C57F1E466605e3Dd40840bC3e7DdAa400528c&#x20;
+
+Set \_amount to be the amount that you want to bridge like `25000000000000000000 (25 TRB with 18 decimals)`
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 9.17.43 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet.</p></figcaption></figure>
 
