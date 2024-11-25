@@ -135,16 +135,6 @@ If you want to do a genesis sync (takes longer but it always works), continue wi
 
 You should now see your log quickly downloading blocks!
 
-7. Upgrade the binary when syncing halts. The binary that you need will be visible in the log.
-
-```bash
-# for binary v1.6.0
-git checkout main && git pull && git checkout v1.6.0 && go build ./cmd/layerd
-```
-
-After you build the new binary, kill and restart your node.\
-&#xNAN;_&#x54;his must be done for all upgrades since genesis._
-
 7. Check if you're fully synced. Open another terminal window and use the command:
 
 ```bash
