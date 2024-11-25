@@ -28,7 +28,7 @@ Set \_amount to be the amount that you want to bridge like `25000000000000000000
 
 ### 3. Make the bridge request (depositToLayer)
 
-Once you have TRBP in your wallet, head over to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x1AaF421491171930e71fb032B765DF252CE3F97e#writeContract). Connect your wallet and click function `3. depositToLayer`. Set the amount to the amount of TRBP that you want to bridge, e.g. 100000000000000000000 (100 TRBP + 18 decimals).\
+Once you have TRBP in your wallet, navigate to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0xFC1C57F1E466605e3Dd40840bC3e7DdAa400528c#writeContract). Connect your wallet and click function `3. depositToLayer`. Set the amount to the amount of TRBP that you want to bridge, e.g. 100000000000000000000 (100 TRBP + 18 decimals).\
 Set \_layerRecipient to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](../run-layer/).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 11.47.26 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet.</p></figcaption></figure>
