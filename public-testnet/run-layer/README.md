@@ -41,7 +41,7 @@ There are 9 steps in this part.
 
 ```sh
 # for genesis sync
-git clone https://github.com/tellor-io/layer -b v1.5.0 && cd layer
+git clone https://github.com/tellor-io/layer -b v2.0.0-alpha1 && cd layer
 ```
 
 2. **Build `layerd` with the command:**
@@ -50,18 +50,23 @@ git clone https://github.com/tellor-io/layer -b v1.5.0 && cd layer
 go build ./cmd/layerd
 ```
 
-3. **An ethereum RPC is requred for reporting bridge requests on layer.**\
-   Using your favorite text editor, create a file called `secrets.yaml`:
+3. **Configure system variables with RPC url and contract address for the bridge.**\
+   Using your favorite text editor, upen up your `.bashrc` or `.zshrc` file:
 
 ```sh
-nano secrets.yaml.example
+# if linux
+nano ~/.bashrc
+
+#if mac
+nano ~/.zshrc
 ```
 
-Replacing \`your\_sepolia\_testnet\_rpc\_url\` with the url of a reliable sepolia rpc, and add the token bridge contract address as shown here:
+Add these lines to the bottom of the file. Be sure to replace the example URL with your Sepolia testnet RPC url:
 
-```json
-eth_rpc_url: "wss://your_sepolia_testnet_rpc_url"
-token_bridge_contract: "0x31F1f15541ea781e170F40A3eEdcfcaC837aFa12"
+```bash
+# layer
+export ETH_RPC_URL='https://any_good_sepolia_rpc_url'
+export TOKEN_BRIDGE_CONTRACT="0xFC1C57F1E466605e3Dd40840bC3e7DdAa400528c"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -85,7 +90,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
     ```
 
-    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_nix.sh), select all and copy the code to your clipboard.&#x20;
+    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_nix.sh), select all and copy the code to your clipboard.&#x20;
     * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
     **If on Mac:**
@@ -96,14 +101,17 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
     ```
 
-    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure\_layer\_mac.sh), select all and copy the code to your clipboard.
+    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_mac.sh), select all and copy the code to your clipboard.
     * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
     Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
 
     ```sh
-    chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh #if linux
-    chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh #if mac
+    # if linux
+    chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh
+
+    # if mac
+    chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh 
     ```
 
     You're now ready to start your node with default sync settings.
@@ -135,7 +143,7 @@ git checkout main && git pull && git checkout v1.6.0 && go build ./cmd/layerd
 ```
 
 After you build the new binary, kill and restart your node.\
-_This must be done for all upgrades since genesis._
+&#xNAN;_&#x54;his must be done for all upgrades since genesis._
 
 7. Check if you're fully synced. Open another terminal window and use the command:
 

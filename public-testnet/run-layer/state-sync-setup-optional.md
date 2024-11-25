@@ -4,12 +4,13 @@ _Tip: If you have already started syncing and you want to start over with a stat
 
 ```sh
 # deletes chain data for resyncing
+# no need to do this if first time running layer
 rm -rf ~/.layer/data/application.db; \
 rm -rf ~/.layer/data/blockstore.db; \
 rm -rf ~/.layer/data/cs.wal; \
 rm -rf ~/.layer/data/evidence.db; \
-rm -rf ~/.layer/data/snapshots
-rm -rf ~/.layer/data/state.db
+rm -rf ~/.layer/data/snapshots \
+rm -rf ~/.layer/data/state.db \
 rm -rf ~/.layer/data/tx_index.db
 ```
 
@@ -52,17 +53,8 @@ Be sure to replace the trust\_height and trust\_hash with the block number and h
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
-3. Upgrade your binary to the current version:
-
-{% code overflow="wrap" %}
-```bash
-# use binary v1.6.0
-git checkout main && git pull && git checkout v1.6.0 && go build ./cmd/layerd
-```
-{% endcode %}
-
 3. Start your node:
 
-```
+```bash
 ./layerd start
 ```
