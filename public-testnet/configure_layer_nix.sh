@@ -10,9 +10,9 @@ set -e
 source ~/.bashrc
 
 export LAYER_NODE_URL=tellorlayer.com
-export TELLORNODE_ID=b0dff39942b90880c040e302bfa37b2239dddc1b
+export TELLORNODE_ID=5ca2c0eccb54e907ba474ce3b6827077ae40ba53
 export KEYRING_BACKEND="test"
-export PEERS="6a5ab45eea6ebd53eea5da79293c53d3ba9244d0@54.183.89.163:26656,b0dff39942b90880c040e302bfa37b2239dddc1b@54.209.172.1:26656,de33dfeeebe49930f51a09e6e9994e1288c6bb69@18.222.23.49:26656,0d38bda3729bbd4a30ed8d602d569548f60824e9@3.147.56.107:26656"
+export PEERS="6a5ab45eea6ebd53eea5da79293c53d3ba9244d0@54.183.89.163:26656,c3223c066d7e97904192a1cdb99e7676ad03d581@3.147.56.107:26656,06067c9ce50f07f4fdd3dba4a7730c62b6225080@18.222.23.49:26656"
 
 echo "Change denom to loya in config files..."
 sed -i 's/([0-9]+)stake/1loya/g' ~/.layer/config/app.toml
