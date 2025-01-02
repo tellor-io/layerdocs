@@ -40,7 +40,9 @@ There are 9 steps in this part.
 1. **Clone the Layer repo, change directory to `layer`**
 
 ```sh
-# for genesis sync
+# for genesis / cosmovisor sync
+git clone https://github.com/tellor-io/layer -b v2.0.0-alpha1 && cd layer
+# for state sync
 git clone https://github.com/tellor-io/layer -b v2.0.1-fix && cd layer
 ```
 
