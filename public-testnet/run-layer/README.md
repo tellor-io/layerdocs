@@ -135,6 +135,30 @@ If you want to do a genesis sync (takes longer but it always works), continue wi
 
 You should now see your log quickly downloading blocks!
 
+7. perform upgrades:
+
+When the chain stops and promts for version v2.0.0-audit, kill your layer process and update your binary in the layer folder:
+
+```bash
+# upgrade to version v2.0.0-audit
+git checkout 634c27667b504beead473321a964aab866866fe3 \
+go build ./cmd/layerd
+```
+
+The start your layer process up again with `./layerd start`
+
+Let it sync up to the next upgrade, then do the same for version `v2.0.1-fix`:
+
+```bash
+# upgrade to version v2.0.0-audit
+git checkout main \
+git pull \
+git checkout v2.0.1-fix \
+go build ./cmd/layerd
+```
+
+The start your layer process up again with `./layerd start`
+
 7. Check if you're fully synced. Open another terminal window and use the command:
 
 ```bash
