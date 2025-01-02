@@ -41,7 +41,7 @@ There are 9 steps in this part.
 
 ```sh
 # for genesis sync
-git clone https://github.com/tellor-io/layer -b v2.0.0-alpha1 && cd layer
+git clone https://github.com/tellor-io/layer -b v2.0.1-fix && cd layer
 ```
 
 2. **Build `layerd` with the command:**

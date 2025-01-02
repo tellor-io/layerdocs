@@ -41,9 +41,8 @@ We will save them to a folder called binaries, but you can keep them anywhere yo
 ```sh
 # v0.2.1
 mkdir ~/binaries && cd ~/binaries && mkdir v0.2.1 && cd v0.2.1 && wget https://github.com/tellor-io/layer/releases/download/v0.2.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# v0.3.0
-cd ~/binaries && mkdir v0.3.0 && cd v0.3.0 && wget https://github.com/tellor-io/layer/releases/download/v0.3.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# v0.4.2...
+# v2.0.1-fix
+cd ~/binaries && mkdir v2.0.1-fix && cd v2.0.1-fix && wget https://github.com/tellor-io/layer/releases/download/v2.0.1-fix/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ...
 ```
 {% endcode %}
