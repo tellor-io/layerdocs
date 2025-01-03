@@ -140,15 +140,16 @@ chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
 
 You're now ready to start syncing your node.
 
+## Start Syncing your Node
+
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
 
 {% hint style="info" %}
-_**If you want to do a state sync, do not start your node yet!**_ \
-_**Go**_ [_**here**_](state-sync-setup-optional.md) _**and do the**_ [_**State Sync Setup Steps.**_](state-sync-setup-optional.md)
+_**If you want to do a state sync, Go**_ [_**here**_](state-sync.md) _**and do additional**_ [_**State Sync Setup Steps.**_](state-sync.md)
 {% endhint %}
 
 {% hint style="info" %}
-If you want to do a genesis sync (takes longer but it always works), continue with the steps below.
+If you want to do a genesis sync, continue with the steps below:
 {% endhint %}
 
 6. Start your layer node:
