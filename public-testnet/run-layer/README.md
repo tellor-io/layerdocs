@@ -92,7 +92,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
     ```
 
-    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_nix.sh), select all and copy the code to your clipboard.&#x20;
+    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_linux.sh), select all and copy the code to your clipboard.&#x20;
     * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
     **If on Mac:**
@@ -103,7 +103,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
     nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
     ```
 
-    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layerdocs/update-guide-working/public-testnet/configure_layer_mac.sh), select all and copy the code to your clipboard.
+    * Navigate [here](https://github.com/tellor-io/layer/blob/main/layer_scripts/configure_layer_mac.sh), select all and copy the code to your clipboard.
     * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
     Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
