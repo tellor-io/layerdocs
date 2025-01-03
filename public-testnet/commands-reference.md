@@ -6,7 +6,7 @@ description: >-
 
 # Commands Reference
 
-_<mark style="color:blue;">**Use the node flag like**</mark><mark style="color:blue;">** **</mark><mark style="color:blue;">**`--node=http://tellorlayer.com:26657`**</mark><mark style="color:blue;">** **</mark><mark style="color:blue;">**to pass in an rpc if you're not running a local node.**</mark>_
+_<mark style="color:blue;">**Use the node flag like**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**`--node=http://tellorlayer.com:26657`**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**to pass in an rpc if you're not running a local node.**</mark>_
 
 ## querying the RPC&#x20;
 

@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [Public Testnet](public-testnet/README.md)
-  * [Run Layer](public-testnet/run-layer/README.md)
-    * [Cosmovisor Setup (optional)](public-testnet/run-layer/cosmovisor-setup-optional.md)
-    * [State Sync Setup (optional)](public-testnet/run-layer/state-sync-setup-optional.md)
+  * [Node Setup](public-testnet/node-setup/README.md)
+    * [Cosmovisor Setup (optional)](public-testnet/node-setup/cosmovisor-setup-optional.md)
+    * [State Sync Setup (optional)](public-testnet/node-setup/state-sync-setup-optional.md)
   * [Manage Accounts](public-testnet/manage-accounts/README.md)
     * [Bridge TRBP from Sepolia](public-testnet/manage-accounts/bridge-trbp-from-sepolia.md)
     * [Bridge back to Sepolia](public-testnet/manage-accounts/bridge-back-to-sepolia.md)

@@ -1,50 +1,53 @@
 ---
-description: >-
-  Tellor layer is a proof of stake network open to everyone who wants to run a
-  validator or be a reporter.
+description: How to set up a Tellor Layer Node.
 ---
 
-# Run Layer
+# Node Setup
 
 ### Pre-requisites
 
-* A local or cloud system running linux, or macOS. If on windows, use WSL.&#x20;
-* Golang (install latest version [here](https://go.dev/doc/install))
-* jq (`sudo apt install jq` on linux, or `brew install jq` on mac)
-* yq (`sudo apt install yq` on linux, or `brew install yq` on mac)
-* sed (`sudo apt install sed` on linux, or `brew install sed` on mac)
+* **A** local or cloud **computer** running linux, or macOS. (If on windows, use WSL.)
+* **Golang** (install latest version [here](https://go.dev/doc/install))
+* **jq (**`sudo apt install jq` on linux, or `brew install jq` on mac)
+* **yq** (`sudo apt install yq` on linux, or `brew install yq` on mac)
+* **sed** (`sudo apt install sed` on linux, or `brew install sed` on mac)
 
 ### Recommended Machine Specs
 
 **If running a node for personal RPC (developer):**
 
-* A modern cpu with at least 4 cores
+* modern cpu with at least 4 cores
 * ram: 16 gb&#x20;
 * storage: 500gb+ (solid state)
 
 **If running a validator / reporter:**
 
-* A modern cpu with at least 8 cores / threads
-* ram: 32 gb&#x20;
+* modern cpu with at least 8 cores / threads
+* ram: 32 gb
 * storage: 500gb+ @ nvme gen3
-* network: 500mb/s DL, 100mb/s UL (the faster the better)
-
-{% hint style="info" %}
-## Initial Setup&#x20;
-{% endhint %}
+* network: 500mb/s DL, 100mb/s UL (the faster the better)&#x20;
 
 ### Build and Configure layerd
 
-There are 9 steps in this part.
+{% hint style="info" %}
+<mark style="color:blue;">Note:</mark> Steps have multiple options. Be sure to choose the tab that matches your machine / desired setup.
+{% endhint %}
 
 1. **Clone the Layer repo, change directory to `layer`**
 
+{% tabs %}
+{% tab title="syncing from Genesis" %}
 ```sh
-# for genesis / cosmovisor sync
 git clone https://github.com/tellor-io/layer -b v2.0.0-alpha1 && cd layer
-# for state sync
+```
+{% endtab %}
+
+{% tab title="Snapshot Sync" %}
+```sh
 git clone https://github.com/tellor-io/layer -b v2.0.1-fix && cd layer
 ```
+{% endtab %}
+{% endtabs %}
 
 2. **Build `layerd` with the command:**
 
@@ -53,15 +56,21 @@ go build ./cmd/layerd
 ```
 
 3. **Configure system variables with RPC url and contract address for the bridge.**\
-   Using your favorite text editor, upen up your `.bashrc` or `.zshrc` file:
+   Using your favorite text editor, upen up your `.bashrc` or `.zshrc` file.
 
-```sh
-# if linux
+{% tabs %}
+{% tab title="Linux" %}
+```
 nano ~/.bashrc
+```
+{% endtab %}
 
-#if mac
+{% tab title="MacOS" %}
+```
 nano ~/.zshrc
 ```
+{% endtab %}
+{% endtabs %}
 
 Add these lines to the bottom of the file. Be sure to replace the example URL with your Sepolia testnet RPC url:
 
@@ -81,42 +90,45 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 ```
 {% endcode %}
 
-6.  **Create and Run the configure\_layer script**\
-    We need to change the config files a bit using one of the provided `configure_layer_nix.sh` or `configure_layer_mac.sh` scripts from the layerdocs repo.
+5. **Configure layer for the layertest-2 test network. This is done using a shell script.**&#x20;
 
-    **If on linux:**
+{% tabs %}
+{% tab title="Linux" %}
+* Create the script file for setting up on linux. We'll use nano in this example:
 
-    * create the script file locally:
+```sh
+nano configure_layer_nix.sh
+```
 
-    ```sh
-    nano configure_layer_nix.sh # or configure_layer_mac.sh if mac
-    ```
+* Open a browser, navigate to the layer repo, and grab [the latest setup script](https://github.com/tellor-io/layer/tree/main/layer_scripts). Or copy it from [here](https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_linux.sh).
+* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
-    * Navigate [here](https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_linux.sh), select all and copy the code to your clipboard.&#x20;
-    * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
 
-    **If on Mac:**
+```sh
+chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh
+```
+{% endtab %}
 
-    * create the script file locally:
+{% tab title="MacOS" %}
+* Create the script file for setting up on mac. We'll use nano in this example:
 
-    ```sh
-    nano configure_layer_mac.sh # or configure_layer_mac.sh if mac
-    ```
+```sh
+nano configure_layer_mac.sh
+```
 
-    * Navigate [here](https://github.com/tellor-io/layer/blob/main/layer_scripts/configure_layer_mac.sh), select all and copy the code to your clipboard.
-    * Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
+* Open a browser, navigate to the layer repo, and grab [the latest setup script](https://github.com/tellor-io/layer/tree/main/layer_scripts). Or copy it from [here](https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_mac.sh).
+* Paste the code, then exit nano with `ctrl^x` then enter `y` to save the changes.
 
-    Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
+Give your new script permission to execute and run it to replace the default configs with proper layer chain configs:
 
-    ```sh
-    # if linux
-    chmod +x configure_layer_nix.sh && ./configure_layer_nix.sh
+```sh
+chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh 
+```
+{% endtab %}
+{% endtabs %}
 
-    # if mac
-    chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh 
-    ```
-
-    You're now ready to start your node with default sync settings.
+You're now ready to start syncing your node.
 
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
 
@@ -142,7 +154,7 @@ You should now see your log quickly downloading blocks!
 When the chain stops and promts for version v2.0.0-audit, kill your layer process and update your binary in the layer folder:
 
 ```bash
-# upgrade to version v2.0.0-audit
+# upgrade to version v2.0.0-audit (hotfix commit)
 git checkout 634c27667b504beead473321a964aab866866fe3 \
 go build ./cmd/layerd
 ```
@@ -152,7 +164,7 @@ The start your layer process up again with `./layerd start`
 Let it sync up to the next upgrade, then do the same for version `v2.0.1-fix`:
 
 ```bash
-# upgrade to version v2.0.0-audit
+# upgrade to version v2.0.1-fix
 git checkout main \
 git pull \
 git checkout v2.0.1-fix \

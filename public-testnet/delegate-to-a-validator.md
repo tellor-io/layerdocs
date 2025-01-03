@@ -13,4 +13,4 @@ Follow these steps to delegate your tokens on the test chain. We will use a remo
 ```
 {% endcode %}
 
-_Be sure to customize the "_tellorvaloper" prefix _address of the person you want to delegate to, the amount that you want to deligate. The loya amount has 6 decimals (e.g._ 10000000loya = 10 TRB)
+_Be sure to customize the "_&#x74;ellorvaloper" prefix _address of the person you want to delegate to, the amount that you want to deligate. The loya amount has 6 decimals (e.g._ 10000000loya = 10 TRB)

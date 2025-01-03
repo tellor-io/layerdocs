@@ -2,7 +2,7 @@
 
 _Once you’re successfully running a validator, running Tellor's custom reporter module is easy!_&#x20;
 
-_**This section assumes that you have a**_ [_**node**_](run-layer/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_ \
+_**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_ \
 
 
 Anyone using layer may choose to "select" reporting power to a reporter similarly to how they may "delegate" to a validator. The reporter gets commission. \
