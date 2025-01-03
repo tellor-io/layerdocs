@@ -4,34 +4,44 @@ description: How to set up a Tellor Layer Node.
 
 # Node Setup
 
-### Pre-requisites
-
-* **A** local or cloud **computer** running linux, or macOS. (If on windows, use WSL.)
-* **Golang** (install latest version [here](https://go.dev/doc/install))
-* **jq (**`sudo apt install jq` on linux, or `brew install jq` on mac)
-* **yq** (`sudo apt install yq` on linux, or `brew install yq` on mac)
-* **sed** (`sudo apt install sed` on linux, or `brew install sed` on mac)
+{% hint style="info" %}
+<mark style="color:blue;">Note:</mark> Steps may have multiple options. Be sure to choose the tab that matches your machine / desired setup.
+{% endhint %}
 
 ### Recommended Machine Specs
 
-**If running a node for personal RPC (developer):**
-
-* modern cpu with at least 4 cores
-* ram: 16 gb&#x20;
-* storage: 500gb+ (solid state)
+Running a node for development or as a personal RPC can be done using any modern pc with at least 16gb ram.
 
 **If running a validator / reporter:**
 
-* modern cpu with at least 8 cores / threads
+* Modern cpu with at least 8 cores / threads
 * ram: 32 gb
 * storage: 500gb+ @ nvme gen3
 * network: 500mb/s DL, 100mb/s UL (the faster the better)&#x20;
 
-### Build and Configure layerd
+### Pre-requisites
 
-{% hint style="info" %}
-<mark style="color:blue;">Note:</mark> Steps have multiple options. Be sure to choose the tab that matches your machine / desired setup.
-{% endhint %}
+{% tabs %}
+{% tab title="Linux" %}
+Golang is required for running layer. jq, yq, and sed are required for running the various config scripts:&#x20;
+
+* **Golang** (install latest version [here](https://go.dev/doc/install))
+* **jq :** `sudo apt install jq`
+* **yq :** `sudo apt install yq`
+* **sed :** `sudo apt install sed`
+{% endtab %}
+
+{% tab title="MacOS" %}
+Golang is required for running layer. jq, yq, and sed are required for running the various config scripts:&#x20;
+
+* **Golang** (install latest version [here](https://go.dev/doc/install))
+* **jq:** `brew install jq`
+* **yq:** `brew install yq`
+* **sed:** `brew install sed`
+{% endtab %}
+{% endtabs %}
+
+### Build and Configure layerd
 
 1. **Clone the Layer repo, change directory to `layer`**
 
@@ -72,7 +82,7 @@ nano ~/.zshrc
 {% endtab %}
 {% endtabs %}
 
-Add these lines to the bottom of the file. Be sure to replace the example URL with your Sepolia testnet RPC url:
+Add these lines to the bottom of the file. Be sure to replace the example URL with your Sepolia testnet RPC url. (If you're using systemd, be sure to make them part of your start script or .service file):
 
 ```bash
 # layer
@@ -151,7 +161,7 @@ You should now see your log quickly downloading blocks!
 
 7. perform upgrades:
 
-When the chain stops and promts for version v2.0.0-audit, kill your layer process and update your binary in the layer folder:
+When syncing the chain from genesis, changing binaries is required. When the chain stops and waits for version v2.0.0-audit, kill your layer process and update your binary in the layer folder:
 
 ```bash
 # upgrade to version v2.0.0-audit (hotfix commit)
