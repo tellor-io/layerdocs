@@ -144,7 +144,7 @@ You're now ready to start syncing your node.
 
 There are two basic ways to sync your node. Choose your adventure:
 
-* genesis sync ([see steps here](genesis-sync-no-cosmovisor.md))
+* **genesis sync (**[**see steps here**](genesis-sync-no-cosmovisor.md)**)**
 * **snapshot sync (**[**see steps here**](./#snapshot-sync)**)**
 
 _Note: genesis sync steps are not needed and are not compatible with a snapshot sync. likewise, the snapshot sync steps are not compatible with a genesis sync._&#x20;
