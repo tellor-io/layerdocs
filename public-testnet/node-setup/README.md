@@ -140,54 +140,13 @@ chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
 
 You're now ready to start syncing your node.
 
-## Start Syncing your Node
+## Choose How you will Sync your Node
 
-_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
+There are two basic ways to sync your node. Choose your adventure:
 
-{% hint style="info" %}
-_**If you want to do a state sync, Go**_ [_**here**_](state-sync.md) _**and do additional**_ [_**State Sync Setup Steps.**_](state-sync.md)
-{% endhint %}
+* genesis sync ([see steps here](genesis-sync-no-cosmovisor.md))
+* **snapshot sync (**[**see steps here**](./#snapshot-sync)**)**
 
-{% hint style="info" %}
-If you want to do a genesis sync, continue with the steps below:
-{% endhint %}
+_Note: genesis sync steps are not needed and are not compatible with a snapshot sync. likewise, the snapshot sync steps are not compatible with a genesis sync._&#x20;
 
-6. Start your layer node:
-
-```bash
-./layerd start
-```
-
-You should now see your log quickly downloading blocks!
-
-7. perform upgrades:
-
-When syncing the chain from genesis, changing binaries is required. When the chain stops and waits for version v2.0.0-audit, kill your layer process and update your binary in the layer folder:
-
-```bash
-# upgrade to version v2.0.0-audit (hotfix commit)
-git checkout 634c27667b504beead473321a964aab866866fe3 \
-go build ./cmd/layerd
-```
-
-The start your layer process up again with `./layerd start`
-
-Let it sync up to the next upgrade, then do the same for version `v2.0.1-fix`:
-
-```bash
-# upgrade to version v2.0.1-fix
-git checkout main \
-git pull \
-git checkout v2.0.1-fix \
-go build ./cmd/layerd
-```
-
-The start your layer process up again with `./layerd start`
-
-7. Check if you're fully synced. Open another terminal window and use the command:
-
-```bash
-./layerd status
-```
-
-You should see a json formated list of information about your running node. If you see `catching_up":false}` that means that you're node is fully synced and ready to use!
+Additionally cosmovisor can be used to help make upgrades automatic. An example of a [cosmovisor setup can be found here.](cosmovisor-sync.md)
