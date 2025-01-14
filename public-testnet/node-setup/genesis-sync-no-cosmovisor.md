@@ -28,12 +28,11 @@ When syncing the chain from genesis, changing binaries at each upgrade height is
 ./layerd query block | grep -A 5 "app_hash"
 ```
 
-_**Stop your layer node then checkout git commit #634c27667b504beead473321a964aab866866fe3 for building v2.0.0-audit:**_
+_**Stop your layer node then checkout git commit #**_&#x39;129e1463c3b8e4a04e8797fb36a3b0ffb6ec23c _**for building v2.0.0-audit:**_
 
 ```sh
-git checkout main \
-git pull \
-git checkout 634c27667b504beead473321a964aab866866fe3 \
+git checkout main && git pull \
+git checkout 9129e1463c3b8e4a04e8797fb36a3b0ffb6ec23c \
 go build ./cmd/layerd
 ```
 
