@@ -4,6 +4,12 @@ description: Sync an archive node with the entire chain state.
 
 # Genesis Sync (no cosmovisor)
 
+
+
+{% hint style="warning" %}
+_**Genesis Sync requires at least 32gb system memory (RAM) for handling the migration included with the update to \`v2.0.1-fix\`**_
+{% endhint %}
+
 {% hint style="info" %}
 <mark style="color:blue;">Note:</mark> Steps may have multiple options. Be sure to choose the tab that matches your machine / desired setup.
 {% endhint %}
@@ -22,7 +28,7 @@ When syncing the chain from genesis, changing binaries at each upgrade height is
 
 ## Applying Upgrade **`v2.0.0-audit`**&#x20;
 
-**Let the node sync until it reaches height: "745000". Height can be checked by viewing the logs, or use the command:**
+**Let the node sync until it reaches height: "744999" (or wait for node to stop on it's own at this height). Height can be checked by viewing the logs, or use the command:**
 
 ```sh
 ./layerd query block | grep -A 5 "app_hash"
@@ -31,8 +37,8 @@ When syncing the chain from genesis, changing binaries at each upgrade height is
 _**Stop your layer node then checkout git commit #**_&#x39;129e1463c3b8e4a04e8797fb36a3b0ffb6ec23c _**for building v2.0.0-audit:**_
 
 ```sh
-git checkout main && git pull \
-git checkout 9129e1463c3b8e4a04e8797fb36a3b0ffb6ec23c \
+git checkout main && git pull && \
+git checkout 9129e1463c3b8e4a04e8797fb36a3b0ffb6ec23c && \
 go build ./cmd/layerd
 ```
 
@@ -40,15 +46,15 @@ When the build finishes, start your node back up with `./layerd start`
 
 ## Applying Upgrade **`v2.0.1`**
 
-**Let the node sync until it reaches height: "`931105`".**
+**Let the node sync until it reaches height: "`931104`" (or wait for node to stop at this height)**
 
 _**Stop your layer node then checkout the tag v2.0.1-fix:**_
 
 ```bash
 # upgrade to version v2.0.0-audit (hotfix commit)
-git checkout main \
-git pull \
-git checkout v2.0.1-fix \
+git checkout main && \
+git pull && \
+git checkout v2.0.1-fix && \
 go build ./cmd/layerd
 ```
 
