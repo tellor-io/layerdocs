@@ -1,4 +1,4 @@
-# State Sync Setup (optional)
+# State Sync
 
 _Tip: If you have already started syncing and you want to start over with a state sync, you will need to delete all of the .db folders and the snapshots folder from \~/.layer/data folder:_
 
@@ -9,8 +9,8 @@ rm -rf ~/.layer/data/application.db; \
 rm -rf ~/.layer/data/blockstore.db; \
 rm -rf ~/.layer/data/cs.wal; \
 rm -rf ~/.layer/data/evidence.db; \
-rm -rf ~/.layer/data/snapshots \
-rm -rf ~/.layer/data/state.db \
+rm -rf ~/.layer/data/snapshots; \
+rm -rf ~/.layer/data/state.db; \
 rm -rf ~/.layer/data/tx_index.db
 ```
 
