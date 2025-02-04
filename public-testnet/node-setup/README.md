@@ -92,6 +92,8 @@ Add these lines to the bottom of the file. Be sure to replace the example URL wi
 # layer
 export ETH_RPC_URL='https://any_good_sepolia_rpc_url'
 export TOKEN_BRIDGE_CONTRACT="0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
+export WITHDRAW_FREQUENCY="21600"
+export REPORTERS_VALIDATOR_ADDRESS="tellor1t6llaazgletpqal2l37emag8x2z053mvxlzskq"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
