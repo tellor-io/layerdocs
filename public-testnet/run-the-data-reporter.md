@@ -2,12 +2,16 @@
 
 _Once you’re successfully running a validator, running Tellor's custom reporter module is easy!_&#x20;
 
-_**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_ \
+_**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
 
+1. Add these lines to the bottom of your .bashrc, .zshrc, and anywhere where your system is setting environment variables for layer so that they are automatically loaded in new environments. Replace the example REPORTERS\_VALIDATOR\_ADDRESS with your own address:
 
-Anyone using layer may choose to "select" reporting power to a reporter similarly to how they may "delegate" to a validator. The reporter gets commission. \
-\
-The create-reporter command requires that you specify your commission rate and the minimum amount of tokens that others may use when selecting you.&#x20;
+```sh
+export WITHDRAW_FREQUENCY="21600"
+export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
+```
+
+2. Sign the `create-reporter` command. Create-reporter requires that you specify your commission rate and the minimum amount of tokens that others may use when selecting you.&#x20;
 
 * A `commision`rate of `200000` means that you get 2% of rewards from your selectors.
 * A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.\
@@ -21,7 +25,7 @@ The create-reporter command requires that you specify your commission rate and t
 ```
 {% endcode %}
 
-Check if your reporter was created successfully:
+3. Check if your reporter was created successfully:
 
 ```sh
 ./layerd query reporter reporters | grep $TELLOR_ADDRESS
