@@ -5,7 +5,7 @@ description: How to set up a Tellor Layer Node.
 # Node Setup
 
 {% hint style="info" %}
-<mark style="color:blue;">Note:</mark> Steps may have multiple options. Be sure to choose the tab that matches your machine / desired setup.
+<mark style="color:blue;">Notes:</mark> Steps may have multiple options. Be sure to choose the tab that matches your machine / desired setup.
 {% endhint %}
 
 ### Recommended Machine Specs
@@ -20,6 +20,10 @@ Running a node for development or as a personal RPC can be done using any modern
 * network: 500mb/s DL, 100mb/s UL (the faster the better)&#x20;
 
 ### Pre-requisites
+
+{% hint style="info" %}
+Commands shown should be used while logged in as a user (not root).
+{% endhint %}
 
 {% tabs %}
 {% tab title="Linux" %}
@@ -48,7 +52,7 @@ Golang is required for running layer. jq, yq, and sed are required for running t
 {% tabs %}
 {% tab title="syncing from Genesis" %}
 ```sh
-git clone https://github.com/tellor-io/layer -b v2.0.0-alpha1 && cd layer
+git clone https://github.com/tellor-io/layer -b v3.0.1 && cd layer
 ```
 {% endtab %}
 
@@ -87,7 +91,7 @@ Add these lines to the bottom of the file. Be sure to replace the example URL wi
 ```bash
 # layer
 export ETH_RPC_URL='https://any_good_sepolia_rpc_url'
-export TOKEN_BRIDGE_CONTRACT="0xFC1C57F1E466605e3Dd40840bC3e7DdAa400528c"
+export TOKEN_BRIDGE_CONTRACT="0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
