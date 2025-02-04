@@ -24,7 +24,7 @@ _**When syncing from genesis, simply start your layer node with the command:**_
 
 You should now see your log quickly downloading blocks!
 
-When syncing the chain from genesis, changing binaries at each upgrade height is required. The upgrades for the current layertest-2 chain are as follows:
+When syncing the chain from genesis, changing binaries at each upgrade height is required. The upgrades for the current layertest-3 chain are as follows:
 
 ## Applying Upgrade **`v2.0.0-audit`**&#x20;
 

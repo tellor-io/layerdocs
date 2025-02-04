@@ -17,7 +17,7 @@ The create-reporter command requires that you specify your commission rate and t
 {% code overflow="wrap" %}
 ```bash
 # layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
-./layerd tx reporter create-reporter "200000" "1000000" --from $ACCOUNT_NAME --chain-id layertest-2 --fees 10loya --yes
+./layerd tx reporter create-reporter "200000" "1000000" --from $ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
 ```
 {% endcode %}
 

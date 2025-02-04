@@ -100,11 +100,11 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 {% code fullWidth="false" %}
 ```sh
-./layerd init layer --chain-id layertest-2
+./layerd init layer --chain-id layertest-3
 ```
 {% endcode %}
 
-5. **Configure layer for the layertest-2 test network. This is done using a shell script.**&#x20;
+5. **Configure layer for the layertest-3 test network. This is done using a shell script.**&#x20;
 
 {% tabs %}
 {% tab title="Linux" %}

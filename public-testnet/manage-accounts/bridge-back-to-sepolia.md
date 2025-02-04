@@ -42,7 +42,7 @@ This will print information about the report. Copy the timestamp for the next st
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-2 --fees 50loya --yes
+./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-3 --fees 50loya --yes
 ```
 {% endcode %}
 
