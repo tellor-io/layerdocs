@@ -1,4 +1,8 @@
-# Cosmovisor Sync
+---
+hidden: true
+---
+
+# Copy of Cosmovisor Sync
 
 ## Prerequisites:
 
@@ -33,18 +37,26 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Gather binaries.
+4. Gather binaries. You can clone the repo and create a build at each tag, or download them from the repo. For each release, select the binary that matches your OS / cpu architecture. (e.g. "Darwin\_arm64" for macOS,"Linux\_x86\_x64" for most cloud machines...)&#x20;
 
-
-
-{% hint style="info" %}
-At the time of writing there are no upgrade binaries. Use v3.0.1.
-{% endhint %}
+We will save them to a folder called binaries, but you can keep them anywhere you like. Download each binary to it's own folder. (**This command is just an example, so be sure that you know which binaries to get before you start! If you're not sure, ask in our discord)**:
 
 {% code overflow="wrap" %}
 ```sh
-# genesis version v3.0.1
+# genesis version v2.0.0-alpha1
 mkdir ~/binaries && cd ~/binaries && mkdir v2.0.0-alpha1 && cd v2.0.0-alpha1 && wget https://github.com/tellor-io/layer/releases/download/v0.2.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# commit hash 634c27667b504beead473321a964aab866866fe3
+cd ~/binaries \
+mkdir 634c27667b504beead473321a964aab866866fe3 \
+cd 634c27667b504beead473321a964aab866866fe3 \
+git clone https://github.com/tellor-io/layer \
+git checkout 634c27667b504beead473321a964aab866866fe3 \
+go build ./cmd/layerd \
+mv layerd ~/binaries/634c27667b504beead473321a964aab866866fe3/layerd
+
+# v2.0.1-fix
+cd ~/binaries && mkdir v2.0.1-fix && cd v2.0.1-fix && wget https://github.com/tellor-io/layer/releases/download/v2.0.1-fix/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ...
 ```
 {% endcode %}
@@ -55,7 +67,9 @@ To check that these downloaded and extracted correctly: `ls ~/binaries`
 
 ```shell
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/locaion/of/upgrade/binary
+./cosmovisor init ~/binaries/v2.0.0-alpha1/layerd
+./cosmovisor add-upgrade v0.3.0 ~/binaries/634c27667b504beead473321a964aab866866fe3/layerd
+./cosmovisor add-upgrade v0.3.0 ~/binaries/v2.0.1-fix/layerd
 # ...
 ```
 

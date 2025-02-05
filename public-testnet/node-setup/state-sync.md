@@ -43,7 +43,7 @@ Scroll or search the document and edit the variables as shown here:
 # [statesync]
 enable = true
 #...
-rpc_servers = "http://tellorlayer.com:26657,http://tellorlayer.com:26657"
+rpc_servers = "https://rpc.layer-node.com,https://rpc.layer-node.com"
 trust_height = 137949
 trust_hash = "F23E2ACAFF92FFEDE14CC9949A60F50E7C6D5A2D40BC9C838DF523944063294D"
 trust_period = "168h0m0s"

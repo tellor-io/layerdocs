@@ -6,6 +6,7 @@
     * [Genesis Sync (no cosmovisor)](public-testnet/node-setup/genesis-sync-no-cosmovisor.md)
     * [State Sync](public-testnet/node-setup/state-sync.md)
     * [Cosmovisor Sync](public-testnet/node-setup/cosmovisor-sync.md)
+    * [Copy of Cosmovisor Sync](public-testnet/node-setup/cosmovisor-sync-1.md)
   * [Manage Accounts](public-testnet/manage-accounts/README.md)
     * [Bridge TRBP from Sepolia](public-testnet/manage-accounts/bridge-trbp-from-sepolia.md)
     * [Bridge back to Sepolia](public-testnet/manage-accounts/bridge-back-to-sepolia.md)
