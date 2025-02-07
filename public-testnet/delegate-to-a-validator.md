@@ -9,7 +9,7 @@ Follow these steps to delegate your tokens on the test chain. We will use a remo
 {% code overflow="wrap" %}
 ```sh
 # e.g. for delegate to tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6
-./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6 123000000loya --from $ACCOUNT_NAME --fees 5loya --chain-id layertest-3
+./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6 123000000loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-3
 ```
 {% endcode %}
 

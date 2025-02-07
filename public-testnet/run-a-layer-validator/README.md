@@ -13,19 +13,10 @@ See our [instructions on getting testnet TRB for help.](../manage-accounts/bridg
 
 _**You will need a fully synced node to use as your validator. If you don't have one, start**_ [_**here**_](../node-setup/)_**.**_
 
-{% hint style="info" %}
-Replace $ACCOUNT\_NAME with whatever name you chose for your account.&#x20;
-
--Or-
-
-Set the name of your account as a system variable:\
-`export ACCOUNT_NAME="example-name"`
-{% endhint %}
-
 1. **Open up a new terminal window on your node machine and check if your address has funds:**
 
 ```bash
-./layerd query bank balance $ACCOUNT_NAME loya
+./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 
 This outputs something like:
@@ -36,7 +27,9 @@ balance:
   denom: loya
 ```
 
-If you need testnet TRB, see the [Getting Testnet TRB](../manage-accounts/bridge-trbp-from-sepolia.md) section!
+{% hint style="info" %}
+If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../manage-accounts/bridge-trbp-from-sepolia.md) with a 12 hour delay.
+{% endhint %}
 
 3. **Retrieve Your Validator Public Key**\
    With your `layer` folder as the active directory, use the command:
@@ -97,14 +90,14 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from $ACCOUNT_NAME --fees 5loya --yes
+./layerd tx staking create-validator ./validator.json --from YOUR_ACCOUNT_NAME --fees 5loya --yes
 ```
 {% endcode %}
 
 6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
 
 ```sh
-./layerd start --key-name $ACCOUNT_NAME
+./layerd start --key-name YOUR_ACCOUNT_NAME
 ```
 
 You should see the log quickly catch up. Are you a validator now?
@@ -114,7 +107,7 @@ You should see the log quickly catch up. Are you a validator now?
 
 {% code overflow="wrap" %}
 ```bash
-./layerd query staking validator $ACCOUNT_NAME
+./layerd query staking validator YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
 

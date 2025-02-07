@@ -7,7 +7,7 @@ Follow these steps to select a reporter to increase their reporting power and re
 {% code overflow="wrap" %}
 ```sh
 # if selecting tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q
-./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q --from $ACCOUNT_NAME --chain-id layertest-3 --fees 5loya --node=http://layer-node.com:26758
+./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 5loya --node=http://layer-node.com:26758
 ```
 {% endcode %}
 

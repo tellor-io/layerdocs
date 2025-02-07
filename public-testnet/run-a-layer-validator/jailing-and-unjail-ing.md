@@ -10,6 +10,6 @@ Make sure your terminal window (shell) has all the variables loaded before tryin
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx slashing unjail --from $ACCOUNT_NAME --fees 5loya --yes
+./layerd tx slashing unjail --from YOUR_ACCOUNT_NAME --fees 5loya --yes
 ```
 {% endcode %}

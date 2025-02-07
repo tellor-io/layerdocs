@@ -1,10 +1,8 @@
 # Run the Data Reporter
 
-_Once you’re successfully running a validator, running Tellor's custom reporter module is easy!_&#x20;
-
 _**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
 
-1. Add these lines to the bottom of your .bashrc, .zshrc, and anywhere where your system is setting environment variables for layer so that they are automatically loaded in new environments. Replace the example REPORTERS\_VALIDATOR\_ADDRESS with your own address:
+1. Add these lines to the bottom of your .bashrc / .zshrc so that they are automatically loaded in new environments. (If you have a more advanced setup, add them to your start script or .service file) Replace the example REPORTERS\_VALIDATOR\_ADDRESS with your own 'telorvaloper' prefix address:
 
 ```sh
 export WITHDRAW_FREQUENCY="21600"
@@ -21,14 +19,14 @@ export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 {% code overflow="wrap" %}
 ```bash
 # layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
-./layerd tx reporter create-reporter "200000" "1000000" --from $ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
+./layerd tx reporter create-reporter "200000" "1000000" --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
 ```
 {% endcode %}
 
 3. Check if your reporter was created successfully:
 
 ```sh
-./layerd query reporter reporters | grep $TELLOR_ADDRESS
+./layerd query reporter reporters | grep YOUR_TELLOR_ADDRESS
 ```
 
 If you see your address in the list, your reporter was created successfully.
@@ -37,14 +35,14 @@ Restart your node again, adding flags for turning on the integrated price daemon
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME --home ~/.layer
+./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME --home ~/.layer
 ```
 {% endcode %}
 
 To see your report transactions, query the oracle module with the command:
 
 ```sh
-./layerd query oracle get-reportsby-reporter $TELLOR_ADDRESS
+./layerd query oracle get-reportsby-reporter YOUR_TELLOR_ADDRESS
 ```
 
 If you see a list of reports, congratulations! You're now a tellor reporter.&#x20;
