@@ -1,3 +1,7 @@
+---
+description: If you would like to use cosmovisor...
+---
+
 # Cosmovisor Sync
 
 ## Prerequisites:
@@ -33,36 +37,18 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Gather binaries.
-
-
-
-{% hint style="info" %}
-At the time of writing there are no upgrade binaries. Use v3.0.1.
-{% endhint %}
-
-{% code overflow="wrap" %}
-```sh
-# genesis version v3.0.1
-mkdir ~/binaries && cd ~/binaries && mkdir v2.0.0-alpha1 && cd v2.0.0-alpha1 && wget https://github.com/tellor-io/layer/releases/download/v0.2.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-...
-```
-{% endcode %}
-
-To check that these downloaded and extracted correctly: `ls ~/binaries`
-
-5. Once you have all of the binaries downloaded, initialize Cosmovisor and add all the upgrades. Change the file paths in the command to match the path to each binary exactly:
+4. Once you have all of the binaries downloaded, initialize Cosmovisor and add all the upgrades. Change the file paths in the command to match the path to each binary exactly:
 
 ```shell
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/locaion/of/upgrade/binary
-# ...
+./cosmovisor init ~/layer/binaries/v3.0.1/layerd
+./cosmovisor add-upgrade ~/layer/binaries/v3.0.2/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
 
 {% code overflow="wrap" %}
 ```sh
-cosmovisor run start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
+./cosmovisor run start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name $ACCOUNT_NAME
 ```
 {% endcode %}

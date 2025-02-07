@@ -1,7 +1,8 @@
 ---
 description: >-
-  Follow the steps to practice bridging Tellor "playground"  TRB (TRBP) from
-  Sepolia testnet:
+  A polished front-end for bridging is still under construction. Follow the
+  steps here to manually bridge Tellor "playground"  TRB (TRBP) from Sepolia
+  testnet:
 ---
 
 # Bridge TRBP from Sepolia
