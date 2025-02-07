@@ -4,7 +4,7 @@ description: >-
   from the bridge (or the faucet) for transacting on layer.
 ---
 
-# Create an Account
+# Manage Accounts
 
 {% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
@@ -31,7 +31,7 @@ If you already have an account, you may Import it with the command:
 ```
 {% endcode %}
 
-8. **Export your addresses.** (optional but recommended for less experienced users) Your wallet account has two important addresses. First, get the "tellor" prefix address, which is used to send and receive tokens. Copy it and keep it in a safe place:
+**Export your addresses.** (optional but recommended for less experienced users) Your wallet account has two important addresses. First, get the "tellor" prefix address, which is used to send and receive tokens. Copy it and keep it in a safe place:
 
 ```bash
 ./layerd keys show $ACCOUNT_NAME
