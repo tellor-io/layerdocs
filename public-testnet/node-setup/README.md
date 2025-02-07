@@ -60,7 +60,7 @@ There are Two different ways to get a node running on **layertest-3**. You can s
 
 {% tabs %}
 {% tab title="Snapshot Sync" %}
-**First, download the binary from the** [**Tellor Github**](https://github.com/tellor-io/layer/tags)**.**
+First, download the binary from the [Tellor Github](https://github.com/tellor-io/layer/tags).
 
 {% tabs %}
 {% tab title="Linux" %}
@@ -76,7 +76,7 @@ There are Two different ways to get a node running on **layertest-3**. You can s
 {% endtab %}
 {% endtabs %}
 
-**Initialize .layer folder in your home directory:**
+Initialize .layer folder in your home directory:
 
 ```sh
 ./layerd init layer --chain-id layertest-3
@@ -84,7 +84,7 @@ There are Two different ways to get a node running on **layertest-3**. You can s
 {% endtab %}
 
 {% tab title="Genesis sync" %}
-**Download the binaries from the** [**Tellor Github**](https://github.com/tellor-io/layer/tags)**.**
+Download the binaries from the [Tellor Github](https://github.com/tellor-io/layer/tags).
 
 {% tabs %}
 {% tab title="Linux" %}
@@ -214,8 +214,8 @@ nano ~/.zshrc
 Add these lines to the bottom of the file. Remember to replace the example URL with your Sepolia testnet RPC url:
 
 ```bash
-Environment="ETH_RPC_URL=wss://a.good.sepolia.rpc.url"
-Environment="TOKEN_BRIDGE_CONTRACT=0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
+export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
+export TOKEN_BRIDGE_CONTRACT="0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
 ```
 
 To load the variables into any open shell (terminal window):
@@ -244,11 +244,9 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 
 {% tabs %}
 {% tab title="State Sync" %}
-We need to make a few more config edits to make sure your state sync goes smoothly.&#x20;
+**We need to make a few more config edits to make sure your state sync goes smoothly.**&#x20;
 
-Almost done!
-
-First, open a terminal. You can use curl to find a good `TRUSTED_HEIGHT` to use for downloading snapshots:
+1. Use curl to find a good `TRUSTED_HEIGHT` to use for downloading snapshots:
 
 ```sh
 export LATEST_HEIGHT=$(curl -s tellorlayer.com:26657/block | jq -r .result.block.header.height); \
@@ -257,9 +255,9 @@ export TRUSTED_HASH=$(curl -s "tellorlayer.com:26657/block?height=$TRUSTED_HEIGH
 echo $TRUSTED_HEIGHT $TRUSTED_HASH
 ```
 
-This command should output something like: `147139 0BCE40CD31D205453DA001780CBF765F3C64FCCB9DCB2F9825872D042780A288.`
+The command should output something like: `147139 0BCE40CD31D205453DA001780CBF765F3C64FCCB9DCB2F9825872D042780A288.`
 
-2. **Edit config.toml:**
+2. Edit config.toml:
 
 Open your config file:
 
@@ -280,7 +278,7 @@ trust_hash = "F23E2ACAFF92FFEDE14CC9949A60F50E7C6D5A2D40BC9C838DF523944063294D"
 trust_period = "168h0m0s"
 ```
 
-Be sure to replace the trust\_height and trust\_hash with the block number and hash from step 1.
+Be sure to replace the `trust_height` and `trust_hash` with the block number and hash from the curl command above.
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
 
@@ -298,7 +296,7 @@ You may see errors related to peers even if the snapshot sync is working properl
 {% endtab %}
 
 {% tab title="Genesis Sync" %}
-Start your layer node with the command:
+#### Start your layer node with the command:
 
 ```bash
 ./layerd start --key-name YOUR_ACCOUNT_NAME
@@ -306,7 +304,7 @@ Start your layer node with the command:
 
 You should now see your log quickly downloading blocks!
 
-### Upgrade the `layerd` Binary to v3.0.2
+#### Upgrade the `layerd` Binary to v3.0.2
 
 Your node will stop syncing at block 156999. When this happens, you will need to kill the layerd process (ctrl^c in many cases) and start it back up again on the `v3.0.2` binary that we downloaded [in step 1](./#id-1.-download-and-organize-the-layerd-binary-s):
 

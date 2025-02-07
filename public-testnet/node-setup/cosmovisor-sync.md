@@ -10,13 +10,13 @@ description: If you would like to use cosmovisor...
 
 ## Build and configure Cosmovisor
 
-1. **Clone the cosmos repo, change directory to** `cosmos-sdk`
+1. **Clone the** cosmos repo, change directory to `cosmos-sdk`
 
 ```sh
 git clone https://github.com/cosmos/cosmos-sdk && cd cosmos-sdk/tools/cosmovisor
 ```
 
-2. **Build cosmovisor with the command:**
+2. Build cosmovisor with the command:
 
 ```sh
 go build ./cmd/cosmovisor
