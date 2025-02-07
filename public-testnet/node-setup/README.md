@@ -287,15 +287,13 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 3. Start your node:
 
 ```bash
-./layerd start
+./layerd start --key-name YOUR_ACCOUNT_NAME
 ```
 
 The node should start up quickly and begin downloading snapshots from peers.
 
 {% hint style="info" %}
 You may see errors related to peers even if the snapshot sync is working properly.&#x20;
-
-Never give up! 💪
 {% endhint %}
 {% endtab %}
 
@@ -303,7 +301,7 @@ Never give up! 💪
 Start your layer node with the command:
 
 ```bash
-./layerd start
+./layerd start --key-name YOUR_ACCOUNT_NAME
 ```
 
 You should now see your log quickly downloading blocks!
@@ -317,7 +315,7 @@ Your node will stop syncing at block 156999. When this happens, you will need to
 cd ~/layer/binaries/v3.0.2
 
 # resume syncing
-./layerd start
+./layerd start --key-name YOUR_ACCOUNT_NAME
 ```
 {% endtab %}
 {% endtabs %}
