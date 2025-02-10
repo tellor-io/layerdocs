@@ -295,7 +295,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 The node should start up quickly and begin downloading snapshots from peers.
 
 {% hint style="info" %}
-You may see errors related to peers even if the snapshot sync is working properly.&#x20;
+Some errors related to peer connections can be expected even if the snapshot sync is working properly. (e.g. "we need more peers", or "Failed to reconnect")
 {% endhint %}
 {% endtab %}
 
