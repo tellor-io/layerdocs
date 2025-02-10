@@ -289,7 +289,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 3. Start your node:
 
 ```bash
-./layerd start --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --key-name YOUR_ACCOUNT_NAME
 ```
 
 The node should start up quickly and begin downloading snapshots from peers.
@@ -317,7 +317,7 @@ Your node will stop syncing at block 156999. When this happens, you will need to
 cd ~/layer/binaries/v3.0.2
 
 # resume syncing
-./layerd start --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --key-name YOUR_ACCOUNT_NAME
 ```
 {% endtab %}
 {% endtabs %}
