@@ -138,7 +138,7 @@ Download the latest setup script from the [layer repo](https://github.com/tellor
 
 {% code overflow="wrap" %}
 ```sh
-wget https://github.com/tellor-io/layer/blob/main/layer_scripts/configure_layer_linux.sh
+wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_linux.sh
 ```
 {% endcode %}
 
@@ -154,7 +154,7 @@ Download the latest setup script from the main layer repo.
 
 {% code overflow="wrap" %}
 ```sh
-wget https://github.com/tellor-io/layer/blob/main/layer_scripts/configure_layer_mac.sh
+wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/layer_scripts/configure_layer_mac.sh
 ```
 {% endcode %}
 
