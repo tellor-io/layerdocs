@@ -44,7 +44,7 @@ We will save them to a folder called binaries, but you can keep them anywhere yo
 {% code overflow="wrap" %}
 ```sh
 # genesis version v2.0.0-alpha1
-mkdir ~/binaries && cd ~/binaries && mkdir v2.0.0-alpha1 && cd v2.0.0-alpha1 && wget https://github.com/tellor-io/layer/releases/download/v0.2.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v2.0.0-alpha1 && cd v2.0.0-alpha1 && wget https://github.com/tellor-io/layer/releases/download/v0.2.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # commit hash 634c27667b504beead473321a964aab866866fe3
 cd ~/binaries \
