@@ -19,7 +19,7 @@ export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 {% code overflow="wrap" %}
 ```bash
 # layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
-./layerd tx reporter create-reporter "200000" "1000000" --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.25 1000000 --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
 ```
 {% endcode %}
 
