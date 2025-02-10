@@ -227,13 +227,13 @@ To load the variables into any open shell (terminal window):
 {% tabs %}
 {% tab title="Linux" %}
 ```
-source .bashrc
+source ~/.bashrc
 ```
 {% endtab %}
 
 {% tab title="MacOS" %}
 ```
-source .zshrc
+source ~/.zshrc
 ```
 {% endtab %}
 {% endtabs %}
