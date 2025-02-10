@@ -78,6 +78,8 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 Initialize .layer folder in your home directory:
 
+Note: don't forget to rename or remove any old installations (`rm -rf ~/.layer`)
+
 ```sh
 ./layerd init layer --chain-id layertest-3
 ```
