@@ -97,7 +97,7 @@ Edit or add the following code:
 6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
 
 ```sh
-./layerd start --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --key-name YOUR_ACCOUNT_NAME
 ```
 
 You should see the log quickly catch up. Are you a validator now?
