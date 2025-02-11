@@ -303,7 +303,7 @@ Some errors related to peer connections can be expected even if the snapshot syn
 #### Start your layer node with the command:
 
 ```bash
-./layerd start --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --key-name YOUR_ACCOUNT_NAME
 ```
 
 You should now see your log quickly downloading blocks!
