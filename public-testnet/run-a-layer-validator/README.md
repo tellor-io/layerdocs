@@ -90,7 +90,7 @@ Edit or add the following code:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from YOUR_ACCOUNT_NAME --fees 5loya --yes
+./layerd tx staking create-validator ./validator.json --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-3 --yes
 ```
 {% endcode %}
 
