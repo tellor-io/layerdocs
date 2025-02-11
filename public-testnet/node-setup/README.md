@@ -64,14 +64,14 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.3
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.3 &#x26;&#x26; cd v3.0.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.3 (upgrade tag v3.0.2)
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.2 &#x26;&#x26; cd v3.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong># current layertest-3 binary
-</strong><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.3 &#x26;&#x26; cd v3.0.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.3 (upgrade tag v3.0.2)
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.2 &#x26;&#x26; cd v3.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}
