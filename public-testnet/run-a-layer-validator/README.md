@@ -86,18 +86,18 @@ Edit or add the following code:
 <mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
 {% endhint %}
 
-* Run the following command to create-validator:
+Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-3 --yes
+./layerd tx staking create-validator ./validator.json --chain-id layertest-3 --from YOUR_ACCOUNT_NAME --fees 5loya --yes
 ```
 {% endcode %}
 
 6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
 
 ```sh
-./layerd start --price-daemon-enabled=false --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
 ```
 
 You should see the log quickly catch up. Are you a validator now?
