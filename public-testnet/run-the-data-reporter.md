@@ -11,7 +11,7 @@ export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 
 2. Sign the `create-reporter` command. Create-reporter requires that you specify your commission rate and the minimum amount of tokens that others may use when selecting you.&#x20;
 
-* A `commision`rate of `200000` means that you get 2% of rewards from your selectors.
+* A `commision-rate` of `0.02` means that you get 2% of rewards from your selectors.
 * A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.\
   \
   Now, run the command:
