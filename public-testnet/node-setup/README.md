@@ -308,9 +308,11 @@ Some errors related to peer connections can be expected even if the snapshot syn
 
 You should now see your log quickly downloading blocks!
 
-#### Upgrade the `layerd` Binary to v3.0.2
+#### Upgrade to v3.0.2
 
-Your node will stop syncing at block 156999. When this happens, you will need to kill the layerd process (ctrl^c in many cases) and start it back up again on the `v3.0.2` binary that we downloaded [in step 1](./#id-1.-download-and-organize-the-layerd-binary-s):
+Your node will stop syncing at block `156999`. When this happens, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the `v3.0.3` binary that we downloaded  [in step 1](./#id-1.-download-and-organize-the-layerd-binary-s).\
+\
+&#xNAN;_&#x4E;ote: Use the v3.0.3 binary at the height for the v3.0.2 upgrade._
 
 ```sh
 # change directory
