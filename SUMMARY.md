@@ -6,6 +6,7 @@
     * [Cosmovisor Sync](public-testnet/node-setup/cosmovisor-sync.md)
     * [Troubleshooting](public-testnet/node-setup/state-sync.md)
     * [Copy of Cosmovisor Sync](public-testnet/node-setup/cosmovisor-sync-1.md)
+    * [Peers List](public-testnet/node-setup/peers-list.md)
   * [Manage Accounts](public-testnet/manage-accounts/README.md)
     * [Bridge TRBP from Sepolia](public-testnet/manage-accounts/bridge-trbp-from-sepolia.md)
     * [Bridge back to Sepolia](public-testnet/manage-accounts/bridge-back-to-sepolia.md)
