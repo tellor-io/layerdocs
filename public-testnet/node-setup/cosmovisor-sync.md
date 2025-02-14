@@ -49,6 +49,6 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 {% code overflow="wrap" %}
 ```sh
-./cosmovisor run start --api.enable --api.swagger --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME
+./cosmovisor run start --api.enable --api.swagger --home ~/.layer --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
