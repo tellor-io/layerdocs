@@ -111,7 +111,12 @@ You should see the log quickly catch up. Are you a validator now?
 ```
 {% endcode %}
 
-If status is `3`...awesome! \
-If status is `2`...still great!\
+If `status:`` ``3,`you are staked and validating!
+
+{% hint style="info" %}
+If `status` is `1`, It means that you are not bonded. This can happen If you accidentally made your "amount" in step 4 too small. Check that you are staking at least 1 TRB (1000000loya).\
 \
-If your status is 2, that means that somehow in the process of making your validator you got jailed. It's ok! This is what testnets are for. You can unjail with steps shown in the [next section.](../run-the-data-reporter.md)
+If `status` is `2`, It means that your validator is jailed. If this happens, check if the node process is running on your host machine.&#x20;
+{% endhint %}
+
+You can unjail with steps shown in the [next section.](../run-the-data-reporter.md)
