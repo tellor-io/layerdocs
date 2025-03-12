@@ -28,6 +28,7 @@ Golang is required for running layer. jq, yq, and sed are required for running t
 * **jq :** `sudo apt install jq`
 * **yq :** `sudo apt install yq`
 * **sed :** `sudo apt install sed`
+* **`curl`**`: sudo apt install curl`
 * **`wget`**`: sudo apt install wget`
 
 If you would like to build the binaries from source, you will need **Golang** ≥ 1.22. Use the default install instructions [here](https://go.dev/doc/install).
@@ -64,14 +65,14 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.3 (upgrade tag v3.0.2)
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.2 &#x26;&#x26; cd v3.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.4
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.4 &#x26;&#x26; cd v3.0.4 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.3 (upgrade tag v3.0.2)
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.2 &#x26;&#x26; cd v3.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.4
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.4 &#x26;&#x26; cd v3.0.4 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}
@@ -97,6 +98,9 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v3.0.1 && cd v3.0.1 &&
 
 # upgrade binary v3.0.3 (**for upgrade v3.0.2**)
 cd ~/layer/binaries && mkdir v3.0.2 && cd v3.0.2 && wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v3.0.4
+cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -109,6 +113,9 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v3.0.1 && cd v3.0.1 &&
 
 # upgrade binary v3.0.3 (**for upgrade v3.0.2**)
 cd ~/layer/binaries && mkdir v3.0.2 && cd v3.0.2 && wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+
+# upgrade binary v3.0.4
+cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -276,7 +283,7 @@ Scroll or search (ctrl^w) the file and edit the state sync variables shown here:
 enable = true
 
 #...
-rpc_servers = "https://rpc.layer-node.com,https://rpc.layer-node.com"
+rpc_servers = "https://tellor.blkjy.io/,https://tellor.blkjy.io/"
 trust_height = 147139
 trust_hash = "F23E2ACAFF92FFEDE14CC9949A60F50E7C6D5A2D40BC9C838DF523944063294D"
 trust_period = "168h0m0s"
@@ -308,19 +315,35 @@ Some errors related to peer connections can be expected even if the snapshot syn
 
 You should now see your log quickly downloading blocks!
 
-#### Upgrade to v3.0.2
+#### Upgrades
 
-Your node will stop syncing at block `156999`. When this happens, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the `v3.0.3` binary that we downloaded  [in step 1](./#id-1.-download-and-organize-the-layerd-binary-s).\
+Your node will stop syncing at block height for each binary upgrade:
+
+`156999 for upgrade v3.0.2`
+
+`1185570 for upgrade v3.0.4`
+
+&#x20;When the sync stops for an upgrade (at the heights shown above, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the corrisponding upgraded binary.\
 \
 &#xNAN;_&#x4E;ote: Use the v3.0.3 binary at the height for the v3.0.2 upgrade._
 
+{% code overflow="wrap" %}
 ```sh
+# At height 156999:
 # change directory
 cd ~/layer/binaries/v3.0.2
 
 # resume syncing
 ./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
+
+# At height 1185570:
+# change directory
+cd ~/layer/binaries/v3.0.4
+
+# resume syncing
+./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
