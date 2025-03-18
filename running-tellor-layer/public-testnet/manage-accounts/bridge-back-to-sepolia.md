@@ -55,7 +55,7 @@ This will print information about the report. Copy the timestamp for the next st
 
 Paste in your withdraw request's Query ID and Timestamp and click the "Generate Oracle Proofs Below" button. (see screenshot below)
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-07 at 1.18.41 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-07 at 1.18.41 PM (2).png" alt=""><figcaption></figcaption></figure>
 
 Keep this page open for the next step.
 

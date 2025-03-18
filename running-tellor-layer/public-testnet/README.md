@@ -1,14 +1,14 @@
 ---
 description: >-
   Tellor layer is a proof of stake network open to everyone who wants to run a
-  validator or be a reporter.
+  validator or be a reporter. This is the command line setup for running a
+  tellor layer node, validator, and/or reporter.
+icon: mug-hot
 ---
 
-# Public Testnet
+# Getting Started&#x20;
 
-## Welcome to the Public Testnet Guide
-
-This guide has three sections:
+## Welcome to the Guide
 
 {% content-ref url="node-setup/" %}
 [node-setup](node-setup/)

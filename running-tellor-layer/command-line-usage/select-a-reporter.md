@@ -1,6 +1,6 @@
-# Select a reporter
+# Select a Reporter
 
-Follow these steps to select a reporter to increase their reporting power and recieve rewards minus the reporter's commision. We will use a remote rpc so that you do not need to run a local node.
+Follow these steps to select a reporter to increase their reporting power and recieve rewards minus the reporter's commision.
 
 ### Create the select-reporter tx
 
