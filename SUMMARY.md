@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Relay Data](relay-data.md)
 
 ## Running Tellor Layer
 
@@ -22,8 +21,8 @@
   * [Creating Transactions](running-tellor-layer/command-line-usage/creating-transactions.md)
   * [Delegate to a Validator](running-tellor-layer/command-line-usage/delegate-to-a-validator.md)
   * [Select a Reporter](running-tellor-layer/command-line-usage/select-a-reporter.md)
-* [Run a Tellor Data Relayer](running-tellor-layer/run-a-tellor-data-relayer.md)
 
 ## Using Tellor Data
 
+* [Relay Data to EVM Chains](using-tellor-data/relay-data-to-evm-chains.md)
 * [Integrating Tellor Data](using-tellor-data/integrating-tellor-data.md)
