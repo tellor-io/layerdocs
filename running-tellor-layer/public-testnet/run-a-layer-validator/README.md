@@ -54,6 +54,12 @@ Create (or edit) the validator.json file:
 nano validator.json
 ```
 
+{% hint style="warning" %}
+* <mark style="color:blue;">**When creating your validator, be sure that you are not choosing an "amount" that is larger than your balance of test-net TRB.**</mark>&#x20;
+* <mark style="color:blue;">**Keep some funds available for paying gas fees if you're going to be running the data reporter.**</mark>
+* <mark style="color:blue;">**TRB has 6 decimals: 1 loya is 0.000001 TRB**</mark>
+{% endhint %}
+
 Edit or add the following code:
 
 ```json
@@ -111,7 +117,7 @@ You should see the log quickly catch up. Are you a validator now?
 ```
 {% endcode %}
 
-If `status:`` ``3,`you are staked and validating!
+If `status: 3,`you are staked and validating!
 
 {% hint style="info" %}
 If `status` is `1`, It means that you are not bonded. This can happen If you accidentally made your "amount" in step 4 too small. Check that you are staking at least 1 TRB (1000000loya).\
