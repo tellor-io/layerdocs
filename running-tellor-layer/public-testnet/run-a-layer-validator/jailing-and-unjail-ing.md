@@ -1,16 +1,16 @@
-# Jailing (and unjail-ing)
+# Slashing Rules for Validators
 
 ### Context
 
 _Tellor inherits validator slashing mechanisms from CometBFT.  A detailed understanding can be found in the_ [_cosmos SDK documentation_](https://docs.cosmos.network/main/build/modules/slashing)_._&#x20;
 
-### Slashing, Jailing, and Tombstone-ing
+### Slashing, Jailing, and Tombstoneing
 
 There are two basic reasons that a validator may be automatically slashed, jailed or tombstoned: liveness and double signing.
 
 **Liveness (inactivity):**
 
-If your validator fails sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. At the time of writing (layertest-4), it can take 15-25 minutes to produce 500 blocks. The penelty is 1% of bonded tokens. **Note**: Liveness slashes do **NOT** lead to a tombstombing.
+If your validator fails to sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. At the time of writing (layertest-4), it can take 15-25 minutes to produce 500 blocks. The penelty is 1% of bonded tokens. Liveness slashes do not lead to a tombstombing.
 
 If your node is Jailed for inactivity, you can simply "**unjail**" it via cli on the host machine:
 
