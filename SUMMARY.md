@@ -11,7 +11,7 @@
     * [Copy of Cosmovisor Sync](running-tellor-layer/public-testnet/node-setup/cosmovisor-sync-1.md)
     * [Peers List](running-tellor-layer/public-testnet/node-setup/peers-list.md)
   * [Run a Layer Validator](running-tellor-layer/public-testnet/run-a-layer-validator/README.md)
-    * [Jailing (and unjail-ing)](running-tellor-layer/public-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
+    * [Jailing](running-tellor-layer/public-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
   * [Manage Accounts](running-tellor-layer/public-testnet/manage-accounts/README.md)
     * [Bridge TRBP from Sepolia](running-tellor-layer/public-testnet/manage-accounts/bridge-trbp-from-sepolia.md)
     * [Bridge back to Sepolia](running-tellor-layer/public-testnet/manage-accounts/bridge-back-to-sepolia.md)
