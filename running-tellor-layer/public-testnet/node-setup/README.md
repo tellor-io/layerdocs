@@ -295,9 +295,11 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 3. Start your node:
 
+{% code overflow="wrap" %}
 ```bash
-./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
+./layerd start --price-daemon-enabled=false --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
+{% endcode %}
 
 The node should start up quickly and begin downloading snapshots from peers.
 
