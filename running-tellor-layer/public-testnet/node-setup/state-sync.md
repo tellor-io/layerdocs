@@ -1,5 +1,5 @@
 ---
-description: Help with a few common setup problems.
+description: Help with a few common setup problems. (more to be added in this section soon)
 ---
 
 # Troubleshooting
