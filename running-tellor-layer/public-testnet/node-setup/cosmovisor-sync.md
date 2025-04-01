@@ -41,9 +41,8 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 ```shell
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v3.0.1/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v3.0.2/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v3.0.4/layerd
+./cosmovisor init ~/layer/binaries/v4.0.0/layerd
+./cosmovisor add-upgrade ~/layer/binaries/v4.0.1/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
