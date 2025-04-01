@@ -23,7 +23,7 @@ Commands shown should be used while logged in as a user (not root).
 
 {% tabs %}
 {% tab title="Linux" %}
-Golang is required for running layer. jq, yq, and sed are required for running the various config scripts:&#x20;
+jq, yq, sed, curl, and wget are required for running the various commands and config scripts and commands in this guide:&#x20;
 
 * **jq :** `sudo apt install jq`
 * **yq :** `sudo apt install yq`
@@ -35,7 +35,7 @@ If you would like to build the binaries from source, you will need **Golang** â‰
 {% endtab %}
 
 {% tab title="MacOS" %}
-Golang is required for running layer. jq, yq, and sed are required for running the various config scripts:&#x20;
+jq, yq, sed, and wget are required for running the various commands in this guide:&#x20;
 
 * **jq:** `brew install jq`
 * **yq:** `brew install yq`
@@ -48,10 +48,10 @@ If you would like to build the binaries from source, you will need **Golang** â‰
 
 ### Choose How you will Sync your Node
 
-There are Two different ways to get a node running on **layertest-3**. You can sync from a snapshot, or from genesis. Syncing from peer snapshot works best for most people. You should sync from genesis if you want to have the full chain history for analysis.
+There are Two different ways to get a node running on **layertest-4**. You can sync from a snapshot, or from genesis. Syncing from peer snapshot works best for most people. You should sync from genesis if you want to have the full chain history for analysis.
 
-* Snapshot sync: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method should take no more than one hour to complete, but you will not be able to query chain history before the day you synced.
-* Genesis sync: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long layertest-3 has been live.
+* Snapshot sync: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method is faster, but you will not be able to query block info (like transactions) for any blocks that were produced before the day of your sync.
+* Genesis sync: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long layertest-4 has been live.
 
 ### 1. Download and Organize the `layerd` Binary(s)
 
@@ -65,25 +65,26 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.4
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.4 &#x26;&#x26; cd v3.0.4 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-4 binary v4.0.2
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.2 &#x26;&#x26; cd v4.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-3 binary v3.0.4
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v3.0.4 &#x26;&#x26; cd v3.0.4 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
-</strong></code></pre>
+{% code overflow="wrap" %}
+```sh
+# current layertest-4 binary v4.0.2
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.2 && cd v4.0.2 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
 Initialize .layer folder in your home directory:
 
 ```sh
-./layerd init layer --chain-id layertest-3
+./layerd init layer --chain-id layertest-4
 ```
-
-_Note: don't forget to rename or remove any old installations (`rm -rf ~/.layer`)_
 {% endtab %}
 
 {% tab title="Genesis sync" %}
@@ -260,13 +261,15 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 1. Use curl to find a good `TRUSTED_HEIGHT` to use for downloading snapshots:
 
 ```sh
-export LATEST_HEIGHT=$(curl -s tellorlayer.com:26657/block | jq -r .result.block.header.height); \
+export LATEST_HEIGHT=$(curl -s https://node-palmito.tellorlayer.com/rpc/block | jq -r .result.block.header.height); \
 export TRUSTED_HEIGHT=$((LATEST_HEIGHT-8000)); \ 
-export TRUSTED_HASH=$(curl -s "tellorlayer.com:26657/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
+export TRUSTED_HASH=$(curl -s "https://node-palmito.tellorlayer.com/rpc/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
 echo $TRUSTED_HEIGHT $TRUSTED_HASH
 ```
 
-The command should output something like: `147139 0BCE40CD31D205453DA001780CBF765F3C64FCCB9DCB2F9825872D042780A288.`
+The command should output something like:&#x20;
+
+`673312 AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B`
 
 2. Edit config.toml:
 
@@ -283,9 +286,9 @@ Scroll or search (ctrl^w) the file and edit the state sync variables shown here:
 enable = true
 
 #...
-rpc_servers = "https://tellor.blkjy.io/,https://tellor.blkjy.io/"
-trust_height = 147139
-trust_hash = "F23E2ACAFF92FFEDE14CC9949A60F50E7C6D5A2D40BC9C838DF523944063294D"
+rpc_servers = "https://node-palmito.tellorlayer.com/rpc/,https://node-palmito.tellorlayer.com/rpc/"
+trust_height = 673312
+trust_hash = "AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B"
 trust_period = "168h0m0s"
 ```
 
