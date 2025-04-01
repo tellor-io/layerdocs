@@ -4,12 +4,16 @@ description: >-
   from the bridge (or the faucet) for transacting on layer.
 ---
 
-# Manage Accounts
+# Managing Accounts
 
 {% hint style="info" %}
 <mark style="color:blue;">**Security Tips:**</mark> \
-1\. This guide uses the "test" backend because this is a testnet guide. Use a more secure option if you're handling real money.\
-2\. Handle mnemonics/keys with extreme care, even if it’s just a testnet address.\
+1\. This guide uses the "test" backend for easy compatibility with the reporter daemon. For information about the different (more secure) options, check out these docs.\
+2\. Always keep a secure backup of your initial configurations just in case.
+
+When you create a new account with the `layerd keys add`  command, the output will include the mnemonic key. It is important to copy this key securely because it is the only time that mnemonic will be shown otherwise!
+
+\
 3\. Never use an address that holds real funds for testing.
 {% endhint %}
 

@@ -45,7 +45,7 @@ If you would like to build the binaries from source, you will need **Golang** â‰
 {% hint style="warning" %}
 **Commands shown should be used while logged in as a user (not root).**\
 \
-**If you are using an older Mac with an intel chip, use the linux version of the binary(s) in step 1.**
+**If you are using an older Mac with an intel chip, use the linux version of the binary(s) in step 1 below.**
 {% endhint %}
 
 ### Choose How you will Sync your Node
