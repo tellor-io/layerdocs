@@ -67,16 +67,16 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># current layertest-4 binary v4.0.2
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.2 &#x26;&#x26; cd v4.0.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v4.0.1
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.1 &#x26;&#x26; cd v4.0.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# current layertest-4 binary v4.0.2
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.2 && cd v4.0.2 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# current layertest-4 binary v4.0.1
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -99,8 +99,8 @@ Download the binaries from the [Tellor Github](https://github.com/tellor-io/laye
 # genesis binary v4.0.0
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v4.0.2 (**for upgrade v4.0.1**)
-cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# upgrade binary v4.0.1
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -112,7 +112,7 @@ cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tell
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 
 # upgrade binary v4.0.2 (**for upgrade v4.0.1**)
-cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
