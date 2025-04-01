@@ -13,13 +13,9 @@ Running a node for development or as a personal RPC can be done using most moder
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
 * storage: 500gb+ @ nvme gen3
-* network: 500mb/s DL, 100mb/s UL (the faster the better)&#x20;
+* network: 500mb/s DL, 100mb/s UL (the faster the better)
 
 ### Pre-requisites
-
-{% hint style="info" %}
-Commands shown should be used while logged in as a user (not root).
-{% endhint %}
 
 {% tabs %}
 {% tab title="Linux" %}
@@ -35,7 +31,7 @@ If you would like to build the binaries from source, you will need **Golang** â‰
 {% endtab %}
 
 {% tab title="MacOS" %}
-jq, yq, sed, and wget are required for running the various commands in this guide:&#x20;
+jq, yq, sed, and wget are required for running the various commands and config scripts in this guide:&#x20;
 
 * **jq:** `brew install jq`
 * **yq:** `brew install yq`
@@ -45,6 +41,12 @@ jq, yq, sed, and wget are required for running the various commands in this guid
 If you would like to build the binaries from source, you will need **Golang** â‰¥ 1.22. Use the default install instructions [here](https://go.dev/doc/install).
 {% endtab %}
 {% endtabs %}
+
+{% hint style="warning" %}
+**Commands shown should be used while logged in as a user (not root).**\
+\
+**If you are using an older Mac with an intel chip, use the linux version of the binary(s) in step 1.**
+{% endhint %}
 
 ### Choose How you will Sync your Node
 
@@ -94,14 +96,11 @@ Download the binaries from the [Tellor Github](https://github.com/tellor-io/laye
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-# genesis binary v3.0.1
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v3.0.1 && cd v3.0.1 && wget https://github.com/tellor-io/layer/releases/download/v3.0.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# genesis binary v4.0.0
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v3.0.3 (**for upgrade v3.0.2**)
-cd ~/layer/binaries && mkdir v3.0.2 && cd v3.0.2 && wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-
-# upgrade binary v3.0.4
-cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# upgrade binary v4.0.2 (**for upgrade v4.0.1**)
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -110,13 +109,10 @@ cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tell
 {% code overflow="wrap" %}
 ```sh
 # genesis binary v3.0.1
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v3.0.1 && cd v3.0.1 && wget https://github.com/tellor-io/layer/releases/download/v3.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 
-# upgrade binary v3.0.3 (**for upgrade v3.0.2**)
-cd ~/layer/binaries && mkdir v3.0.2 && cd v3.0.2 && wget https://github.com/tellor-io/layer/releases/download/v3.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
-
-# upgrade binary v3.0.4
-cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tellor-io/layer/releases/download/v3.0.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# upgrade binary v4.0.2 (**for upgrade v4.0.1**)
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -125,14 +121,12 @@ cd ~/layer/binaries && mkdir v3.0.4 && cd v3.0.4 && wget https://github.com/tell
 Initialize the chain config files:
 
 ```sh
-# change directory to ~/layer/binaries/v3.0.1
-cd ~/layer/binaries/v3.0.1
+# change directory to ~/layer/binaries/v4.0.0
+cd ~/layer/binaries/v4.0.0
 
 # initialize chain configs
-./layerd init layer --chain-id layertest-3
+./layerd init layer --chain-id layertest-4
 ```
-
-_Note: don't forget to rename or remove any old installations (`rm -rf ~/.layer`)_
 {% endtab %}
 {% endtabs %}
 
@@ -227,10 +221,10 @@ Add these lines to the bottom of the file. Remember to replace the example URL w
 
 ```bash
 export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x6ac02f3887b358591b8b2d22cfb1f36fa5843867"
+export TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
 ```
 
-To load the variables into any open shell (terminal window):
+Load the new variables:
 
 {% tabs %}
 {% tab title="Linux" %}
