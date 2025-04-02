@@ -6,7 +6,7 @@ description: Follow the steps to become a Layer testnet validator.
 
 {% hint style="success" %}
 <mark style="color:green;">**You will need a node that's fully synced and an account that has a balance (loya).**</mark>  \
-See our [instructions on getting testnet TRB for help.](../bridge-trbp-from-sepolia.md)&#x20;
+See our [instructions on getting testnet TRB for help.](../bridge-trbp-from-sepolia/)&#x20;
 {% endhint %}
 
 ## Validator Setup
@@ -28,7 +28,7 @@ balance:
 ```
 
 {% hint style="info" %}
-If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../bridge-trbp-from-sepolia.md) with a 12 hour delay.
+If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../bridge-trbp-from-sepolia/) with a 12 hour delay.
 {% endhint %}
 
 3. **Retrieve Your Validator Public Key**\
