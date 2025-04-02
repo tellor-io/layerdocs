@@ -1,20 +1,18 @@
 ---
 description: >-
   Follow the steps to make a layer account that can be used to receive funds
-  from the bridge (or the faucet) for transacting on layer.
+  from the bridge for transacting on layer.
 ---
 
 # Managing Accounts
 
 {% hint style="info" %}
-<mark style="color:blue;">**Security Tips:**</mark> \
-1\. This guide uses the "test" backend for easy compatibility with the reporter daemon. For information about the different (more secure) options, check out these docs.\
-2\. Always keep a secure backup of your initial configurations just in case.
+<mark style="color:blue;">**Security Tips:**</mark>&#x20;
 
-When you create a new account with the `layerd keys add`  command, the output will include the mnemonic key. It is important to copy this key securely because it is the only time that mnemonic will be shown otherwise!
-
-\
-3\. Never use an address that holds real funds for testing.
+* When you create a new account with the `layerd keys add`  command, the output will include the mnemonic key. It is important to copy this key securely because it is the only time that mnemonic will be shown otherwise!
+* This guide uses the "test" backend for easy compatibility with the reporter daemon. For information about the different (more secure) options, check out these docs.
+* Always keep a secure backup of your initial configurations (including the Node key) just in case! A validator is difficult to recover without the node\_key, priv\_validator\_key, and priv\_validator\_state.
+* Never use an address that holds real funds for testing.
 {% endhint %}
 
 If you do not yet have an account / mnemonic phrase, Generate a new key pair with the command:
@@ -27,7 +25,7 @@ If you do not yet have an account / mnemonic phrase, Generate a new key pair wit
 Be sure to <mark style="color:orange;">**copy the entire output**</mark> with the mnemonic and keep it in a very safe place!
 {% endhint %}
 
-If you already have an account, you may Import it with the command:
+If you already have an account, you can Import it with the command:
 
 {% code overflow="wrap" %}
 ```sh
@@ -35,13 +33,13 @@ If you already have an account, you may Import it with the command:
 ```
 {% endcode %}
 
-**Export your addresses.** (optional but recommended for less experienced users) Your wallet account has two important addresses. First, get the "tellor" prefix address, which is used to send and receive tokens. Copy it and keep it in a safe place:
+To print the "tellor" prefix address to the terminal:
 
 ```bash
 ./layerd keys show $ACCOUNT_NAME
 ```
 
-Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which is used for validator commands. Copy it and keep it in a safe place:
+Next, add the `--bech val` flag to get the "tellorvaloper" prefix address, which is used for validator commands:
 
 ```bash
 ./layerd keys show $ACCOUNT_NAME --bech val
@@ -56,7 +54,9 @@ echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bash
 ```
 {% endcode %}
 
-Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux) Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)&#x20;
+
+Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
 {% hint style="info" %}
 <mark style="color:blue;">Check accounts any time with:</mark> \

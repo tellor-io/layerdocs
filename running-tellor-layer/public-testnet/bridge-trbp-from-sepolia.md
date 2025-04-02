@@ -1,25 +1,30 @@
 ---
 description: >-
   Follow the steps here to manually bridge Tellor "playground"  TRB (TRBP) from
-  Sepolia testnet:
+  Sepolia testnet.
 ---
 
 # Bridging Sepolia TRB
 
+{% hint style="success" %}
+If you don't have any Sepolia TRB, Make a request in the [Tellor Discord](https://discord.gg/kaMenz4ZVw)'s `testing-layer` channel.
+
+**Reminder: There is no incentive to run the testnet unless you want to be a validator and /or reporter on mainnet. TRB inflation is immutable.**
+{% endhint %}
+
 #### 1. Approve the bridge contract
 
-Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660\
+Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
 
-
-On the Contracts tab, click on function `2. approve`. Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2&#x20;
+On the Contracts tab, click on function `2. approve`. Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2
 
 Set \_amount to be the amount that you want to bridge like `25000000000000000000 (25 TRB with 18 decimals)`
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 9.17.43 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 9.17.43 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet. (old contract address in picture)</p></figcaption></figure>
 
 #### 3. Make the bridge request (depositToLayer)
 
-Once you have TRBP in your wallet, navigate to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2#writeContract).&#x20;
+Navigate to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2#writeContract).&#x20;
 
 Connect your wallet and click function `3. depositToLayer`.&#x20;
 
