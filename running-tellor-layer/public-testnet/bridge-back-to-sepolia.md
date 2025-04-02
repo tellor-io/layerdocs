@@ -1,4 +1,4 @@
-# Bridge back to Sepolia
+# Bridge (test) TRB back to Sepolia
 
 #### 1. Request withdraw of your tokens from layer to sepolia.&#x20;
 
@@ -47,7 +47,7 @@ This will print information about the report. Copy the timestamp for the next st
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-3 --fees 50loya --yes
+./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-4 --fees 50loya --yes
 ```
 {% endcode %}
 
@@ -55,7 +55,7 @@ This will print information about the report. Copy the timestamp for the next st
 
 Paste in your withdraw request's Query ID and Timestamp and click the "Generate Oracle Proofs Below" button. (see screenshot below)
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-02-07 at 1.18.41 PM (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-02-07 at 1.18.41 PM (2).png" alt=""><figcaption></figcaption></figure>
 
 Keep this page open for the next step.
 

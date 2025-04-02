@@ -2,24 +2,23 @@
 
 _**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
 
-1. Add these lines to the bottom of your .bashrc / .zshrc so that they are automatically loaded in new environments. (If you have a more advanced setup, add them to your start script or .service file) Replace the example REPORTERS\_VALIDATOR\_ADDRESS with your own 'telorvaloper' prefix address:
+1. Add these lines to the bottom of your .bashrc / .zshrc so that they are automatically loaded in new environments. (If you have a more advanced setup, add them to your start script or .service file) Replace the example tellorvaloper1YOUR\_TELLORVALOPER\_ADDRESS with your own 'telorvaloper' prefix address:
 
 ```sh
 export WITHDRAW_FREQUENCY="21600"
 export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 ```
 
-2. Sign the `create-reporter` command. Create-reporter requires that you specify your commission rate and the minimum amount of tokens that others may use when selecting you.&#x20;
+2. Create-reporter requires that you specify your commission rate, min-tokens-required, and a moniker for your reporter.&#x20;
 
-* A `commision-rate` of `0.02` means that you get 2% of rewards from your selectors.
-* A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.\
-  \
-  Now, run the command:
+* A `commision-rate` of `0.25` means that you get 25% of rewards from your selectors.
+* A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.
+* Your `moniker` can be anything you like. (REPORTER\_MONIKER) in the example command:
 
 {% code overflow="wrap" %}
 ```bash
 # layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
-./layerd tx reporter create-reporter 0.25 1000000 --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.25 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
 
