@@ -67,15 +67,15 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v4.0.1
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.1 &#x26;&#x26; cd v4.0.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v4.0.2
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.1 &#x26;&#x26; cd v4.0.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# current layertest-4 binary v4.0.1
+# layertest-4 binary v4.0.2
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
@@ -99,8 +99,8 @@ Download the binaries from the [Tellor Github](https://github.com/tellor-io/laye
 # genesis binary v4.0.0
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v4.0.1
-cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# upgrade binary v4.0.2 (for upgrade name v4.0.1)
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -111,8 +111,8 @@ cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tell
 # genesis binary v3.0.1
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 
-# upgrade binary v4.0.2 (**for upgrade v4.0.1**)
-cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# upgrade binary v4.0.2 (**for upgrade name v4.0.1**)
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -316,28 +316,19 @@ You should now see your log quickly downloading blocks!
 
 #### Upgrades
 
-Your node will stop syncing at block height for each binary upgrade:
+Your node will stop syncing at the following block height(s) for each binary upgrade:
 
-`156999 for upgrade v3.0.2`
+`452800 for upgrade v4.0.1`
 
-`1185570 for upgrade v3.0.4`
-
-&#x20;When the sync stops for an upgrade (at the heights shown above, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the corrisponding upgraded binary.\
+&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the corresponding upgraded binary.\
 \
-&#xNAN;_&#x4E;ote: Use the v3.0.3 binary at the height for the v3.0.2 upgrade._
+&#xNAN;_&#x4E;ote: Use the v4.0.2 binary at the height for the v4.0.1 upgrade._
 
 {% code overflow="wrap" %}
 ```sh
-# At height 156999:
+# At height 452800 the node will stop syncing:
 # change directory
-cd ~/layer/binaries/v3.0.2
-
-# resume syncing
-./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
-
-# At height 1185570:
-# change directory
-cd ~/layer/binaries/v3.0.4
+cd ~/layer/binaries/v4.0.2
 
 # resume syncing
 ./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
