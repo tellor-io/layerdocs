@@ -4,7 +4,7 @@ description: How to get your funds back to Ethereum (Sepolia)
 
 # Bridge TRB back to Sepolia
 
-1\. Request withdraw of your tokens on Layer via the cli.&#x20;
+**1. Request withdraw of your tokens on Layer via the cli.**&#x20;
 
 In this example, the layer address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`:
 
@@ -38,7 +38,7 @@ _<mark style="color:blue;">**Your withdraw request will be automatically reporte
 
 #### 2. Wait 12 hours.
 
-#### 3. Find the timestamp of the aggregate report  using the query\_id from step 2:
+#### 3. Find the timestamp of the aggregate report  using the query\_id from step 1:
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layerd query oracle get-current-aggregate-report [query_id] [flags]
 <strong>./layerd query oracle get-current-aggregate-report &#x3C;your_query_id_from_step_2>
