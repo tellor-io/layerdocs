@@ -34,4 +34,10 @@ Set `_layerRecipient` to your tellor prefix address on layer. If you don't have 
 
 Click Write and confirm the transaction.
 
-Note: The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller value for \_amount.
+### 3. Wait 12 Hours
+
+There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello! After 12 hours have passed, you or anyone else may claim your tokens on Tellor Layer.&#x20;
+
+{% hint style="info" %}
+For steps to claim your deposit on layer, see here.
+{% endhint %}

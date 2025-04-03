@@ -1,7 +1,5 @@
 ---
-description: >-
-  Follow the steps here to manually bridge Tellor "playground"  TRB (TRBP) from
-  Sepolia testnet.
+description: Bridge requests can me made at bridge.tellor.io!
 ---
 
 # Bridging Sepolia TRB
@@ -14,46 +12,33 @@ If you don't have any Sepolia TRB, Make a request in the [Tellor Discord](https:
 
 _**When you make a tellor bridge deposit request, that EVM event is reported on Tellor Layer by the data reporters running there. After a 12 hour wait, the data can be claimed by anyone who wants to claim the tip.**_&#x20;
 
-####
-
-Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
-
-On the Contracts tab, click on function `2. approve`. Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2
-
-Set \_amount to be the amount that you want to bridge like `25000000000000000000 (25 TRB with 18 decimals)`
-
-<figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 9.17.43 AM.png" alt=""><figcaption><p>Click "Write" and confirm the transaction in your wallet. (old contract address in picture)</p></figcaption></figure>
-
-#### 3. Make the bridge request (depositToLayer)
-
-Navigate to the [Layer Testnet bridge](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2#writeContract).&#x20;
-
-Connect your wallet and click function `3. depositToLayer`.&#x20;
-
-Set the \_amount to the amount of TRBP that you want to bridge, e.g. 10000000000000000000 (10 TRBP + 18 decimals).
-
-Set the `_tip` to 10000000000000000 (0.01 TRB). This is a tip that can be claimed by any validator or reporter over on layer who is willing to pay the gas to claim your bridge request for you!
-
-Set `_layerRecipient` to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](manage-accounts.md).
-
-<figure><img src="../../.gitbook/assets/Screenshot 2025-02-06 at 12.22.28 PM (1).png" alt=""><figcaption></figcaption></figure>
-
-Click Write and confirm the transaction.
-
-{% hint style="info" %}
-<mark style="color:blue;">Note: The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller value for  \_amount.</mark>
+{% hint style="warning" %}
+<mark style="color:blue;">N</mark><mark style="color:blue;">**ote: The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller value for  \_amount.**</mark>
 {% endhint %}
 
-#### 4. Wait 12 hours
+### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
+
+1\) Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-04-03 12-18-53.png" alt=""><figcaption><p>Note: The "Deposit Limit" displayed is the maximum amount of TRB that can be bridged for the current 12 hour period.</p></figcaption></figure>
+
+2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill out the TIP field with the amount of TRB that you would like to tip as a reward for the person who claims your bridge request.
+
+{% hint style="success" %}
+At the time of writing, Tellor Layer is still testnet only and a tip of 0.01 TRB works great.
+{% endhint %}
+
+4\. Wait 12 hours
 
 There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
+
+
 
 ### How to claim tokens on Layer
 
 On layer, the tips for bridge deposit claims become available 12 hours after the bridge request was reported. \
 \
 If you have tokens in your wallet, open a terminal on your node machine and find the timestamp for the aggregate report for any unclaimed bridge deposit. \
-\
 Generate the deterministic  queryId and QueryData using the instructions shown [here](bridge-trbp-from-sepolia/generate-tellor-query-ids.md). Use the get-current-aggregate-report command using the QueryId, and copy the output for reference:
 
 {% code overflow="wrap" %}
