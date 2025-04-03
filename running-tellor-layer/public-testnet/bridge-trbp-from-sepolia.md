@@ -14,7 +14,7 @@ If you don't have any Sepolia TRB, Make a request in the [Tellor Discord](https:
 
 _**When you make a tellor bridge deposit request, that EVM event is reported on Tellor Layer by the data reporters running there. After a 12 hour wait, the data can be claimed by anyone who wants to claim the tip.**_&#x20;
 
-#### 1. Approve the bridge contract
+####
 
 Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
 
