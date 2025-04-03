@@ -25,7 +25,7 @@ _**When you make a tellor bridge deposit request, that EVM event is reported on 
 2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill out the TIP field with the amount of TRB that you would like to tip as a reward for the person who claims your bridge request.
 
 {% hint style="success" %}
-At the time of writing Tellor Layer is still testnet only and a tip of 0.01 TRB works great.
+A tip of 0.01 TRB should work great.
 {% endhint %}
 
 4\. Wait 12 hours
@@ -33,7 +33,7 @@ At the time of writing Tellor Layer is still testnet only and a tip of 0.01 TRB 
 There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
 
 \
-5\. Check if your bridge deposit was successful!&#x20;
+5\. Check if your bridge deposit was successful.
 
 You should see your new balance reflected when you run the command:
 
