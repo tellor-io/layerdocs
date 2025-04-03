@@ -17,7 +17,7 @@ export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 
 {% code overflow="wrap" %}
 ```bash
-# layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [flags]
+# layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [moniker] [flags]
 ./layerd tx reporter create-reporter 0.25 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
@@ -32,11 +32,8 @@ If you see your address in the list, your reporter was created successfully.
 
 Restart your node again, adding flags for turning on the integrated price daemon:
 
-{% code overflow="wrap" %}
-```bash
-./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME --home ~/.layer
-```
-{% endcode %}
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong>./layerd start --api.enable --api.swagger --price-daemon-enabled=true --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME --home ~/.layer
+</strong></code></pre>
 
 To see your report transactions, query the oracle module with the command:
 
