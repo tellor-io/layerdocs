@@ -32,37 +32,17 @@ At the time of writing, Tellor Layer is still testnet only and a tip of 0.01 TRB
 
 There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
 
-
-
-### How to claim tokens on Layer
-
-On layer, the tips for bridge deposit claims become available 12 hours after the bridge request was reported. \
 \
-If you have tokens in your wallet, open a terminal on your node machine and find the timestamp for the aggregate report for any unclaimed bridge deposit. \
-Generate the deterministic  queryId and QueryData using the instructions shown [here](bridge-trbp-from-sepolia/generate-tellor-query-ids.md). Use the get-current-aggregate-report command using the QueryId, and copy the output for reference:
-
-{% code overflow="wrap" %}
-```sh
-# Note: remove the '0x' from the beginning of the Query ID
-./layerd query oracle get-current-aggregate-report 97e25476d1379dcf4958abe62e2bd81b13adc63d42b908fb1252de268fe365cf
-```
-{% endcode %}
-
-To claim, use the `claim-deposits` command shown below. \
-\- Replace YOUR\_TELLOR\_PREFIX\_ADDRESS with your tellor layer address from step 3. \
-\- Replace "3" your `depositId`.\
-\- Replace 1738788758751 with the timestamp from the output of the command above.
-
-{% code overflow="wrap" %}
-```sh
-./layerd tx bridge claim-deposits YOUR_TELLOR_PREFIX_ADDRESS 3 1738788758751 --from $ACCOUNT_NAME --fees 5loya --yes
-```
-{% endcode %}
+5\. Check if your bridge deposit was successful!&#x20;
 
 You should see your new balance reflected when you run the command:
 
+{% code overflow="wrap" %}
 ```sh
-./layerd query bank balance $TELLOR_ADDRESS loya --chain-id layertest-3
+./layerd query bank balance $TELLOR_ADDRESS loya
 ```
+{% endcode %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-08-13 at 12.27.20 PM.png" alt=""><figcaption></figcaption></figure>
+{% hint style="warning" %}
+At the time of writing Layer is testnet only. If more than 12 hours have passed, and you don't see the balance reflected in your wallet, feel free to reach out to the tellor team.
+{% endhint %}
