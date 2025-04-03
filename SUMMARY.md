@@ -13,6 +13,7 @@
   * [Bridging Sepolia TRB](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia.md)
     * [Generate Tellor Query Ids](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia/generate-tellor-query-ids.md)
     * [Block Explorer Method](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
+  * [Claiming Bridge Deposits](running-tellor-layer/public-testnet/claiming-bridge-deposits.md)
   * [Run a Layer Validator](running-tellor-layer/public-testnet/run-a-layer-validator/README.md)
     * [Slashing Rules for Validators](running-tellor-layer/public-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
   * [Run the Data Reporter](running-tellor-layer/public-testnet/run-the-data-reporter.md)
