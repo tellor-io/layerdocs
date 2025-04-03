@@ -47,3 +47,11 @@ Make a note of the timestamp for step 3.
 ./layerd tx bridge claim-deposits YOUR_TELLOR_PREFIX_ADDRESS 3 1738788758751 --from ACCOUNT_NAME --gas auto --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
+
+You should see your new balance reflected when you run the command:
+
+{% code overflow="wrap" %}
+```sh
+./layerd query bank balance $TELLOR_ADDRESS loya
+```
+{% endcode %}
