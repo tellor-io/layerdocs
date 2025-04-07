@@ -25,24 +25,15 @@ _**When you make a tellor bridge deposit request, that EVM event is reported on 
 2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill out the TIP field with the amount of TRB that you would like to tip as a reward for the person who claims your bridge request.
 
 {% hint style="success" %}
-A tip of 0.01 TRB should work great.
+<mark style="color:blue;">A tip of 0.01 TRB should work, but larger tips may entice someone to claim your deposit more quickly.</mark>&#x20;
 {% endhint %}
 
 4\. Wait 12 hours
 
-There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
+While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
 
-\
-5\. Check if your bridge deposit was successful.
-
-You should see your new balance reflected when you run the command:
-
-{% code overflow="wrap" %}
-```sh
-./layerd query bank balance $TELLOR_ADDRESS loya
-```
-{% endcode %}
-
-{% hint style="warning" %}
-At the time of writing Layer is testnet only. If more than 12 hours have passed, and you don't see the balance reflected in your wallet, feel free to reach out to the tellor team.
+{% hint style="success" %}
+<mark style="color:blue;">**When 12 hours have passed, your bridge deposit tip becomes claimable on layer. When someone runs claim-deposit for your deposit ID, they can claim the tip.**</mark>
 {% endhint %}
+
+5. Wait for their deposit (tip) to be claimed. Those who already have funds on layer can check the next section to learn how to `claim-deposits` !
