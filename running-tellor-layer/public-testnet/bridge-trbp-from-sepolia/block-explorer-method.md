@@ -17,7 +17,7 @@ Set the `_amount` to be the amount that you want to bridge e.g. `250000000000000
 
 ![](<../../../.gitbook/assets/Screenshot From 2025-04-07 14-49-35.png>)
 
-Click "Write" and confirm the transaction in your wallet. (old contract address in picture)
+Click "Write" and confirm the transaction in your wallet.
 
 ### 2. Make the bridge request (depositToLayer)
 
