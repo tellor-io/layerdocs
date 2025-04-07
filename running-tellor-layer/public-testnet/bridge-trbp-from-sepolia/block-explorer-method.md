@@ -10,11 +10,12 @@ _**Bridge requests can usually be sent to layer via**_ [_**https://bridge.tellor
 
 Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
 
-On the Contracts tab, click on function `2. approve`. Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2
+On the Contracts tab, click on function `2. approve`\
+Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: `0x5acb5977f35b1A91C4fE0F4386eB669E046776F2`
 
-Set \_amount to be the amount that you want to bridge like `25000000000000000000 (25 TRB with 18 decimals)`
+Set the `_amount` to be the amount that you want to bridge e.g. `25000000000000000000 (25 TRB with 18 decimals)`
 
-![](https://docs.tellor.io/~gitbook/image?url=https%3A%2F%2F2729899787-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fs90SVtIdiQ8dmMsqriIa%252Fuploads%252FhbWX6hiZJ1Ve5TF1gqUI%252FScreenshot%25202024-08-13%2520at%25209.17.43%25E2%2580%25AFAM.png%3Falt%3Dmedia%26token%3D982b3c3b-ac73-4e53-a17e-8733b30a8ddd\&width=768\&dpr=4\&quality=100\&sign=b9223cc2\&sv=2)
+![](<../../../.gitbook/assets/Screenshot From 2025-04-07 14-49-35.png>)
 
 Click "Write" and confirm the transaction in your wallet. (old contract address in picture)
 
