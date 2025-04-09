@@ -16,7 +16,7 @@ If your node is Jailed for inactivity, you can simply "**unjail**" it via cli on
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx slashing unjail --from YOUR_ACCOUNT_NAME --chain-id layertest-3 --fees 5loya --yes
+./layerd tx slashing unjail --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 5loya --yes
 ```
 {% endcode %}
 
