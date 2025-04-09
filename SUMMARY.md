@@ -23,6 +23,7 @@
   * [Creating Transactions](running-tellor-layer/command-line-usage/creating-transactions.md)
   * [Delegate to a Validator](running-tellor-layer/command-line-usage/delegate-to-a-validator.md)
   * [Select a Reporter](running-tellor-layer/command-line-usage/select-a-reporter.md)
+  * [Disputing an Incorrect Report](running-tellor-layer/command-line-usage/disputing-an-incorrect-report.md)
 
 ## Using Tellor Data
 
