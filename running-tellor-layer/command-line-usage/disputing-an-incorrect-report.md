@@ -1,24 +1,23 @@
 ---
-description: Context and cli commands for handling disputes
+description: >-
+  cli commands and additional context for understanding Tellor reporter slashing
+  and dispute governance
 hidden: true
 ---
 
 # Disputing an Incorrect Report
 
-Tellor reporters can be slashed for reporting incorrect oracle data. The mechanisms for this are conceptually similar to validator slashing, but the rules are different. \
+_In the unlikely event that there is an incorrect or malicious data report to the Tellor oracle, anyone who has funds on layer can call **propose-dispute** to remove that value from the database and initiate the dispute governance process. Before we think about doing the commands, let's get more familiar with the whole dispute governance and reporter slashing process._
 
+### Dispute Resolution / Governance
+
+When a dispute is proposed, the disputer pays a dispute fee and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
+
+There are three dispute categories: warning, minor, and major.&#x20;
 
 {% hint style="info" %}
 Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
 {% endhint %}
-
-\
-When an incorrect report is detected, anyone who has funds on layer can call propose-dispute to remove that value from the database and initiate the dispute governance process. Disputes are very rare in the Tellor ecosystem, and are usually due to faulty APIs, but mechanisms are in place to remove any truly malicious reports / reporters if necessary. \
-
-
-When a dispute is proposed, the disputer pays a dispute fee, and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
-
-There are three dispute categories: warning, minor, and major.&#x20;
 
 ### warning:
 
