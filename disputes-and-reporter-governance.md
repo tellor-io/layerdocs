@@ -70,7 +70,7 @@ There are three different choices when voting on a dispute:
 
 `vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute. The reporter gets their tokens back minus 2.5% that was taken out for voter rewards.&#x20;
 
-`vote-invalid:` It is not clear or not important if the reporter was wrong or malicious. The reporter gets all of their tokens back, and the disputer get's back the fee minus 2.5% that was taken out for voter rewards.
+`vote-invalid:` It is not clear or not important if the reporter was wrong or malicious. The reporter gets all of their tokens back, and the disputer gets back the fee minus 2.5% that was taken out for voter rewards.
 
 {% code overflow="wrap" %}
 ```sh
@@ -79,6 +79,8 @@ There are three different choices when voting on a dispute:
 ./layerd tx dispute vote 3 vote-invalid --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
+
+## Settling the Dispute
 
 After 72 hours, the winning party in the dispute can call withdraw-fee-refund to receive the tokens paid by the counter-party in the dispute:
 
