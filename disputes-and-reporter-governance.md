@@ -2,7 +2,6 @@
 description: >-
   cli commands and additional context for understanding Tellor reporter slashing
   and dispute governance
-hidden: true
 icon: gavel
 ---
 
@@ -82,7 +81,7 @@ There are three different choices when voting on a dispute:
 
 ## Settling the Dispute
 
-After 72 hours, the winning party in the dispute can call withdraw-fee-refund to receive the tokens paid by the counter-party in the dispute:
+After 72 hours, the winning party (or parties if invalid) in the dispute can call withdraw-fee-refund to receive the tokens paid by the counter-party in the dispute:
 
 {% code overflow="wrap" %}
 ```sh
