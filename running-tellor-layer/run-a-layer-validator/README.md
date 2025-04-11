@@ -6,12 +6,10 @@ icon: binary-circle-check
 # Run a Layer Validator
 
 {% hint style="success" %}
-<mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../public-testnet/node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../public-testnet/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
+* <mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../public-testnet/node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../public-testnet/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
 {% endhint %}
 
 ## Validator Setup
-
-_**You will need a fully synced node to use as your validator. If you don't have one, start**_ [_**here**_](../public-testnet/node-setup/)_**.**_
 
 1. **Open up a new terminal window on your node machine and check if your address has funds:**
 
@@ -27,8 +25,8 @@ balance:
   denom: loya
 ```
 
-{% hint style="info" %}
-If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../public-testnet/bridge-trbp-from-sepolia.md) with a 12 hour delay.
+{% hint style="warning" %}
+<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](../public-testnet/bridge-trbp-from-sepolia.md) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
 {% endhint %}
 
 3. **Retrieve Your Validator Public Key**\
@@ -55,8 +53,8 @@ nano validator.json
 ```
 
 {% hint style="warning" %}
-* <mark style="color:blue;">**When creating your validator, be sure that you are not choosing an "amount" that is larger than your balance of test-net TRB.**</mark>&#x20;
-* <mark style="color:blue;">**Keep some funds available for paying gas fees if you're going to be running the data reporter.**</mark>
+* <mark style="color:blue;">**When creating your validator, be sure that you are NOT choosing an "amount" that is larger than your balance of test-net TRB.**</mark>&#x20;
+* <mark style="color:blue;">**Keep a balance of loya available for paying gas fees if you're going to be running the data reporter.**</mark>
 * <mark style="color:blue;">**TRB has 6 decimals: 1 loya is 0.000001 TRB**</mark>
 {% endhint %}
 
@@ -106,9 +104,11 @@ Run the following command to create-validator:
 
 6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
 
+{% code overflow="wrap" %}
 ```sh
 ./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
 ```
+{% endcode %}
 
 You should see the log quickly catch up. Are you a validator now?
 
