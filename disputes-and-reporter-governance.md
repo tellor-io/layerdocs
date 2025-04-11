@@ -54,7 +54,7 @@ Full example:
 {% hint style="warning" %}
 #### _<mark style="color:blue;">There is a 48 hour voting period followed by a 24 hour Challenge period after a dispute.</mark>_
 
-_<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call claim-reward or withdraw-fee-refund depending on which way the community voted.**</mark>_
+_<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call withdraw-fee-refund to claim any tokens that were awarded from the dispute. Also, all the reporters who voted on the dispute can call claim-reward to receive their share of 2.5% of the dispute fee!**</mark>_&#x20;
 {% endhint %}
 
 ## Voting
