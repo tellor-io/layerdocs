@@ -10,7 +10,7 @@ There are two basic reasons that a validator may be automatically slashed, jaile
 
 **Liveness (inactivity):**
 
-If your validator fails to sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. At the time of writing (layertest-4), it can take 15-25 minutes to produce 500 blocks. The penelty is 1% of bonded tokens. Liveness slashes do not lead to a tombstombing.
+If your validator fails to sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. At the time of writing (layertest-4), it can take 15-25 minutes to produce 500 blocks. The penalty is 1% of bonded tokens. Liveness slashes do not lead to a tombstombing.
 
 If your node is Jailed for inactivity, you can simply "**unjail**" it via cli on the host machine:
 
@@ -22,7 +22,7 @@ If your node is Jailed for inactivity, you can simply "**unjail**" it via cli on
 
 **Double Signing:**
 
-Unjustified precommits (double signs) are rare, and the penalty is severe. If a double sign is detected the validator is automatically slashed up to 50% and tomestoned, while their delegators are forced to unbond or redelegate their token voting power. \
+Unjustified pre-commits (double signs) are rare, and the penalty is severe. If a double sign is detected the validator is automatically slashed up to 50% and tomestoned, while their delegators are forced to unbond or redelegate their token voting power. \
 \
 A “tombstoned" validator key can never be used again. The validator may rejoin the network using another node key, but they will have to earn back the trust of any delegators they previously had.
 
