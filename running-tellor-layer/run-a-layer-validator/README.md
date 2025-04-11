@@ -81,12 +81,16 @@ Edit or add the following code:
 * Edit `"pubkey"` to match yours from step 4.
 * Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
 * Edit `"moniker"` with a name you choose for your validator node.
+* Edit identity, website, security, and details with your identifying information. (optional)
+* Edit `commission-rate`, `commission-max-rate`, `commission-max-change-rate`, and `min-self-delegation` if desired. (these can be changed later using the `edit-validator` command).
 
 {% hint style="info" %}
-<mark style="color:blue;">**Note:**</mark> TRB tokens are used for gas on the layer network. As a validator you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.
+<mark style="color:blue;">**Note:**</mark> TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.
 {% endhint %}
 
-5. **Create Your Validator:** A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
+5. **Create Your Validator:** \
+   \
+   A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
 
 {% hint style="info" %}
 <mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>

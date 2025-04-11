@@ -10,14 +10,14 @@ _**This section assumes that you have a**_ [_**node**_](public-testnet/node-setu
 
 1. Create the `create-reporter` transaction. The command requires that you specify your commission rate, min-tokens-required, and a moniker for your reporter:&#x20;
 
-* A `commision-rate` of `0.25` means that you get 25% of rewards from your selectors.
-* A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.
+* A `commision-rate` of `0.05` means that you get 5% of rewards from your selectors. This can be changed later.
+* A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
 * Your `moniker` can be anything you like. (REPORTER\_MONIKER) in the example command:
 
 {% code overflow="wrap" %}
 ```bash
 # layerd tx reporter create-reporter [commission-rate] [min-tokens-required] [moniker] [flags]
-./layerd tx reporter create-reporter 0.25 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
 
