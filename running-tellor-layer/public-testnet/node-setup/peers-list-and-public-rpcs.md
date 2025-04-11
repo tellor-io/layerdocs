@@ -2,7 +2,7 @@
 description: The following peers list can be used for syncing `layertest-3`
 ---
 
-# Peers List
+# Peers List & Public RPCs
 
 {% hint style="info" %}
 If you followed the Node Setup section of these docs, you already have the latest peers list.
@@ -20,3 +20,12 @@ persistent_peers = "c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.219.95.82:26656,
 
 ```
 {% endcode %}
+
+### RPCs
+
+For syncing on Palmito:
+
+```
+https://tellor-testnet.nirvanalabs.xyz/tellor-testnet-public
+https://node-palmito.tellorlayer.com/rpc/
+```

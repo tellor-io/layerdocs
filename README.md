@@ -18,7 +18,7 @@ For more in-depth information, checkout the [Tellor Layer tech paper](https://gi
 The current testnet is code named "Palmito", and it is the first testnet that uses the "real" Sepolia testnet TRB contract instead of a playground token. All supply on Tellor Palmito will be bridged Sepolia TRB: [https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660)\
 
 
-Sepolia TRB cannot be minted from a playground faucet the way it was done on previous testnets which used "TRBP". Testers will need to make new requests in the Tellor public discord. Please include your public EVM address on Ethereum's Sepolia.\
+Sepolia TRB cannot be minted from a playground faucet the way it was done on previous testnets which used "TRBP". Testers will need to make new requests in the Tellor public discord. Please include your public EVM address on Ethereum Sepolia.\
 \
 We look forward to hearing from you! Once your TRB is bridged to Palmito, you can try running a validator, creating a reporter, tipping a reporter, and securing the authentically decentralized Tellor oracle.
 

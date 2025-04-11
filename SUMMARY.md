@@ -6,9 +6,9 @@
 
 * [Getting Started ](running-tellor-layer/public-testnet/README.md)
   * [Node Setup](running-tellor-layer/public-testnet/node-setup/README.md)
-    * [Peers List](running-tellor-layer/public-testnet/node-setup/peers-list.md)
+    * [Peers List & Public RPCs](running-tellor-layer/public-testnet/node-setup/peers-list-and-public-rpcs.md)
     * [Cosmovisor Sync](running-tellor-layer/public-testnet/node-setup/cosmovisor-sync.md)
-    * [Troubleshooting](running-tellor-layer/public-testnet/node-setup/state-sync.md)
+    * [State Sync Troubleshooting](running-tellor-layer/public-testnet/node-setup/state-sync.md)
   * [Managing Accounts](running-tellor-layer/public-testnet/manage-accounts.md)
   * [Bridging Sepolia TRB](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia.md)
     * [Claiming Bridge Deposits](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia/claiming-bridge-deposits.md)

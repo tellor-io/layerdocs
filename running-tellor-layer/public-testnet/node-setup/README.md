@@ -12,7 +12,7 @@ Running a node for development or as a personal RPC can be done using most moder
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
-* storage: 500gb+ @ nvme gen3
+* storage: 500gb+ @ NVME gen3+
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
 ### Pre-requisites
@@ -198,7 +198,7 @@ A Layer node uses the following variables:
 * ETH\_RPC\_URL: A reliable sepolia RPC url for calling the bridge contract.
 
 {% hint style="info" %}
-If you are starting layer with a bash script, be sure to include export statements for these variables at the top of your start script. If running layerd as a system service, they can be added to your .service file. Commands shown are for running layer in a regular bash terminal or with tmux or screen.
+If you are starting layer with a bash script, be sure to include export statements for these variables at the top of your start script. If running layerd as a system service, they can be added to your .service file. Commands shown are for running layer in a local bash terminal or with tmux or screen.
 {% endhint %}
 
 Set the environment variables so that they are set in new terminal windows by default. Open your .bashrc or .zshrc file with a text editor like nano:
@@ -280,7 +280,7 @@ Scroll or search (ctrl^w) the file and edit the state sync variables shown here:
 enable = true
 
 #...
-rpc_servers = "https://node-palmito.tellorlayer.com/rpc/,https://node-palmito.tellorlayer.com/rpc/"
+rpc_servers = "https://tellor-testnet.nirvanalabs.xyz/tellor-testnet-public/,https://node-palmito.tellorlayer.com/rpc/"
 trust_height = 673312
 trust_hash = "AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B"
 trust_period = "168h0m0s"

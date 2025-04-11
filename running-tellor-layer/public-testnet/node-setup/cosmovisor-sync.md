@@ -37,7 +37,7 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Once you have all of the binaries downloaded, initialize Cosmovisor and add all the upgrades. Change the file paths in the command to match the path to each binary exactly:
+4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](./). Change the file paths in the command to match the correct folder path to each binary:
 
 ```shell
 # set up cosmovisor. Each command is done seperatly.
