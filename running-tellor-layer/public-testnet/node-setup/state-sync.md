@@ -106,5 +106,16 @@ discovery_time = "15s"
 
 _**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your rpc\_servers, trust\_height are configured using the steps shown in**_[ _**Node Setup**_](./)_**. (be careful to choose the tabs that match your system)**_
 
-The `trust_period` should be left alone, and the `discovery_time` can be safely increased to "30s".\
-\
+The `trust_period` should be left alone, and the `discovery_time` can be safely increased to "30s".
+
+### Start your Node
+
+{% code overflow="wrap" %}
+```sh
+./layerd start --price-daemon-enabled=false --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+```
+{% endcode %}
+
+If the sync is working, you will see your node quickly finding, downloading, and applying snapshots.
+
+_**Note: A statesync with good RPCs and Peers can still take up to 2 hours to sync completely.**_
