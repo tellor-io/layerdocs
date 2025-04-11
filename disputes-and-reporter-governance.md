@@ -60,19 +60,19 @@ During this time reporters and token holders have the following voting options:
 ```
 {% endcode %}
 
-After 72 hours, the winning party in the dispute can call `claim-reward` to receive the tokens paid by the counter-party in the dispute:
+After 72 hours, the winning party in the dispute can call withdraw-fee-refund to receive the tokens paid by the counter-party in the dispute:
+
+{% code overflow="wrap" %}
+```sh
+./layerd tx dispute withdraw-fee-refund 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+```
+{% endcode %}
+
+Any accounts that voted may call claim-reward to receive a small reward for voting. The amount that you get for voting is a token-weighted share of 2.5% of the dispute fee.
 
 {% code overflow="wrap" %}
 ```sh
 # layerd tx dispute claim-reward [dispute_id] [flags]
 ./layerd tx dispute claim-reward 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
-```
-{% endcode %}
-
-In the event that a dispute settles with a majority `vote-invalid` , the disputer may withdraw their dispute fee refund:
-
-{% code overflow="wrap" %}
-```sh
-./layerd tx dispute withdraw-fee-refund 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
