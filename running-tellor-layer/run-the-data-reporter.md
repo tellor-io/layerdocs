@@ -8,14 +8,7 @@ icon: pen
 _**This section assumes that you have a**_ [_**node**_](public-testnet/node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
 {% endhint %}
 
-1. Add these lines to the bottom of your .bashrc / .zshrc so that they are automatically loaded in new environments. (If you have a more advanced setup, add them to your start script or .service file) Replace the example tellorvaloper1YOUR\_TELLORVALOPER\_ADDRESS with your own 'telorvaloper' prefix address:
-
-```sh
-export WITHDRAW_FREQUENCY="21600"
-export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
-```
-
-2. Create-reporter requires that you specify your commission rate, min-tokens-required, and a moniker for your reporter.&#x20;
+1. Create the `create-reporter` transaction. The command requires that you specify your commission rate, min-tokens-required, and a moniker for your reporter:&#x20;
 
 * A `commision-rate` of `0.25` means that you get 25% of rewards from your selectors.
 * A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet.

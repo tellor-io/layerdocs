@@ -186,9 +186,15 @@ If you already have an account, you can Import it with the command:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd keys add YOUR_ACCOUNT_NAME --recover
+./layerd keys add ETH_RPC_URL --recover
 ```
 {% endcode %}
+
+Export your "tellorvaloper" prefix address. Copy it and keep it handy for the next step:
+
+```sh
+./layerd keys show YOUR_ACCOUNT_NAME --bech val
+```
 
 ### 4. Set System Variables
 
@@ -196,6 +202,8 @@ A Layer node uses the following variables:
 
 * TOKEN\_BRIDGE\_CONTRACT: the token bridge contract address.
 * ETH\_RPC\_URL: A reliable sepolia RPC url for calling the bridge contract.
+* WITHDRAW\_FREQUENCY: For reporters, the daemon will automatically claim your tips (rewards) on this interval (in seconds)
+* REPORTERS\_VALIDATOR\_ADDRESS: For reporters the "tellorvaloper" address that you want to withdraw rewards to. (can be different from your reporter's address)
 
 {% hint style="info" %}
 If you are starting layer with a bash script, be sure to include export statements for these variables at the top of your start script. If running layerd as a system service, they can be added to your .service file. Commands shown are for running layer in a local bash terminal or with tmux or screen.
@@ -217,11 +225,13 @@ nano ~/.zshrc
 {% endtab %}
 {% endtabs %}
 
-Add these lines to the bottom of the file. Remember to replace the example URL with your Sepolia testnet RPC url:
+Add these lines to the bottom of the file. Remember to replace the example `ETH_RPC_URL` with your actual Sepolia testnet RPC url, and if you're going to run a reporter, replace the `REPORTERS_VALIDATOR_ADDRESS` with your own as well.
 
 ```bash
 export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
 export TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
+export WITHDRAW_FREQUENCY="21600"
+export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
 ```
 
 Load the new variables:
