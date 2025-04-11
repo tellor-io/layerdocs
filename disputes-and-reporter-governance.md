@@ -7,11 +7,7 @@ icon: gavel
 
 # Disputes and Reporter Governance
 
-_**In the unlikely event that there is questionable data reporting on Tellor, anyone who has funds on layer can call propose-dispute to identify the offending reporter and begin the dispute governance process.**_&#x20;
-
-_**This does not happen very often; so, before we do the commands, let's get more familiar with the whole dispute governance and reporter slashing process.**_
-
-### Proposing a Dispute:
+### Context:
 
 When a dispute is proposed, the disputer may choose to pay the entire dispute fee which jails the offending reporter immediately. If the disputer doesn't have enough tokens to cover the dispute fee (e.g. disputing a reporter with a very large stake), they can pay a small portion of the dispute fee and wait for others to pay the rest.&#x20;
 
@@ -22,10 +18,10 @@ There are three dispute categories: **warning**, **minor**, and **major**. This 
 ### Dispute Categories:
 
 * <mark style="color:green;">**Warning**</mark>: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call \`unjail\` immediately to start reporting again with slightly reduced power while the dispute is settled.
-* <mark style="color:yellow;">**Minor**</mark>:  The dispute fee / slashing amount is set a 10% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.&#x20;
+* <mark style="color:yellow;">**Minor**</mark>:  The dispute fee / slashing amount is set a 5% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.&#x20;
 * <mark style="color:red;">**Major**</mark>: The dispute fee / slashing amount is set equal to the amount bonded by the reporter. The reporter will be jailed forever unless the vote result is `against`.
 
-### How to Propose a Dispute
+## How to Propose a Dispute
 
 The propose-dispute command has 6 arguments:
 
