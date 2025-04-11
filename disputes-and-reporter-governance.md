@@ -14,15 +14,16 @@ _**This does not happen very often; so, before we do the commands, let's get mor
 
 ### Proposing a Dispute:
 
-When a dispute is proposed, the disputer may choose to pay the entire dispute fee which jails the offending reporter immediately. If the disputer doesn't have enough tokens to cover the dispute fee (e.g. disputing a reporter with a very large stake), they can pay a small portion of the dispute fee and wait for others to pay the rest to get the offending reporter jailed. \
-\
-&#x20;pays a dispute fee and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
+When a dispute is proposed, the disputer may choose to pay the entire dispute fee which jails the offending reporter immediately. If the disputer doesn't have enough tokens to cover the dispute fee (e.g. disputing a reporter with a very large stake), they can pay a small portion of the dispute fee and wait for others to pay the rest.&#x20;
 
-There are three dispute categories: warning, minor, and major.&#x20;
+Once the fee is paid, the governance process begins, and the offending reporter is jailed. They are also temporarily slashed an amount equal to the dispute fee.
 
-### warning:
+There are three dispute categories: **warning**, **minor**, and **major**. This gives some flexibility to the ways dispute governance can be used to ensure smooth operation of the oracle.
 
-The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator.&#x20;
+### Dispute Categories:
+
+* **Warning**: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call unjail immediately to start reporting again with slightly reduced power while the dispute is settled.
+* **Minor**: &#x20;
 
 ### minor:
 
@@ -35,7 +36,7 @@ The dispute fee / slashing amount is set equal to the amount bonded by the repor
 ### Jail Times
 
 \
-\
+If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.\
 **To initiate a dispute from the cli:**
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong># layerd tx dispute propose-dispute [disputed-reporter] [report-meta-id] [report-query-id] [dispute-category] [fee] [pay-from-bond] [flags]
