@@ -1,17 +1,17 @@
 ---
 description: Follow the steps to become a Layer testnet validator.
+icon: binary-circle-check
 ---
 
 # Run a Layer Validator
 
 {% hint style="success" %}
-<mark style="color:green;">**You will need a node that's fully synced and an account that has a balance (loya).**</mark>  \
-See our [instructions on getting testnet TRB for help.](../bridge-trbp-from-sepolia.md)&#x20;
+<mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../public-testnet/node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../public-testnet/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
 {% endhint %}
 
 ## Validator Setup
 
-_**You will need a fully synced node to use as your validator. If you don't have one, start**_ [_**here**_](../node-setup/)_**.**_
+_**You will need a fully synced node to use as your validator. If you don't have one, start**_ [_**here**_](../public-testnet/node-setup/)_**.**_
 
 1. **Open up a new terminal window on your node machine and check if your address has funds:**
 
@@ -28,7 +28,7 @@ balance:
 ```
 
 {% hint style="info" %}
-If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../bridge-trbp-from-sepolia.md) with a 12 hour delay.
+If you need testnet TRB, send us a message in the [Discord](https://discord.gg/HX76jMhvG6)! You can also [bridge it yourself](../public-testnet/bridge-trbp-from-sepolia.md) with a 12 hour delay.
 {% endhint %}
 
 3. **Retrieve Your Validator Public Key**\

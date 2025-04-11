@@ -14,12 +14,12 @@ icon: mug-hot
 [node-setup](node-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="run-a-layer-validator/" %}
-[run-a-layer-validator](run-a-layer-validator/)
+{% content-ref url="../run-a-layer-validator/" %}
+[run-a-layer-validator](../run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="run-the-data-reporter.md" %}
-[run-the-data-reporter.md](run-the-data-reporter.md)
+{% content-ref url="../run-the-data-reporter.md" %}
+[run-the-data-reporter.md](../run-the-data-reporter.md)
 {% endcontent-ref %}
 
 {% hint style="success" %}

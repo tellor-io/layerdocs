@@ -3,6 +3,7 @@ description: >-
   cli commands and additional context for understanding Tellor reporter slashing
   and dispute governance
 hidden: true
+icon: gavel
 ---
 
 # Disputes and Reporter Governance
@@ -37,7 +38,13 @@ The dispute fee / slashing amount is set equal to the amount bonded by the repor
 </strong>./layerd tx dispute propose-dispute tellor17gc67q05d5rsz9caznm0s7s5eazg2e3fkk8e 109136 0x0d12ad49193163bbbeff4e6db8294ced23ff8605359fd66799d4e25a3a0e3a warning 555555000000loya true --from ACCOUNT_NAME --gas 500000 --fees 15loya  --chain-id layertest-4 --yes
 </code></pre>
 
-There is a 24 hour voting period after the dispute. During this time reporters and token holders have the following voting options:
+{% hint style="warning" %}
+#### _<mark style="color:blue;">There is a 48 hour voting period followed by a 24 hour Challenge period after a dispute.</mark>_
+
+_<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call claim-reward or withdraw-fee-refund depending on which way the community voted.**</mark>_
+{% endhint %}
+
+During this time reporters and token holders have the following voting options:
 
 `vote-support:`  You support the disputer and believe that the reporter should be slashed.
 
@@ -47,11 +54,13 @@ There is a 24 hour voting period after the dispute. During this time reporters a
 
 {% code overflow="wrap" %}
 ```sh
-# layerd tx dispute vote [id] [vote] [flags]
+# layerd tx dispute vote [id] [vote-choice] [flags]
 # full example:
 ./layerd tx dispute vote 3 vote-invalid --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
+
+After 72 hours, the winning party in the dispute can call `claim-reward` to receive the tokens paid by the counter-party in the dispute:
 
 {% code overflow="wrap" %}
 ```sh
@@ -60,9 +69,10 @@ There is a 24 hour voting period after the dispute. During this time reporters a
 ```
 {% endcode %}
 
+In the event that a dispute settles with a majority `vote-invalid` , the disputer may withdraw their dispute fee refund:
+
 {% code overflow="wrap" %}
 ```sh
-// Some code
+./layerd tx dispute withdraw-fee-refund 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
-

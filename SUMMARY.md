@@ -14,16 +14,19 @@
     * [Claiming Bridge Deposits](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia/claiming-bridge-deposits.md)
     * [Block Explorer Method](running-tellor-layer/public-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
   * [Generate Bridge Query Data / IDs](running-tellor-layer/public-testnet/generate-bridge-query-data-ids.md)
-  * [Run a Layer Validator](running-tellor-layer/public-testnet/run-a-layer-validator/README.md)
-    * [Slashing Rules for Validators](running-tellor-layer/public-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
-  * [Run the Data Reporter](running-tellor-layer/public-testnet/run-the-data-reporter.md)
   * [Bridge TRB back to Sepolia](running-tellor-layer/public-testnet/bridge-back-to-sepolia.md)
+* [Run a Layer Validator](running-tellor-layer/run-a-layer-validator/README.md)
+  * [Slashing Rules for Validators](running-tellor-layer/run-a-layer-validator/jailing-and-unjail-ing.md)
+* [Become a Data Reporter](running-tellor-layer/run-the-data-reporter.md)
 * [Command Line Usage](running-tellor-layer/command-line-usage/README.md)
   * [Query the Chain](running-tellor-layer/command-line-usage/query-the-chain.md)
   * [Creating Transactions](running-tellor-layer/command-line-usage/creating-transactions.md)
   * [Delegate to a Validator](running-tellor-layer/command-line-usage/delegate-to-a-validator.md)
   * [Select a Reporter](running-tellor-layer/command-line-usage/select-a-reporter.md)
-  * [Disputes and Reporter Governance](running-tellor-layer/command-line-usage/disputes-and-reporter-governance.md)
+
+***
+
+* [Disputes and Reporter Governance](disputes-and-reporter-governance.md)
 
 ## Using Tellor Data
 

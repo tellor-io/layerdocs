@@ -1,6 +1,12 @@
-# Run the Data Reporter
+---
+icon: pen
+---
 
-_**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
+# Become a Data Reporter
+
+{% hint style="success" %}
+_**This section assumes that you have a**_ [_**node**_](public-testnet/node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
+{% endhint %}
 
 1. Add these lines to the bottom of your .bashrc / .zshrc so that they are automatically loaded in new environments. (If you have a more advanced setup, add them to your start script or .service file) Replace the example tellorvaloper1YOUR\_TELLORVALOPER\_ADDRESS with your own 'telorvaloper' prefix address:
 
