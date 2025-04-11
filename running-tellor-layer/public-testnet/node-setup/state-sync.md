@@ -104,7 +104,7 @@ trust_period = "168h0m0s"
 discovery_time = "15s"
 ```
 
-_**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your rpc\_servers, trust\_height are configured using the steps shown in**_[ _**Node Setup**_](./)_**. (be careful to choose the tabs that match your system)**_
+_**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your****&#x20;****`rpc_servers`****,****&#x20;****`trust_height`****&#x20;****, and****&#x20;****`trust_hash`****&#x20;****are configured using the steps shown in**_[ _**Node Setup**_](./)_**. (be careful to choose the tabs that match your system)**_
 
 The `trust_period` should be left alone, and the `discovery_time` can be safely increased to "30s".
 
