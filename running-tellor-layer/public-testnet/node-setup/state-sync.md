@@ -119,7 +119,8 @@ The `trust_period` should be left alone, and the `discovery_time` can be safely 
 If the sync is working, you will see your node quickly finding, downloading, and applying snapshots.
 
 {% hint style="success" %}
-_**Note: Messages like "We need more peers..." can be ignored.**_ \
-_**A statesync with good RPCs and Peers can still take an hour or more to start downloading blocks..**_
+_**Notes:**_  \
+_**- "We need more peers..." messages are normal and can be ignored.**_ \
+_**- A statesync with good RPCs and Peers can still take an hour or more to start downloading blocks.**_
 {% endhint %}
 
