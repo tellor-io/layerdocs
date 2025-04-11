@@ -8,15 +8,15 @@ icon: gavel
 
 # Disputes and Reporter Governance
 
-_In the unlikely event that there is an incorrect or malicious data report to the Tellor oracle, anyone who has funds on layer can call **propose-dispute** to remove that value from the database and initiate the dispute governance process. Before we think about doing the commands, let's get more familiar with the whole dispute governance and reporter slashing process._
+_**In the unlikely event that there is questionable data reporting on Tellor, anyone who has funds on layer can call propose-dispute to identify the offending reporter and begin the dispute governance process.**_&#x20;
 
-{% hint style="info" %}
-Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
-{% endhint %}
+_**This does not happen very often; so, before we do the commands, let's get more familiar with the whole dispute governance and reporter slashing process.**_
 
-### Dispute Resolution / Governance
+### Proposing a Dispute:
 
-When a dispute is proposed, the disputer pays a dispute fee and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
+When a dispute is proposed, the disputer may choose to pay the entire dispute fee which jails the offending reporter immediately. If the disputer doesn't have enough tokens to cover the dispute fee (e.g. disputing a reporter with a very large stake), they can pay a small portion of the dispute fee and wait for others to pay the rest to get the offending reporter jailed. \
+\
+&#x20;pays a dispute fee and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
 
 There are three dispute categories: warning, minor, and major.&#x20;
 
@@ -30,7 +30,11 @@ The dispute fee / slashing amount is set a 10% of the reporter's bonded tokens. 
 
 ### major:
 
-The dispute fee / slashing amount is set equal to the amount bonded by the reporter. A major dispute aims to completely remove a malicious reporter from the system and should be used only if it is a clear attack on the system or it's users.\
+The dispute fee / slashing amount is set equal to the amount bonded by the reporter. A major dispute aims to completely remove a malicious reporter from the system and should be used only if it is a clear attack on the system or it's users.
+
+### Jail Times
+
+\
 \
 **To initiate a dispute from the cli:**
 

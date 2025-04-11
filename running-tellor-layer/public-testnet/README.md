@@ -8,6 +8,10 @@ icon: mug-hot
 
 # Getting Started&#x20;
 
+{% hint style="info" %}
+Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
+{% endhint %}
+
 ## Welcome to the Guide
 
 {% content-ref url="node-setup/" %}
