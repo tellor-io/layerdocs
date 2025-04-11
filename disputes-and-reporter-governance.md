@@ -62,13 +62,15 @@ Full example:
 _<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call claim-reward or withdraw-fee-refund depending on which way the community voted.**</mark>_
 {% endhint %}
 
-During this time reporters and token holders have the following voting options:
+## Voting
 
-`vote-support:`  You support the disputer and believe that the reporter should be slashed.
+There are three different choices when voting on a dispute:
 
-`vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute.
+`vote-support:`  You support the disputer and believe that the reporter should be slashed. The disputer receives all of the reporter's tokens, and they are refunded the dispute fee minus 2.5% that was taken out for voter rewards.
 
-`vote-invalid:` It is not clear or not important if the report was incorrect.
+`vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute. The reporter gets their tokens back minus 2.5% that was taken out for voter rewards.&#x20;
+
+`vote-invalid:` It is not clear or not important if the reporter was wrong or malicious. The reporter gets all of their tokens back, and the disputer get's back the fee minus 2.5% that was taken out for voter rewards.
 
 {% code overflow="wrap" %}
 ```sh
