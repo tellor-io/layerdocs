@@ -5,19 +5,19 @@ description: >-
 hidden: true
 ---
 
-# Disputing an Incorrect Report
+# Disputes and Reporter Governance
 
 _In the unlikely event that there is an incorrect or malicious data report to the Tellor oracle, anyone who has funds on layer can call **propose-dispute** to remove that value from the database and initiate the dispute governance process. Before we think about doing the commands, let's get more familiar with the whole dispute governance and reporter slashing process._
+
+{% hint style="info" %}
+Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
+{% endhint %}
 
 ### Dispute Resolution / Governance
 
 When a dispute is proposed, the disputer pays a dispute fee and the reporter is temporarily slashed an equal amount. The reporter will be also be "jailed" and unable to report until the dispute is settled.  If the disputer is a reporter or validator, they can choose whether they want to use bonded tokens or take from their free balance of loya for the dispute fee.
 
 There are three dispute categories: warning, minor, and major.&#x20;
-
-{% hint style="info" %}
-Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
-{% endhint %}
 
 ### warning:
 
@@ -41,13 +41,28 @@ There is a 24 hour voting period after the dispute. During this time reporters a
 
 `vote-support:`  You support the disputer and believe that the reporter should be slashed.
 
-`vote-against:` You support the reporter, and belive the disputer should lose their dispute fee as punishment for opening an unnecessary dispute.
+`vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute.
 
 `vote-invalid:` It is not clear or not important if the report was incorrect.
 
 {% code overflow="wrap" %}
 ```sh
 # layerd tx dispute vote [id] [vote] [flags]
-./layerd tx dispute vote 3 vote-against --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+# full example:
+./layerd tx dispute vote 3 vote-invalid --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
+
+{% code overflow="wrap" %}
+```sh
+# layerd tx dispute claim-reward [dispute_id] [flags]
+./layerd tx dispute claim-reward 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+```
+{% endcode %}
+
+{% code overflow="wrap" %}
+```sh
+// Some code
+```
+{% endcode %}
+
