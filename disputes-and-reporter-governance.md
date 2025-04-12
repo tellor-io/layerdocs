@@ -7,9 +7,13 @@ icon: gavel
 
 # Disputes and Reporter Governance
 
-### Context:
+### Overview:
 
-When a dispute is proposed, the disputer may choose to pay the entire dispute fee which jails the offending reporter immediately. If the disputer doesn't have enough tokens to cover the dispute fee (e.g. disputing a reporter with a very large stake), they can pay a small portion of the dispute fee and wait for others to pay the rest.&#x20;
+Tellor reporters are subject to novel dispute mechanisms designed to ensure data integrity. If questionable data is identified or a reporter is suspected of acting maliciously, any participant holding TRB on the network can initiate a dispute. This open and transparent process empowers the community to govern reporters collectively.&#x20;
+
+Here's how it works:
+
+The disputer must pay a dispute fee that is based on the severity of the offense and the size of the offending reporter's stake. If they can't afford the dispute fee, they can alert the community and ask for help funding the dispute.
 
 Once the fee is paid, the governance process begins, and the offending reporter is jailed. They are also temporarily slashed an amount equal to the dispute fee.
 
@@ -17,8 +21,8 @@ There are three dispute categories: **warning**, **minor**, and **major**. This 
 
 ### Dispute Categories:
 
-* <mark style="color:green;">**Warning**</mark>: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call \`unjail\` immediately to start reporting again with slightly reduced power while the dispute is settled.
-* <mark style="color:yellow;">**Minor**</mark>:  The dispute fee / slashing amount is set a 5% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.&#x20;
+* <mark style="color:yellow;">**Warning**</mark>: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call \`unjail\` immediately to start reporting again with slightly reduced power while the dispute is settled.
+* <mark style="color:orange;">**Minor**</mark>:  The dispute fee / slashing amount is set a 5% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.&#x20;
 * <mark style="color:red;">**Major**</mark>: The dispute fee / slashing amount is set equal to the amount bonded by the reporter. The reporter will be jailed forever unless the vote result is `against`.
 
 ## How to Propose a Dispute
