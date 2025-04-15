@@ -19,6 +19,12 @@ Once the fee is paid, the governance process begins, and the offending reporter 
 
 There are three dispute categories: **warning**, **minor**, and **major**. This gives some flexibility to the ways dispute governance can be used to ensure smooth operation of the oracle.
 
+Dispute information can be queried using the following cli commands:
+
+```
+// Some code
+```
+
 ### Dispute Categories:
 
 * <mark style="color:yellow;">**Warning**</mark>: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call \`unjail\` immediately to start reporting again with slightly reduced power while the dispute is settled.
@@ -63,11 +69,22 @@ _<mark style="color:blue;">**After 72 hours, the dispute is settled and the part
 
 ### Adding Funds to the Dispute Fee
 
-In the even that a dispute fee is underpaid, anyone who wants to support the dispute financially can call `add-fee-to-dispute` . They will earn a proportionate amount of the reward funds from the dispute if the rest of the community votes to support it. Likewise, if the community votes "against", the fee is forfeited to the accused reporter. Example:
+In the event that a disputer is unable to pay the entire dispute fee, anyone who wants to support the dispute financially can call `add-fee-to-dispute` . All fee payers earn a proportionate amount of the reward funds from the dispute if the rest of the community votes to support it. Likewise, if the community votes "against", the entire fee is forfeited to the accused reporter. Example:
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong># layerd tx dispute add-fee-to-dispute [dispute-id] [amount] [pay-from-bond] [flags]
 </strong>/layerd tx dispute add-fee-to-dispute 2 2023500loya false --from ACCOUNT_NAME --fees 5loya
 </code></pre>
+
+### What Happens if the Dispute Fee is Not Paid?
+
+If the dispute fee is not paid in full while the dispute is active, the dispute will automatically settle "invalid". Anyone who paid a partial dispute fee can call `withdraw-fee-refund` to get those funds back. Example:
+
+{% code overflow="wrap" %}
+```sh
+# layerd tx dispute withdraw-fee-refund [payer-address] [id] [flags]
+./layerd tx dispute withdraw-fee-refund tellor1vw2yy9nf3wz7hey89tpw5hn0yr3hkrzt889x47 3 --from cypher --fees 5loya --chain-id layertest-4 --yes
+```
+{% endcode %}
 
 ## Voting
 
