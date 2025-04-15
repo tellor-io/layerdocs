@@ -21,8 +21,8 @@ There are three dispute categories: **warning**, **minor**, and **major**. This 
 
 Dispute information can be queried using the following cli commands:
 
-```
-// Some code
+```sh
+./layerd query dispute disputes
 ```
 
 ### Dispute Categories:
@@ -49,7 +49,9 @@ layerd tx dispute propose-dispute [disputed-reporter] [report-meta-id] [report-q
 
 **\[dispute-category]**: (see above)
 
-**\[fee]**: The amount of the dispute fee that you would like to pay while proposing the dispute. Setting this to any value that is larger than the required dispute fee will only remove the exact fee amount from your wallet or bond. for example, if the dispute fee is 12345loya and fee=999999999999loya, the amount taken to pay the dispute fee will be 12345loya.
+**\[fee]**: The amount of the dispute fee that you would like to pay while proposing the dispute. The minimum is 1 TRB (1000000loya) to prevent spam.\
+\
+&#x20;Setting the fee to any value that is larger than the required dispute fee will only remove the exact fee amount from your wallet or bond. for example, if the dispute fee is 12345loya and fee=999999999999loya, the amount taken to pay the dispute fee will be 12345loya.
 
 **\[pay-from-bond]**: set this to True if you want to use bonded tokens to pay the dispute fee. You might want to do this if you don't have enough free balance to pay the fee. Set this to "False" to use free balance only.
 
@@ -57,7 +59,7 @@ Full example:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx dispute propose-dispute tellor17gc67q05d5rsz9caznm0s7s5eazg2e3fkk8e 109136 0x0d12ad49193163bbbeff4e6db8294ced23ff8605359fd66799d4e25a3a0e3a warning 555555000000loya false --from ACCOUNT_NAME --gas 500000 --fees 15loya  --chain-id layertest-4 --yes
+./layerd tx dispute propose-dispute tellor17gc67q05d5rsz9caznm0s7s5eazg2e3fkk8e 109136 0x0d12ad49193163bbbeff4e6db8294ced23ff8605359fd66799d4e25a3a0e3a warning 1000000loya false --from ACCOUNT_NAME --gas 500000 --fees 15loya  --chain-id layertest-4 --yes
 ```
 {% endcode %}
 
@@ -82,7 +84,7 @@ If the dispute fee is not paid in full while the dispute is active, the dispute 
 {% code overflow="wrap" %}
 ```sh
 # layerd tx dispute withdraw-fee-refund [payer-address] [id] [flags]
-./layerd tx dispute withdraw-fee-refund tellor1vw2yy9nf3wz7hey89tpw5hn0yr3hkrzt889x47 3 --from cypher --fees 5loya --chain-id layertest-4 --yes
+./layerd tx dispute withdraw-fee-refund tellor1vw2yy9nf3wz7hey89tpw5hn0yr3hkrzt889x47 3 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4 --yes
 ```
 {% endcode %}
 
