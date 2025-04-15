@@ -61,6 +61,14 @@ Full example:
 _<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call withdraw-fee-refund to claim any tokens that were awarded from the dispute. Also, all the reporters who voted on the dispute can call claim-reward to receive their share of 2.5% of the dispute fee!**</mark>_&#x20;
 {% endhint %}
 
+### Adding Funds to the Dispute Fee
+
+In the even that a dispute fee is underpaid, anyone who wants to support the dispute financially can call `add-fee-to-dispute` . They will earn a proportionate amount of the reward funds from the dispute if the rest of the community votes to support it. Likewise, if the community votes "against", the fee is forfeited to the accused reporter. Example:
+
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong># layerd tx dispute add-fee-to-dispute [dispute-id] [amount] [pay-from-bond] [flags]
+</strong>/layerd tx dispute add-fee-to-dispute 2 2023500loya false --from ACCOUNT_NAME --fees 5loya
+</code></pre>
+
 ## Voting
 
 There are three different choices when voting on a dispute:
