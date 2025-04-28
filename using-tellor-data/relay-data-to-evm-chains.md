@@ -7,6 +7,8 @@ icon: microchip
 
 # Relay Data to EVM Chains
 
-[https://github.com/tellor-io/py-relayer](https://github.com/tellor-io/py-relayer)\
+[https://github.com/tellor-io/py-relayer](https://github.com/tellor-io/py-relayer)
+
+.\
 
 
