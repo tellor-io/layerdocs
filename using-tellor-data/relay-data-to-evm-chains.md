@@ -108,5 +108,3 @@ relayer --help
 relayer relay --help
 ```
 
-.
-

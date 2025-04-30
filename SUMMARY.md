@@ -32,3 +32,4 @@
 
 * [Relay Data to EVM Chains](using-tellor-data/relay-data-to-evm-chains.md)
 * [Integrating Tellor Data](using-tellor-data/integrating-tellor-data.md)
+* [Integrate Tellor on a New Chain](using-tellor-data/integrate-tellor-on-a-new-chain.md)
