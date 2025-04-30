@@ -86,9 +86,7 @@ Edit or add the following code:
 <mark style="color:blue;">**Note:**</mark> TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.
 {% endhint %}
 
-5. **Create Your Validator:** \
-   \
-   A few things need to happen (in order) to successfully start a layer validator. You should have two terminal windows open: a command window and a node window.
+5. **Create Your Validator**
 
 {% hint style="info" %}
 <mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
@@ -112,7 +110,7 @@ Run the following command to create-validator:
 
 You should see the log quickly catch up. Are you a validator now?
 
-6. **Verify Your Validator Creation**\
+7. **Verify Your Validator Creation**\
    Ensure your validator was created successfully using the command replacing your\_validator\_address:
 
 {% code overflow="wrap" %}
