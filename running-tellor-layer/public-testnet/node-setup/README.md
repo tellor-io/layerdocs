@@ -68,7 +68,7 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% tabs %}
 {% tab title="Linux" %}
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v4.0.2
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.1 &#x26;&#x26; cd v4.0.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.3 &#x26;&#x26; cd v4.0.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
@@ -76,7 +76,7 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% code overflow="wrap" %}
 ```sh
 # layertest-4 binary v4.0.2
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/4.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -101,6 +101,9 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 &&
 
 # upgrade binary v4.0.2 (for upgrade name v4.0.1)
 cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v4.0.3 (for upgrade name v4.0.3)
+cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -201,7 +204,8 @@ Export your "tellorvaloper" prefix address. Copy it and keep it handy for the ne
 A Layer node uses the following variables:
 
 * TOKEN\_BRIDGE\_CONTRACT: the token bridge contract address.
-* ETH\_RPC\_URL: A reliable sepolia RPC url for calling the bridge contract.
+* ETH\_RPC\_URL\_PRIMARY: A reliable sepolia RPC url for calling the bridge contract.
+* ETH\_RPC\_URL\_FALLBACK: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
 * WITHDRAW\_FREQUENCY: For reporters, the daemon will automatically claim your tips (rewards) on this interval (in seconds)
 * REPORTERS\_VALIDATOR\_ADDRESS: For reporters the "tellorvaloper" address that you want to withdraw rewards to. (can be different from your reporter's address)
 
@@ -228,10 +232,11 @@ nano ~/.zshrc
 Add these lines to the bottom of the file. Remember to replace the example `ETH_RPC_URL` with your actual Sepolia testnet RPC url, and if you're going to run a reporter, replace the `REPORTERS_VALIDATOR_ADDRESS` with your own as well.
 
 ```bash
-export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
+export ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
+export ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
 export TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
-export WITHDRAW_FREQUENCY="21600"
-export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS"
+export WITHDRAW_FREQUENCY="21600" # how often you want to withdraw rewards (seconds)
+export REPORTERS_VALIDATOR_ADDRESS="tellorvaloper1YOUR_TELLORVALOPER_ADDRESS" # for recieving rewards
 ```
 
 Load the new variables:
@@ -304,9 +309,11 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --price-daemon-enabled=false --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
+
+<mark style="color:blue;">**Note: If you want to enable the server for http requests, add the flags**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**`--api.enable`**</mark> <mark style="color:blue;">**`--api.swagger`**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**to your start command.**</mark>
 
 The node should start up quickly and begin downloading snapshots from peers.
 
@@ -328,11 +335,15 @@ You should now see your log quickly downloading blocks!
 
 Your node will stop syncing at the following block height(s) for each binary upgrade:
 
-`452800 for upgrade v4.0.1`
+`452800 for upgrade v4.0.1` **(uses the v4.0.2 binary)**
 
-&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process (ctrl^c in many cases) and start it back up again on the corresponding upgraded binary.\
+`2154000 for upgrade v4.0.3`
+
+&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
-&#xNAN;_&#x4E;ote: Use the v4.0.2 binary at the height for the v4.0.1 upgrade._
+&#xNAN;_**Notes on the  Upgrades:**_&#x20;
+
+* _**The v4.0.2 binary is used at the height for the v4.0.1 upgrade. (This is not a typo)**_
 
 {% code overflow="wrap" %}
 ```sh
@@ -341,7 +352,14 @@ Your node will stop syncing at the following block height(s) for each binary upg
 cd ~/layer/binaries/v4.0.2
 
 # resume syncing
-./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+
+# At height 2154000 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v4.0.3
+
+# resume syncing
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
 {% endtab %}
