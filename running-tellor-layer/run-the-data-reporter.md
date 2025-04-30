@@ -16,16 +16,16 @@ _**This section assumes that you have a**_ [_**node**_](public-testnet/node-setu
 
 To build the `reporterd` binary:
 
-1\) Clone the repo, and make it your current directory:
+1\) Clone the repo, and make `layer/daemons` your current directory:
 
 ```sh
 git clone https://github.com/tellor-io/layer && cd layer/daemons
 ```
 
-2\) Build the binary (requires go):
+2\) Build the binary (requires go) and `cd` back to `layer`:
 
 ```sh
-make build
+make build && cd ..
 ```
 
 ### Create and Configure a Reporter and Start Reporting
