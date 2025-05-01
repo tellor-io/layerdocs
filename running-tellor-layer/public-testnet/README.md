@@ -6,7 +6,9 @@ description: >-
 icon: mug-hot
 ---
 
-# Getting Started&#x20;
+# Getting Started
+
+
 
 {% hint style="info" %}
 Visit the Data Feed to see the oracle data being reported in real time [here](https://explorer.tellor.io/data-feed).
@@ -14,8 +16,8 @@ Visit the Data Feed to see the oracle data being reported in real time [here](ht
 
 ## Welcome to the Guide
 
-{% content-ref url="node-setup/" %}
-[node-setup](node-setup/)
+{% content-ref url="../node-setup/" %}
+[node-setup](../node-setup/)
 {% endcontent-ref %}
 
 {% content-ref url="../run-a-layer-validator/" %}

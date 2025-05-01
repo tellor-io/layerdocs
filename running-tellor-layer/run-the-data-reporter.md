@@ -5,7 +5,7 @@ icon: pen
 # Become a Data Reporter
 
 {% hint style="success" %}
-_**This section assumes that you have a**_ [_**node**_](public-testnet/node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
+_**This section assumes that you have a**_ [_**node**_](node-setup/) _**and**_ [_**validator**_](run-a-layer-validator/) _**running already.**_&#x20;
 {% endhint %}
 
 ### Build the Reporter Daemon Binary

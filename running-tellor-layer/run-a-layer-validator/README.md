@@ -6,7 +6,7 @@ icon: binary-circle-check
 # Run a Layer Validator
 
 {% hint style="success" %}
-* <mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../public-testnet/node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../public-testnet/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
+* <mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../node-setup/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
 {% endhint %}
 
 ## Validator Setup
@@ -26,7 +26,7 @@ balance:
 ```
 
 {% hint style="warning" %}
-<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](../public-testnet/bridge-trbp-from-sepolia.md) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
+<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](../bridge-trbp-from-sepolia/) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
 {% endhint %}
 
 3. **Retrieve Your Validator Public Key**\

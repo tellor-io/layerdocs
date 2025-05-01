@@ -189,7 +189,7 @@ If you already have an account, you can Import it with the command:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd keys add ETH_RPC_URL --recover
+./layerd keys add YOUR_ACCOUNT_NAME --recover
 ```
 {% endcode %}
 
@@ -261,7 +261,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 ### 5. Sync the Node
 
-_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally. This is not obvious for beginners._ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _is a great option for beginners. More advanced setups can be achieved using systemd._
+_<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally. This is not obvious for beginners. Try_ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _or tmux. More advanced setups can be achieved using systemd services._
 
 Choose the tab depending on whether or not you are doing a genesis sync, or a state sync:
 
@@ -297,7 +297,7 @@ Scroll or search (ctrl^w) the file and edit the state sync variables shown here:
 enable = true
 
 #...
-rpc_servers = "https://tellor-testnet.nirvanalabs.xyz/tellor-testnet-public/,https://node-palmito.tellorlayer.com/rpc/"
+rpc_servers = "https://node-palmito.tellorlayer.com/rpc/,https://node-palmito.tellorlayer.com/rpc/"
 trust_height = 673312
 trust_hash = "AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B"
 trust_period = "168h0m0s"
