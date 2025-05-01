@@ -204,7 +204,8 @@ Export your "tellorvaloper" prefix address. Copy it and keep it handy for the ne
 A Layer node uses the following variables:
 
 * TOKEN\_BRIDGE\_CONTRACT: the token bridge contract address.
-* ETH\_RPC\_URL\_PRIMARY: A reliable sepolia RPC url for calling the bridge contract.
+* ETH\_RPC\_URL: A reliable Sepolia RPC URL.
+* ETH\_RPC\_URL\_PRIMARY: Sepolia RPC url for the reporter daemon (can be the same).
 * ETH\_RPC\_URL\_FALLBACK: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
 * WITHDRAW\_FREQUENCY: For reporters, the daemon will automatically claim your tips (rewards) on this interval (in seconds)
 * REPORTERS\_VALIDATOR\_ADDRESS: For reporters the "tellorvaloper" address that you want to withdraw rewards to. (can be different from your reporter's address)
