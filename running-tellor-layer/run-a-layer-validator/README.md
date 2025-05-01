@@ -104,7 +104,7 @@ Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --price-daemon-enabled=false --home ~/.layer --key-name YOUR_ACCOUNT_NAME
+./layerd start --home ~/.layer --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
 

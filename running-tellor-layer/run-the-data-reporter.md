@@ -34,7 +34,7 @@ make build
 cp reporterd ~/layer/binaries/v4.0.3 && cd ~/layer/binaries/v4.0.3
 ```
 
-### Create and Configure a Reporter and Start Reporting
+### Configure a Reporter and Start Reporting
 
 1\) Create the `create-reporter` transaction. The command requires that you specify your commission rate, min-tokens-required, and a moniker for your reporter:&#x20;
 
