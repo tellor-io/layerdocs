@@ -19,26 +19,26 @@ Running a node for development or as a personal RPC can be done using most moder
 
 {% tabs %}
 {% tab title="Linux" %}
-jq, yq, sed, curl, and wget are required for running the various commands and config scripts and commands in this guide:&#x20;
+jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
 
-* **jq :** `sudo apt install jq`
-* **yq :** `sudo apt install yq`
-* **sed :** `sudo apt install sed`
-* **`curl`**`: sudo apt install curl`
-* **`wget`**`: sudo apt install wget`
-
-If you would like to build the binaries from source, you will need **Golang** ≥ 1.22. Use the default install instructions [here](https://go.dev/doc/install).
+* **`jq` :** `sudo apt install jq`
+* **`yq` :** `sudo apt install yq`
+* **`sed` :** `sudo apt install sed`
+* **`curl`**: `sudo apt install curl`
+* **`wget`** : `sudo apt install wget`&#x20;
+* `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
+* `make` : `sudo apt install build-essential`
 {% endtab %}
 
 {% tab title="MacOS" %}
 jq, yq, sed, and wget are required for running the various commands and config scripts in this guide:&#x20;
 
-* **jq:** `brew install jq`
-* **yq:** `brew install yq`
-* **sed:** `brew install sed`
-* **`wget`**`: brew install wget`
-
-If you would like to build the binaries from source, you will need **Golang** ≥ 1.22. Use the default install instructions [here](https://go.dev/doc/install).
+* **`jq`:** `brew install jq`
+* **`yq`:** `brew install yq`
+* **`sed`:** `brew install sed`
+* **`wget`**`: brew install wget`&#x20;
+* `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
+* `make` : `xcode-select --install`&#x20;
 {% endtab %}
 {% endtabs %}
 
