@@ -104,7 +104,7 @@ Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --home ~/.layer --key-name YOUR_ACCOUNT_NAME
+./layerd start --home $HOME/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
 
