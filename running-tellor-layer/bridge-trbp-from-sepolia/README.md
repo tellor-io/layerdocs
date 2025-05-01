@@ -1,5 +1,6 @@
 ---
 description: Bridge requests can me made at bridge.tellor.io!
+icon: bridge-water
 ---
 
 # Bridging Sepolia TRB

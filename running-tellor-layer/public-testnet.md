@@ -16,16 +16,16 @@ Visit the Data Feed to see the oracle data being reported in real time [here](ht
 
 ## Welcome to the Guide
 
-{% content-ref url="../node-setup/" %}
-[node-setup](../node-setup/)
+{% content-ref url="node-setup/" %}
+[node-setup](node-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="../run-a-layer-validator/" %}
-[run-a-layer-validator](../run-a-layer-validator/)
+{% content-ref url="run-a-layer-validator/" %}
+[run-a-layer-validator](run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="../run-the-data-reporter.md" %}
-[run-the-data-reporter.md](../run-the-data-reporter.md)
+{% content-ref url="run-the-data-reporter.md" %}
+[run-the-data-reporter.md](run-the-data-reporter.md)
 {% endcontent-ref %}
 
 {% hint style="success" %}

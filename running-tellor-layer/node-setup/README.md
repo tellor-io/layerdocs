@@ -1,5 +1,6 @@
 ---
 description: How to set up a Tellor Layer Node.
+icon: rectangle-terminal
 ---
 
 # Node Setup
