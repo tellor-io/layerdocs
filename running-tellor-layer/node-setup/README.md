@@ -5,18 +5,20 @@ icon: rectangle-terminal
 
 # Node Setup
 
-### Recommended Machine Specs
+## Recommended Hardware Specs
 
-Running a node for development or as a personal RPC can be done using most modern computers with at least 16gb ram.
+Operating a node <mark style="color:yellow;">for a personal RPC</mark> can be done using most modern computers. The smallest computer tested was a Pi 5 with 8gb of RAM, and it worked great.
 
-**If operating a validator / reporter we recommend:**
+**For&#x20;**<mark style="color:yellow;">**validators**</mark>**&#x20;we recommend:**
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
 * storage: 500gb+ @ NVME gen3+
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
-### Pre-requisites
+<mark style="color:yellow;background-color:yellow;">Note: The memory requirement (32gb) is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines.</mark>
+
+### Software Prerequisites
 
 {% tabs %}
 {% tab title="Linux" %}
