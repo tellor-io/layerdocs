@@ -115,4 +115,4 @@ If `status` is `1`, It means that you are not bonded. This can happen If you acc
 If `status` is `2`, It means that your validator is jailed. If this happens, check if the node process is running on your host machine.&#x20;
 {% endhint %}
 
-You can unjail with steps shown in the [next section.](../run-the-data-reporter.md)
+You can unjail with steps shown in the [next section.](../run-the-data-reporter/)

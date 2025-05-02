@@ -11,7 +11,7 @@ icon: pen
 
 ## Prerequisites
 
-* An account for creating a reporter that has either [created](run-a-layer-validator/) or [delegated](command-line-usage/delegate-to-a-validator.md) to a validator.&#x20;
+* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../command-line-usage/delegate-to-a-validator.md) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
 ## Build the Reporter Binary

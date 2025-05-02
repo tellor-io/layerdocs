@@ -24,8 +24,8 @@ Visit the Data Feed to see the oracle data being reported in real time [here](ht
 [run-a-layer-validator](run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="run-the-data-reporter.md" %}
-[run-the-data-reporter.md](run-the-data-reporter.md)
+{% content-ref url="run-the-data-reporter/" %}
+[run-the-data-reporter](run-the-data-reporter/)
 {% endcontent-ref %}
 
 {% hint style="success" %}
