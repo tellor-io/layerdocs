@@ -1,10 +1,10 @@
 # Delegate to a Validator
 
-Follow these steps to delegate your tokens on the test chain. We will use a remote rpc so that you do not need to run a node locally.
+When you delegate to a validator you will increase their power while earning rewards minus that validators commission.&#x20;
 
-### Create the delegate tx
+When you delegate to a validator, losses can occur due to that validator's inactivity or misbehavior.&#x20;
 
-The following is an example command:
+Be sure to select a validator that you trust!
 
 {% code overflow="wrap" %}
 ```sh

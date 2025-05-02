@@ -1,6 +1,10 @@
 # Select a Reporter
 
-When you select a reporter you increase their reporting power and receive rewards minus the reporter's commission.
+When you select a reporter you increase their reporting power while earning rewards minus the reporter's commission. \
+\
+When you select a reporter, losses can occur if that reporter is disputed.&#x20;
+
+Be sure to select an active reporter who you trust!
 
 {% code overflow="wrap" %}
 ```sh
