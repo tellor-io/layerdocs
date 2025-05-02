@@ -60,6 +60,5 @@ Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)
 Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 
 {% hint style="info" %}
-<mark style="color:blue;">Check accounts any time with:</mark> \
-`./layerd keys list`
+<mark style="color:blue;">Check accounts any time with:</mark> `./layerd keys list`
 {% endhint %}

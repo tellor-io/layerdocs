@@ -9,7 +9,7 @@
   * [Claiming Bridge Deposits](running-tellor-layer/bridge-trbp-from-sepolia/claiming-bridge-deposits.md)
   * [Block Explorer Method](running-tellor-layer/bridge-trbp-from-sepolia/block-explorer-method.md)
   * [Bridge TRB back to Sepolia](running-tellor-layer/bridge-trbp-from-sepolia/bridge-back-to-sepolia.md)
-  * [Generate Bridge Query Data / IDs](running-tellor-layer/bridge-trbp-from-sepolia/generate-bridge-query-data-ids.md)
+  * [Manual Generation of Bridge Query Data / IDs](running-tellor-layer/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 * [Managing Accounts](running-tellor-layer/manage-accounts.md)
 * [Node Setup](running-tellor-layer/node-setup/README.md)
   * [Peers List & Public RPCs](running-tellor-layer/node-setup/peers-list-and-public-rpcs.md)

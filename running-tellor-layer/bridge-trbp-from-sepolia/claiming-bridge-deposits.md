@@ -11,7 +11,7 @@ _**The claim transaction for an individual bridge request can be claimed (12 hou
 <mark style="color:blue;">**You must have a balance on Tellor Layer to claim tips for bridge deposits.**</mark>
 {% endhint %}
 
-1\) Find the queryId for the unclaimed bridge deposit. This is covered in another section of this documentation ([here](generate-bridge-query-data-ids.md)).
+1\) Find the queryId for the unclaimed bridge deposit. This is covered in another section of this documentation ([here](manual-generation-of-bridge-query-data-ids.md)).
 
 2\) Find a timestamp for the aggregate report of the bridge deposit:
 
