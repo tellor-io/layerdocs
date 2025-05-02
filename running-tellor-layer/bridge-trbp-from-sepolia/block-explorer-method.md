@@ -1,5 +1,6 @@
 ---
 description: How to use Etherscan to bridge Sepolia TRB to Tellor Layer.
+hidden: true
 ---
 
 # Block Explorer Method
@@ -15,7 +16,7 @@ Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb
 
 Set the `_amount` to be the amount that you want to bridge e.g. `25000000000000000000 (25 TRB with 18 decimals)`
 
-![](<../../../.gitbook/assets/Screenshot From 2025-04-07 14-49-35.png>)
+![](<../../.gitbook/assets/Screenshot From 2025-04-07 14-49-35.png>)
 
 Click "Write" and confirm the transaction in your wallet.
 

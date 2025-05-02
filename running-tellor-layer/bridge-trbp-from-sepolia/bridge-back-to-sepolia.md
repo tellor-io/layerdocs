@@ -4,41 +4,47 @@ description: How to get your funds back to Ethereum (Sepolia)
 
 # Bridge TRB back to Sepolia
 
-**1. Request withdraw of your tokens on Layer via the cli.**&#x20;
+#### **1. Use the CLI to Request a Withdrawal**&#x20;
 
-In this example, the layer address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`:
+In the following example command, our Tellor address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`. (Adjust these two parameters to match your addresses.)
 
 {% code overflow="wrap" %}
-```bash
+```sh
 # layerd tx bridge withdraw-tokens [creator] [recipient] [amount] [flags]
-./layerd tx bridge withdraw-tokens tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5 7660794eF8f978Ea0922DC29B4d93e1fc94A 69010069loya --from YOUR_ACCOUNT_NAME --fees 5loya
+./layerd tx bridge withdraw-tokens tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5 7660794eF8f978Ea0922DC29B4d93e1fc94A 69010069loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}
 
-Copy the transaction hash of this withdraw-tokens transaction from the output.
+_Save the transaction hash from the output._&#x20;
 
-\
-We need to query the result and copy two pieces of information: the `query_id` and the `withdraw_id`
+#### 2. Gather information about your request
+
+Use the command:
 
 {% code overflow="wrap" %}
-```bash
-# to get the queryId
-./layerd query tx --type=hash <your_tx_hash> | grep -A 1 "query_id"
-
-# to get the withdraw_id
-./layerd query tx --type=hash <your_tx_hash> | grep -A 1 "withdraw_id"
+```sh
+./layerd query tx --type=hash <YOUR_TRANSACTION_HASH> | grep -A 1 -e raw_log -e query_id -e withdraw_id
 ```
 {% endcode %}
 
-Save these to be used in step 3...
+Copy the output to use later. It should look similar to this:
 
-{% hint style="info" %}
-_<mark style="color:blue;">**Your withdraw request will be automatically reported on layer.**</mark>_&#x20;
-{% endhint %}
+```
+    key: query_id
+    value: 866997ed9d1a463f0ce8ba1d55a6b7545ba1e4ba1292ae502b6a859b5e1d3a5d
+--
+    key: withdraw_id
+    value: "8"
+--
+raw_log: ""
+timestamp: "2025-05-02T16:11:27Z"
+```
 
-**2. Wait 12 hours.**
+#### **3. Wait 12 hours.**
 
-**3. Find the timestamp of the aggregate report  using the query\_id from step 1:**
+There is a 12 hour delay for bridge requests to and from Tellor.
+
+#### 4. Find the timestamp of the aggregate report  using the query\_id from step 1:
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layerd query oracle get-current-aggregate-report [query_id] [flags]
 <strong>./layerd query oracle get-current-aggregate-report &#x3C;your_query_id_from_step_2>
