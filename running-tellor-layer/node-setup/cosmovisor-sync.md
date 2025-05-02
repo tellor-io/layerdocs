@@ -1,22 +1,24 @@
 ---
-description: If you would like to use cosmovisor...
+description: Setup steps for cosmovisor gang.
 ---
 
 # Cosmovisor Sync
 
+Cosmovisor is a binary manager that can perform upgrades automatically. It can be configured to automatically download binaries, but this level of automation has not been tested on Tellor!
+
 ## Prerequisites:
 
-* A Layer node machine configured like [this](./).
+A Tellor node machine configured like [this](./) is not required, but different setups may require different commands from the ones shown below.
 
 ## Build and configure Cosmovisor
 
-1. **Clone the** cosmos repo, change directory to `cosmos-sdk`
+1. **Clone the** cosmos repo somewhere on your node machine and change directory to `cosmos-sdk`
 
 ```sh
 git clone https://github.com/cosmos/cosmos-sdk && cd cosmos-sdk/tools/cosmovisor
 ```
 
-2. Build cosmovisor with the command:
+2. Build cosmovisor:
 
 ```sh
 go build ./cmd/cosmovisor
@@ -43,12 +45,15 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 # set up cosmovisor. Each command is done seperatly.
 ./cosmovisor init ~/layer/binaries/v4.0.0/layerd
 ./cosmovisor add-upgrade ~/layer/binaries/v4.0.1/layerd
+./cosmovisor add-upgrade ~/layer/binaries/v4.0.3/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
 
 {% code overflow="wrap" %}
 ```sh
-./cosmovisor run start --api.enable --api.swagger --home ~/.layer --price-daemon-enabled=false --panic-on-daemon-failure-enabled=false --key-name YOUR_ACCOUNT_NAME
+./cosmovisor run start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME --api.enable --api.swagger
 ```
 {% endcode %}
+
+Make sure to do `add-upgrade` in advance of future Tellor upgrades to make use of cosmovisor's features.

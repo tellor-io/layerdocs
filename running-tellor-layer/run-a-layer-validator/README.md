@@ -5,13 +5,13 @@ icon: binary-circle-check
 
 # Run a Layer Validator
 
-{% hint style="success" %}
-* <mark style="color:green;">**You will need a**</mark> [<mark style="color:green;">**node that's fully synced**</mark>](../node-setup/) <mark style="color:green;">**and**</mark> [<mark style="color:green;">**an account that has a balance**</mark>](../node-setup/manage-accounts.md) <mark style="color:green;">**(loya).**</mark>&#x20;
-{% endhint %}
+## Prerequisites
 
-## Validator Setup
+You will need a [node that's fully synced](../node-setup/) and [an account that has a balance](../manage-accounts.md) (loya).
 
-1. **Open up a new terminal window on your node machine and check if your address has funds:**
+## Creating your Validator
+
+#### 1) Check if your address has funds:
 
 ```bash
 ./layerd query bank balance YOUR_ACCOUNT_NAME loya
@@ -25,38 +25,32 @@ balance:
   denom: loya
 ```
 
-{% hint style="warning" %}
+{% hint style="success" %}
 <mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](../bridge-trbp-from-sepolia/) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
 {% endhint %}
 
-3. **Retrieve Your Validator Public Key**\
-   With your `layer` folder as the active directory, use the command:
+#### 2)  Retrieve your Node's Pubkey
 
-```bash
-./layerd comet show-validator
-```
+Navigate to your active binary directory and print your node's "pubkey". This is a unique identifier for a node running on your computer:
 
-This returns your validator pubkey.  Should look like this:
+<pre class="language-bash"><code class="lang-bash"><strong>cd ~/layer/binaries/v4.0.3 &#x26;&#x26; ./layerd comet show-validator
+</strong></code></pre>
+
+This returns your validator pubkey.  It should look like this:
 
 ```bash
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}
 ```
 
-Copy the pubkey to your clipboard for step 4.
+Copy this output for the next step.
 
-4. **Edit the Validator Configuration File**
+#### **3) Edit the Validator Configuration File**
 
 Create (or edit) the validator.json file:
 
 ```bash
 nano validator.json
 ```
-
-{% hint style="warning" %}
-* <mark style="color:blue;">**When creating your validator, be sure that you are NOT choosing an "amount" that is larger than your balance of test-net TRB.**</mark>&#x20;
-* <mark style="color:blue;">**Keep a balance of loya available for paying gas fees if you're going to be running the data reporter.**</mark>
-* <mark style="color:blue;">**TRB has 6 decimals: 1 loya is 0.000001 TRB**</mark>
-{% endhint %}
 
 Edit or add the following code:
 
@@ -82,8 +76,12 @@ Edit or add the following code:
 * Edit identity, website, security, and details with your identifying information. (optional)
 * Edit `commission-rate`, `commission-max-rate`, `commission-max-change-rate`, and `min-self-delegation` if desired. (these can be changed later using the `edit-validator` command).
 
-{% hint style="info" %}
-<mark style="color:blue;">**Note:**</mark> TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.
+{% hint style="warning" %}
+<mark style="color:blue;">**Important Considerations for your Validator:**</mark>
+
+* <mark style="color:blue;">When creating your validator, be sure that you are NOT choosing an "amount" that is larger than your balance of test-net TRB.</mark>&#x20;
+* <mark style="color:blue;">TRB has 6 decimals: 1 loya is 0.000001 TRB</mark>
+* <mark style="color:blue;">Note: TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.</mark>
 {% endhint %}
 
 5. **Create Your Validator**
