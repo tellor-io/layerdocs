@@ -6,24 +6,24 @@ icon: bridge-water
 # Bridging Sepolia TRB
 
 {% hint style="success" %}
-If you don't have any Sepolia TRB, Make a request in the [Tellor Discord](https://discord.gg/kaMenz4ZVw)'s `testing-layer` channel.
+<mark style="color:blue;">Important Info on Bridging:</mark>
 
-**Reminder: There is no incentive to run the testnet unless you want to be a validator and /or reporter on mainnet. TRB inflation is immutable.**
+* <mark style="color:blue;">**If you need Sepolia TRB, please make a request in the**</mark> [<mark style="color:blue;">**Tellor Discord**</mark>](https://discord.gg/kaMenz4ZVw)<mark style="color:blue;">**'s #testing-layer channel.**</mark>
+* <mark style="color:blue;">**There is no incentive to run this testnet. It is only for practicing the operation validators and reporters for mainnet.**</mark>
+* <mark style="color:blue;">**The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller  \_amount, or wait for a time when the bridge is less congested.**</mark>
 {% endhint %}
 
-_**When you make a tellor bridge deposit request, that EVM event is reported on Tellor Layer by the data reporters running there. After a 12 hour wait, the balance should arrive in your tellor account.**_
+### Prerequisites
 
-{% hint style="warning" %}
-<mark style="color:blue;">N</mark><mark style="color:blue;">**ote: The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller value for  \_amount.**</mark>
-{% endhint %}
+* An ethereum wallet with Sepolia TRB. (c.a. [0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660))
 
 ### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
 
-1\) Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
+Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot From 2025-05-01 15-17-52.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-05-02 11-57-51.png" alt=""><figcaption></figcaption></figure>
 
-2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer, add your receiving address on layer (starts with "tellor1"), and approve the Deposit.
+2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill in the "To address" with your tellor prefix account and approve the transaction in your wallet extension pop-up.
 
 4\. Wait 12 hours
 
