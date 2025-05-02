@@ -1,5 +1,5 @@
 ---
-description: How to set up a Tellor Layer Node.
+description: How to Operate Tellor Layer Node.
 icon: rectangle-terminal
 ---
 
@@ -7,16 +7,16 @@ icon: rectangle-terminal
 
 ## Recommended Hardware Specs
 
-Operating a node <mark style="color:yellow;">for a personal RPC</mark> can be done using most modern computers. The smallest computer tested was a Pi 5 with 8gb of RAM, and it worked great.
+Operating a node <mark style="color:green;">for a personal RPC</mark> can be done using most modern computers. The smallest computer tested was a Pi 5 with 8gb of RAM, and it worked great.
 
-**For&#x20;**<mark style="color:yellow;">**validators**</mark>**&#x20;we recommend:**
+**For&#x20;**<mark style="color:green;">**validators**</mark>**&#x20;we recommend:**
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
 * storage: 500gb+ @ NVME gen3+
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
-<mark style="color:yellow;background-color:yellow;">Note: The memory requirement (32gb) is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines.</mark>
+_Note: The memory requirement (32gb) is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines._
 
 ### Software Prerequisites
 
@@ -45,23 +45,23 @@ jq, yq, sed, and wget are required for running the various commands and config s
 {% endtab %}
 {% endtabs %}
 
-{% hint style="warning" %}
-**Commands shown should be used while logged in as a user (not root).**\
-\
-**If you are using an older Mac with an intel chip, use the linux version of the binary(s) in step 1 below.**
+{% hint style="success" %}
+* Commands shown should just work while logged in as a user (not root).&#x20;
+* **I**f you are using an older Mac with an intel chip, the linux versions (amd64) in step 1 below may be used. (just remember to use the mac commands!)&#x20;
+* If on raspberry pi or similar, use the binary downloads for "**arm64**".
 {% endhint %}
 
-### Choose How you will Sync your Node
+## Choose How you will Sync your Node
 
-There are Two different ways to get a node running on **layertest-4**. You can sync from a snapshot, or from genesis. Syncing from peer snapshot works best for most people. You should sync from genesis if you want to have the full chain history for analysis.
+There are two different ways to get a node running on **layertest-4**:
 
-* Snapshot sync: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method is faster, but you will not be able to query block info (like transactions) for any blocks that were produced before the day of your sync.
-* Genesis sync: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long layertest-4 has been live.
+* **Snapshot sync**: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method is faster, but you will not be able to query block info (like transactions) for any blocks that were produced before the day of your sync.
+* **Genesis sync**: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long layertest-4 has been live.
 
-### 1. Download and Organize the `layerd` Binary(s)
+## 1. Download and Organize the `layerd` Binary(s)
 
-{% hint style="info" %}
-**Be sure to select the tabs that work for your setup.**
+{% hint style="warning" %}
+**Be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**&#x20;
 {% endhint %}
 
 {% tabs %}
@@ -136,7 +136,7 @@ cd ~/layer/binaries/v4.0.0
 {% endtab %}
 {% endtabs %}
 
-### 2. Edit Chain Configuration for Layer.
+## 2. Edit Chain Configuration for Layer.
 
 _These steps are the same if you are doing a snapshot sync or a genesis sync. Select the tab for your computer's architecture:_
 
@@ -174,7 +174,7 @@ chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
 {% endtab %}
 {% endtabs %}
 
-### 3. Make a Local Account
+## 3. Make a Local Account
 
 Create a tellor address (account) for starting the node with various options. This should be done even if you're not going to run a validator.
 
@@ -202,20 +202,16 @@ Export your "tellorvaloper" prefix address. Copy it and keep it handy for the ne
 ./layerd keys show YOUR_ACCOUNT_NAME --bech val
 ```
 
-### 4. Set System Variables
+## 4. Set System Variables
 
 A Layer node uses the following variables:
 
-* TOKEN\_BRIDGE\_CONTRACT: the token bridge contract address.
-* ETH\_RPC\_URL: A reliable Sepolia RPC URL.
-* ETH\_RPC\_URL\_PRIMARY: Sepolia RPC url for the reporter daemon (can be the same).
-* ETH\_RPC\_URL\_FALLBACK: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
-* WITHDRAW\_FREQUENCY: For reporters, the daemon will automatically claim your tips (rewards) on this interval (in seconds)
-* REPORTERS\_VALIDATOR\_ADDRESS: For reporters the "tellorvaloper" address that you want to withdraw rewards to. (can be different from your reporter's address)
-
-{% hint style="info" %}
-If you are starting layer with a bash script, be sure to include export statements for these variables at the top of your start script. If running layerd as a system service, they can be added to your .service file. Commands shown are for running layer in a local bash terminal or with tmux or screen.
-{% endhint %}
+* <mark style="color:green;">**TOKEN\_BRIDGE\_CONTRACT**</mark>: the token bridge contract address.
+* <mark style="color:green;">**ETH\_RPC\_URL**</mark>: A reliable Sepolia RPC URL.
+* <mark style="color:green;">**ETH\_RPC\_URL\_PRIMARY**</mark>: Sepolia RPC url for the reporter daemon (can be the same).
+* <mark style="color:green;">**ETH\_RPC\_URL\_FALLBACK**</mark>: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
+* <mark style="color:green;">**WITHDRAW\_FREQUENCY**</mark>: For reporters, the daemon will automatically claim your tips (rewards) on this interval (in seconds)
+* <mark style="color:green;">**REPORTERS\_VALIDATOR\_ADDRESS**</mark>: From step 3 above.
 
 Set the environment variables so that they are set in new terminal windows by default. Open your .bashrc or .zshrc file with a text editor like nano:
 
