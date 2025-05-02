@@ -11,11 +11,13 @@ You will need a [node that's fully synced](../node-setup/) and [an account that 
 
 ## Creating your Validator
 
-#### 1) Check if your address has funds:
+#### 1) Change directory to the one with the active binary and check if your address has funds:
 
+{% code overflow="wrap" %}
 ```bash
-./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v4.0.3 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
+{% endcode %}
 
 This outputs something like:
 
@@ -31,9 +33,9 @@ balance:
 
 #### 2)  Retrieve your Node's Pubkey
 
-Navigate to your active binary directory and print your node's "pubkey". This is a unique identifier for a node running on your computer:
+This is a unique identifier for a node running on your computer:
 
-<pre class="language-bash"><code class="lang-bash"><strong>cd ~/layer/binaries/v4.0.3 &#x26;&#x26; ./layerd comet show-validator
+<pre class="language-bash"><code class="lang-bash"><strong>./layerd comet show-validator
 </strong></code></pre>
 
 This returns your validator pubkey.  It should look like this:
@@ -76,19 +78,16 @@ Edit or add the following code:
 * Edit identity, website, security, and details with your identifying information. (optional)
 * Edit `commission-rate`, `commission-max-rate`, `commission-max-change-rate`, and `min-self-delegation` if desired. (these can be changed later using the `edit-validator` command).
 
-{% hint style="warning" %}
+{% hint style="success" %}
 <mark style="color:blue;">**Important Considerations for your Validator:**</mark>
 
 * <mark style="color:blue;">When creating your validator, be sure that you are NOT choosing an "amount" that is larger than your balance of test-net TRB.</mark>&#x20;
 * <mark style="color:blue;">TRB has 6 decimals: 1 loya is 0.000001 TRB</mark>
 * <mark style="color:blue;">Note: TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.</mark>
+* <mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://explorer.tellor.io)<mark style="color:blue;">**.**</mark>
 {% endhint %}
 
-5. **Create Your Validator**
-
-{% hint style="info" %}
-<mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://antietam.tellor.io/)<mark style="color:blue;">**.**</mark>
-{% endhint %}
+#### **4)  Create your validator.**
 
 Run the following command to create-validator:
 
@@ -98,18 +97,9 @@ Run the following command to create-validator:
 ```
 {% endcode %}
 
-6. Restart your node, adding the --key-name flag. Head back to the terminal where you're running your node and use ctrl^c to stop it. Then use the command:
+**5) Verify that creation was successful.**
 
-{% code overflow="wrap" %}
-```sh
-./layerd start --home $HOME/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
-```
-{% endcode %}
-
-You should see the log quickly catch up. Are you a validator now?
-
-7. **Verify Your Validator Creation**\
-   Ensure your validator was created successfully using the command replacing your\_validator\_address:
+Use the command:
 
 {% code overflow="wrap" %}
 ```bash
