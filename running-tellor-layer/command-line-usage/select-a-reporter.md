@@ -10,6 +10,6 @@ Be sure to select an active reporter who you trust!
 ```sh
 # layerd tx reporter select-reporter [reporter-address] [flags]
 # Example selecting reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q
-./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-4 --node=http://layer-node.com:26758
+./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-4 --node https://node-palmito.tellorlayer.com/rpc/
 ```
 {% endcode %}
