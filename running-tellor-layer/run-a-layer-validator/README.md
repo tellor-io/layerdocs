@@ -11,7 +11,7 @@ You will need a [node that's fully synced](../node-setup/) and [an account that 
 
 ## Creating your Validator
 
-#### 1) Change directory to the one with the active binary and check if your address has funds:
+#### 1) Change directory to v4.0.3 and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
