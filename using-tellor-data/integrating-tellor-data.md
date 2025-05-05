@@ -10,12 +10,28 @@ Integrating tellor data into a user contract involves two major aspects:
 * Verifying that the data is authentic tellor data
 * Custom data checks unique to your use case and data needs
 
+{% hint style="info" %}
+See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for a few example oracle use case implementations.
+{% endhint %}
+
+### Contract Addresses
+
+BlobstreamO Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
+
 ### Verifying Data Authenticity
 
-Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The BlobstreamO contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the BlobstreamO contract for this authentication step. The code block below shows how you can connect your contract to BlobstreamO and pass tellor data to it to verify its authenticity.
+Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The BlobstreamO contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the BlobstreamO contract for this authentication step.&#x20;
+
+We will install the usingtellorlayer npm package to gain access to the IBlobstreamO interface:
+
+```bash
+npm i usingtellorlayer
+```
+
+The code block below shows how you can connect your contract to BlobstreamO and pass tellor data to it to verify its authenticity.
 
 ```solidity
-import { IBlobstreamO } from “./interfaces/IBlobstreamO.sol”;
+import "usingtellorlayer/contracts/interfaces/IBlobstreamO.sol";
 
 contract SamplePredictionMarketUser {
 	IBlobstreamO public blobstream;
@@ -27,8 +43,7 @@ contract SamplePredictionMarketUser {
 	function resolveMarket(
         	OracleAttestationData calldata _attestData, 
         	Validator[] calldata _currentValidatorSet, 
-        	Signature[] calldata _sigs, 
-        	uint256 _marketId
+        	Signature[] calldata _sigs,
     	) public {
 		// **************************************************
 		// * AUTHENTICITY: verify that data came from tellor chain
@@ -61,7 +76,7 @@ Custom checks will vary based on the use case and any other unique data needs. I
         		OracleAttestationData calldata _attestData, 
         		Validator[] calldata _currentValidatorSet, 
         		Signature[] calldata _sigs, 
-        		uint256 _marketId
+        		uint256 _marketId // id created for this use case
         ) public {
                 // ...
 
@@ -104,7 +119,7 @@ Once the data has passed the authenticity and custom user checks, you can decode
 ```solidity
 pragma solidity 0.8.19;
 
-import "./dependencies/IBlobstreamO.sol";
+import "usingtellorlayer/contracts/interfaces/IBlobstreamO.sol";
 
 contract SamplePredictionMarketUser {
 	IBlobstreamO public blobstream;
@@ -198,5 +213,3 @@ Below is all of the data and metadata available to a user contract. We encourage
 * **Attestation Timestamp** - This is the time of when the attestation was created
 * **Last Consensus Timestamp** - This is the timestamp of the last aggregate which had at least 2/3 of reporter power
 * **Power Threshold** - This is equal to 2/3 of the total tokens tellor validators have at stake
-
-See more examples in the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser).
