@@ -15,7 +15,7 @@ icon: bridge-water
 
 ### Prerequisites
 
-* An ethereum wallet with Sepolia TRB. (c.a. [0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660))
+* An ethereum wallet with Sepolia TRB: [0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660)
 
 ### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
 
