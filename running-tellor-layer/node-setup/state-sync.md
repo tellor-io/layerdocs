@@ -1,8 +1,10 @@
 ---
-description: Help with a few common setup problems. (more to be added in this section soon)
+description: >-
+  Steps for resetting / re-syncing a state synced node (or recovering from a
+  failed state sync).
 ---
 
-# State Sync Troubleshooting
+# State Sync Troubleshooting / Resetting Chain Data
 
 ## State Sync Failed!?
 
@@ -12,7 +14,7 @@ There are three main reasons why a state sync will fail:
 * Not enough healthy peers / seeds configured
 * Incorrect trusted height / trusted hash
 
-### Steps to Fix:
+### Steps to reset chain data without losing your accounts:
 
 1\) Stop the node process with `ctrl^c` (or `sudo systemctl stop layer` if it's a service)
 

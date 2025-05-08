@@ -14,7 +14,7 @@
 * [Node Setup](running-tellor-layer/node-setup/README.md)
   * [Peers List & Public RPCs](running-tellor-layer/node-setup/peers-list-and-public-rpcs.md)
   * [Cosmovisor Sync](running-tellor-layer/node-setup/cosmovisor-sync.md)
-  * [State Sync Troubleshooting](running-tellor-layer/node-setup/state-sync.md)
+  * [State Sync Troubleshooting / Resetting Chain Data](running-tellor-layer/node-setup/state-sync.md)
   * [Example .service Files](running-tellor-layer/node-setup/example-.service-files.md)
 * [Run a Layer Validator](running-tellor-layer/run-a-layer-validator/README.md)
   * [Slashing Rules for Validators](running-tellor-layer/run-a-layer-validator/jailing-and-unjail-ing.md)
