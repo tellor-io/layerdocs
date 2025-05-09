@@ -5,12 +5,18 @@ icon: diagram-nested
 
 # Integrate Tellor on a New Chain
 
-In this guide, we will go through the steps of providing access to tellor data on a new chain. This will involve:
+In this guide, we will go through the steps of providing access to tellor data on a new chain. You do not have to perform these steps yourself, and the tellor team would be happy to help if you contact us on [Discord](https://discord.com/invite/tellor) or [this google form](https://docs.google.com/forms/d/e/1FAIpQLSc5YEerq5y5_YBiQg7ZwDVw76o_1KmRmqXvzjeZlfshNKTvaQ/viewform).&#x20;
+
+For those with a do-it-yourself attitude, this guide will involve:
 
 * deploying the BlobstreamO contract
 * deploying an example user contact SimpleLayerUser
 * installing the relayer
 * running the relayer
+
+{% hint style="danger" %}
+Following the steps in this guide does not guarantee access to absolutely secure oracle data. See the [Tellor Security 201](https://tellor.io/blog/layer-security-201/) article for more information.
+{% endhint %}
 
 ### Clone Tellor and Install
 
@@ -48,7 +54,9 @@ Open the `hardhat.config.js` file and add your evm chain information under `netw
 
 Now we're going to use deployment scripts to deploy the BlobstreamO contract. This is the contract responsible for verifying that relayed data is authentic tellor data.
 
-Open the deployment script `./scripts/DeployBlobstreamO.js`. At the top of the file, you will see a variable `guardianaddress`. You will need to choose an address who is responsible for resetting the BlobstreamO validator set in the event that it becomes stale (no updates within 21 days). As long as the validator set is always kept up to date in the contract, the guardian will have no special privileges or responsibilities.\
+Open the deployment script `./scripts/DeployBlobstreamO.js`. At the top of the file, you will see a variable `guardianaddress`. You will need to choose an address who is responsible for resetting the BlobstreamO validator set in the event that it becomes stale (no updates within 21 days). As long as the validator set is always kept up to date in the contract, the guardian will have no special privileges or responsibilities.
+
+\
 Set the address to one of your own addresses:
 
 ```js

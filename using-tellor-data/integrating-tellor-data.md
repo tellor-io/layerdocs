@@ -43,7 +43,7 @@ contract SamplePredictionMarketUser {
 	function resolveMarket(
         	OracleAttestationData calldata _attestData, 
         	Validator[] calldata _currentValidatorSet, 
-        	Signature[] calldata _sigs,
+        	Signature[] calldata _sigs
     	) public {
 		// **************************************************
 		// * AUTHENTICITY: verify that data came from tellor chain
