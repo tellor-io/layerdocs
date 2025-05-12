@@ -310,11 +310,9 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME --api-enable --api-swagger
 ```
 {% endcode %}
-
-<mark style="color:blue;">**Note: If you want to enable the server for http requests, add the flags**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**`--api.enable`**</mark> <mark style="color:blue;">**`--api.swagger`**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**to your start command.**</mark>
 
 The node should start up quickly and begin downloading snapshots from peers.
 
