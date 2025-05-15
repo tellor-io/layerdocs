@@ -9,7 +9,7 @@ In this guide, we will go through the steps of providing access to tellor data o
 
 For those with a do-it-yourself attitude, this guide will involve:
 
-* deploying the BlobstreamO contract
+* deploying the TellorDataBridge contract
 * deploying an example user contact SimpleLayerUser
 * installing the relayer
 * running the relayer
@@ -50,11 +50,11 @@ Open your new `.env` file and add your ethereum private key and an rpc node url.
 
 Open the `hardhat.config.js` file and add your evm chain information under `networks`. You can use the `sepolia` section as a guide.
 
-#### BlobstreamO
+#### TellorDataBridge
 
-Now we're going to use deployment scripts to deploy the BlobstreamO contract. This is the contract responsible for verifying that relayed data is authentic tellor data.
+Now we're going to use deployment scripts to deploy the TellorDataBridge contract. This is the contract responsible for verifying that relayed data is authentic tellor data.
 
-Open the deployment script `./scripts/DeployBlobstreamO.js`. At the top of the file, you will see a variable `guardianaddress`. You will need to choose an address who is responsible for resetting the BlobstreamO validator set in the event that it becomes stale (no updates within 21 days). As long as the validator set is always kept up to date in the contract, the guardian will have no special privileges or responsibilities.
+Open the deployment script `./scripts/DeployTellorDataBridge.js`. At the top of the file, you will see a variable `guardianaddress`. You will need to choose an address who is responsible for resetting the TellorDataBridge validator set in the event that it becomes stale (no updates within 21 days). As long as the validator set is always kept up to date in the contract, the guardian will have no special privileges or responsibilities.
 
 \
 Set the address to one of your own addresses:
@@ -65,29 +65,29 @@ var guardianaddress = "0xYOUR_ADDRESS"
 
 You should also update the `PK` and `NODE_URL` variables to match those in your `.env` file.
 
-Now you should be able to deploy the BlobstreamO contract:
+Now you should be able to deploy the TellorDataBridge contract:
 
 ```bash
-npx hardhat run scripts/DeployBlobstreamO.js --network YOUR_NETWORK
+npx hardhat run scripts/DeployTellorDataBridge.js --network YOUR_NETWORK
 ```
 
 The following should print in your logs:
 
 ```
-deploy BlobstreamO bridge
-BlobstreamO deployed to: 0xYOUR_BLOBSTREAM_ADDRESS
+deploy TellorDataBridge
+TellorDataBridge deployed to: 0xYOUR_DATA_BRIDGE_ADDRESS
 ```
 
-We will use the address `0xYOUR_BLOBSTREAM_ADDRESS` in the steps below.
+We will use the address `0xYOUR_DATA_BRIDGE_ADDRESS` in the steps below.
 
 #### SimpleLayerUser
 
 Now we will deploy the SimpleLayerUser contract as an example oracle user.
 
-Open the deployment script `./scripts/DeploySimpleLayerUser.js`. Set the BlobstreamO address
+Open the deployment script `./scripts/DeploySimpleLayerUser.js`. Set the TellorDataBridge address
 
 ```js
-var blobstreamOaddress = "0xYOUR_BLOBSTREAM_ADDRESS"
+var dataBridgeAddress = "0xYOUR_DATA_BRIDGE_ADDRESS"
 ```
 
 You will also need a queryId. We will use the ETH/USD spot price queryId in this example.
@@ -117,14 +117,14 @@ We will use `0xYOUR_TELLOR_USER_ADDRESS` when running the relayer below.
 
 The relayer is used to get oracle data from tellor and submit it to your user contract.
 
-Follow the [setup instructions for the relayer](https://docs.tellor.io/layer-docs/using-tellor-data/relay-data-to-evm-chains). We recommend you set your `ETH_PRIVATE_KEY` in the relayer .env file, using the same evm address you used to deploy the contracts in the steps above. Only the deployer address can initialize the BlobstreamO contract, but any address can run the relayer after initialization. You should also set the `WEB3_PROVIDER_URL`.
+Follow the [setup instructions for the relayer](https://docs.tellor.io/layer-docs/using-tellor-data/relay-data-to-evm-chains). We recommend you set your `ETH_PRIVATE_KEY` in the relayer .env file, using the same evm address you used to deploy the contracts in the steps above. Only the deployer address can initialize the TellorDataBridge contract, but any address can run the relayer after initialization. You should also set the `WEB3_PROVIDER_URL`.
 
-#### Initialize BlobstreamO
+#### Initialize TellorDataBridge
 
-We need to initialize the BlobstreamO contract with the current tellor validator set information.
+We need to initialize the TellorDataBridge contract with the current tellor validator set information.
 
 ```bash
-relayer init --blobstream-address 0xYOUR_BLOBSTREAM_ADDRESS
+relayer init --blobstream-address 0xYOUR_DATA_BRIDGE_ADDRESS
 ```
 
 Now you should be ready to relay data to your contract.
@@ -132,9 +132,9 @@ Now you should be ready to relay data to your contract.
 #### Relay Data
 
 ```bash
-relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --blobstream-address 0xYOUR_BLOBSTREAM_ADDRESS --contract-type SimpleLayerUser --sleep-time 3600
+relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --blobstream-address 0xYOUR_DATA_BRIDGE_ADDRESS --contract-type SimpleLayerUser --sleep-time 3600
 ```
 
 The relayer should gather tellor oracle data and submit it to your contract. If you see a transaction hash printed in the relayer logs, that's a good sign. Check your evm chain's block explorer to see whether you relayed data successfully.
 
-Given the `sleep-time` argument we entered in that last command, the relayer will continuously submit new oracle data once every hour. You may also see the relayer update the validator set in the BlobstreamO contract occasionally.
+Given the `sleep-time` argument we entered in that last command, the relayer will continuously submit new oracle data once every hour. You may also see the relayer update the validator set in the TellorDataBridge contract occasionally.

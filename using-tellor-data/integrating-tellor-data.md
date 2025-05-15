@@ -16,7 +16,7 @@ See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for
 
 ### Contract Addresses
 
-BlobstreamO Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
+TellorDataBridge Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
 
 ### Verifying Data Authenticity
 
