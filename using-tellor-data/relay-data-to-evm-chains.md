@@ -70,7 +70,7 @@ The relayer provides several commands through its CLI:
 #### Start Relaying
 
 ```bash
-relayer relay --layer-test-user-address 0x44941f399c4c009b01bE2D3b0A0852dC8FFD2C4a --blobstream-address 0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8 --layer-swagger https://node-palmito.tellorlayer.com/ --layer-rpc https://node-palmito.tellorlayer.com/rpc/ --contract-type TestPriceFeedUser --sleep-time 7200
+relayer relay --layer-test-user-address 0x44941f399c4c009b01bE2D3b0A0852dC8FFD2C4a --data-bridge-address 0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8 --layer-swagger https://node-palmito.tellorlayer.com/ --layer-rpc https://node-palmito.tellorlayer.com/rpc/ --contract-type TestPriceFeedUser --sleep-time 7200
 ```
 
 #### Update Oracle Data Once
@@ -82,20 +82,20 @@ relayer update --query-id 0x83a7f3d48786ac2667503a61e8c415438ed2922eb86a2906e4ee
 #### Relay Token Bridge Withdraw
 
 ```bash
-relayer relay-bridge --blobstream-address 0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8 --token-bridge-address 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2 --withdraw-id 8
+relayer relay-bridge --data-bridge-address 0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8 --token-bridge-address 0x5acb5977f35b1A91C4fE0F4386eB669E046776F2 --withdraw-id 8
 ```
 
-#### Initialize Blobstream
+#### Initialize Data Bridge
 
-This command initializes the BlobstreamO contract after deployment. This must be run by the contract deployer address.
+This command initializes the TellorDataBridge contract after deployment. This must be run by the contract deployer address.
 
 ```bash
 relayer init
 ```
 
-#### Reset Blobstream
+#### Reset Data Bridge
 
-This command resets the validator set in the BlobstreamO contract in the event that the last relayed validator set is over 21 days old. This can only be run by the BlobstreamO contract’s `guardian` address.
+This command resets the validator set in the TellorDataBridge contract in the event that the last relayed validator set is over 21 days old. This can only be run by the TellorDataBridge contract’s `guardian` address.
 
 ```bash
 relayer reset

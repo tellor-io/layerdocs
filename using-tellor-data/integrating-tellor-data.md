@@ -20,24 +20,24 @@ TellorDataBridge Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://s
 
 ### Verifying Data Authenticity
 
-Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The BlobstreamO contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the BlobstreamO contract for this authentication step.&#x20;
+Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The TellorDataBridge contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the TellorDataBridge contract for this authentication step.&#x20;
 
-We will install the usingtellorlayer npm package to gain access to the IBlobstreamO interface:
+We will install the usingtellorlayer npm package to gain access to the TellorDataBridge interface:
 
 ```bash
 npm i usingtellorlayer
 ```
 
-The code block below shows how you can connect your contract to BlobstreamO and pass tellor data to it to verify its authenticity.
+The code block below shows how you can connect your contract to TellorDataBridge and pass tellor data to it to verify its authenticity.
 
 ```solidity
-import "usingtellorlayer/contracts/interfaces/IBlobstreamO.sol";
+import "usingtellorlayer/contracts/interfaces/ITellorDataBridge.sol";
 
 contract SamplePredictionMarketUser {
-	IBlobstreamO public blobstream;
+	ITellorDataBridge public bridge;
 	
-	constructor(address _blobstreamO) {
-		blobstream = IBlobstreamO(_blobstreamO);
+	constructor(address _bridge) {
+		bridge = ITellorDataBridge(_bridge);
 	}
 
 	function resolveMarket(
@@ -48,7 +48,7 @@ contract SamplePredictionMarketUser {
 		// **************************************************
 		// * AUTHENTICITY: verify that data came from tellor chain
 		// **************************************************
-		blobstream.verifyOracleData(_attestData, _currentValidatorSet, _sigs);
+		bridge.verifyOracleData(_attestData, _currentValidatorSet, _sigs);
 
 		// … 
 	}
@@ -68,7 +68,7 @@ Custom checks will vary based on the use case and any other unique data needs. I
 2. As a sanity check, make sure the data was reported after the market expiration time.
    * If your market allows resolution anytime after the market was created, use the market's start time instead of expiration time here.
 3. Verify that `aggregatePower` meets some threshold. This is the amount of reporter stake power that was used to create the oracle data.
-   * We used the `powerThreshold` from the BlobstreamO contract as our threshold in the example below. This is equal to 2/3 of the total tellor stake amount.
+   * We used the `powerThreshold` from the TellorDataBridge contract as our threshold in the example below. This is equal to 2/3 of the total tellor stake amount.
    * In the event that the power does not reach the higher threshold, we check that the data both reaches the lower threshold, and has been on chain for a period of time to allow for disputes.
 
 ```solidity
@@ -94,9 +94,9 @@ Custom checks will vary based on the use case and any other unique data needs. I
 		require(_attestData.report.timestamp / 1000 > markets[_marketId].expiration);
 
 		// verify data reporter power meets threshold (2/3 total power) or optimistic period
-		if (_attestData.report.aggregatePower < blobstream.powerThreshold()) {
+		if (_attestData.report.aggregatePower < bridge.powerThreshold()) {
 				// make sure optimistic data meets lower threshold (1/3 total power)
-				require(_attestData.report.aggregatePower > blobstream.powerThreshold() / 2);
+				require(_attestData.report.aggregatePower > bridge.powerThreshold() / 2);
 				// make sure data stayed on chain for at least 12 hours without being disputed
 				require(_attestData.attestationTimestamp - _attestData.report.timestamp > (12 hours * 1000));
 		}
@@ -119,10 +119,10 @@ Once the data has passed the authenticity and custom user checks, you can decode
 ```solidity
 pragma solidity 0.8.19;
 
-import "usingtellorlayer/contracts/interfaces/IBlobstreamO.sol";
+import "usingtellorlayer/contracts/interfaces/ITellorDataBridge.sol";
 
 contract SamplePredictionMarketUser {
-	IBlobstreamO public blobstream;
+	ITellorDataBridge public bridge;
 	MarketInfo[] public markets;
 	uint256 public chainId = block.chainid;
 
@@ -132,8 +132,8 @@ contract SamplePredictionMarketUser {
 		uint256 expiration;
 	}
 	
-	constructor(address _blobstreamO) {
-		blobstream = IBlobstreamO(_blobstreamO);
+	constructor(address _bridge) {
+		bridge = ITellorDataBridge(_bridge);
 	}
 
 	function resolveMarket(
@@ -145,7 +145,7 @@ contract SamplePredictionMarketUser {
 		// **************************************************
 		// * AUTHENTICITY: verify that data came from tellor chain
 		// **************************************************
-		blobstream.verifyOracleData(_attestData, _currentValidatorSet, _sigs);
+		bridge.verifyOracleData(_attestData, _currentValidatorSet, _sigs);
 
 		// **************************************************
 		// * CUSTOM USER CHECKS: verify that the data is correct for this unique use case
@@ -161,9 +161,9 @@ contract SamplePredictionMarketUser {
 		require(_attestData.report.timestamp / 1000 > markets[_marketId].expiration);
 
         	// verify data reporter power meets threshold (2/3 total power) or optimistic period
-        	if (_attestData.report.aggregatePower < blobstream.powerThreshold()) {
+        	if (_attestData.report.aggregatePower < bridge.powerThreshold()) {
             		// make sure optimistic data meets lower threshold (1/3 total power)
-            		require(_attestData.report.aggregatePower > blobstream.powerThreshold() / 2);
+            		require(_attestData.report.aggregatePower > bridge.powerThreshold() / 2);
             		// make sure data stayed on chain for at least 12 hours without being disputed
             		require(_attestData.attestationTimestamp - _attestData.report.timestamp > (12 hours * 1000));
         	}

@@ -124,7 +124,7 @@ Follow the [setup instructions for the relayer](https://docs.tellor.io/layer-doc
 We need to initialize the TellorDataBridge contract with the current tellor validator set information.
 
 ```bash
-relayer init --blobstream-address 0xYOUR_DATA_BRIDGE_ADDRESS
+relayer init --data-bridge-address 0xYOUR_DATA_BRIDGE_ADDRESS
 ```
 
 Now you should be ready to relay data to your contract.
@@ -132,7 +132,7 @@ Now you should be ready to relay data to your contract.
 #### Relay Data
 
 ```bash
-relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --blobstream-address 0xYOUR_DATA_BRIDGE_ADDRESS --contract-type SimpleLayerUser --sleep-time 3600
+relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --data-bridge-address 0xYOUR_DATA_BRIDGE_ADDRESS --contract-type SimpleLayerUser --sleep-time 3600
 ```
 
 The relayer should gather tellor oracle data and submit it to your contract. If you see a transaction hash printed in the relayer logs, that's a good sign. Check your evm chain's block explorer to see whether you relayed data successfully.
