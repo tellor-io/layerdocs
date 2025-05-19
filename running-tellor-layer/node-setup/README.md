@@ -7,9 +7,9 @@ icon: rectangle-terminal
 
 ## Recommended Hardware Specs
 
-Operating a node <mark style="color:green;">for a personal RPC</mark> can be done using most modern computers. The smallest computer tested was a Pi 5 with 8gb of RAM, and it worked great.
+Operating a node <mark style="color:green;">for a personal RPC</mark> can be done using most modern computers.&#x20;
 
-**For&#x20;**<mark style="color:green;">**validators**</mark>**&#x20;we recommend:**
+For running a <mark style="color:green;">**validator**</mark>**&#x20; more horsepower is recommend:**
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
@@ -310,7 +310,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME --api-enable --api-swagger
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME --api.enable --api.swagger
 ```
 {% endcode %}
 
