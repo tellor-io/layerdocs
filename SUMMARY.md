@@ -29,6 +29,7 @@
 ***
 
 * [Disputes and Reporter Governance](disputes-and-reporter-governance.md)
+* [No-Stake Reporting](no-stake-reporting.md)
 
 ## Using Tellor Data
 
