@@ -24,10 +24,10 @@ Clone the repo, change directory to layer/daemons and do `make build`:
 git clone https://github.com/tellor-io/layer && cd layer/daemons && make build
 ```
 
-Move or Copy the binary to `~/layer/binaries/v4.0.3` and `cd` to that directory to operate the reporter (unless your setup is different).
+Move or Copy the binary to `~/layer/binaries/v5.0.0` and `cd` to that directory to operate the reporter (unless your setup is different).
 
 ```sh
-cp bin/reporterd ~/layer/binaries/v4.0.3 && cd ~/layer/binaries/v4.0.3
+cp bin/reporterd ~/layer/binaries/v5.0.0 && cd ~/layer/binaries/v5.0.0
 ```
 
 #### 2) Configure a Reporter and Start Reporting

@@ -11,11 +11,11 @@ You will need a [node that's fully synced](../node-setup/) and [an account that 
 
 ## Creating your Validator
 
-#### 1) Change directory to v4.0.3 and check if your address has funds:
+#### 1) Change directory to `~/layer/binaries/v5.0.0` and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v4.0.3 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v5.0.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 

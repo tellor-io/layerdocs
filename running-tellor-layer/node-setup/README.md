@@ -70,16 +70,16 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v4.0.3
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v4.0.3 &#x26;&#x26; cd v4.0.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v5.0.0
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.0.0 &#x26;&#x26; cd v5.0.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.0.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# layertest-4 binary v4.0.3
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# layertest-4 binary v5.0.0
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/v5.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -107,6 +107,9 @@ cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tell
 
 # upgrade binary v4.0.3 (for upgrade name v4.0.3)
 cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v5.0.0 (for upgrade name v5.0.0)
+cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/5.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -119,6 +122,12 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 &&
 
 # upgrade binary v4.0.2 (**for upgrade name v4.0.1**)
 cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+
+# upgrade binary v4.0.3
+cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/4.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+
+# upgrade binary v5.0.0 (**for upgrade name v5.0.0**)
+cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/5.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -336,7 +345,9 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `452800 for upgrade v4.0.1` **(uses the v4.0.2 binary)**
 
-`2154000 for upgrade v4.0.3`
+`2154000 for upgrade v4.0.3`&#x20;
+
+`3139971 for upgrade v5.0.0`
 
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
@@ -356,6 +367,13 @@ cd ~/layer/binaries/v4.0.2
 # At height 2154000 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v4.0.3
+
+# resume syncing
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+
+# At height 3139971 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v5.0.0
 
 # resume syncing
 ./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
