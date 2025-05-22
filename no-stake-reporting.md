@@ -7,7 +7,7 @@ icon: door-open
 
 As of v5.0.0, anyone from the anywhere may report oracle data to Tellor Layer as a "no-stake" report. No-stake reports are different from regular reports because they are not aggregated on chain, and they cannot be disputed.
 
-The query data and value for a no-stake report can be any abi encoded bytes data in hexadecimal format.
+The query data and value for a no-stake report can be any abi encoded data in hexadecimal format.
 
 To create a no-stake report using the cli, use the oracle module's no-stake-report command:
 
