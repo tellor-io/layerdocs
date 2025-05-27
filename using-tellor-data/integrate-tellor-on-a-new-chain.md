@@ -10,7 +10,7 @@ In this guide, we will go through the steps of providing access to tellor data o
 For those with a do-it-yourself attitude, this guide will involve:
 
 * deploying the TellorDataBridge contract
-* deploying an example user contact SimpleLayerUser
+* deploying an example YOLO user contract YoloUser
 * installing the relayer
 * running the relayer
 
@@ -20,16 +20,16 @@ Following the steps in this guide does not guarantee access to absolutely secure
 
 ### Clone Tellor and Install
 
-First, clone tellor layer:
+First, clone SampleLayerUser repo:
 
 ```bash
-git clone https://github.com/tellor-io/layer.git
+git clone https://github.com/tellor-io/SampleLayerUser.git
 ```
 
-Move to the evm directory:
+Move to the SampleLayerUser directory:
 
 ```bash
-cd layer/evm
+cd SampleLayerUser
 ```
 
 Install the tellor hardhat project:
@@ -80,11 +80,11 @@ TellorDataBridge deployed to: 0xYOUR_DATA_BRIDGE_ADDRESS
 
 We will use the address `0xYOUR_DATA_BRIDGE_ADDRESS` in the steps below.
 
-#### SimpleLayerUser
+#### YoloUser
 
-Now we will deploy the SimpleLayerUser contract as an example oracle user.
+Now we will deploy the YoloUser contract as an example oracle user.
 
-Open the deployment script `./scripts/DeploySimpleLayerUser.js`. Set the TellorDataBridge address
+Open the deployment script `./scripts/DeployYoloUser.js`. Set the TellorDataBridge address
 
 ```js
 var dataBridgeAddress = "0xYOUR_DATA_BRIDGE_ADDRESS"
@@ -98,17 +98,17 @@ var queryId = "0x83a7f3d48786ac2667503a61e8c415438ed2922eb86a2906e4ee66d9a2ce499
 
 Update the `PK` and `NODE_URL` variables to match those in your `.env` file.
 
-Now we are ready to deploy the SimpleLayerUser:
+Now we are ready to deploy the YoloUser:
 
 ```bash
-npx hardhat run scripts/DeploySimpleLayerUser.js --network YOUR_NETWORK
+npx hardhat run scripts/DeployYoloUser.js --network YOUR_NETWORK
 ```
 
 This will print in your logs:
 
 ```
-deploying SimpleLayerUser
-SimpleLayerUser deployed to: 0xYOUR_TELLOR_USER_ADDRESS
+deploying YoloUser
+YoloUser deployed to: 0xYOUR_TELLOR_USER_ADDRESS
 ```
 
 We will use `0xYOUR_TELLOR_USER_ADDRESS` when running the relayer below.
@@ -132,7 +132,7 @@ Now you should be ready to relay data to your contract.
 #### Relay Data
 
 ```bash
-relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --data-bridge-address 0xYOUR_DATA_BRIDGE_ADDRESS --contract-type SimpleLayerUser --sleep-time 3600
+relayer relay --layer-user-address 0xYOUR_TELLOR_USER_ADDRESS --data-bridge-address 0xYOUR_DATA_BRIDGE_ADDRESS --contract-type YoloTellorUser --sleep-time 3600
 ```
 
 The relayer should gather tellor oracle data and submit it to your contract. If you see a transaction hash printed in the relayer logs, that's a good sign. Check your evm chain's block explorer to see whether you relayed data successfully.
