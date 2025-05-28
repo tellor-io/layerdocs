@@ -113,6 +113,19 @@ YoloUser deployed to: 0xYOUR_TELLOR_USER_ADDRESS
 
 We will use `0xYOUR_TELLOR_USER_ADDRESS` when running the relayer below.
 
+**Custom User Contracts**&#x20;
+
+The relayer will try to submit oracle data to the user contract using a function with the following interface. If you are following this guide, but building your own custom user contract instead of using the YoloUser contract, please make sure your custom contract has a function with this interface:
+
+<pre class="language-solidity"><code class="lang-solidity"><strong>function updateOracleData(
+</strong>        OracleAttestationData calldata _attestData,
+        Validator[] calldata _currentValidatorSet,
+        Signature[] calldata _sigs
+) external;
+</code></pre>
+
+See the [Verifying Data Authenticity](https://docs.tellor.io/layer-docs/using-tellor-data/integrating-tellor-data#verifying-data-authenticity) section in the docs for more information on setting up your custom contracts.
+
 ### Setup and Run the Relayer
 
 The relayer is used to get oracle data from tellor and submit it to your user contract.

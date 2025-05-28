@@ -40,7 +40,7 @@ contract SamplePredictionMarketUser {
 		bridge = ITellorDataBridge(_bridge);
 	}
 
-	function resolveMarket(
+	function updateOracleData(
         	OracleAttestationData calldata _attestData, 
         	Validator[] calldata _currentValidatorSet, 
         	Signature[] calldata _sigs
@@ -72,7 +72,7 @@ Custom checks will vary based on the use case and any other unique data needs. I
    * In the event that the power does not reach the higher threshold, we check that the data both reaches the lower threshold, and has been on chain for a period of time to allow for disputes.
 
 ```solidity
-	function resolveMarket(
+	function updateOracleData(
         		OracleAttestationData calldata _attestData, 
         		Validator[] calldata _currentValidatorSet, 
         		Signature[] calldata _sigs, 
@@ -136,7 +136,7 @@ contract SamplePredictionMarketUser {
 		bridge = ITellorDataBridge(_bridge);
 	}
 
-	function resolveMarket(
+	function updateOracleData(
         	OracleAttestationData calldata _attestData, 
         	Validator[] calldata _currentValidatorSet, 
         	Signature[] calldata _sigs, 
