@@ -277,18 +277,33 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 {% tab title="State Sync" %}
 **We need to make a few more config edits to make sure your state sync goes smoothly.**&#x20;
 
-1. Use curl to find a good `TRUSTED_HEIGHT` to use for downloading snapshots:
+1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://node-palmito.tellorlayer.com/rpc/` . Copy and paste this entire block of shell code into a terminal and hit enter:
 
 ```sh
-export LATEST_HEIGHT=$(curl -s https://node-palmito.tellorlayer.com/rpc/block | jq -r .result.block.header.height); \
-export TRUSTED_HEIGHT=$((LATEST_HEIGHT-8000)); \ 
-export TRUSTED_HASH=$(curl -s "https://node-palmito.tellorlayer.com/rpc/block?height=$TRUSTED_HEIGHT" | jq -r .result.block_id.hash); \
-echo $TRUSTED_HEIGHT $TRUSTED_HASH
+NODE_URL="https://node-palmito.tellorlayer.com/rpc"
+CURRENT_HEIGHT=$(./layerd status --node $NODE_URL | jq -r '.sync_info.latest_block_height')
+NODE_ID=$(./layerd status --node $NODE_URL | jq -r '.node_info.id')
+HOME_DIR=~/.layer
+SNAPSHOT_INTERVAL=12500
+SNAPSHOT_OFFSET=10000
+remainder=$((CURRENT_HEIGHT % SNAPSHOT_INTERVAL))
+if [ $remainder -ge $SNAPSHOT_OFFSET ]; then
+    ESTIMATED_SNAPSHOT_HEIGHT=$((CURRENT_HEIGHT - (remainder - SNAPSHOT_OFFSET) - 12500))
+else
+    ESTIMATED_SNAPSHOT_HEIGHT=$((CURRENT_HEIGHT - (remainder + SNAPSHOT_INTERVAL - SNAPSHOT_OFFSET) - 12500))
+fi
+TRUSTED_HASH=$(curl -s "$NODE_URL/block?height=$ESTIMATED_SNAPSHOT_HEIGHT" | jq -r .result.block_id.hash)
+echo "Trusted height: $ESTIMATED_SNAPSHOT_HEIGHT"
+echo "Trusted hash: $TRUSTED_HASH"
+
 ```
 
-The command should output something like:&#x20;
+The output should be something like:&#x20;
 
-`673312 AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B`
+```sh
+trusted height: 3785000
+Trusted hash: DD27874AB1F5F4DFC5D7818E7CFBF8A8ECEDA745FFA78DF24D799B2B201418B9
+```
 
 2. Edit config.toml:
 
@@ -298,7 +313,7 @@ Open your config file:
 nano ~/.layer/config/config.toml
 ```
 
-Scroll or search (ctrl^w) the file and edit the state sync variables shown here:
+Scroll or search (ctrl^w) the file and edit the state sync variables shown here to match the trusted height and trusted hash you found above:
 
 ```toml
 # [statesync]
@@ -306,8 +321,8 @@ enable = true
 
 #...
 rpc_servers = "https://node-palmito.tellorlayer.com/rpc/,https://node-palmito.tellorlayer.com/rpc/"
-trust_height = 673312
-trust_hash = "AE2500529CCC9CB012D17AEA10567EF4663D1E1B21EB63D8F851D10BB913C42B"
+trust_height = 3785000
+trust_hash = "DD27874AB1F5F4DFC5D7818E7CFBF8A8ECEDA745FFA78DF24D799B2B201418B9"
 trust_period = "168h0m0s"
 ```
 
