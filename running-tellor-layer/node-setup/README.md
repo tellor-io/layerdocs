@@ -277,7 +277,7 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 {% tab title="State Sync" %}
 **We need to make a few more config edits to make sure your state sync goes smoothly.**&#x20;
 
-1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://node-palmito.tellorlayer.com/rpc/` . Copy and paste this entire block of shell code into a terminal and hit enter:
+1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://node-palmito.tellorlayer.com/rpc/` . Copy and paste this entire block of commands into a terminal and hit enter:
 
 ```sh
 NODE_URL="https://node-palmito.tellorlayer.com/rpc"
@@ -313,12 +313,12 @@ Open your config file:
 nano ~/.layer/config/config.toml
 ```
 
-Scroll or search (ctrl^w) the file and edit the state sync variables shown here to match the trusted height and trusted hash you found above:
+Scroll or search (`ctrl^w`) the file and edit the state sync variables shown here to match the trusted height and trusted hash you found above:
 
 ```toml
 # [statesync]
+# ...
 enable = true
-
 #...
 rpc_servers = "https://node-palmito.tellorlayer.com/rpc/,https://node-palmito.tellorlayer.com/rpc/"
 trust_height = 3785000
