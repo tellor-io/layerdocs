@@ -37,5 +37,9 @@ Please take the time to <mark style="color:green;">**review all information**</m
 {% endhint %}
 
 {% hint style="info" %}
-<mark style="color:orange;">**Disclaimer:**</mark> participation in the Tellor Layer public testnet involves using experimental software. If used in a mainnet context, the commands in this documentation WILL have consequences for real funds. Proceed with caution and ensure that you understand the responsibilities and risks associated with participation.  **\*It's advisable to always use a fresh addresses for testing, and never use a&#x20;**_**testnet**_**&#x20;address for&#x20;**_**mainnet**_**&#x20;funds.**
+<mark style="color:orange;">**Disclaimer:**</mark> participation in the Tellor Layer public testnet involves using experimental software. If used in a mainnet context, the commands in this documentation WILL have consequences for real funds. Proceed with caution and ensure that you understand the responsibilities and risks associated with participation. &#x20;
+{% endhint %}
+
+{% hint style="danger" %}
+Never operate mainnet validators with the same keys that you use for operating testnet validators. In some edge situations, this results in permanent jailing and loss of funds due to bad validator attestations.
 {% endhint %}
