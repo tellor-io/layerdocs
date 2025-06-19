@@ -41,5 +41,5 @@ Please take the time to <mark style="color:green;">**review all information**</m
 {% endhint %}
 
 {% hint style="danger" %}
-Never operate mainnet validators with the same keys that you use for operating testnet validators. In some edge situations, this results in permanent jailing and loss of funds due to bad validator attestations.
+Never operate Tellor Mainnet validators with the same keys that you use for operating Tellor Testnet validators. In some edge situations, this results in permanent jailing and loss of funds due to bad validator attestations.
 {% endhint %}
