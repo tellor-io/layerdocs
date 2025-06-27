@@ -70,8 +70,9 @@ touch .env
 ```
 {% endcode %}
 
-The logs should soon begin showing information about your cycle list reports! \
+The logs should soon begin showing information about your cycle list reports!&#x20;
 
+<sub>You can set up a grafana dashboard using</sub> [<sub>this\_guide</sub>](https://app.gitbook.com/o/-MFXSaNHbs8RgP8-7mnZ/s/s90SVtIdiQ8dmMsqriIa/~/changes/316/setting-up-a-grafana-dashboard-for-your-layer-node) <sub>to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.</sub>
 
 Congratulations on becoming a Tellor Reporter! 🎉
 
