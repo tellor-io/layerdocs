@@ -370,6 +370,8 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `3139971 for upgrade v5.0.0`
 
+`5092670 for upgrade v5.1.0`
+
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
 &#xNAN;_**Notes on the  Upgrades:**_&#x20;
