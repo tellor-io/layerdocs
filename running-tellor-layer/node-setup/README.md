@@ -103,13 +103,13 @@ Download the binaries from the [Tellor Github](https://github.com/tellor-io/laye
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # upgrade binary v4.0.2 (for upgrade name v4.0.1)
-cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # upgrade binary v4.0.3 (for upgrade name v4.0.3)
-cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # upgrade binary v5.0.0 (for upgrade name v5.0.0)
-cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/5.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/v5.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # upgrade binary v5.1.0 (for upgrade name v5.1.0)
 cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/5.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
