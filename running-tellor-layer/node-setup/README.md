@@ -170,6 +170,8 @@ Give the script permission to execute, then run the script:
 ```sh
 chmod +x configure_layer_linux.sh && ./configure_layer_linux.sh
 ```
+
+**If you are doing a genesis sync for an archive node, be sure to set `pruning = "nothing"` in your app.toml file typically located at  `~/.layer/config/app.toml` .**
 {% endtab %}
 
 {% tab title="MacOS" %}
@@ -186,6 +188,8 @@ Give the script permission to execute, then run the script:
 ```sh
 chmod +x configure_layer_mac.sh && ./configure_layer_mac.sh
 ```
+
+**If you are doing a genesis sync for an archive node, be sure to set `pruning = "nothing"` in your app.toml file typically located at  `~/.layer/config/app.toml` .**
 {% endtab %}
 {% endtabs %}
 
