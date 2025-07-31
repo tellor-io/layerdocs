@@ -1,30 +1,31 @@
 ---
-description: Bridge requests can me made at bridge.tellor.io!
-icon: bridge-water
+description: Lock your TRB on Ethereum, receive funds on tellor
+icon: bridge-lock
 ---
 
-# Bridging Sepolia TRB
-
-{% hint style="success" %}
-<mark style="color:blue;">Important Info on Bridging:</mark>
-
-* <mark style="color:blue;">**If you need Sepolia TRB, please make a request in the**</mark> [<mark style="color:blue;">**Tellor Discord**</mark>](https://discord.gg/kaMenz4ZVw)<mark style="color:blue;">**'s #testing-layer channel.**</mark>
-* <mark style="color:blue;">**There is no incentive to run this testnet. It is only for practicing the operation validators and reporters for mainnet.**</mark>
-* <mark style="color:blue;">**The amount that you can bridge is limited. Layer does not allow more than 5% of the supply to be bridged in a 12 hour period. If your bridge request is failing, try a smaller  \_amount, or wait for a time when the bridge is less congested.**</mark>
-{% endhint %}
+# Bridging to Tellor
 
 ### Prerequisites
 
-* An ethereum wallet with Sepolia TRB: [0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660)
+* &#x20;Ethereum wallet with some [TRB](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf).
+* A [recieving address](../manage-accounts.md) on Tellor layer.
 
 ### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
 
-Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
+Click "Connect Wallet" and connect your Ethereum wallet.
 
 <figure><img src="../../.gitbook/assets/Screenshot From 2025-05-02 11-57-51.png" alt=""><figcaption></figcaption></figure>
 
-2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill in the "To address" with your tellor prefix account and approve the transaction in your wallet extension pop-up.
+Fill out the TRB field with the amount that you want to bridge to Tellor. Fill in the "to address" field with your tellor prefix account and approve the transaction in your wallet extension pop-up.
 
-4\. Wait 12 hours
+### Wait 12 hours
 
-While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello!
+After a 12 hour security delay, your balance of TRB will arrive in your tellor wallet automatically. Congrats! This is a great time to pop into the [tellor discord ](https://discord.gg/tellor)and say hello!
+
+### Secondary Method:
+
+If the bridge page is ever unavailable, a block explorer like etherscan works fine. The instructions shown here are for testnet, but they work on the mainnet contracts as well.
+
+{% content-ref url="../../running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md" %}
+[block-explorer-method.md](../../running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
+{% endcontent-ref %}

@@ -7,17 +7,27 @@ icon: hand-wave
 
 ## What is Tellor Layer?
 
-Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It works by using a network of staked parties who are crypto-economically incentivized to honestly report requested data.&#x20;
+Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.
 
 {% hint style="info" %}
 For more in-depth information, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
-## Palmito Testnet
+### Tellor-1
 
-The current testnet is code named "Palmito". The native currency on Palmito is bridged Sepolia TRB: [https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660). If you would like to test a validator and / or reporter and you don't yet have any sepolia TRB, [join the public discord](https://discord.gg/HX76jMhvG6) and make a request! (Please make all requests in the #testing-layer channel, and don't forget to include your sepolia address.)\
-\
-We look forward to hearing from you! Once your TRB is[ bridged to Palmito](running-tellor-layer/bridge-trbp-from-sepolia/), you can try running a validator, creating a reporter, tipping a reporter, and securing the authentically decentralized Tellor oracle.
+**`tellor-1` is the tellor mainnet chain-id. Over a year in the making, this is a custom oracle chain for coming to consensus on subjective data.** The network is open for anyone to participate with no barriors to participation other than bridging and staking TRB ([ERC20](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf)).&#x20;
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+### Palmito Testnet (layertest-4)
+
+Palmito is the current testnet equivalent for testing tellor operation and functionaity.
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
 
 ### What is a Validator?&#x20;
 
@@ -38,4 +48,3 @@ Reporters are individuals who read data from the internet (and/or any"real world
 
 * **Submitting values** for data requests (queries) that are subject to validation and disputes.  \*Validators can be reporters but not all reporters will be validators.
 * **Monitoring submissions for accuracy**. A robust system of staking and slashing ensures that reporters (and users) are crypto-economically incentivized to monitor their data.
-

@@ -20,21 +20,20 @@ There are three main reasons why a state sync will fail:
 
 2\) Remove the chain data from `~/.layer/data/`, being careful to NOT delete the `priv_validator_state.json` file:
 
-```sh
-# Delete the binaries
+<pre class="language-sh"><code class="lang-sh"># Delete the binaries
 # This is useful if you're not sure that you downloaded the right binaries:
 rm -rf ~/layer/binaries
 
 # deletes chain data
 # This is useful if state sync fails and you need to try a different config
-rm -rf ~/.layer/data/application.db; \
-rm -rf ~/.layer/data/blockstore.db; \
+<strong>rm -rf ~/.layer/data/application.db; \
+</strong>rm -rf ~/.layer/data/blockstore.db; \
 rm -rf ~/.layer/data/cs.wal; \
 rm -rf ~/.layer/data/evidence.db; \
 rm -rf ~/.layer/data/snapshots; \
 rm -rf ~/.layer/data/state.db; \
 rm -rf ~/.layer/data/tx_index.db
-```
+</code></pre>
 
 Next, open up your configs.
 
@@ -97,11 +96,13 @@ enable = true
 #
 # For Cosmos SDK-based chains, trust_period should usually be about 2/3 of the unbonding time (~2
 # weeks) during which they can be financially punished (slashed) for misbehavior.
-rpc_servers = "https://mainnet.tellorlayer.com/rpc/,https://mainnet.tellorlayer.com/rpc/"
+rpc_servers = "https://tellor-testnet.nirvanalabs.xyz/tellor-testnet-public/,https://node-palmito.tellorlayer.com/rpc/"
 trust_height = 217310
 trust_hash = "F526C5B5C79DECDC27F555A96A7B3F33444DE060AD5C9A02A7F5D15C5DBE85"
 trust_period = "168h0m0s"
 
+# Time to spend discovering snapshots before initiating a restore.
+discovery_time = "15s"
 ```
 
 _**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your****&#x20;****`rpc_servers`****,****&#x20;****`trust_height`****&#x20;****, and****&#x20;****`trust_hash`****&#x20;****are configured using the steps shown in**_[ _**Node Setup**_](broken-reference)_**. (be careful to choose the tabs that match your system)**_
@@ -112,7 +113,7 @@ The `trust_period` should be left alone, and the `discovery_time` can be safely 
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --price-daemon-enabled=false --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
 
@@ -121,6 +122,6 @@ If the sync is working, you will see your node quickly finding, downloading, and
 {% hint style="success" %}
 _**Notes:**_  \
 _**- "We need more peers..." messages are normal and can be ignored.**_ \
-_**- A statesync with good RPCs and Peers can still take an hour or more to finish downloading the state snapshot.**_
+_**- A statesync with good RPCs and Peers can still take an hour or more to start downloading blocks.**_
 {% endhint %}
 

@@ -10,7 +10,7 @@ There are two basic reasons that a validator may be automatically slashed, jaile
 
 ### **Liveness (inactivity):**
 
-If your validator fails to sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. **At the time of writing tellor has a 1.52s average block time, so it takes approximately 12.6 minutes of inactivity before a validator is jailed.**&#x20;
+If your validator fails to sign for 500 blocks (e.g. the validator node is down for 500 blocks), the validator will be automatically jailed. At the time of writing layertest-4 has a 1.8s average block time, so it takes approximately 15 minutes of inactivity before a validator is jailed.&#x20;
 
 The penalty for inactivity is 1% of bonded tokens. Liveness slashes do not lead to a tombstombing.
 
@@ -24,8 +24,6 @@ A “tombstoned" validator key can never be used again. The validator may rejoin
 
 {% hint style="danger" %}
 Warning: It is possible to double sign blocks accidentally during complex operations like migrating a validator node to a different machine. Always be 100% sure that the layer node process on the old machine is dead before starting it up on the new machine!
-
-Warning: Never use any account that was used on tellor testnet to run a validator on tellor mainnet!
 {% endhint %}
 
 ## Check Your Validator's Status
@@ -44,6 +42,6 @@ Unjail your validator with the command:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx slashing unjail --from YOUR_ACCOUNT_NAME --chain-id tellor-1 --fees 5loya --yes
+./layerd tx slashing unjail --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 5loya --yes
 ```
 {% endcode %}

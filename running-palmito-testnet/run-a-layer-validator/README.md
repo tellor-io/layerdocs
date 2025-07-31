@@ -1,5 +1,5 @@
 ---
-description: Follow the steps to become a tellor validator.
+description: Follow the steps to become a Layer testnet validator.
 icon: binary-circle-check
 ---
 
@@ -7,15 +7,15 @@ icon: binary-circle-check
 
 ## Prerequisites
 
-You will need a [node that's fully synced](../node-setup/) and [an account that has a balance](../manage-accounts.md) (loya).
+You will need a [node that's fully synced](broken-reference) and [an account that has a balance](../../running-tellor-layer/manage-accounts.md) (loya).
 
 ## Creating your Validator
 
-#### 1) Change directory to `~/layer/binaries/v5.1.0` and check if your address has funds. You will need to have at least 1 TRB to stake a validator on tellor layer:
+#### 1) Change directory to `~/layer/binaries/v5.0.0` and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v5.1.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v5.0.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -23,9 +23,13 @@ This outputs something like:
 
 ```bash
 balance:
-  amount: "123456"
+  amount: "0"
   denom: loya
 ```
+
+{% hint style="success" %}
+<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](broken-reference) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
+{% endhint %}
 
 #### 2)  Retrieve your Node's Pubkey
 
@@ -89,7 +93,7 @@ Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --chain-id tellor-1 --from YOUR_ACCOUNT_NAME --fees 5loya --yes
+./layerd tx staking create-validator ./validator.json --chain-id layertest-4 --from YOUR_ACCOUNT_NAME --fees 5loya --yes
 ```
 {% endcode %}
 
@@ -111,4 +115,4 @@ If `status` is `1`, It means that you are not bonded. This can happen If you acc
 If `status` is `2`, It means that your validator is jailed. If this happens, check if the node process is running on your host machine.&#x20;
 {% endhint %}
 
-You can unjail with steps shown in the [next section.](../run-the-data-reporter/)
+You can unjail with steps shown in the [next section.](../../running-tellor-layer/run-the-data-reporter/)

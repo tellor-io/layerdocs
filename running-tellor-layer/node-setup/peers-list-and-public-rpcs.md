@@ -1,5 +1,5 @@
 ---
-description: The following peers list can be used for syncing `layertest-4`
+description: The following peers list can be used for syncing tellor mainnet
 ---
 
 # Peers List & Public RPCs
@@ -12,20 +12,17 @@ In your `~/.layerd/config/config.toml` file:
 
 {% code overflow="wrap" %}
 ```json
-# Comma separated list of seed nodes to connect to
-seeds = "c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.219.95.82:26656,05105e8bb28e8c5ace1cecacefb8d4efb0338ec6@18.218.114.74:26656,705f6154c6c6aeb0ba36c8b53639a5daa1b186f6@3.80.39.230:26656,1f6522a346209ee99ecb4d3e897d9d97633ae146@3.101.138.30:26656,3822fa2eb0052b36360a7a6e285c18cc92e26215@175.41.188.192:26656"
-
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.219.95.82:26656,05105e8bb28e8c5ace1cecacefb8d4efb0338ec6@18.218.114.74:26656,705f6154c6c6aeb0ba36c8b53639a5daa1b186f6@3.80.39.230:26656,1f6522a346209ee99ecb4d3e897d9d97633ae146@3.101.138.30:26656,3822fa2eb0052b36360a7a6e285c18cc92e26215@175.41.188.192:26656"
+persistent_peers = "5a9db46eceb055c9238833aa54e15a2a32a09c9a@54.67.36.145:26656,f2644778a8a2ca3b55ec65f1b7799d32d4a7098e@54.149.160.93:26656,2904aa32501548e127d3198c8f5181fb4d67bbe6@18.116.23.104:26656"
 
 ```
 {% endcode %}
 
-### RPCs
+RPC
 
-For syncing on Palmito:
+* [https://mainnet.tellorlayer.com/rpc/\
+  ](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
 
-```
-https://tellor-testnet.nirvanalabs.xyz/tellor-testnet-public
-https://node-palmito.tellorlayer.com/rpc/
-```
+API:
+
+* [https://mainnet.tellorlayer.com](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)

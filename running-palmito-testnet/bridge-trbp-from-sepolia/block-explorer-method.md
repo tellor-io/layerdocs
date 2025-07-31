@@ -1,11 +1,14 @@
 ---
 description: How to use Etherscan to bridge Sepolia TRB to Tellor Layer.
-hidden: true
 ---
 
 # Block Explorer Method
 
 _**Bridge requests can usually be sent to layer via**_ [_**https://bridge.tellor.io/**_](https://bridge.tellor.io/)_**. A block explorer can be used as a secondary method using the steps shown below.**_
+
+{% hint style="success" %}
+T**he methods shown here can also be used to interact with the mainnet bridge contract to `tellor-1`.**
+{% endhint %}
 
 ### 1. Approve the bridge contract
 

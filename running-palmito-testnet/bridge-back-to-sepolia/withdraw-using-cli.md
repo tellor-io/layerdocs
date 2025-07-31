@@ -1,10 +1,10 @@
 ---
-description: How to get your funds back to Ethereum (Sepolia)
+description: Exit tellor permissionlessly even if the front-end is down.
 ---
 
-# Bridge TRB back to Sepolia
+# Withdraw Using CLI
 
-#### **1. Use the CLI to Request a Withdrawal**&#x20;
+#### &#x31;**. Use the CLI to Request a Withdrawal**
 
 In the following example command, our Tellor address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`. (Adjust these two parameters to match your addresses.)
 

@@ -11,6 +11,6 @@ If the dispute is just a warning, you can unjail right away. The command to do t
 {% code overflow="wrap" %}
 ```sh
 # layerd tx reporter unjail-reporter [flags]
-./layerd tx reporter unjail-reporter --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1
+./layerd tx reporter unjail-reporter --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
 ```
 {% endcode %}

@@ -41,11 +41,22 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](broken-reference). Change the file paths in the command to match the correct folder path to each binary:
 
+For a genesis sync:
+
 ```shell
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v4.0.3/layerd
+./cosmovisor init ~/layer/binaries/v4.0.0/layerd
+./cosmovisor add-upgrade ~/layer/binaries/v4.0.1/layerd
+./cosmovisor add-upgrade ~/layer/binaries/v4.0.3/layerd
 ./cosmovisor add-upgrade ~/layer/binaries/v5.0.0/layerd
 ./cosmovisor add-upgrade ~/layer/binaries/v5.1.0/layerd
+```
+
+For a state sync, initialize cosmovisor with the current binary:
+
+```sh
+# set up cosmovisor. Each command is done seperatly.
+./cosmovisor init ~/layer/binaries/v5.1.0/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:

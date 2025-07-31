@@ -11,7 +11,7 @@ icon: pen
 
 ## Prerequisites
 
-* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](broken-reference) to a validator.&#x20;
+* An account for creating a reporter that has either [created](../../running-tellor-layer/run-a-layer-validator/) or [delegated](broken-reference) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
 ## Build the Reporter Binary
@@ -24,10 +24,10 @@ Clone the repo, change directory to layer/daemons and do `make build`:
 git clone https://github.com/tellor-io/layer && cd layer/daemons && make build
 ```
 
-Move or Copy the binary to `~/layer/binaries/v5.1.0` and `cd` to that directory to operate the reporter (unless your setup is different).
+Move or Copy the binary to `~/layer/binaries/v5.0.0` and `cd` to that directory to operate the reporter (unless your setup is different).
 
 ```sh
-cp bin/reporterd ~/layer/binaries/v5.1.0 && cd ~/layer/binaries/v5.1.0
+cp bin/reporterd ~/layer/binaries/v5.0.0 && cd ~/layer/binaries/v5.0.0
 ```
 
 #### 2) Configure a Reporter and Start Reporting
@@ -37,7 +37,7 @@ Use the cli to create your reporter with an initial reporting configuration. Com
 {% code overflow="wrap" %}
 ```bash
 # create-reporter [commission-rate] [min-tokens-required] [moniker] [flags]
-./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id tellor-1 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
 
@@ -56,19 +56,23 @@ Parameters:
 
 If your reporter was created successfully, this will output your reporter information.
 
-#### 4) Start the reporter:
+4\) Make an empty .env file to bypass an error. (this will be fixed in the next update):
+
+```sh
+touch .env
+```
+
+#### 5) Start the reporter:
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
 
 The logs should soon begin showing information about your cycle list reports!&#x20;
 
-{% hint style="success" %}
-You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.
-{% endhint %}
+<sub>You can set up a grafana dashboard using</sub> [<sub>this\_guide</sub>](https://app.gitbook.com/o/-MFXSaNHbs8RgP8-7mnZ/s/s90SVtIdiQ8dmMsqriIa/~/changes/316/setting-up-a-grafana-dashboard-for-your-layer-node) <sub>to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.</sub>
 
 Congratulations on becoming a Tellor Reporter! 🎉
 

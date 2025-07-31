@@ -59,7 +59,7 @@ Full example:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx dispute propose-dispute tellor17gc67q05d5rsz9caznm0s7s5eazg2e3fkk8e 109136 0x0d12ad49193163bbbeff4e6db8294ced23ff8605359fd66799d4e25a3a0e3a warning 1000000loya false --from ACCOUNT_NAME --gas 500000 --fees 15loya  --chain-id layertest-4 --yes
+./layerd tx dispute propose-dispute tellor17gc67q05d5rsz9caznm0s7s5eazg2e3fkk8e 109136 0x0d12ad49193163bbbeff4e6db8294ced23ff8605359fd66799d4e25a3a0e3a warning 1000000loya false --from ACCOUNT_NAME --gas 500000 --fees 15loya  --chain-id tellor-1 --yes
 ```
 {% endcode %}
 
@@ -74,7 +74,7 @@ _<mark style="color:blue;">**After 72 hours, the dispute is settled and the part
 In the event that a disputer is unable to pay the entire dispute fee, anyone who wants to support the dispute financially can call `add-fee-to-dispute` . All fee payers earn a proportionate amount of the reward funds from the dispute if the rest of the community votes to support it. Likewise, if the community votes "against", the entire fee is forfeited to the accused reporter. Example:
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong># layerd tx dispute add-fee-to-dispute [dispute-id] [amount] [pay-from-bond] [flags]
-</strong>/layerd tx dispute add-fee-to-dispute 2 2023500loya false --from ACCOUNT_NAME --fees 5loya
+</strong>/layerd tx dispute add-fee-to-dispute 2 2023500loya false --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1
 </code></pre>
 
 ### What Happens if the Dispute Fee is Not Paid?
@@ -84,7 +84,7 @@ If the dispute fee is not paid in full while the dispute is active, the dispute 
 {% code overflow="wrap" %}
 ```sh
 # layerd tx dispute withdraw-fee-refund [payer-address] [id] [flags]
-./layerd tx dispute withdraw-fee-refund tellor1vw2yy9nf3wz7hey89tpw5hn0yr3hkrzt889x47 3 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4 --yes
+./layerd tx dispute withdraw-fee-refund tellor1vw2yy9nf3wz7hey89tpw5hn0yr3hkrzt889x47 3 --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1 --yes
 ```
 {% endcode %}
 
@@ -102,7 +102,7 @@ There are three different choices when voting on a dispute:
 ```sh
 # layerd tx dispute vote [id] [vote-choice] [flags]
 # full example:
-./layerd tx dispute vote 3 vote-invalid --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+./layerd tx dispute vote 3 vote-invalid --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1
 ```
 {% endcode %}
 
@@ -112,7 +112,7 @@ After 72 hours, the winning party (or parties if invalid) in the dispute can cal
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx dispute withdraw-fee-refund 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+./layerd tx dispute withdraw-fee-refund 2 --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1
 ```
 {% endcode %}
 
@@ -121,6 +121,6 @@ Any accounts that voted may call claim-reward to receive a small reward for voti
 {% code overflow="wrap" %}
 ```sh
 # layerd tx dispute claim-reward [dispute_id] [flags]
-./layerd tx dispute claim-reward 2 --from ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+./layerd tx dispute claim-reward 2 --from ACCOUNT_NAME --fees 5loya --chain-id tellor-1
 ```
 {% endcode %}

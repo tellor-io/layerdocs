@@ -7,24 +7,22 @@ icon: mug-hot
 
 If you want to learn how to run a tellor node, validator, and/or reporter, you are in the right place!
 
-{% content-ref url="bridge-trbp-from-sepolia/" %}
-[bridge-trbp-from-sepolia](bridge-trbp-from-sepolia/)
+## Welcome to the Guide
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="node-setup/" %}
-[node-setup](node-setup/)
+{% content-ref url="../running-tellor-layer/run-a-layer-validator/" %}
+[run-a-layer-validator](../running-tellor-layer/run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="run-a-layer-validator/" %}
-[run-a-layer-validator](run-a-layer-validator/)
-{% endcontent-ref %}
-
-{% content-ref url="run-the-data-reporter/" %}
-[run-the-data-reporter](run-the-data-reporter/)
+{% content-ref url="../running-tellor-layer/run-the-data-reporter/" %}
+[run-the-data-reporter](../running-tellor-layer/run-the-data-reporter/)
 {% endcontent-ref %}
 
 {% hint style="success" %}
-Taking the time to run a practice valiator on palmito testnet before running a mainnet validator is highly recommended!
+Please take the time to <mark style="color:green;">**review all information**</mark> in this guide and acclimate yourself before beginning.
 {% endhint %}
 
 {% hint style="success" %}
