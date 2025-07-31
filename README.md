@@ -1,5 +1,6 @@
 ---
 description: Overview
+hidden: true
 icon: hand-wave
 ---
 
