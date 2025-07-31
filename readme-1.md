@@ -1,9 +1,10 @@
 ---
 description: Overview
+hidden: true
 icon: hand-wave
 ---
 
-# Introduction
+# Copy of Introduction
 
 ## What is Tellor Layer?
 
@@ -12,6 +13,14 @@ Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to
 {% hint style="info" %}
 For more in-depth information, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
+
+### Tellor-1
+
+**`tellor-1` is the tellor mainnet chain-id. Over a year in the making, this is a custom oracle chain for coming to consensus on subjective data.** The network is open for anyone to participate with no barriors to participation other than bridging and staking TRB ([ERC20](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf)).&#x20;
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
 
 ### Palmito Testnet (layertest-4)
 
