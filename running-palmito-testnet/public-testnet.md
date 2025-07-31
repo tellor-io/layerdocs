@@ -3,22 +3,26 @@ description: Instructions and guides for using tellor.
 icon: mug-hot
 ---
 
-# Getting Started
+# Getting Started (testnet)
 
 If you want to learn how to run a tellor node, validator, and/or reporter, you are in the right place!
 
 ## Welcome to the Guide
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="node-setup-quick-start-testnet.md" %}
+[node-setup-quick-start-testnet.md](node-setup-quick-start-testnet.md)
 {% endcontent-ref %}
 
-{% content-ref url="../running-tellor-layer/run-a-layer-validator/" %}
-[run-a-layer-validator](../running-tellor-layer/run-a-layer-validator/)
+{% content-ref url="node-setup/" %}
+[node-setup](node-setup/)
 {% endcontent-ref %}
 
-{% content-ref url="../running-tellor-layer/run-the-data-reporter/" %}
-[run-the-data-reporter](../running-tellor-layer/run-the-data-reporter/)
+{% content-ref url="run-a-layer-validator/" %}
+[run-a-layer-validator](run-a-layer-validator/)
+{% endcontent-ref %}
+
+{% content-ref url="run-the-data-reporter/" %}
+[run-the-data-reporter](run-the-data-reporter/)
 {% endcontent-ref %}
 
 {% hint style="success" %}

@@ -21,13 +21,9 @@
   * [Unjail Your Reporter](running-tellor-layer/run-the-data-reporter/unjail-your-reporter.md)
 * [Disputes and Reporter Governance](running-tellor-layer/disputes-and-reporter-governance.md)
 
-***
-
-* [No-Stake Reporting](no-stake-reporting.md)
-
 ## Running Palmito (testnet)
 
-* [Getting Started](running-palmito-testnet/public-testnet.md)
+* [Getting Started (testnet)](running-palmito-testnet/public-testnet.md)
 * [Bridging TRB to Tellor (palmito)](running-palmito-testnet/bridge-trbp-from-sepolia/README.md)
   * [Block Explorer Method](running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
   * [Manual Generation of Bridge Query Data / IDs](running-palmito-testnet/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
@@ -38,12 +34,16 @@
   * [Cosmovisor Sync](running-palmito-testnet/node-setup/cosmovisor-sync.md)
   * [State Sync Troubleshooting / Resetting Chain Data](running-palmito-testnet/node-setup/state-sync.md)
   * [Example .service Files](running-palmito-testnet/node-setup/example-.service-files.md)
-* [Run a Layer Validator](running-palmito-testnet/run-a-layer-validator/README.md)
+* [Run a Layer Validator (testnet)](running-palmito-testnet/run-a-layer-validator/README.md)
   * [Slashing Rules for Validators](running-palmito-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
-* [Become a Data Reporter](running-palmito-testnet/run-the-data-reporter/README.md)
+* [Become a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter/README.md)
   * [Unjail Your Reporter](running-palmito-testnet/run-the-data-reporter/unjail-your-reporter.md)
 * [Withdraw TRB (to Sepolia)](running-palmito-testnet/bridge-back-to-sepolia/README.md)
   * [Withdraw Using CLI](running-palmito-testnet/bridge-back-to-sepolia/withdraw-using-cli.md)
+
+***
+
+* [No-Stake Reporting](no-stake-reporting.md)
 
 ## Command Line Usage
 
