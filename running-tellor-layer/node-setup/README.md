@@ -174,7 +174,7 @@ Add these lines to the bottom of the file. Remember to replace the example `ETH_
 export ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
 export ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
 export ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
-export TOKEN_BRIDGE_CONTRACT=""
+export TOKEN_BRIDGE_CONTRACT="0x5589e306b1920F009979a50B88caE32aecD471E4"
 ```
 
 Load the new variables:

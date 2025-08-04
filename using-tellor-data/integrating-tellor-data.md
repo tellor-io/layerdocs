@@ -16,6 +16,8 @@ See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for
 
 ### Contract Addresses
 
+TellorDataBridge Ethereum: [0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65](https://etherscan.io/address/0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65)
+
 TellorDataBridge Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
 
 ### Verifying Data Authenticity
