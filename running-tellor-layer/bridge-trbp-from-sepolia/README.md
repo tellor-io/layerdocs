@@ -14,7 +14,7 @@ icon: bridge-lock
 
 Click "Connect Wallet" and connect your Ethereum wallet.
 
-<figure><img src="../../.gitbook/assets/Screenshot From 2025-05-02 11-57-51.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-08-04 12-14-18.png" alt="" width="375"><figcaption></figcaption></figure>
 
 Fill out the TRB field with the amount that you want to bridge to Tellor. Fill in the "to address" field with your tellor prefix account and approve the transaction in your wallet extension pop-up.
 
