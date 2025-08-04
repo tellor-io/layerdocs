@@ -45,9 +45,25 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 &&
 
 ### 2. Download the script that matches your system:
 
-wget command for getting palmito linux script
+Additional info about the scripts can be found [here](https://github.com/tellor-io/layer/tree/main/scripts/setup). We will give the script permission to execute in the same command.
 
-wget command for getting palmito mac script
+{% tabs %}
+{% tab title="Linux" %}
+{% code overflow="wrap" %}
+```sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_linux.sh && chmod +x configure_mainnet_linux.sh
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Mac" %}
+{% code overflow="wrap" %}
+```sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_mac.sh && chmod +x configure_mainnet_linux.sh
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### 3. Edit the environment variables (optional)
 
@@ -75,11 +91,10 @@ nano configure_palmito_mac.sh # if mac
 
 ### 4. Give the script permission to execute, and run it:
 
-```sh
-chmod +x configure_palmito_linux.sh && configure_palmito_linux.sh
-# --or--
-chmod +x configure_palmito_mac.sh && configure_palmito_mac.sh
-```
+<pre class="language-sh"><code class="lang-sh"><strong>./configure_palmito_linux.sh # if linux
+</strong># --or--
+./configure_palmito_mac.sh # if mac
+</code></pre>
 
 The script should greet you and begin the guided setup!
 

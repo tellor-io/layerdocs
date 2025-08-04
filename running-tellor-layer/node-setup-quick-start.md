@@ -45,9 +45,25 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 &&
 
 ### 2. Download the script that matches your system:
 
-wget command for getting mainnet linux script
+Additional info about the scripts can be found [here](https://github.com/tellor-io/layer/tree/main/scripts/setup).
 
-wget command for getting mainnet mac script
+{% tabs %}
+{% tab title="Linux" %}
+{% code overflow="wrap" %}
+```sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_mainnet_linux.sh && chmod +x configure_mainnet_linux.sh
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Mac" %}
+{% code overflow="wrap" %}
+```sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_mainnet_mac.sh && chmod +x configure_mainnet_linux.sh
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ### 3. Edit the environment variables (optional)
 
@@ -76,9 +92,9 @@ nano configure_mainnet_mac.sh # if mac
 ### 4. Give the script permission to execute, and run it:
 
 ```sh
-chmod +x configure_mainnet_linux.sh && configure_mainnet_linux.sh
+./configure_mainnet_linux.sh # if linux
 # --or--
-chmod +x configure_mainnet_mac.sh && configure_mainnet_mac.sh
+./configure_mainnet_mac.sh # if mac
 ```
 
 The script should greet you and begin the guided setup!
