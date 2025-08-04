@@ -51,7 +51,7 @@ Additional info about the scripts can be found [here](https://github.com/tellor-
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_linux.sh && chmod +x configure_mainnet_linux.sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_linux.sh && chmod +x configure_palmito_linux.sh
 ```
 {% endcode %}
 {% endtab %}
@@ -59,7 +59,7 @@ wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/c
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_mac.sh && chmod +x configure_mainnet_linux.sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_palmito_mac.sh && chmod +x configure_palmito_mac.sh
 ```
 {% endcode %}
 {% endtab %}

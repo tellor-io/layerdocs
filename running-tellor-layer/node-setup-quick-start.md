@@ -59,7 +59,7 @@ wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/c
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_mainnet_mac.sh && chmod +x configure_mainnet_linux.sh
+wget https://github.com/tellor-io/layer/blob/main/scripts/setup/initial_config/configure_mainnet_mac.sh && chmod +x configure_mainnet_mac.sh
 ```
 {% endcode %}
 {% endtab %}
