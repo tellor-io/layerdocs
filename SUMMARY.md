@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Copy of Introduction](readme-1.md)
 
 ## Running Tellor Layer
 
