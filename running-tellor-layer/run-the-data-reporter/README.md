@@ -5,13 +5,9 @@ icon: pen
 
 # Become a Data Reporter
 
-{% hint style="success" %}
-**Starting with version v4.0.3 the reporter daemon (`reporterd`) is complied and operated separately from the node client `layerd`. This is an important improvement to allow upgrading the oracle data reporter without the need for a chain upgrade**
-{% endhint %}
-
 ## Prerequisites
 
-* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](broken-reference) to a validator.&#x20;
+* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
 ## Build the Reporter Binary

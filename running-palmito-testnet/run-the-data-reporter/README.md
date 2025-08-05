@@ -3,11 +3,7 @@ description: Operate a Data Reporter!
 icon: pen
 ---
 
-# Become a Data Reporter
-
-{% hint style="success" %}
-**Starting with version v4.0.3 the reporter daemon (`reporterd`) is complied and operated separately from the node client `layerd`. This is an important improvement to allow upgrading the oracle data reporter without the need for a chain upgrade**
-{% endhint %}
+# Become a Data Reporter (testnet)
 
 ## Prerequisites
 
