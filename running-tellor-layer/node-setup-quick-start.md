@@ -51,7 +51,7 @@ Additional info about the scripts can be found [here](https://github.com/tellor-
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/setup/initial_config/configure_mainnet_linux.sh && chmod +x configure_mainnet_linux.sh
+curl -O https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/setup/initial_config/configure_mainnet_linux.sh && chmod +x configure_mainnet_linux.sh
 ```
 {% endcode %}
 {% endtab %}
@@ -59,7 +59,7 @@ wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/s
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/setup/initial_config/configure_mainnet_mac.sh && chmod +x configure_mainnet_mac.sh
+curl -O https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/setup/initial_config/configure_mainnet_mac.sh && chmod +x configure_mainnet_mac.sh
 ```
 {% endcode %}
 {% endtab %}
