@@ -191,6 +191,8 @@ export ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
 export TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
 ```
 
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
 Load the new variables:
 
 {% tabs %}
@@ -206,8 +208,6 @@ source ~/.zshrc
 ```
 {% endtab %}
 {% endtabs %}
-
-Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 ## 3. Edit Chain Configuration for Layer.
 

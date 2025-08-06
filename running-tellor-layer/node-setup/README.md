@@ -177,6 +177,8 @@ export ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
 export TOKEN_BRIDGE_CONTRACT="0x5589e306b1920F009979a50B88caE32aecD471E4"
 ```
 
+Exit nano with `ctrl^x` then enter `y` to save the changes.
+
 Load the new variables:
 
 {% tabs %}
@@ -192,8 +194,6 @@ source ~/.zshrc
 ```
 {% endtab %}
 {% endtabs %}
-
-Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 ## 3. Edit Chain Configuration for Layer.
 
