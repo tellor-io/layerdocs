@@ -23,7 +23,7 @@ git clone https://github.com/tellor-io/layer && cd layer/daemons && make build
 Move or Copy the binary to `~/layer/binaries/v5.0.0` and `cd` to that directory to operate the reporter (unless your setup is different).
 
 ```sh
-cp bin/reporterd ~/layer/binaries/v5.0.0 && cd ~/layer/binaries/v5.0.0
+cp bin/reporterd ~/layer/binaries/v5.1.0 && cd ~/layer/binaries/v5.0.0
 ```
 
 #### 2) Configure a Reporter and Start Reporting
@@ -68,9 +68,7 @@ touch .env
 
 The logs should soon begin showing information about your cycle list reports!&#x20;
 
-<sub>You can set up a grafana dashboard using</sub> [<sub>this\_guide</sub>](https://app.gitbook.com/o/-MFXSaNHbs8RgP8-7mnZ/s/s90SVtIdiQ8dmMsqriIa/~/changes/316/setting-up-a-grafana-dashboard-for-your-layer-node) <sub>to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.</sub>
-
-Congratulations on becoming a Tellor Reporter! 🎉
+Congratulations you are a Tellor Reporter! 🎉
 
 ```
 # example of Healthy logs at time of writing

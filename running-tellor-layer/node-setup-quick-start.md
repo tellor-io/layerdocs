@@ -115,7 +115,7 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/5090658_mainnet.tar.gz
+curl -O https://layer-node.com/download/5146599_mainnet.tar.gz
 ```
 
 * Extract the snapshot to your home directory:
@@ -131,7 +131,6 @@ tar -xvf 5090658_mainnet.tar.gz -C ~/.layer/data --strip-components=1 --keep-old
 {% code overflow="wrap" %}
 ```sh
 ./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
-
 ```
 {% endcode %}
 {% endtab %}
