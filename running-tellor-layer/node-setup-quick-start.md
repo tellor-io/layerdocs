@@ -100,3 +100,41 @@ nano configure_mainnet_mac.sh # if mac
 The script should greet you and begin the guided setup!
 
 <figure><img src="../.gitbook/assets/Screenshot From 2025-07-31 09-41-00.png" alt=""><figcaption></figcaption></figure>
+
+### Options:
+
+{% tabs %}
+{% tab title="State sync" %}
+* _**To perform a state sync, simply choose option 1 when prompted, and option 1 again when asked if you want to start the node:**_
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-30-24.png" alt=""><figcaption></figcaption></figure>
+{% endtab %}
+
+{% tab title="Snapshot Sync" %}
+* _**If you want to sync from a snapshot, be sure to select option 2 when asked if you want to set up a state sync, and option 2 again when asked if you want to start the node:**_
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-32-28.png" alt=""><figcaption></figcaption></figure>
+
+* Download the snapshot:
+
+```sh
+curl -O https://layer-node.com/download/5090658_mainnet.tar.gz
+```
+
+* Extract the snapshot to your home directory:
+
+{% code overflow="wrap" %}
+```sh
+tar -xvf 5090658_mainnet.tar.gz -C ~/.layer/data --strip-components=1 --keep-old-files --exclude=priv_validator_state.json
+```
+{% endcode %}
+
+* Start the node!
+
+{% code overflow="wrap" %}
+```sh
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
