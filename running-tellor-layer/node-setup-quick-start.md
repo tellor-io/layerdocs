@@ -65,7 +65,7 @@ curl -O https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/script
 {% endtab %}
 {% endtabs %}
 
-### 3. Edit the environment variables (optional)
+### 2.1. Edit the environment variables (optional)
 
 If you'd like to use a custom home directory, custom peers or RPCs you can configure those at the top of the script. The defaults are:
 
@@ -89,7 +89,7 @@ nano configure_mainnet_linux.sh # if linux
 nano configure_mainnet_mac.sh # if mac
 ```
 
-### 4. Give the script permission to execute, and run it:
+### 3. Give the script permission to execute, and run it:
 
 ```sh
 ./configure_mainnet_linux.sh # if linux
@@ -103,15 +103,12 @@ The script should greet you and begin the guided setup!
 
 ### Options:
 
+* **Snapshot sync**: Download a snapshot from a server, extract it into your data folder, and start the node. The node will need time to catch up downloading blocks. At the time of writing this takes about 3 hours to complete.
+* **State sync**: Sync up to the network using snapshots from peers and a good RPC. At the time of writing this takes about 9 hours to complete.
+
 {% tabs %}
-{% tab title="State sync" %}
-* _**To perform a state sync, simply choose option 1 when prompted, and option 1 again when asked if you want to start the node:**_
-
-<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-30-24.png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
-
 {% tab title="Snapshot Sync" %}
-* _**If you want to sync from a snapshot, be sure to select option 2 when asked if you want to set up a state sync, and option 2 again when asked if you want to start the node:**_
+- _**If you want to sync from a snapshot, be sure to select option 2 when asked if you want to set up a state sync, and option 2 again when asked if you want to start the node:**_
 
 <figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-32-28.png" alt=""><figcaption></figcaption></figure>
 
@@ -128,6 +125,21 @@ curl -O https://layer-node.com/download/5090658_mainnet.tar.gz
 tar -xvf 5090658_mainnet.tar.gz -C ~/.layer/data --strip-components=1 --keep-old-files --exclude=priv_validator_state.json
 ```
 {% endcode %}
+
+* Start the node!
+
+{% code overflow="wrap" %}
+```sh
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
+
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="State sync" %}
+* _**To perform a state sync, simply choose option 1 when prompted, and option 1 again when asked if you want to start the node:**_
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-30-24.png" alt=""><figcaption></figcaption></figure>
 
 * Start the node!
 

@@ -65,7 +65,7 @@ curl -O  https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scrip
 {% endtab %}
 {% endtabs %}
 
-### 3. Edit the environment variables (optional)
+### <mark style="color:$info;">2.1 (optional) Edit the environment variables</mark>
 
 If you'd like to use a custom home directory, custom peers or RPCs you can configure those at the top of the script. The defaults are:
 
@@ -89,7 +89,7 @@ nano configure_palmito_linux.sh # if linux
 nano configure_palmito_mac.sh # if mac
 ```
 
-### 4. Give the script permission to execute, and run it:
+### 3. Give the script permission to execute, and run it:
 
 <pre class="language-sh"><code class="lang-sh"><strong>./configure_palmito_linux.sh # if linux
 </strong># --or--
@@ -99,3 +99,52 @@ nano configure_palmito_mac.sh # if mac
 The script should greet you and begin the guided setup!
 
 <figure><img src="../.gitbook/assets/Screenshot From 2025-07-31 10-05-08.png" alt=""><figcaption></figcaption></figure>
+
+### Options:
+
+* **Snapshot sync**: Download a snapshot from a server, extract it into your data folder, and start the node. The node will need time to catch up downloading blocks. At the time of writing this takes about 6 hours to complete.
+* **State sync**: Sync up to the network using snapshots from peers and a good RPC. At the time of writing this takes 12-24 hours to finish.
+
+{% tabs %}
+{% tab title="Snapshot Sync" %}
+- _**If you want to sync from a snapshot, be sure to select option 2 when asked if you want to set up a state sync, and option 2 again when asked if you want to start the node:**_
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-32-28.png" alt=""><figcaption></figcaption></figure>
+
+* Download the snapshot:
+
+```sh
+curl -O https://layer-node.com/download/1754483727_cypher_snapshot.tar.gz
+```
+
+* Extract the snapshot to your home directory:
+
+{% code overflow="wrap" %}
+```sh
+tar -xvzf 1754483727_cypher_snapshot.tar.gz -C ~/.layer/data --strip-components=1 --keep-old-files --exclude=priv_validator_state.json
+```
+{% endcode %}
+
+* Start the node!
+
+{% code overflow="wrap" %}
+```sh
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="State sync" %}
+* _**To perform a state sync, simply choose option 1 when prompted, and option 1 again when asked if you want to start the node:**_
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-30-24.png" alt=""><figcaption></figcaption></figure>
+
+* Start the node!
+
+{% code overflow="wrap" %}
+```sh
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
