@@ -121,9 +121,23 @@ curl -O https://layer-node.com/download/1754483727_cypher_snapshot.tar.gz
 
 {% code overflow="wrap" %}
 ```sh
-tar -xvzf 1754483727_cypher_snapshot.tar.gz -C ~/.layer/data --strip-components=1 --keep-old-files --exclude=priv_validator_state.json
+tar -xvf 1754483727_cypher_snapshot.tar
 ```
 {% endcode %}
+
+* Move the chain data from the extracted .layer\_snapshot into your layer home directory:
+
+{% code overflow="wrap" %}
+```sh
+mv .layer_snapshot/data/application.db/ .layer_snapshot/data/blockstore.db/ .layer_snapshot/data/evidence.db/ .layer_snapshot/data/snapshots/ .layer_snapshot/data/state.db/ .layer_snapshot/data/tx_index.db/ ~/.layer/data
+```
+{% endcode %}
+
+* Remove the temporary .layer\_snapshot folder
+
+```
+rm -rf .layer_snapshot
+```
 
 * Start the node!
 
