@@ -135,7 +135,7 @@ mv .layer_snapshot/data/application.db/ .layer_snapshot/data/blockstore.db/ .lay
 
 * Remove the temporary .layer\_snapshot folder
 
-```
+```sh
 rm -rf .layer_snapshot
 ```
 
