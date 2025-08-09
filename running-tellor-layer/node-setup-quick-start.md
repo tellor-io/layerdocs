@@ -115,7 +115,7 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/mainnet_snapshot_5159306.tar.gz
+curl -O https://layer-node.com/download/mainnet_snapshot_5253794.tar.gz
 ```
 
 * Extract the snapshot to your home directory:
