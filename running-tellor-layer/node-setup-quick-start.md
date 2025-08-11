@@ -115,14 +115,25 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/mainnet_snapshot_5253794.tar.gz
+curl -O https://layer-node.com/download/1754925499_mainnet.tar.gz
 ```
 
-* Extract the snapshot to your home directory:
+* Extract the snapshot and move the files to your home directory:
 
 {% code overflow="wrap" %}
 ```sh
-tar -xvf 5090658_mainnet.tar.gz -C ~/.layer/data --strip-components=1 --keep-old-files --exclude=priv_validator_state.json
+# extract the archive
+tar -xvzf 1754925499_mainnet.tar.gz
+# move the chain data into your ~/.layer folder
+mv -f 1754925499_mainnet/.layer/data/application.db ~/.layer/data/application.db
+mv -f 1754925499_mainnet/.layer/data/blockstore.db ~/.layer/data/blockstore.db
+mv -f 1754925499_mainnet/.layer/data/cs.wal ~/.layer/data/cs.wal
+mv -f 1754925499_mainnet/.layer/data/evidence.db ~/.layer/data/evidence.db
+mv -f 1754925499_mainnet/.layer/data/snapshots ~/.layer/data/snapshots
+mv -f 1754925499_mainnet/.layer/data/state.db ~/.layer/data/state.db
+mv -f 1754925499_mainnet/.layer/data/tx_index.db ~/.layer/data/tx_index.db
+# remove the empty folders
+rm -rf 1754925499_mainnet/
 ```
 {% endcode %}
 
