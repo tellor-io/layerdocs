@@ -114,7 +114,7 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/1754483727_cypher_snapshot.tar.gz
+curl -O https://layer-node.com/download/1754483727_cypher_snapshot.tar
 ```
 
 * Extract the snapshot to your home directory:
