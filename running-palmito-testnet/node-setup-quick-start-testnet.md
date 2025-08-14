@@ -114,14 +114,14 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/1754483727_cypher_snapshot.tar
+curl -O https://layer-node.com/download/1755192948_palmito.tar.gz
 ```
 
 * Extract the snapshot to your home directory:
 
 {% code overflow="wrap" %}
 ```sh
-tar -xvf 1754483727_cypher_snapshot.tar
+tar --no-same-owner --no-same-permissions -xvzf 1755192948_palmito.tar.gz
 ```
 {% endcode %}
 

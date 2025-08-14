@@ -13,7 +13,7 @@ For running a validator, _more power_ is recommen&#x64;**:**
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb
-* storage: 500gb+ @ NVME gen3+
+* storage: 1000gb+ @ NVME gen3+
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
 _Note: The memory requirement (32gb) is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines._
