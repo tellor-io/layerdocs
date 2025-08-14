@@ -93,7 +93,7 @@ Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --chain-id layertest-4 --from YOUR_ACCOUNT_NAME --fees 5loya --yes
+./layerd tx staking create-validator ./validator.json --chain-id tellor-1 --from YOUR_ACCOUNT_NAME --gas 300000 --fees 8loya --yes
 ```
 {% endcode %}
 
