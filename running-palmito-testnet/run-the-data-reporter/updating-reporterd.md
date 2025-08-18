@@ -20,7 +20,7 @@ Move the binary to it's expected location (your setup may be different).
 
 {% code overflow="wrap" %}
 ```sh
-cp bin/reporterd ~/layer/binaries/v5.1.0 && cd ~/layer/binaries/v5.1.0
+cp bin/reporterd ~/layer/binaries/v5.1.1 && cd ~/layer/binaries/v5.1.1
 ```
 {% endcode %}
 
