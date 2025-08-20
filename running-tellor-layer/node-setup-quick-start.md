@@ -123,7 +123,7 @@ curl -O https://layer-node.com/download/1755098405_mainnet.tar.gz
 {% code overflow="wrap" %}
 ```sh
 # extract the archive
-tar -xvzf 1755098405_mainnet.tar.gz
+tar --no-same-owner --no-same-permissions -xvzf 1755098405_mainnet.tar.gz
 # move the chain data into your ~/.layer folder
 mv -f .layer_snapshot/.layer/data/application.db ~/.layer/data/application.db
 mv -f .layer_snapshot/.layer/data/blockstore.db ~/.layer/data/blockstore.db
