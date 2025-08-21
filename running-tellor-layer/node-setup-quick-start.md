@@ -142,7 +142,7 @@ rm -rf .layer_snapshot/
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enab
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
 ```
 {% endcode %}
 {% endtab %}
