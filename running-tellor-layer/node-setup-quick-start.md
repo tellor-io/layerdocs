@@ -124,7 +124,8 @@ curl -O https://layer-node.com/download/1755098405_mainnet.tar.gz
 ```sh
 # extract the archive.
 tar -xvzf 1755098405_mainnet.tar.gz
-sudo chown -R $USER:$USER .layer_snapshot
+sudo chown -R $(id -un):$(id -gn) .layer_snapshot
+sudo chmod -R u+rwX .layer_snapshot
 # move the chain data into your ~/.layer folder
 mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
 mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
