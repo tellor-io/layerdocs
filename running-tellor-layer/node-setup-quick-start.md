@@ -122,16 +122,17 @@ curl -O https://layer-node.com/download/1755098405_mainnet.tar.gz
 
 {% code overflow="wrap" %}
 ```sh
-# extract the archive
-tar --no-same-owner --no-same-permissions -xvzf 1755098405_mainnet.tar.gz
+# extract the archive.
+tar -xvzf 1755098405_mainnet.tar.gz
+sudo chown -R $USER:$USER .layer_snapshot
 # move the chain data into your ~/.layer folder
-mv -f .layer_snapshot/.layer/data/application.db ~/.layer/data/application.db
-mv -f .layer_snapshot/.layer/data/blockstore.db ~/.layer/data/blockstore.db
-mv -f .layer_snapshot/.layer/data/cs.wal ~/.layer/data/cs.wal
-mv -f .layer_snapshot/.layer/data/evidence.db ~/.layer/data/evidence.db
-mv -f .layer_snapshot/.layer/data/snapshots ~/.layer/data/snapshots
-mv -f .layer_snapshot/.layer/data/state.db ~/.layer/data/state.db
-mv -f .layer_snapshot/.layer/data/tx_index.db ~/.layer/data/tx_index.db
+mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
+mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
+mv -f .layer_snapshot/data/cs.wal ~/.layer/data/cs.wal
+mv -f .layer_snapshot/data/evidence.db ~/.layer/data/evidence.db
+mv -f .layer_snapshot/data/snapshots ~/.layer/data/snapshots
+mv -f .layer_snapshot/data/state.db ~/.layer/data/state.db
+mv -f .layer_snapshot/data/tx_index.db ~/.layer/data/tx_index.db
 # remove the empty folders
 rm -rf .layer_snapshot/
 ```
@@ -141,7 +142,7 @@ rm -rf .layer_snapshot/
 
 {% code overflow="wrap" %}
 ```sh
-./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enable --api.swagger
+./layerd start --home ~/.layer --keyring-backend test --key-name KEYNAME --api.enab
 ```
 {% endcode %}
 {% endtab %}
