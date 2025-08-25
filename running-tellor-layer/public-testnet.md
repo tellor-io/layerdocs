@@ -11,6 +11,10 @@ If you want to learn how to run a tellor node, validator, and/or reporter, you a
 [bridge-trbp-from-sepolia](bridge-trbp-from-sepolia/)
 {% endcontent-ref %}
 
+{% content-ref url="node-setup-quick-start.md" %}
+[node-setup-quick-start.md](node-setup-quick-start.md)
+{% endcontent-ref %}
+
 {% content-ref url="node-setup/" %}
 [node-setup](node-setup/)
 {% endcontent-ref %}
