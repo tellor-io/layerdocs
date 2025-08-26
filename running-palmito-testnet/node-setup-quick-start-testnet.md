@@ -114,22 +114,23 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/1755192948_palmito.tar.gz
+curl -O https://layer-node.com/download/1756215466_palmito.tar
 ```
 
-* Extract the snapshot to your home directory:
+* Extract the snapshot to your home directory, and move the chain data from the extracted .layer\_snapshot into your layer home directory:
 
 {% code overflow="wrap" %}
 ```sh
-tar --no-same-owner --no-same-permissions -xvzf  1755192948_palmito.tar.gz
-```
-{% endcode %}
-
-* Move the chain data from the extracted .layer\_snapshot into your layer home directory:
-
-{% code overflow="wrap" %}
-```sh
-mv .layer_snapshot/data/application.db/ .layer_snapshot/data/blockstore.db/ .layer_snapshot/data/evidence.db/ .layer_snapshot/data/snapshots/ .layer_snapshot/data/state.db/ .layer_snapshot/data/tx_index.db/ ~/.layer/data
+tar -xvf 1756215466_palmito.tar
+sudo chown -R $(id -un):$(id -gn) .layer_snapshot
+sudo chmod -R u+rwX .layer_snapshot
+mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
+mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
+mv -f .layer_snapshot/data/cs.wal ~/.layer/data/cs.wal
+mv -f .layer_snapshot/data/evidence.db ~/.layer/data/evidence.db
+mv -f .layer_snapshot/data/snapshots ~/.layer/data/snapshots
+mv -f .layer_snapshot/data/state.db ~/.layer/data/state.db
+mv -f .layer_snapshot/data/tx_index.db ~/.layer/data/tx_index.db
 ```
 {% endcode %}
 
