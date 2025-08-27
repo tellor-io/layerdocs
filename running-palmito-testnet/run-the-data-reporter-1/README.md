@@ -1,25 +1,40 @@
 ---
 description: Operate a Data Reporter!
+hidden: true
 icon: pen
 ---
 
-# Run a Data Reporter
+# Become a Data Reporter (testnet)
 
 ## Prerequisites
 
-* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
+* An account for creating a reporter that has either [created](../../running-tellor-layer/run-a-layer-validator/) or [delegated](broken-reference) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
 ## Build the Reporter Binary
 
-#### 1) Configure a Reporter on Tellor
+#### 1) To build the Reporter Daemon Binary
 
-Use the cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:&#x20;
+Clone the repo, change directory to layer/daemons and do `make build`:
+
+```sh
+git clone https://github.com/tellor-io/layer && cd layer/daemons && make build
+```
+
+Move or Copy the binary to `~/layer/binaries/v5.1.1` and `cd` to that directory to operate the reporter (unless your setup is different).
+
+```sh
+cp bin/reporterd ~/layer/binaries/v5.1.1 && cd ~/layer/binaries/v5.1.1
+```
+
+#### 2) Configure a Reporter and Start Reporting
+
+Use the cli to create your reporter with an initial reporting configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted for personal preference:&#x20;
 
 {% code overflow="wrap" %}
 ```bash
 # create-reporter [commission-rate] [min-tokens-required] [moniker] [flags]
-./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id tellor-1 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
 ```
 {% endcode %}
 
@@ -30,7 +45,7 @@ Parameters:
 * Choose a `REPORTER_MONIKER` that you love! (It does not need to be the same as your validator moniker.)
 * Your `moniker` can be anything you like. (REPORTER\_MONIKER) in the example command:
 
-#### 2) Check if your reporter was created successfully:
+#### 3) Check if your reporter was created successfully:
 
 ```sh
 ./layerd query reporter reporters | grep -A 7 YOUR_TELLOR_ADDRESS
@@ -38,41 +53,23 @@ Parameters:
 
 If your reporter was created successfully, this will output your reporter information.
 
-#### 3) Download the latest `reporterd` binary:
+4\) Make an empty .env file to bypass an error. (this will be fixed in the next update):
 
-{% tabs %}
-{% tab title="Linux" %}
-{% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz
+touch .env
 ```
-{% endcode %}
-{% endtab %}
 
-{% tab title="Mac" %}
-{% code overflow="wrap" %}
-```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-#### 4) Start the reporter:
+#### 5) Start the reporter:
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
 
 The logs should soon begin showing information about your cycle list reports!&#x20;
 
-{% hint style="success" %}
-You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.
-{% endhint %}
-
-Congratulations on becoming a Tellor Reporter! 🎉
+Congratulations you are a Tellor Reporter! 🎉
 
 ```
 # example of Healthy logs at time of writing

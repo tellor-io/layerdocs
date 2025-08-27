@@ -17,7 +17,7 @@
   * [Advanced Setup](running-tellor-layer/node-setup/advanced-setup.md)
 * [Run a Layer Validator](running-tellor-layer/run-a-layer-validator/README.md)
   * [Slashing Rules for Validators](running-tellor-layer/run-a-layer-validator/jailing-and-unjail-ing.md)
-* [Become a Data Reporter](running-tellor-layer/run-the-data-reporter/README.md)
+* [Run a Data Reporter](running-tellor-layer/run-the-data-reporter/README.md)
   * [Updating reporterd](running-tellor-layer/run-the-data-reporter/updating-reporterd.md)
   * [Unjail Your Reporter](running-tellor-layer/run-the-data-reporter/unjail-your-reporter.md)
 * [Disputes and Reporter Governance](running-tellor-layer/disputes-and-reporter-governance.md)
@@ -37,9 +37,12 @@
   * [Example .service Files](running-palmito-testnet/node-setup/example-.service-files.md)
 * [Run a Layer Validator (testnet)](running-palmito-testnet/run-a-layer-validator/README.md)
   * [Slashing Rules for Validators](running-palmito-testnet/run-a-layer-validator/jailing-and-unjail-ing.md)
-* [Become a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter/README.md)
+* [Run a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter/README.md)
   * [Updating reporterd](running-palmito-testnet/run-the-data-reporter/updating-reporterd.md)
   * [Unjail Your Reporter](running-palmito-testnet/run-the-data-reporter/unjail-your-reporter.md)
+* [Become a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter-1/README.md)
+  * [Updating reporterd](running-palmito-testnet/run-the-data-reporter-1/updating-reporterd.md)
+  * [Unjail Your Reporter](running-palmito-testnet/run-the-data-reporter-1/unjail-your-reporter.md)
 * [Withdraw TRB (to Sepolia)](running-palmito-testnet/bridge-back-to-sepolia/README.md)
   * [Withdraw Using CLI](running-palmito-testnet/bridge-back-to-sepolia/withdraw-using-cli.md)
 
@@ -65,5 +68,3 @@
 ***
 
 * [Setting up a Grafana Dashboard for your Layer Node](setting-up-a-grafana-dashboard-for-your-layer-node.md)
-
-## Reporter Ops
