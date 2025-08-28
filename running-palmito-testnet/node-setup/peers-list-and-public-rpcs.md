@@ -25,4 +25,4 @@ RPC
 
 API:
 
-* [https://node-palmito.tellorlayer.com](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
+* [https://node-palmito.tellorlayer.com/](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)

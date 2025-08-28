@@ -25,4 +25,4 @@ RPC
 
 API:
 
-* [https://mainnet.tellorlayer.com](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
+* [https://mainnet.tellorlayer.com/](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
