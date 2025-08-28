@@ -23,7 +23,7 @@ We want to remove the old reporter configurations so that a new ones can be gene
 ```sh
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
-rm ~/.layer/config/market_params.toml
+rm ~/.layer/config/pricefeed_exchange_config.toml
 ```
 
 ### 3. Download the latest `reporterd` release
