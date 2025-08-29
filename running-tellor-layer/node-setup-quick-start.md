@@ -115,7 +115,7 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/1756147790_mainnet.tar
+curl -O https://layer-node.com/download/1756486163_tellor-1.tar
 ```
 
 * Extract the snapshot and move the files to your home directory:
@@ -123,7 +123,7 @@ curl -O https://layer-node.com/download/1756147790_mainnet.tar
 {% code overflow="wrap" %}
 ```sh
 # extract the archive.
-tar -xvf 1756147790_mainnet.tar
+tar -xvf 1756486163_tellor-1.tar
 sudo chown -R $(id -un):$(id -gn) .layer_snapshot
 sudo chmod -R u+rwX .layer_snapshot
 # move the chain data into your ~/.layer folder
