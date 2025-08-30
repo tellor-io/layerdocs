@@ -114,14 +114,14 @@ The script should greet you and begin the guided setup!
 * Download the snapshot:
 
 ```sh
-curl -O https://layer-node.com/download/1756215466_palmito.tar
+curl -O https://layer-node.com/download/1756518729_layertest-4.tar
 ```
 
 * Extract the snapshot to your home directory, and move the chain data from the extracted .layer\_snapshot into your layer home directory:
 
 {% code overflow="wrap" %}
 ```sh
-tar -xvf 1756215466_palmito.tar
+tar -xvf 1756518729_layertest-4.tar
 sudo chown -R $(id -un):$(id -gn) .layer_snapshot
 sudo chmod -R u+rwX .layer_snapshot
 mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
