@@ -1,5 +1,5 @@
 ---
-description: Bridge requests can me made at bridge.tellor.io!
+description: Bridge requests can me made at hub.tellor.io!
 icon: bridge-water
 ---
 
@@ -17,7 +17,7 @@ icon: bridge-water
 
 * An ethereum wallet with Sepolia TRB: [0x80fc34a2f9FfE86F41580F47368289C402DEc660](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660)
 
-### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
+### Navigate to [hub.tellor.io](https://hub.tellor.io/).
 
 Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
 

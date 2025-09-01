@@ -10,7 +10,7 @@ icon: bridge-lock
 * &#x20;Ethereum wallet with some [TRB](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf).
 * A [recieving address](../manage-accounts.md) on Tellor layer.
 
-### Navigate to [bridge.tellor.io](https://bridge.tellor.io/)
+### Navigate to [hub.tellor.io](https://hub.tellor.io/).
 
 Click "Connect Wallet" and connect your Ethereum wallet.
 
