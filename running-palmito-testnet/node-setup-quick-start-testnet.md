@@ -117,13 +117,11 @@ The script should greet you and begin the guided setup!
 curl -O https://layer-node.com/download/1756518729_layertest-4.tar
 ```
 
-* Extract the snapshot to your home directory, and move the chain data from the extracted .layer\_snapshot into your layer home directory:
+* Visit [http://layer-node.com](https://layer-node.com/) and use the example commands shown there to download and extract the latest snapshot.
+* Move the files into your .layer folder:
 
 {% code overflow="wrap" %}
 ```sh
-tar -xvf 1756518729_layertest-4.tar
-sudo chown -R $(id -un):$(id -gn) .layer_snapshot
-sudo chmod -R u+rwX .layer_snapshot
 mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
 mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
 mv -f .layer_snapshot/data/cs.wal ~/.layer/data/cs.wal

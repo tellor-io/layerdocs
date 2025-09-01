@@ -112,21 +112,12 @@ The script should greet you and begin the guided setup!
 
 <figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-32-28.png" alt=""><figcaption></figcaption></figure>
 
-* Download the snapshot:
-
-```sh
-curl -O https://layer-node.com/download/1756486163_tellor-1.tar
-```
-
-* Extract the snapshot and move the files to your home directory:
+* Visit [http://layer-node.com](https://layer-node.com/) and use the example commands shown there to download and extract the latest snapshot.
+* Move the chain data into your \~/.layer folder:
 
 {% code overflow="wrap" %}
 ```sh
-# extract the archive.
-tar -xvf 1756486163_tellor-1.tar
-sudo chown -R $(id -un):$(id -gn) .layer_snapshot
-sudo chmod -R u+rwX .layer_snapshot
-# move the chain data into your ~/.layer folder
+# 
 mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
 mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
 mv -f .layer_snapshot/data/cs.wal ~/.layer/data/cs.wal
@@ -134,7 +125,6 @@ mv -f .layer_snapshot/data/evidence.db ~/.layer/data/evidence.db
 mv -f .layer_snapshot/data/snapshots ~/.layer/data/snapshots
 mv -f .layer_snapshot/data/state.db ~/.layer/data/state.db
 mv -f .layer_snapshot/data/tx_index.db ~/.layer/data/tx_index.db
-# remove the empty folders
 rm -rf .layer_snapshot/
 ```
 {% endcode %}
