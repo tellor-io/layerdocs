@@ -8,23 +8,19 @@ description: Steps for updating your reporter daemon.
 It's important to keep your Tellor reporter software up-to-date with all the latest feeds so that you can maximize rewards. This is done separately from chain (layerd) upgrades
 {% endhint %}
 
-### 1. Remove the old `reporterd` binary
+### 1. Stop your reporter.
+
+### 2. Remove the old `reporterd` binary and Configs:
 
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries && rm reporterd
-```
-{% endcode %}
-
-### 2. Remove the old configs
-
-We want to remove the old reporter configurations so that a new ones can be generated with the latest feeds / sources:
-
-```sh
+cd ~/layer/binaries/reporter # your path may be different
+rm reporterd
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml
 ```
+{% endcode %}
 
 ### 3. Download the latest `reporterd` release
 
@@ -50,6 +46,6 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 
 {% code overflow="wrap" %}
 ```sh
-./reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
