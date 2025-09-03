@@ -7,7 +7,7 @@ icon: pen
 
 ## Prerequisites
 
-* &#x20;A working[ node (or binary](../node-setup-quick-start.md) and remote rpc).
+* &#x20;A working[ node](../node-setup-quick-start.md).
 * An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 

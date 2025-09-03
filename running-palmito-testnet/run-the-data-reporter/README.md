@@ -7,7 +7,7 @@ icon: pen
 
 ## Prerequisites
 
-* A working[ node and binary](../../running-tellor-layer/node-setup-quick-start.md) (or rpc).
+* A working[ node](../../running-tellor-layer/node-setup-quick-start.md).
 * An account for creating a reporter that has either [created](../../running-tellor-layer/run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
