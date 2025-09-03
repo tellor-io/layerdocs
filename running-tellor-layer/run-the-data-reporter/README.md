@@ -61,7 +61,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 
 #### 4) Create .env
 
-Be sure to configure these variables here or in your shell. (The .env file is required even if it's empty):
+Be sure to configure these variables here or in your shell. (The .env file is required but can be empty if you're setting these another way):
 
 {% code overflow="wrap" %}
 ```sh

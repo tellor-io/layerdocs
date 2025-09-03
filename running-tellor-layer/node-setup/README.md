@@ -74,16 +74,16 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># tellor-1 binary v5.1.0
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.0 &#x26;&#x26; cd v5.1.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># tellor-1 binary v5.1.1
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.1 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# tellor-1 binary v5.1.0
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# tellor-1 binary v5.1.1
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -111,6 +111,9 @@ cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tell
 
 # upgrade binary v5.1.0
 cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v5.1.1
+cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -126,6 +129,9 @@ cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tell
 
 # upgrade binary v5.1.0
 cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+
+# upgrade binary v5.1.1
+cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -197,7 +203,7 @@ source ~/.zshrc
 
 ## 3. Edit Chain Configuration for Layer.
 
-We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.&#x20;
+We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.
 
 _**Note: All other variables can be safely left as is.**_
 
@@ -329,11 +335,9 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `3891401 for upgrade v5.1.0`&#x20;
 
-&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
-\
-&#xNAN;_**Notes on the  Upgrades:**_&#x20;
+`6699035 for upgrade v5.1.1`
 
-* _**The v4.0.2 binary is used at the height for the v4.0.1 upgrade. (This is not a typo)**_
+&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.
 
 {% code overflow="wrap" %}
 ```sh
@@ -347,6 +351,13 @@ cd ~/layer/binaries/v5.0.0
 # At height 3891401 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.0
+
+# resume syncing
+./layerd start --home ~/.layer --keyring-backend test --api.enable --api.swagger
+
+# At height 6699035 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v5.1.1
 
 # resume syncing
 ./layerd start --home ~/.layer --keyring-backend test --api.enable --api.swagger
