@@ -7,6 +7,7 @@ icon: pen
 
 ## Prerequisites
 
+* &#x20;A working[ node (or binary](../node-setup-quick-start.md) and remote rpc).
 * An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
@@ -58,7 +59,22 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% endtab %}
 {% endtabs %}
 
-#### 4) Start the reporter:
+#### 4) Create .env
+
+Be sure to configure these variables here or in your shell. (The .env file is required even if it's empty):
+
+{% code overflow="wrap" %}
+```sh
+ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
+ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
+ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
+TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
+WITHDRAW_FREQUENCY=3600
+REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks..."
+```
+{% endcode %}
+
+#### 5) Start the reporter:
 
 {% code overflow="wrap" %}
 ```bash
