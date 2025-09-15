@@ -10,8 +10,10 @@ icon: hand-wave
 Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.
 
 {% hint style="info" %}
-For more in-depth information, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
+For in-depth information about the design, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
+
+<mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently no inflationary rewards for being a validator or reporter on tellor-1. Tellor has been live on Ethereum since 2019, and the inflationary rewards are still happening there. The transition is important and we want to get it right. We have announced that the switch will happen some time in December 2025 - January 2026.**</mark>
 
 ### Tellor-1
 
