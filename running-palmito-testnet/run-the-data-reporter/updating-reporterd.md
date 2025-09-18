@@ -14,8 +14,7 @@ It's important to keep your Tellor reporter software up-to-date with all the lat
 
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter # your path may be different
-rm reporterd
+rm -rf ~/layer/binaries/reporter # your path may be different
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml
