@@ -14,7 +14,7 @@ It's important to keep your Tellor reporter software up-to-date with all the lat
 
 {% code overflow="wrap" %}
 ```sh
-rm -rf ~/layer/binaries/reporter # your path may be different
+rm -rf ~/layer/binaries/reporter/reporterd # your path may be different
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml
@@ -27,7 +27,7 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -35,7 +35,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
