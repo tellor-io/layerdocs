@@ -45,6 +45,8 @@ Environment="ETH_RPC_URL_FALLBACK=https://your.sepolia.fallback_rpc_url"
 Environment="TOKEN_BRIDGE_CONTRACT=0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
 Environment="WITHDRAW_FREQUENCY=3600"
 Environment="REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1_your_address"
+Environment="MC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY"
+Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
 
 [Install]
 WantedBy=multi-user.target

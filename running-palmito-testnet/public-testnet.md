@@ -25,8 +25,8 @@ If you want to learn how to run a tellor node, validator, and/or reporter, you a
 [run-a-layer-validator](run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="run-the-data-reporter-1/" %}
-[run-the-data-reporter-1](run-the-data-reporter-1/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% hint style="success" %}

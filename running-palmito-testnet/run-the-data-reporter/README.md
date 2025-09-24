@@ -69,8 +69,12 @@ ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
 TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
 WITHDRAW_FREQUENCY=3600
 REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks..."
+CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
+SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY
 ```
 {% endcode %}
+
+_Note: The API keys are not required, but reporters should consider setting them to enable reporting for all tipped feeds. This ensures maximum earnings._
 
 #### 5) Start the reporter:
 

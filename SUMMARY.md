@@ -39,9 +39,6 @@
 * [Run a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter/README.md)
   * [Updating reporterd](running-palmito-testnet/run-the-data-reporter/updating-reporterd.md)
   * [Unjail Your Reporter](running-palmito-testnet/run-the-data-reporter/unjail-your-reporter.md)
-* [Become a Data Reporter (testnet)](running-palmito-testnet/run-the-data-reporter-1/README.md)
-  * [Updating reporterd](running-palmito-testnet/run-the-data-reporter-1/updating-reporterd.md)
-  * [Unjail Your Reporter](running-palmito-testnet/run-the-data-reporter-1/unjail-your-reporter.md)
 * [Withdraw TRB (to Sepolia)](running-palmito-testnet/bridge-back-to-sepolia/README.md)
   * [Withdraw Using CLI](running-palmito-testnet/bridge-back-to-sepolia/withdraw-using-cli.md)
 
