@@ -1,10 +1,10 @@
 ---
-description: Templates for systemd service files that work with Tellor Layer
+description: Templates for systemd service files that work with Tellor
 ---
 
 # Example .service Files
 
-Tellor Layer requires two separate services that use two different binaries: `layerd` and `reporterd`.&#x20;
+Tellor requires two separate services that use two different binaries: `layerd` and `reporterd`.&#x20;
 
 For running the layer node client (`layerd`):
 

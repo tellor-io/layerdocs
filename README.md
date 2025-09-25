@@ -5,12 +5,12 @@ icon: hand-wave
 
 # Introduction
 
-## What is Tellor Layer?
+## What is Tellor?
 
-Tellor Layer is a new L1 built using the cosmos sdk for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.
+Tellor is an L1 built for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.
 
 {% hint style="info" %}
-For in-depth information about the design, checkout the [Tellor Layer tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
+For in-depth information about the design, checkout the [Tellor tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
 <mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently no inflationary rewards for being a validator or reporter on tellor-1. Tellor has been live on Ethereum since 2019, and the inflationary rewards are still happening there. The transition is important and we want to get it right. The switch is scheduled for December 2025 - January 2026.**</mark>
@@ -33,7 +33,7 @@ Palmito is the current testnet equivalent for testing tellor operation and funct
 
 ### What is a Validator?&#x20;
 
-Validators in the Tellor Layer network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain. The number of total validators is capped at 100.
+Validators in the Tellor network play a crucial role in maintaining the blockchain's integrity and consensus. They are responsible for validating transactions, securing the network, and ensuring the proper functioning of the blockchain. The number of total validators is capped at 100.
 
 #### **Responsibilities of a Validator:**
 
@@ -44,7 +44,7 @@ Validators in the Tellor Layer network play a crucial role in maintaining the bl
 
 ### What is a Reporter?
 
-Reporters are individuals who read data from the internet (and/or any"real world" sources) for submission to the Tellor oracle. The data they report is aggregated and verified via on-chain c onsensus. Reporters earn TRB rewards for their efforts.
+Reporters are individuals who read data from the internet (and/or any"real world" sources) for submission to the Tellor oracle. The data they report is aggregated and verified via on-chain consensus. Reporters earn TRB rewards for their efforts.
 
 #### **Reporters are responsible for:**
 

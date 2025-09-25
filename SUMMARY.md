@@ -14,7 +14,7 @@
   * [Cosmovisor Sync](running-tellor-layer/node-setup/cosmovisor-sync.md)
   * [State Sync Troubleshooting / Resetting Chain Data](running-tellor-layer/node-setup/state-sync.md)
   * [Example .service Files](running-tellor-layer/node-setup/example-.service-files.md)
-* [Run a Layer Validator](running-tellor-layer/run-a-layer-validator/README.md)
+* [Run a Tellor Validator](running-tellor-layer/run-a-layer-validator/README.md)
   * [Slashing Rules for Validators](running-tellor-layer/run-a-layer-validator/jailing-and-unjail-ing.md)
 * [Run a Data Reporter](running-tellor-layer/run-the-data-reporter/README.md)
   * [Updating reporterd](running-tellor-layer/run-the-data-reporter/updating-reporterd.md)

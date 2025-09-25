@@ -1,5 +1,5 @@
 ---
-description: How to Operate Tellor Layer Node.
+description: How to Operate Tellor Node.
 icon: rectangle-terminal
 ---
 
@@ -201,7 +201,7 @@ source ~/.zshrc
 {% endtab %}
 {% endtabs %}
 
-## 3. Edit Chain Configuration for Layer.
+## 3. Edit Chain Configuration for Tellor.
 
 We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.
 

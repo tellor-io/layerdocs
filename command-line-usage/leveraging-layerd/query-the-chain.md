@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use the cli to query Tellor Layer for information about accounts, validators,
+  Use the cli to query Tellor for information about accounts, validators,
   reports, disputes, governance and more.
 ---
 

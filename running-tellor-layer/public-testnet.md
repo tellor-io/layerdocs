@@ -32,11 +32,11 @@ Taking the time to run a practice valiator on palmito testnet before running a m
 {% endhint %}
 
 {% hint style="success" %}
-<mark style="color:orange;">**Note:**</mark> _This is a guide for setting up a Tellor Layer public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!_
+<mark style="color:orange;">**Note:**</mark> _This is a guide for setting up a Tellor public testnet validator / reporter. Care is taken to provide info on the tools being used, but testers should be comfortable with running experimental code via command line interface. A beginner’s understanding of the cosmos SDK is highly recommended!_
 {% endhint %}
 
 {% hint style="info" %}
-<mark style="color:orange;">**Disclaimer:**</mark> participation in the Tellor Layer public testnet involves using experimental software. If used in a mainnet context, the commands in this documentation WILL have consequences for real funds. Proceed with caution and ensure that you understand the responsibilities and risks associated with participation.
+<mark style="color:orange;">**Disclaimer:**</mark> participation in the Tellor public testnet involves using experimental software. If used in a mainnet context, the commands in this documentation WILL have consequences for real funds. Proceed with caution and ensure that you understand the responsibilities and risks associated with participation.
 {% endhint %}
 
 {% hint style="danger" %}

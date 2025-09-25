@@ -1,5 +1,5 @@
 ---
-description: Follow the steps to become a Layer testnet validator.
+description: Follow the steps to become a Tellor testnet validator.
 icon: binary-circle-check
 ---
 
@@ -84,7 +84,7 @@ Edit or add the following code:
 * <mark style="color:blue;">When creating your validator, be sure that you are NOT choosing an "amount" that is larger than your balance of test-net TRB.</mark>&#x20;
 * <mark style="color:blue;">TRB has 6 decimals: 1 loya is 0.000001 TRB</mark>
 * <mark style="color:blue;">Note: TRB tokens are used for gas on the layer network. As a validator / reporter you will need to make transactions to send tokens, become a reporter, unjail, etc. When choosing the amount to stake, it is important to reserve some TRB for gas.</mark>
-* <mark style="color:blue;">**Staking on layer is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://explorer.tellor.io)<mark style="color:blue;">**.**</mark>
+* <mark style="color:blue;">**Staking on Tellor is limited to 5% of the total staked tokens per 12 hours. You can check the current amount that's allowed to stake**</mark> [<mark style="color:blue;">**here**</mark>](https://explorer.tellor.io)<mark style="color:blue;">**.**</mark>
 {% endhint %}
 
 #### **4)  Create your validator.**

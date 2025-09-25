@@ -21,7 +21,7 @@ icon: bridge-water
 
 Click "Connect Wallet" and connect your Ethereum wallet. Make sure that you have some Sepolia TRB and ETH for Gas.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot From 2025-05-02 11-57-51.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-25 at 2.39.24 PM.png" alt=""><figcaption></figcaption></figure>
 
 2\) Fill out the TRB field with the balance of TRB that you want to bridge to Tellor Layer. Fill in the "To address" with your tellor prefix account and approve the transaction in your wallet extension pop-up.
 

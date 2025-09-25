@@ -87,7 +87,7 @@ _Note: The API keys are not required, but reporters should consider setting them
 The logs should soon begin showing information about your cycle list reports!&#x20;
 
 {% hint style="success" %}
-You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.
+You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Tellor such as average gas price for submitting a report, block times, total bonded tokens, etc.
 {% endhint %}
 
 Congratulations on becoming a Tellor Reporter! 🎉

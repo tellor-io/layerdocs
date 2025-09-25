@@ -215,7 +215,7 @@ source ~/.zshrc
 {% endtab %}
 {% endtabs %}
 
-## 3. Edit Chain Configuration for Layer.
+## 3. Edit Chain Configuration for Tellor.
 
 We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.&#x20;
 

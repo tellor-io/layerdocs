@@ -1,7 +1,7 @@
 ---
 description: >-
   Follow the steps to make a layer account that can be used to receive funds
-  from the bridge for transacting on layer.
+  from the bridge for transacting on Tellor.
 icon: hand-holding-dollar
 ---
 

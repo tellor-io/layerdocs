@@ -1,7 +1,7 @@
 ---
 description: >-
   Relay oracle data, validator set, and bridge information updates back and
-  forth between tellor layer and any EVM chain.
+  forth between tellor and any EVM chain.
 icon: microchip
 ---
 

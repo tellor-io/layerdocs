@@ -1,5 +1,5 @@
 ---
-description: Commands for interacting with Tellor Layer using the command line interface.
+description: Commands for interacting with Tellor using the command line interface.
 icon: square-terminal
 ---
 

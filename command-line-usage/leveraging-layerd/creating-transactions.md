@@ -1,5 +1,5 @@
 ---
-description: Use the cli to create Tellor Layer transactions.
+description: Use the cli to create Tellor transactions.
 ---
 
 # Creating Transactions

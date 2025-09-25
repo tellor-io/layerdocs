@@ -6,7 +6,7 @@ description: Just in case
 
 Navigate to [https://tellor.io/queryidstation/](https://tellor.io/queryidstation/).
 
-_**This tool can be used to generate many different types of Query Data and Query Id for any Tellor data. Here's how to do it for Tellor Layer bridge transactions.**_
+_**This tool can be used to generate many different types of Query Data and Query Id for any Tellor data. Here's how to do it for Tellor  bridge transactions.**_
 
 * Click on custom query.
 * Enter `TRBBridge` for the type.

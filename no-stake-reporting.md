@@ -5,7 +5,7 @@ icon: door-open
 
 # No-Stake Reporting
 
-As of v5.0.0, anyone from the anywhere may report oracle data to Tellor Layer as a "no-stake" report. No-stake reports are different from regular reports because they are not aggregated on chain, and they cannot be disputed.
+As of v5.0.0, anyone from the anywhere may report oracle data to Tellor as a "no-stake" report. No-stake reports are different from regular reports because they are not aggregated on chain, and they cannot be disputed.
 
 The query data and value for a no-stake report can be any abi encoded data in hexadecimal format.
 
