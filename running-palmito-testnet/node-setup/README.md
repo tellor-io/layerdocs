@@ -18,7 +18,7 @@ For running a validator, _more power_ is recommen&#x64;**:**
 
 _Note: The memory requirement (32gb) is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines._
 
-### _<mark style="color:green;">Check the</mark>_ [_<mark style="color:green;">Quick Start</mark>_](../../running-tellor-layer/node-setup-quick-start.md) _<mark style="color:green;">section for installers:</mark>_
+### _<mark style="color:green;">Check the</mark>_ [_<mark style="color:green;">Quick Start</mark>_](../../running-tellor/node-setup-quick-start.md) _<mark style="color:green;">section for installers:</mark>_
 
 {% content-ref url="../node-setup-quick-start-testnet.md" %}
 [node-setup-quick-start-testnet.md](../node-setup-quick-start-testnet.md)

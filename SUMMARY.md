@@ -2,24 +2,24 @@
 
 * [Introduction](README.md)
 
-## Running Tellor Layer
+## Running Tellor
 
-* [Getting Started](running-tellor-layer/public-testnet.md)
-* [Bridging to Tellor](running-tellor-layer/bridge-trbp-from-sepolia/README.md)
-  * [Manual Generation of Bridge Query Data / IDs](running-tellor-layer/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
-* [Managing Accounts](running-tellor-layer/manage-accounts.md)
-* [Node Setup Quick Start](running-tellor-layer/node-setup-quick-start.md)
-* [Node Setup Manual](running-tellor-layer/node-setup/README.md)
-  * [Peers List & Public RPCs](running-tellor-layer/node-setup/peers-list-and-public-rpcs.md)
-  * [Cosmovisor Sync](running-tellor-layer/node-setup/cosmovisor-sync.md)
-  * [State Sync Troubleshooting / Resetting Chain Data](running-tellor-layer/node-setup/state-sync.md)
-  * [Example .service Files](running-tellor-layer/node-setup/example-.service-files.md)
-* [Run a Tellor Validator](running-tellor-layer/run-a-layer-validator/README.md)
-  * [Slashing Rules for Validators](running-tellor-layer/run-a-layer-validator/jailing-and-unjail-ing.md)
-* [Run a Data Reporter](running-tellor-layer/run-the-data-reporter/README.md)
-  * [Updating reporterd](running-tellor-layer/run-the-data-reporter/updating-reporterd.md)
-  * [Unjail Your Reporter](running-tellor-layer/run-the-data-reporter/unjail-your-reporter.md)
-* [Disputes and Reporter Governance](running-tellor-layer/disputes-and-reporter-governance.md)
+* [Getting Started](running-tellor/getting_started.md)
+* [Bridging to Tellor](running-tellor/bridge-trbp-from-sepolia/README.md)
+  * [Manual Generation of Bridge Query Data / IDs](running-tellor/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
+* [Managing Accounts](running-tellor/manage-accounts.md)
+* [Node Setup Quick Start](running-tellor/node-setup-quick-start.md)
+* [Node Setup Manual](running-tellor/node-setup/README.md)
+  * [Peers List & Public RPCs](running-tellor/node-setup/peers-list-and-public-rpcs.md)
+  * [Cosmovisor Sync](running-tellor/node-setup/cosmovisor-sync.md)
+  * [State Sync Troubleshooting / Resetting Chain Data](running-tellor/node-setup/state-sync.md)
+  * [Example .service Files](running-tellor/node-setup/example-.service-files.md)
+* [Run a Tellor Validator](running-tellor/run-a-layer-validator/README.md)
+  * [Slashing Rules for Validators](running-tellor/run-a-layer-validator/jailing-and-unjail-ing.md)
+* [Run a Data Reporter](running-tellor/run-the-data-reporter/README.md)
+  * [Updating reporterd](running-tellor/run-the-data-reporter/updating-reporterd.md)
+  * [Unjail Your Reporter](running-tellor/run-the-data-reporter/unjail-your-reporter.md)
+* [Disputes and Reporter Governance](running-tellor/disputes-and-reporter-governance.md)
 
 ## Running Palmito (testnet)
 

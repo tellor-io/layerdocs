@@ -7,7 +7,7 @@ icon: binary-circle-check
 
 ## Prerequisites
 
-You will need a [node that's fully synced](broken-reference) and [an account that has a balance](../../running-tellor-layer/manage-accounts.md) (loya).
+You will need a [node that's fully synced](broken-reference) and [an account that has a balance](../../running-tellor/manage-accounts.md) (loya).
 
 ## Creating your Validator
 
@@ -115,4 +115,4 @@ If `status` is `1`, It means that you are not bonded. This can happen If you acc
 If `status` is `2`, It means that your validator is jailed. If this happens, check if the node process is running on your host machine.&#x20;
 {% endhint %}
 
-You can unjail with steps shown in the [next section.](../../running-tellor-layer/run-the-data-reporter/)
+You can unjail with steps shown in the [next section.](../../running-tellor/run-the-data-reporter/)
