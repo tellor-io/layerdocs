@@ -46,17 +46,19 @@ For a genesis sync:
 ```shell
 # set up cosmovisor. Each command is done seperatly.
 ./cosmovisor init ~/layer/binaries/v4.0.0/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v4.0.1/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v4.0.3/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v5.0.0/layerd
-./cosmovisor add-upgrade ~/layer/binaries/v5.1.0/layerd
+./cosmovisor add-upgrade v4.0.1 ~/layer/binaries/v4.0.1/layerd
+./cosmovisor add-upgrade v4.0.3 ~/layer/binaries/v4.0.3/layerd
+./cosmovisor add-upgrade v5.0.0 ~/layer/binaries/v5.0.0/layerd
+./cosmovisor add-upgrade v5.1.0 ~/layer/binaries/v5.1.0/layerd
+./cosmovisor add-upgrade v5.1.1 ~/layer/binaries/v5.1.1/layerd
+./cosmovisor add-upgrade v5.1.2 ~/layer/binaries/v5.1.2/layerd
 ```
 
 For a state sync, initialize cosmovisor with the current binary:
 
 ```sh
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v5.1.0/layerd
+./cosmovisor init ~/layer/binaries/v5.1.2/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
