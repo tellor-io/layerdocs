@@ -13,7 +13,7 @@ icon: pen
 
 #### 1) Configure a Reporter on Tellor
 
-Use the cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:&#x20;
+Use the `layerd` cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:&#x20;
 
 {% code overflow="wrap" %}
 ```bash
@@ -24,10 +24,9 @@ Use the cli register and initialize your reporter configuration. Commission-rate
 
 Parameters:
 
-* A `commision-rate` of `0.05` means that you get 5% of rewards from your selectors.
-* A `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
+* A (example) `commision-rate` of `0.05` means that you get 5% of rewards from your selectors.
+* A (example)  `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
 * Choose a `REPORTER_MONIKER` that you love! (It does not need to be the same as your validator moniker.)
-* Your `moniker` can be anything you like. (REPORTER\_MONIKER) in the example command:
 
 #### 2) Check if your reporter was created successfully:
 
@@ -43,7 +42,7 @@ If your reporter was created successfully, this will output your reporter inform
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.9/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -51,7 +50,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.9/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -71,6 +70,7 @@ WITHDRAW_FREQUENCY=3600
 REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks..."
 CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
 SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY
+INFURA_API_KEY=YOUR_INFURA_API_KEY
 ```
 {% endcode %}
 
