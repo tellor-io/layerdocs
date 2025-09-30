@@ -35,7 +35,7 @@ jq, yq, sed, curl, wget, make, and **Go** are required for running the various c
 * **`sed` :** `sudo apt install sed`
 * **`curl`**: `sudo apt install curl`
 * **`wget`** : `sudo apt install wget`&#x20;
-* `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
+* `Go version 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
 * `make` : `sudo apt install build-essential`
 {% endtab %}
 
