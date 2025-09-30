@@ -76,16 +76,16 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v5.1.1
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.1 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v5.1.2
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.2 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# layertest-4 binary v5.1.1
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+# layertest-4 binary v5.1.2
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -194,7 +194,7 @@ Add these lines to the bottom of the file. Remember to replace the example `ETH_
 export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
 export ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
 export ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x87e025f9c3E20E8Cd1a5D2854237D75A4624F72e"
+export TOKEN_BRIDGE_CONTRACT="0x62733e63499a25E35844c91275d4c3bdb159D29d"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -354,6 +354,8 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `7375500 for upgrade v5.1.1`
 
+`9569214 for upgrade v5.1.2`
+
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
 &#xNAN;_**Notes on the  Upgrades:**_&#x20;
@@ -390,6 +392,10 @@ cd ~/layer/binaries/v5.1.0
 # At height 7375500 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.1
+
+# At height 9569214 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v5.1.2
 
 # resume syncing
 ./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
