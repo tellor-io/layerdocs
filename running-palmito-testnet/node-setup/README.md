@@ -194,7 +194,7 @@ Add these lines to the bottom of the file. Remember to replace the example `ETH_
 export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
 export ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
 export ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
+export TOKEN_BRIDGE_CONTRACT="0x87e025f9c3E20E8Cd1a5D2854237D75A4624F72e"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
