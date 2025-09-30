@@ -12,9 +12,11 @@ It's important to keep your Tellor reporter software up-to-date with all the lat
 
 ### 2. Remove the old `reporterd` binary and Configs:
 
+_Your file paths may be different. Remember to adjust as needed to remove the files:_
+
 {% code overflow="wrap" %}
 ```sh
-rm -rf ~/layer/binaries/reporter/reporterd # your path may be different
+rm -rf ~/layer/binaries/reporter/reporterd
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml
@@ -27,7 +29,7 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.9/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -35,7 +37,7 @@ cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && reporterd_Darwin_arm64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.0.9/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
