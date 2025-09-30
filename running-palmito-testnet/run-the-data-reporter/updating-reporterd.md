@@ -12,6 +12,8 @@ It's important to keep your Tellor reporter software up-to-date with all the lat
 
 ### 2. Remove the old `reporterd` binary and Configs:
 
+_Be sure to set the correct paths to these files if your setup is different:_
+
 {% code overflow="wrap" %}
 ```sh
 rm ~/layer/binaries/reporter/reporterd
