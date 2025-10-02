@@ -77,7 +77,7 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% tabs %}
 {% tab title="Linux" %}
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layertest-4 binary v5.1.2
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.2 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.2 &#x26;&#x26; cd v5.1.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
@@ -85,7 +85,7 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% code overflow="wrap" %}
 ```sh
 # layertest-4 binary v5.1.2
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -121,7 +121,10 @@ cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tell
 cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
 # upgrade binary v5.1.1 (for upgrade name v5.1.1)
-cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v5.1.2 (for upgrade name v5.1.2)
+cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
