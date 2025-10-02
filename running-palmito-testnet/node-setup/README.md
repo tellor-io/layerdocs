@@ -149,6 +149,9 @@ cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tell
 
 # upgrade binary v5.1.1
 cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+
+# upgrade binary v5.1.2
+cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
