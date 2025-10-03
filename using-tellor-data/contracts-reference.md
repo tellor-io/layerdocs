@@ -15,7 +15,7 @@ icon: address-book
 
 ### **Sepolia**
 
-* TellorDataBridge: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
+* TellorDataBridge: [0x219255BcC07FA116A27b9303222A8003A0fEd394](https://sepolia.etherscan.io/address/0x219255BcC07FA116A27b9303222A8003A0fEd394)
 
 </details>
 

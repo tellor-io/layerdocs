@@ -14,11 +14,9 @@ Integrating tellor data into a user contract involves two major aspects:
 See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for a few example oracle use case implementations.
 {% endhint %}
 
-### Contract Addresses
-
-TellorDataBridge Ethereum: [0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65](https://etherscan.io/address/0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65)
-
-TellorDataBridge Sepolia: [0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8](https://sepolia.etherscan.io/address/0xC69f43741D379cE93bdaAC9b5135EA3e697df1F8)
+{% hint style="info" %}
+See the [Contracts Reference](contracts-reference.md) page for deployed contract addresses. You are also welcome to deploy your own.
+{% endhint %}
 
 ### Verifying Data Authenticity
 
