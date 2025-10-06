@@ -19,6 +19,7 @@
 * [Run a Data Reporter](running-tellor/run-the-data-reporter/README.md)
   * [Updating reporterd](running-tellor/run-the-data-reporter/updating-reporterd.md)
   * [Unjail Your Reporter](running-tellor/run-the-data-reporter/unjail-your-reporter.md)
+  * [Switch Reporter or Selector](running-tellor/run-the-data-reporter/switch-reporter-or-selector.md)
 * [Disputes and Reporter Governance](running-tellor/disputes-and-reporter-governance.md)
 
 ## Running Palmito (testnet)
