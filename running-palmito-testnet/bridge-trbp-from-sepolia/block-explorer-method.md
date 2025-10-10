@@ -15,7 +15,7 @@ T**he methods shown here can also be used to interact with the mainnet bridge co
 Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
 
 On the Contracts tab, click on function `2. approve`\
-Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: `0x5acb5977f35b1A91C4fE0F4386eB669E046776F2`
+Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x62733e63499a25E35844c91275d4c3bdb159D29d
 
 Set the `_amount` to be the amount that you want to bridge e.g. `25000000000000000000 (25 TRB with 18 decimals)`
 
