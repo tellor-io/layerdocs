@@ -45,6 +45,7 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 ./cosmovisor add-upgrade v5.0.0 ~/layer/binaries/v5.0.0/layerd
 ./cosmovisor add-upgrade v5.1.0 ~/layer/binaries/v5.1.0/layerd
 ./cosmovisor add-upgrade v5.1.1 ~/layer/binaries/v5.1.1/layerd
+./cosmovisor add-upgrade v5.1.2 ~/layer/binaries/v5.1.2/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
@@ -55,4 +56,4 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 ```
 {% endcode %}
 
-Make sure to do `add-upgrade` in advance of future Tellor upgrades to make use of cosmovisor's features.
+Make sure to do `add-upgrade` in advance of future Tellor upgrades to make use of cosmovisor's upgrade automation!
