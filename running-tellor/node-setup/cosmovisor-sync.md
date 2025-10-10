@@ -1,10 +1,8 @@
 ---
-description: Setup steps for cosmovisor gang.
+description: Cosmovisor is a binary manager that can perform upgrades automatically.
 ---
 
 # Cosmovisor Sync
-
-Cosmovisor is a binary manager that can perform upgrades automatically. It can be configured to automatically download binaries, but this level of automation has not been tested on Tellor!
 
 ## Prerequisites:
 
