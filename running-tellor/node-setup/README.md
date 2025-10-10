@@ -74,15 +74,13 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># tellor-1 binary v5.1.1
-<strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.1 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v5.1.2 &#x26;&#x26; cd v5.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-# tellor-1 binary v5.1.1
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
@@ -114,6 +112,9 @@ cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tell
 
 # upgrade binary v5.1.1
 cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v5.1.2
+cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -337,6 +338,8 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `6699035 for upgrade v5.1.1`
 
+`8593590 for upgrade v5.1.2`
+
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.
 
 {% code overflow="wrap" %}
@@ -358,6 +361,13 @@ cd ~/layer/binaries/v5.1.0
 # At height 6699035 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.1
+
+# resume syncing
+./layerd start --home ~/.layer --keyring-backend test --api.enable --api.swagger
+
+# At height 8593590 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v5.1.2
 
 # resume syncing
 ./layerd start --home ~/.layer --keyring-backend test --api.enable --api.swagger
