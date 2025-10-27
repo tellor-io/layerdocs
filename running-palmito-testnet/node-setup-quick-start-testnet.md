@@ -111,17 +111,12 @@ The script should greet you and begin the guided setup!
 
 <figure><img src="../.gitbook/assets/Screenshot From 2025-08-06 21-32-28.png" alt=""><figcaption></figcaption></figure>
 
-* Download the snapshot:
-
-```sh
-curl -O https://layer-node.com/download/1756518729_layertest-4.tar
-```
-
 * Visit [http://layer-node.com](https://layer-node.com/) and use the example commands shown there to download and extract the latest snapshot.
-* Move the files into your .layer folder:
+* Move the chain data into your \~/.layer folder:
 
 {% code overflow="wrap" %}
 ```sh
+# 
 mv -f .layer_snapshot/data/application.db ~/.layer/data/application.db
 mv -f .layer_snapshot/data/blockstore.db ~/.layer/data/blockstore.db
 mv -f .layer_snapshot/data/cs.wal ~/.layer/data/cs.wal
@@ -129,14 +124,9 @@ mv -f .layer_snapshot/data/evidence.db ~/.layer/data/evidence.db
 mv -f .layer_snapshot/data/snapshots ~/.layer/data/snapshots
 mv -f .layer_snapshot/data/state.db ~/.layer/data/state.db
 mv -f .layer_snapshot/data/tx_index.db ~/.layer/data/tx_index.db
+rm -rf .layer_snapshot/
 ```
 {% endcode %}
-
-* Remove the temporary .layer\_snapshot folder
-
-```sh
-rm -rf .layer_snapshot
-```
 
 * Start the node!
 
