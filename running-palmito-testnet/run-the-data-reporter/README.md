@@ -9,7 +9,6 @@ icon: pen
 
 * A working[ node](../../running-tellor/node-setup-quick-start.md).
 * An account for creating a reporter that has either [created](../../running-tellor/run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
-* `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install) if not already installed.
 
 #### 1) Configure a Reporter on Tellor
 

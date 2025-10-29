@@ -40,7 +40,3 @@ Please take the time to <mark style="color:green;">**review all information**</m
 {% hint style="info" %}
 <mark style="color:orange;">**Disclaimer:**</mark> participation in the Tellor public testnet involves using experimental software. If used in a mainnet context, the commands in this documentation WILL have consequences for real funds. Proceed with caution and ensure that you understand the responsibilities and risks associated with participation.
 {% endhint %}
-
-{% hint style="danger" %}
-**Never operate Tellor Mainnet validators with the same keys that you use for operating Tellor Testnet validators. Signatures from testnets can be submitted as evidence of bad behavior on mainnet which results in slashing.**
-{% endhint %}

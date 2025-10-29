@@ -8,6 +8,7 @@ Tellor requires two separate services that use two different binaries: `layerd` 
 
 For running the layer node client (`layerd`):
 
+{% code overflow="wrap" %}
 ```sh
 [Unit]
 Description=Layer Node Client
@@ -24,9 +25,11 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 ```
+{% endcode %}
 
 For running the reporter daemon (`reporterd`):
 
+{% code overflow="wrap" %}
 ```sh
 [Unit]
 Description=Layer Reporter
@@ -51,3 +54,34 @@ Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
 [Install]
 WantedBy=multi-user.target
 ```
+{% endcode %}
+
+For running a layer validator with cosmovisor:
+
+{% code overflow="wrap" %}
+```shell
+[Unit]
+Description=Cosmovisor Validator Start
+After=network-online.target
+
+[Service]
+User=USERNAME
+Group=USERNAME
+WorkingDirectory=/home/USERNAME/layer
+ExecStart=/home/USERNAME/cosmovisor run start --home /home/USERNAME/.layer --keyring-backend="test" --key-name="ACCOUNT_NAME" --api.enable --api.swagger
+Restart=always
+RestartSec=10
+MemoryMax=25G
+Environment="DAEMON_NAME=layerd"
+Environment="DAEMON_HOME=/home/USERNAME/.layer"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_POLL_INTERVAL=300ms"
+Environment="UNSAFE_SKIP_BACKUP=true"
+Environment="DAEMON_PREUPGRADE_MAX_RETRIES=0"
+
+
+[Install]
+WantedBy=multi-user.target
+```
+{% endcode %}
