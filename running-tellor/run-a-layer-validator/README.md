@@ -11,11 +11,11 @@ You will need a [node that's fully synced](../node-setup/) and [an account that 
 
 ## Creating your Validator
 
-#### 1) Change directory to `~/layer/binaries/v5.1.2` and check if your address has funds. You will need to have at least 1 TRB to stake a validator on tellor layer:
+1\) Change directory to `~/layer/binaries/v6.0.0` and check if your address has funds. You will need to have at least 1 TRB to stake a validator on tellor layer:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v5.1.2 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v6.0.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -27,7 +27,7 @@ balance:
   denom: loya
 ```
 
-#### 2)  Retrieve your Node's Pubkey
+2\)  Retrieve your Node's Pubkey
 
 This is a unique identifier for a node running on your computer:
 
