@@ -1,6 +1,5 @@
 ---
 description: Record of Contract Addresses
-icon: address-book
 ---
 
 # TRBBridge Contracts Reference

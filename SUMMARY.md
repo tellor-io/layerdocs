@@ -1,11 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Bridging TRB](bridge-trbp-from-sepolia/README.md)
-  * [TRBBridge Contracts Reference](bridge-trbp-from-sepolia/trbbridge-contracts-reference.md)
-  * [Etherscan Method (Deposits)](bridge-trbp-from-sepolia/etherscan-method-deposits.md)
-  * [Request a Withdrawal via CLI](bridge-trbp-from-sepolia/request-a-withdrawal-via-cli.md)
-  * [Manual Generation of Bridge Query Data / IDs](bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
+* [Bridging TRB](bridging-trb/README.md)
+  * [TRBBridge Contracts Reference](bridging-trb/trbbridge-contracts-reference.md)
+  * [Etherscan Method (Deposits)](bridging-trb/etherscan-method-deposits.md)
+  * [Request a Withdrawal via CLI](bridging-trb/request-a-withdrawal-via-cli.md)
+  * [Manual Generation of Bridge Query Data / IDs](bridging-trb/manual-generation-of-bridge-query-data-ids.md)
 
 ## Running Tellor
 
