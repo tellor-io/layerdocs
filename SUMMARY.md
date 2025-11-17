@@ -4,6 +4,7 @@
 * [Bridging TRB](bridge-trbp-from-sepolia/README.md)
   * [TRBBridge Contracts Reference](bridge-trbp-from-sepolia/trbbridge-contracts-reference.md)
   * [Etherscan Method (Deposits)](bridge-trbp-from-sepolia/etherscan-method-deposits.md)
+  * [Request a Withdrawal via CLI](bridge-trbp-from-sepolia/request-a-withdrawal-via-cli.md)
   * [Manual Generation of Bridge Query Data / IDs](bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 
 ## Running Tellor

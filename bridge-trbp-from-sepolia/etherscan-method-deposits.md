@@ -1,14 +1,10 @@
 ---
-description: How to use Etherscan to bridge Sepolia TRB to Tellor Layer.
+description: How to use Etherscan to "manually" bridge TRB to Tellor Layer.
 ---
 
 # Etherscan Method (Deposits)
 
 _**Bridge requests can usually be sent to Tellor via**_ [_**https://hub.tellor.io/**_](https://hub.tellor.io/)_**. A block explorer can be used as a secondary method using the steps shown below.**_
-
-{% hint style="success" %}
-T**he methods shown here can also be used to interact with the mainnet bridge contract to `tellor-1`.**
-{% endhint %}
 
 ### 1. Approve the bridge contract
 
@@ -41,8 +37,4 @@ Click Write and confirm the transaction.
 
 ### 3. Wait 12 Hours
 
-There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello! After 12 hours have passed, you or anyone else may claim your tokens on Tellor.&#x20;
-
-{% hint style="info" %}
-For steps to claim your deposit on layer, see here.
-{% endhint %}
+There's a 12 hour delay to secure deposits. While you're wait it's a great opportunity to join the [tellor discord ](https://discord.gg/tellor)and say hello! After 12 hours have passed, your tokens should arrive in your wallet automatically.
