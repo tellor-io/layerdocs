@@ -53,7 +53,7 @@ If the bridge page is ever unavailable, use etherscan.
 [etherscan-method-deposits.md](etherscan-method-deposits.md)
 {% endcontent-ref %}
 
-If you want to make a bridge request using the layerd CLI:
+If you want to make a withdrawal request using the layerd CLI:
 
 {% content-ref url="request-a-withdrawal-via-cli.md" %}
 [request-a-withdrawal-via-cli.md](request-a-withdrawal-via-cli.md)
