@@ -2,7 +2,7 @@
 description: How to use Etherscan to bridge Sepolia TRB to Tellor Layer.
 ---
 
-# Block Explorer Method
+# Etherscan Method (Deposits)
 
 _**Bridge requests can usually be sent to Tellor via**_ [_**https://hub.tellor.io/**_](https://hub.tellor.io/)_**. A block explorer can be used as a secondary method using the steps shown below.**_
 
@@ -12,20 +12,20 @@ T**he methods shown here can also be used to interact with the mainnet bridge co
 
 ### 1. Approve the bridge contract
 
-Navigate to the [Sepolia TRB contract](https://sepolia.etherscan.io/address/0x80fc34a2f9FfE86F41580F47368289C402DEc660#writeProxyContract): 0x80fc34a2f9FfE86F41580F47368289C402DEc660
+Navigate to the TRB [contract](trbbridge-contracts-reference.md)'s contract tab. Click the button for "Write as Proxy" (image below)
+
+<figure><img src="../.gitbook/assets/Screenshot From 2025-11-17 12-15-14.png" alt=""><figcaption></figcaption></figure>
 
 On the Contracts tab, click on function `2. approve`\
-Set spender to the [bridge contract](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2) address: 0x62733e63499a25E35844c91275d4c3bdb159D29d
+Set spender to be the [bridge contract address](trbbridge-contracts-reference.md).
 
 Set the `_amount` to be the amount that you want to bridge e.g. `25000000000000000000 (25 TRB with 18 decimals)`
-
-![](<../../.gitbook/assets/Screenshot From 2025-04-07 14-49-35.png>)
 
 Click "Write" and confirm the transaction in your wallet.
 
 ### 2. Make the bridge request (depositToLayer)
 
-Navigate to the [Tellor Testnet bridge](https://sepolia.etherscan.io/address/0x5acb5977f35b1A91C4fE0F4386eB669E046776F2#writeContract).
+Navigate to the [TRBBridge contract](trbbridge-contracts-reference.md)'s contract tab. Click the button for "Write as Proxy".
 
 Connect your wallet and click function `3. depositToLayer`.
 
@@ -35,7 +35,7 @@ Set the `_tip` to 10000000000000000 (0.01 TRB). This is a tip that can be claime
 
 Set `_layerRecipient` to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](https://docs.tellor.io/layer-docs/running-tellor-layer/public-testnet/manage-accounts).
 
-![](https://docs.tellor.io/~gitbook/image?url=https%3A%2F%2F2729899787-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fs90SVtIdiQ8dmMsqriIa%252Fuploads%252FTWQVieJBEBj2jfPXa887%252FScreenshot%25202025-02-06%2520at%252012.22.28%25E2%2580%25AFPM.png%3Falt%3Dmedia%26token%3D4c9762d2-d0fe-49fe-a9be-88c175e63614\&width=768\&dpr=4\&quality=100\&sign=92b3f40e\&sv=2)
+<figure><img src="https://docs.tellor.io/~gitbook/image?url=https%3A%2F%2F2729899787-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fs90SVtIdiQ8dmMsqriIa%252Fuploads%252FTWQVieJBEBj2jfPXa887%252FScreenshot%25202025-02-06%2520at%252012.22.28%25E2%2580%25AFPM.png%3Falt%3Dmedia%26token%3D4c9762d2-d0fe-49fe-a9be-88c175e63614&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=92b3f40e&#x26;sv=2" alt=""><figcaption></figcaption></figure>
 
 Click Write and confirm the transaction.
 

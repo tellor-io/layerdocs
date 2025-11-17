@@ -7,8 +7,8 @@ icon: mug-hot
 
 If you want to learn how to run a tellor node, validator, and/or reporter, you are in the right place!
 
-{% content-ref url="bridge-trbp-from-sepolia/" %}
-[bridge-trbp-from-sepolia](bridge-trbp-from-sepolia/)
+{% content-ref url="../bridge-trbp-from-sepolia/" %}
+[bridge-trbp-from-sepolia](../bridge-trbp-from-sepolia/)
 {% endcontent-ref %}
 
 {% content-ref url="node-setup-quick-start.md" %}

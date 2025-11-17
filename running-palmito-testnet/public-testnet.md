@@ -9,8 +9,8 @@ If you want to learn how to run a tellor node, validator, and/or reporter, you a
 
 ## Welcome to the Guide
 
-{% content-ref url="bridge-trbp-from-sepolia/" %}
-[bridge-trbp-from-sepolia](bridge-trbp-from-sepolia/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="node-setup-quick-start-testnet.md" %}

@@ -1,12 +1,14 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Bridging TRB](bridge-trbp-from-sepolia/README.md)
+  * [TRBBridge Contracts Reference](bridge-trbp-from-sepolia/trbbridge-contracts-reference.md)
+  * [Etherscan Method (Deposits)](bridge-trbp-from-sepolia/etherscan-method-deposits.md)
+  * [Manual Generation of Bridge Query Data / IDs](bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 
 ## Running Tellor
 
 * [Getting Started](running-tellor/getting_started.md)
-* [Bridging TRB](running-tellor/bridge-trbp-from-sepolia/README.md)
-  * [Manual Generation of Bridge Query Data / IDs](running-tellor/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 * [Managing Accounts](running-tellor/manage-accounts.md)
 * [Node Setup Quick Start](running-tellor/node-setup-quick-start.md)
 * [Node Setup Manual](running-tellor/node-setup/README.md)
@@ -25,9 +27,6 @@
 ## Running Palmito (testnet)
 
 * [Getting Started (testnet)](running-palmito-testnet/public-testnet.md)
-* [Bridging TRB to Tellor (palmito)](running-palmito-testnet/bridge-trbp-from-sepolia/README.md)
-  * [Block Explorer Method](running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
-  * [Manual Generation of Bridge Query Data / IDs](running-palmito-testnet/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 * [Managing Accounts](running-palmito-testnet/manage-accounts.md)
 * [Node Setup Quick Start (testnet)](running-palmito-testnet/node-setup-quick-start-testnet.md)
 * [Node Setup Manual (testnet)](running-palmito-testnet/node-setup/README.md)
@@ -58,7 +57,7 @@
 
 ## Using Tellor Data
 
-* [Contracts Reference](using-tellor-data/contracts-reference.md)
+* [DataBridge Contracts Reference](using-tellor-data/databridge-contracts-reference.md)
 * [Relay Data to EVM Chains](using-tellor-data/relay-data-to-evm-chains.md)
 * [Integrating Tellor Data](using-tellor-data/integrating-tellor-data.md)
 * [Integrate Tellor on a New Chain](using-tellor-data/integrate-tellor-on-a-new-chain.md)

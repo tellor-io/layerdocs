@@ -15,7 +15,7 @@ See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for
 {% endhint %}
 
 {% hint style="info" %}
-See the [Contracts Reference](contracts-reference.md) page for deployed contract addresses. You are also welcome to deploy your own.
+See the [Contracts Reference](databridge-contracts-reference.md) page for deployed contract addresses. You are also welcome to deploy your own.
 {% endhint %}
 
 ### Verifying Data Authenticity
