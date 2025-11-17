@@ -3,29 +3,53 @@ description: Lock your TRB on Ethereum, receive funds on tellor
 icon: bridge-lock
 ---
 
-# Bridging to Tellor
+# Bridging TRB
 
 ### Prerequisites
 
 * &#x20;Ethereum wallet with some [TRB](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf).
 * A [recieving address](../manage-accounts.md) on Tellor layer.
 
-### Navigate to [hub.tellor.io](https://hub.tellor.io/).
+### How to Deposit:
 
-Click "Connect Wallet" and connect your Ethereum wallet.
+Navigate to [hub.tellor.io](https://hub.tellor.io/).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-25 at 2.31.29 PM.png" alt=""><figcaption></figcaption></figure>
+Click the "bridge" circle. Then click "Connect Wallet" and connect your Ethereum wallet. (screenshot below)
 
 Fill out the TRB field with the amount that you want to bridge to Tellor. Fill in the "to address" field with your tellor prefix account and approve the transaction in your wallet extension pop-up.
 
-### Wait 12 hours
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-11-17 11-10-47.png" alt=""><figcaption></figcaption></figure>
 
-After a 12 hour security delay, your balance of TRB will arrive in your tellor wallet automatically. Congrats! This is a great time to pop into the [tellor discord ](https://discord.gg/tellor)and say hello!
+Click "Approve Deposit" and sign the proposed transaction with your ethereum wallet, then click "Bridge to Tellor" and do the same.
 
-### Secondary Method:
+**After a 12 hour security delay, your balance of TRB will arrive in your tellor wallet automatically.** Congrats! This is a great time to pop into the [tellor discord ](https://discord.gg/tellor)and say hello!
+
+### How to Withdraw (bridge back to Ethereum):
+
+Navigate to [hub.tellor.io](https://hub.tellor.io/).
+
+Click the "bridge" circle. Click "Connect Wallets" to connect your Ethereum wallet and your keplr wallet. (The keplr wallet must be the one that holds your funds on Tellor Layer.) \
+\
+Then also click "To Ethereum" as shown in the screenshot below.
+
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-11-17 11-21-04.png" alt=""><figcaption></figcaption></figure>
+
+Fill in the fields with your ethereum address and the amount of TRB that you would like to withdraw Click "Request Withdrawal" and sign the transaction with keplr. \
+\
+Wait 12 hours.
+
+After 12 hours have passed, connect your wallets again (if necessary) and you should see two buttons next to your withdrawal details in the Withdrawal Transactions table.
+
+<figure><img src="../../.gitbook/assets/Screenshot From 2025-11-17 11-16-51.png" alt="" width="323"><figcaption></figcaption></figure>
+
+Click "Request attestation" and sign the tx with your keplr wallet.\
+Click "Claim Withdrawal" and sign the tx with your ethereum wallet. The funds should arrive immediately.
+
+### Secondary Methods:
 
 If the bridge page is ever unavailable, a block explorer like etherscan works fine. The instructions shown here are for testnet, but they work on the mainnet contracts as well.
 
 {% content-ref url="../../running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md" %}
 [block-explorer-method.md](../../running-palmito-testnet/bridge-trbp-from-sepolia/block-explorer-method.md)
 {% endcontent-ref %}
+

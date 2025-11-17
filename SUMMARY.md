@@ -5,7 +5,7 @@
 ## Running Tellor
 
 * [Getting Started](running-tellor/getting_started.md)
-* [Bridging to Tellor](running-tellor/bridge-trbp-from-sepolia/README.md)
+* [Bridging TRB](running-tellor/bridge-trbp-from-sepolia/README.md)
   * [Manual Generation of Bridge Query Data / IDs](running-tellor/bridge-trbp-from-sepolia/manual-generation-of-bridge-query-data-ids.md)
 * [Managing Accounts](running-tellor/manage-accounts.md)
 * [Node Setup Quick Start](running-tellor/node-setup-quick-start.md)
