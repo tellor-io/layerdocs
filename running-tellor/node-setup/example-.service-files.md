@@ -47,6 +47,8 @@ Environment="WITHDRAW_FREQUENCY=3600"
 Environment="REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1_your_address"
 Environment="MC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY"
 Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
+Environment="INFURA_API_KEY=YOUR_INFURA_API_KEY"
+Environment="ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY"
 
 [Install]
 WantedBy=multi-user.target
