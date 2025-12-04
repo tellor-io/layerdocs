@@ -13,7 +13,7 @@ Tellor is a Layer 1 blockchain built for the purpose of coming to consensus on a
 For in-depth information about the design, checkout the [Tellor tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
-<mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently trustless inflationary rewards for being a validator or reporter on tellor-1. Inflationary rewards will transition Q1 2026. Temporary rewards are currently available at 1/4th rate (approx. 36 TRB per 24 hours).**</mark>&#x20;
+<mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently no trustless inflationary rewards for being a validator or reporter on Tellor. Inflationary rewards will transition Q1 2026. Temporary rewards are currently available at 1/4th rate (approx. 36 TRB per 24 hours).**</mark>&#x20;
 
 ### Tellor-1
 
