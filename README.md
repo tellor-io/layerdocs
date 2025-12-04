@@ -13,22 +13,22 @@ Tellor is a Layer 1 blockchain built for the purpose of coming to consensus on a
 For in-depth information about the design, checkout the [Tellor tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
-<mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently no inflationary rewards for being a validator or reporter on tellor-1. Tellor has been live on Ethereum since 2019, and the inflationary rewards are still happening there. The transition is important and we want to get it right. The switch is scheduled for December 2025 - January 2026.**</mark>
+<mark style="background-color:yellow;">**Important note for validators who offer staking services: There are currently trustless inflationary rewards for being a validator or reporter on tellor-1. Inflationary rewards will transition Q1 2026. Temporary rewards are currently available at 1/4th rate (approx. 36 TRB per 24 hours).**</mark>&#x20;
 
 ### Tellor-1
 
 **`tellor-1` is the tellor mainnet chain-id. Over a year in the making, this is a custom oracle chain for coming to consensus on subjective data.** The network is open for anyone to participate with no barriors to participation other than bridging and staking TRB ([ERC20](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf)).&#x20;
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/Pe4IW2P0OSDraf0cWra8" %}
+[Broken link](/broken/pages/Pe4IW2P0OSDraf0cWra8)
 {% endcontent-ref %}
 
 ### Palmito Testnet (layertest-4)
 
 Palmito is the current testnet equivalent for testing tellor operation and functionaity.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/cpgf4r3gLEp7xSXrvVjL" %}
+[Broken link](/broken/pages/cpgf4r3gLEp7xSXrvVjL)
 {% endcontent-ref %}
 
 ### What is a Validator?&#x20;
