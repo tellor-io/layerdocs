@@ -7,10 +7,10 @@ icon: pen
 
 ## Staking
 
-To create a reporter on Tellor Layer, you must first "stake" your address one of two ways. You must have either created a validator -OR- delegated to a validator to bond your tokens.
+To create a reporter on Tellor Layer, you must first "stake" your address one of two ways. You must either create a validator -OR- delegate to a validator to bond your tokens.
 
-* Created a Validator: Your account is the KEYNAME account used for your [validator](../run-a-layer-validator/).
-* Delegated to a Validator: If your reporter account is not a validator account, you must [bond your address to a validator ](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md)before you may create your reporter.
+* Create a Validator: Your account is the KEYNAME account used for your [validator](../run-a-layer-validator/).
+* Delegate to a Validator: If your reporter account is not a validator account, you must [bond your address to a validator ](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md)before you may create your reporter.
 
 #### 1) Configure a Reporter on Tellor
 
