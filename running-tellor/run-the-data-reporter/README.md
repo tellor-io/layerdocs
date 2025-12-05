@@ -5,10 +5,12 @@ icon: pen
 
 # Run a Data Reporter
 
-## Prerequisites
+## Staking
 
-* &#x20;A working[ node](../node-setup-quick-start.md).
-* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
+To create a reporter on Tellor Layer, you must first "stake" your address one of two ways. You must have either created a validator -OR- delegated to a validator to bond your tokens.
+
+* Created a Validator: Your account is the KEYNAME account used for your [validator](../run-a-layer-validator/).
+* Delegated to a Validator: If your reporter account is not a validator account, you must [bond your address to a validator ](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md)before you may create your reporter.
 
 #### 1) Configure a Reporter on Tellor
 
