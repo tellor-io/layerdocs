@@ -72,7 +72,7 @@ addr_book_strict = false
 
 ```
 
-Try manually editing the seeds and persistent\_peers to match [those shown here](broken-reference).
+Try manually editing the seeds and persistent\_peers to match [those shown here](/broken/pages/6obmvOkNkczgoNDiiU4c).
 
 In most cases `addr_book_strict` can be safely changed to `true`.&#x20;
 
@@ -105,7 +105,7 @@ trust_period = "168h0m0s"
 discovery_time = "15s"
 ```
 
-_**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your****&#x20;****`rpc_servers`****,****&#x20;****`trust_height`****&#x20;****, and****&#x20;****`trust_hash`****&#x20;****are configured using the steps shown in**_[ _**Node Setup**_](broken-reference)_**. (be careful to choose the tabs that match your system)**_
+_**Take a moment to check that****&#x20;****`enable = true`****&#x20;****, and check that your****&#x20;****`rpc_servers`****,****&#x20;****`trust_height`****&#x20;****, and****&#x20;****`trust_hash`****&#x20;****are configured using the steps shown in**_[ _**Node Setup**_](/broken/pages/OzHKVqI8SaLRc9qfBb3m)_**. (be careful to choose the tabs that match your system)**_
 
 The `trust_period` should be left alone, and the `discovery_time` can be safely increased to "30s".
 

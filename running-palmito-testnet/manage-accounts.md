@@ -23,7 +23,7 @@ If you do not yet have an account / mnemonic phrase, Generate a new key pair wit
 ```
 
 {% hint style="warning" %}
-Be sure to <mark style="color:orange;">**copy the entire output**</mark> with the mnemonic and keep it in a very safe place!
+Be sure to <mark style="color:orange;">**copy the output**</mark> with the mnemonic and keep it in a very safe place!
 {% endhint %}
 
 If you already have an account, you can Import it with the command:

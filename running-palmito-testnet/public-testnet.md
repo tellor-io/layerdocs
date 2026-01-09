@@ -9,12 +9,12 @@ If you want to learn how to run a tellor node, validator, and/or reporter, you a
 
 ## Welcome to the Guide
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="node-quick-start-testnet.md" %}
+[node-quick-start-testnet.md](node-quick-start-testnet.md)
 {% endcontent-ref %}
 
-{% content-ref url="node-setup-quick-start-testnet.md" %}
-[node-setup-quick-start-testnet.md](node-setup-quick-start-testnet.md)
+{% content-ref url="quick-start-new-faster.md" %}
+[quick-start-new-faster.md](quick-start-new-faster.md)
 {% endcontent-ref %}
 
 {% content-ref url="node-setup/" %}
@@ -25,8 +25,8 @@ If you want to learn how to run a tellor node, validator, and/or reporter, you a
 [run-a-layer-validator](run-a-layer-validator/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="run-the-data-reporter/" %}
+[run-the-data-reporter](run-the-data-reporter/)
 {% endcontent-ref %}
 
 {% hint style="success" %}

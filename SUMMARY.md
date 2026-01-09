@@ -29,8 +29,9 @@
 ## Running Palmito (testnet)
 
 * [Getting Started (testnet)](running-palmito-testnet/public-testnet.md)
+* [Node Quick Start (testnet)](running-palmito-testnet/node-quick-start-testnet.md)
+* [Quick Start New (faster!)](running-palmito-testnet/quick-start-new-faster.md)
 * [Managing Accounts](running-palmito-testnet/manage-accounts.md)
-* [Node Setup Quick Start (testnet)](running-palmito-testnet/node-setup-quick-start-testnet.md)
 * [Node Setup Manual (testnet)](running-palmito-testnet/node-setup/README.md)
   * [Peers List & Public RPCs](running-palmito-testnet/node-setup/peers-list-and-public-rpcs.md)
   * [Cosmovisor Sync](running-palmito-testnet/node-setup/cosmovisor-sync.md)

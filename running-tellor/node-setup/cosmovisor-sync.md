@@ -6,7 +6,7 @@ description: Cosmovisor is a binary manager that can perform upgrades automatica
 
 ## Prerequisites:
 
-A Tellor node machine configured like [this](broken-reference) is not required, but different setups may require different commands from the ones shown below.
+A Tellor node machine configured like [this](/broken/pages/OzHKVqI8SaLRc9qfBb3m) is not required, but different setups may require different commands from the ones shown below.
 
 ## Build and configure Cosmovisor
 
@@ -37,7 +37,7 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](broken-reference). Change the file paths in the command to match the correct folder path to each binary:
+4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](/broken/pages/OzHKVqI8SaLRc9qfBb3m). Change the file paths in the command to match the correct folder path to each binary:
 
 ```shell
 # set up cosmovisor. Each command is done seperatly.

@@ -7,15 +7,15 @@ icon: binary-circle-check
 
 ## Prerequisites
 
-You will need a [node that's fully synced](broken-reference) and [an account that has a balance](../../running-tellor/manage-accounts.md) (loya).
+You will need a [node that's fully synced](/broken/pages/OzHKVqI8SaLRc9qfBb3m) and [an account that has a balance](../../running-tellor/manage-accounts.md) (loya).
 
 ## Creating your Validator
 
-#### 1) Change directory to `~/layer/binaries/v6.0.0` and check if your address has funds:
+#### 1) Change directory to `~/layer/binaries/v6.1.0` and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v6.0.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v6.1.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -28,7 +28,7 @@ balance:
 ```
 
 {% hint style="success" %}
-<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](broken-reference) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
+<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](/broken/pages/4O73QKXdoE47vF80Fxmc) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
 {% endhint %}
 
 #### 2)  Retrieve your Node's Pubkey

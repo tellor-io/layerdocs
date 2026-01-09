@@ -8,7 +8,7 @@ Cosmovisor is a binary manager that can perform upgrades automatically. It can b
 
 ## Prerequisites:
 
-A Tellor node machine configured like [this](broken-reference) is not required, but different setups may require different commands from the ones shown below.
+A Tellor node machine configured like [this](/broken/pages/OzHKVqI8SaLRc9qfBb3m) is not required, but different setups may require different commands from the ones shown below.
 
 ## Build and configure Cosmovisor
 
@@ -39,7 +39,7 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](broken-reference). Change the file paths in the command to match the correct folder path to each binary:
+4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](/broken/pages/OzHKVqI8SaLRc9qfBb3m). Change the file paths in the command to match the correct folder path to each binary:
 
 For a genesis sync:
 
@@ -53,13 +53,14 @@ For a genesis sync:
 ./cosmovisor add-upgrade v5.1.1 ~/layer/binaries/v5.1.1/layerd
 ./cosmovisor add-upgrade v5.1.2 ~/layer/binaries/v5.1.2/layerd
 ./cosmovisor add-upgrade v6.0.0 ~/layer/binaries/v6.0.0/layerd
+./cosmovisor add-upgrade v6.1.0 ~/layer/binaries/v6.1.0/layerd
 ```
 
 For a state sync, initialize cosmovisor with the current binary:
 
 ```sh
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v6.0.0/layerd
+./cosmovisor init ~/layer/binaries/v6.1.0/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:

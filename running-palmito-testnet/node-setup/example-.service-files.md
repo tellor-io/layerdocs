@@ -38,7 +38,7 @@ After=network-online.target
 [Service]
 User=USERNAME
 Group=USERNAME
-WorkingDirectory=/home/USERNAME/403/layer
+WorkingDirectory=/home/USERNAME/layer
 ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 Restart=always
 RestartSec=10

@@ -43,7 +43,7 @@ If your reporter was created successfully, this will output your reporter inform
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.1.2/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.1.3/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -51,7 +51,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.1.2/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer/releases/download/reporterd%2Fv0.1.3/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -76,8 +76,6 @@ ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
 ```
 {% endcode %}
 
-_Note: The API keys are not required, but reporters should consider setting them to enable reporting for all tipped feeds. This ensures maximum earnings._
-
 #### 5) Start the reporter:
 
 {% code overflow="wrap" %}
@@ -86,31 +84,27 @@ _Note: The API keys are not required, but reporters should consider setting them
 ```
 {% endcode %}
 
-The logs should soon begin showing information about your cycle list reports!&#x20;
+Note: Optional flags may be used to establish a stream of profit taking for your operation:
+
+{% hint style="info" %}
+**Optinal flags for auto-unbonding:**\
+`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).       &#x20;
+
+`--auto-unbonding-ammount` : The amount of TRB (in loya) which you would like to auto-unbond.
+
+`--auto-unbonding-max-stake-percentage` : A safeguard against automatically unbonding too much. Set this to a percentage of your stake ( 0.01 for 1%)
+{% endhint %}
+
+Here is an example start command for a reporter who wants to automatically unbond 2.999 TRB (2999999loya) per day with a maximum set to 1% of their total stake:
+
+{% code overflow="wrap" %}
+```bash
+./reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
+```
+{% endcode %}
 
 {% hint style="success" %}
 You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Layer such as average gas price for submitting a report, block times, total bonded tokens, etc.
 {% endhint %}
 
 Congratulations on becoming a Tellor Reporter! 🎉
-
-```
-# example of Healthy logs at time of writing
-...
-3:13PM INF ReporterDaemon current query id in cycle list=5c13cd9c97dbb98f2429c101a2a8150e6c7a0ddaff6124ee176a3a411067ded0 module=reporter-client
-3:13PM INF NewReport module=reporter-client reporter=tellor1xyxd7x9yjfh0ad6mg3wfyczwmandzj7qlgl3ug
-3:13PM INF NewReport module=reporter-client reporter_power=6
-3:13PM INF NewReport module=reporter-client query_type=SpotPrice
-3:13PM INF NewReport module=reporter-client query_id=5c13cd9c97dbb98f2429c101a2a8150e6c7a0ddaff6124ee176a3a411067ded0
-3:13PM INF NewReport module=reporter-client value=000000000000000000000000000000000000000000000001ac9d8fdd3ff08000
-3:13PM INF NewReport cyclelist=true module=reporter-client
-3:13PM INF NewReport aggregate_method=weighted-median module=reporter-client
-3:13PM INF NewReport module=reporter-client query_data=00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000953706f745072696365000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000003747262000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037573640000000000000000000000000000000000000000000000000000000000
-3:13PM INF NewReport module=reporter-client timestamp=1746198787384
-3:13PM INF NewReport meta_id=1102753 module=reporter-client
-3:13PM INF NewReport module=reporter-client msg_index=0
-3:13PM INF transaction hash: 89BA489BC6DB0D022456733F500A4AFECE27F03BFDBF7FE2A7EA56117C4B884E module=reporter-client
-3:13PM INF response after submit message: 0 module=reporter-client
-3:13PM INF Tx in Channel: 0 module=reporter-client
-...
-```

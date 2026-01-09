@@ -20,8 +20,8 @@ _Note: The memory requirement (32gb) is important to consider if you are plannin
 
 ### _<mark style="color:green;">Check the</mark>_ [_<mark style="color:green;">Quick Start</mark>_](../../running-tellor/node-setup-quick-start.md) _<mark style="color:green;">section for installers:</mark>_
 
-{% content-ref url="../node-setup-quick-start-testnet.md" %}
-[node-setup-quick-start-testnet.md](../node-setup-quick-start-testnet.md)
+{% content-ref url="../quick-start-new-faster.md" %}
+[quick-start-new-faster.md](../quick-start-new-faster.md)
 {% endcontent-ref %}
 
 ### Software Prerequisites
@@ -76,7 +76,7 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.0.0 &#x26;&#x26; cd v6.0.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.0 &#x26;&#x26; cd v6.1.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
@@ -123,6 +123,9 @@ cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tell
 
 # upgrade binary v6.0.0 (for upgrade name v6.0.0)
 cd ~/layer/binaries && mkdir v6.0.0 && cd v6.0.0 && wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v6.1.0 (for upgrade name v6.0.0)
+cd ~/layer/binaries && mkdir v6.1.0 && cd v6.1.0 && wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -360,7 +363,9 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `9569214 for upgrade v5.1.2`
 
-`11012370 for upgrade v6.0.0`
+`11012370 for upgrade v6.0.0`&#x20;
+
+`14800000 for upgrade v6.1.0`
 
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
@@ -374,40 +379,43 @@ Your node will stop syncing at the following block height(s) for each binary upg
 # change directory
 cd ~/layer/binaries/v4.0.2
 
-# resume syncing
+# resume syncing:
 ./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 
 # At height 2154000 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v4.0.3
-
-# resume syncing
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+# resume syncing...
 
 # At height 3139971 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.0.0
-
-# resume syncing
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+# resume syncing...
 
 # At height 5092670 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.0
+# resume syncing...
 
 # At height 7375500 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.1
+# resume syncing...
 
 # At height 9569214 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.2
+# resume syncing...
 
 # At height 11012370 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v6.0.0
+# resume syncing...
 
-# resume syncing
+# At height 14800000 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v6.1.0
+# resume syncing...
 ./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
 ```
 {% endcode %}
