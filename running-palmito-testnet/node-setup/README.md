@@ -327,7 +327,7 @@ Exit nano with `ctrl^x` then enter `y` to save the changes.
 
 {% code overflow="wrap" %}
 ```bash
-./layerd start --home ~/.layer --keyring-backend test --api.enable --api.swagger
+./layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
 ```
 {% endcode %}
 
@@ -379,8 +379,8 @@ Your node will stop syncing at the following block height(s) for each binary upg
 # change directory
 cd ~/layer/binaries/v4.0.2
 
-# resume syncing:
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+# TO RESUME SYNCING:
+./layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
 
 # At height 2154000 the node will stop syncing:
 # change directory
@@ -415,8 +415,7 @@ cd ~/layer/binaries/v6.0.0
 # At height 14800000 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v6.1.0
-# resume syncing...
-./layerd start --home ~/.layer --keyring-backend test --key-name YOUR_ACCOUNT_NAME
+
 ```
 {% endcode %}
 {% endtab %}
