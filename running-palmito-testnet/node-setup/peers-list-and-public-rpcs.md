@@ -13,16 +13,16 @@ In your `~/.layerd/config/config.toml` file:
 {% code overflow="wrap" %}
 ```json
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "8d19cdf430e491d6d6106863c4c466b75a17088a@54.153.125.203:26656,c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.219.95.82:26956,05105e8bb28e8c5ace1cecacefb8d4efb0338ec6@18.218.114.74:26656,1f6522a346209ee99ecb4d3e897d9d97633ae146@3.101.138.30:26656,705f6154c6c6aeb0ba36c8b53639a5daa1b186f6@3.80.39.230:26656"
+persistent_peers = "8d19cdf430e491d6d6106863c4c466b75a17088a@52.53.241.143:26656,c7b175a5bafb35176cdcba3027e764a0dbd0811c@34.222.24.182:26956,05105e8bb28e8c5ace1cecacefb8d4efb0338ec6@18.218.114.74:26656,1f6522a346209ee99ecb4d3e897d9d97633ae146@3.101.138.30:26656,705f6154c6c6aeb0ba36c8b53639a5daa1b186f6@3.80.39.230:26656"
 
 ```
 {% endcode %}
 
 RPC
 
-* [https://node-palmito.tellorlayer.com/rpc/\
-  ](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
+* [https://node-palmito.tellorlayer.com/rpc/<br>](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
 
 API:
 
 * [https://node-palmito.tellorlayer.com/](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
+
