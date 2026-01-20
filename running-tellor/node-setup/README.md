@@ -74,14 +74,14 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.0.0 &#x26;&#x26; cd v6.0.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.0 &#x26;&#x26; cd v6.1.0 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.0.0 && cd v6.0.0 && wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.0 && cd v6.1.0 && wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -356,22 +356,27 @@ cd ~/layer/binaries/v5.0.0
 # At height 3891401 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.0
-# resume syncing:
+# resume syncing
 
 # At height 6699035 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.1
-# resume syncing:
+# resume syncing
 
 # At height 8593590 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v5.1.2
-# resume syncing:
+# resume syncing
 
 # At height 9908000 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v6.0.0
-# resume syncing:
+# resume syncing
+
+# At height 13280690 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v6.1.0
+# resume syncing
 ```
 {% endcode %}
 {% endtab %}
