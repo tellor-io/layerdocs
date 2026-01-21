@@ -127,7 +127,7 @@ cd ~/layer/binaries && mkdir v6.0.0 && cd v6.0.0 && wget https://github.com/tell
 # upgrade binary v6.1.0 (for upgrade name v6.1.0)
 cd ~/layer/binaries && mkdir v6.1.0 && cd v6.1.0 && wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v6.1.1 (for upgrade name v6.1.1)
+# upgrade binary v6.1.1-fix (for upgrade name v6.1.1-fix)
 cd ~/layer/binaries && mkdir v6.1.1 && cd v6.1.1 && wget https://github.com/tellor-io/layer/releases/download/v6.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
