@@ -4,7 +4,7 @@ description: Steps for changing your reporter selection.
 
 # Switch Reporter or Selector
 
-Note: Using the switch-reporter command will lock your stake for 21 days to prevent bridge manipulation. After the waiting period ends, your stake becomes active again and is reassigned to the new reporter address.
+Note: Reporters who want to "retire" and become selectors must wait 21 days to prevent bridge manipulation.
 
 The following command can be used to change your reporter selection:
 
