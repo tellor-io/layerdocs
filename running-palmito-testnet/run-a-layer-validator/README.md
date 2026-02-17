@@ -9,13 +9,13 @@ icon: binary-circle-check
 
 You will need a [node that's fully synced](/broken/pages/OzHKVqI8SaLRc9qfBb3m) and [an account that has a balance](../../running-tellor/manage-accounts.md) (loya).
 
-## Creating your Validator
+#### Create your Validator:
 
-#### 1) Change directory to `~/layer/binaries/v6.1.0` and check if your address has funds:
+1\) Change directory to `~/layer/binaries/v6.1.2` and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v6.1.0 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v6.1.2 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -23,7 +23,7 @@ This outputs something like:
 
 ```bash
 balance:
-  amount: "0"
+  amount: "123456789"
   denom: loya
 ```
 

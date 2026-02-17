@@ -76,12 +76,12 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.1 &#x26;&#x26; cd v6.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.1/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.2 &#x26;&#x26; cd v6.1.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.1 &#x26;&#x26; cd v6.1.1 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.1/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.2 &#x26;&#x26; cd v6.1.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}
@@ -103,32 +103,35 @@ Download the binaries from the [Tellor Github](https://github.com/tellor-io/laye
 # genesis binary v4.0.0
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.0 && cd v4.0.0 && wget https://github.com/tellor-io/layer/releases/download/v4.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v4.0.2 (for upgrade name v4.0.1)
+# upgrade binary v4.0.2
 cd ~/layer/binaries && mkdir v4.0.1 && cd v4.0.1 && wget https://github.com/tellor-io/layer/releases/download/v4.0.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v4.0.3 (for upgrade name v4.0.3)
+# upgrade binary v4.0.3
 cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v5.0.0 (for upgrade name v5.0.0)
+# upgrade binary v5.0.0
 cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/v5.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v5.1.0 (for upgrade name v5.1.0)
+# upgrade binary v5.1.0
 cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v5.1.1 (for upgrade name v5.1.1)
+# upgrade binary v5.1.1
 cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v5.1.2 (for upgrade name v5.1.2)
+# upgrade binary v5.1.2
 cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v6.0.0 (for upgrade name v6.0.0)
+# upgrade binary v6.0.0
 cd ~/layer/binaries && mkdir v6.0.0 && cd v6.0.0 && wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v6.1.0 (for upgrade name v6.1.0)
+# upgrade binary v6.1.0
 cd ~/layer/binaries && mkdir v6.1.0 && cd v6.1.0 && wget https://github.com/tellor-io/layer/releases/download/v6.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
-# upgrade binary v6.1.1-fix (for upgrade name v6.1.1-fix)
+# upgrade binary v6.1.1-fix (for upgrade name v6.1.1)
 cd ~/layer/binaries && mkdir v6.1.1 && cd v6.1.1 && wget https://github.com/tellor-io/layer/releases/download/v6.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v6.1.2
+cd ~/layer/binaries && mkdir v6.1.2 && cd v6.1.2 && wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -372,6 +375,8 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `15176288 for upgrade v6.1.1`
 
+`16864110 for upgrade v6.1.2`
+
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
 &#xNAN;_**Notes on the  Upgrades:**_&#x20;
@@ -425,6 +430,9 @@ cd ~/layer/binaries/v6.1.0
 # change directory
 cd ~/layer/binaries/v6.1.1
 
+# At height 16864110 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v6.1.2
 ```
 {% endcode %}
 {% endtab %}

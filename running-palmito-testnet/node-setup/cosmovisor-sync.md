@@ -41,27 +41,16 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](/broken/pages/OzHKVqI8SaLRc9qfBb3m). Change the file paths in the command to match the correct folder path to each binary:
 
-For a genesis sync:
-
-```shell
-# set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v4.0.0/layerd
-./cosmovisor add-upgrade v4.0.1 ~/layer/binaries/v4.0.1/layerd
-./cosmovisor add-upgrade v4.0.3 ~/layer/binaries/v4.0.3/layerd
-./cosmovisor add-upgrade v5.0.0 ~/layer/binaries/v5.0.0/layerd
-./cosmovisor add-upgrade v5.1.0 ~/layer/binaries/v5.1.0/layerd
-./cosmovisor add-upgrade v5.1.1 ~/layer/binaries/v5.1.1/layerd
-./cosmovisor add-upgrade v5.1.2 ~/layer/binaries/v5.1.2/layerd
-./cosmovisor add-upgrade v6.0.0 ~/layer/binaries/v6.0.0/layerd
-./cosmovisor add-upgrade v6.1.0 ~/layer/binaries/v6.1.0/layerd
-./cosmovisor add-upgrade v6.1.1 ~/layer/binaries/v6.1.1/layerd
-```
-
-For a state sync, initialize cosmovisor with the current binary:
-
 ```sh
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v6.1.1/layerd
+./cosmovisor init ~/layer/binaries/v6.1.2/layerd
+```
+
+To add upgrade binaries for automatic restart:
+
+```shell
+# example if upgrade tag is v6.X.X:
+./cosmovisor add-upgrade v6.X.X ~/layer/binaries/v6.X.X/layerd
 ```
 
 6. To start your node with cosmovisor managing upgrades:
