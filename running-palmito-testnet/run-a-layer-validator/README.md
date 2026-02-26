@@ -11,11 +11,11 @@ You will need a [node that's fully synced](/broken/pages/OzHKVqI8SaLRc9qfBb3m) a
 
 #### Create your Validator:
 
-1\) Change directory to `~/layer/binaries/v6.1.2` and check if your address has funds:
+1\) Change directory to `~/layer/binaries/v6.1.3` and check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v6.1.2 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+cd ~/layer/binaries/v6.1.3 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 

@@ -43,15 +43,19 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 ```sh
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v6.1.2/layerd
+./cosmovisor init ~/layer/binaries/v6.1.3/layerd
 ```
 
-To add upgrade binaries for automatic restart:
+Add the current binary as an upgrade binary as well:
 
 ```shell
-# example if upgrade tag is v6.X.X:
-./cosmovisor add-upgrade v6.X.X ~/layer/binaries/v6.X.X/layerd
+# example if upgrade tag is v6.1.3:
+./cosmovisor add-upgrade v6.1.3 ~/layer/binaries/v6.1.3/layerd
 ```
+
+{% hint style="info" %}
+The add-upgrade command shown above can be used to add future upgrade binaries as well.
+{% endhint %}
 
 6. To start your node with cosmovisor managing upgrades:
 

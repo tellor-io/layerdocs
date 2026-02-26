@@ -76,12 +76,12 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.2 &#x26;&#x26; cd v6.1.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.3 &#x26;&#x26; cd v6.1.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.2 &#x26;&#x26; cd v6.1.2 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.3 &#x26;&#x26; cd v6.1.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Darwin_arm64.tar.gz &#x26;&#x26; tar -xvzf layer_Darwin_arm64.tar.gz
 </strong></code></pre>
 {% endtab %}
 {% endtabs %}
@@ -132,6 +132,9 @@ cd ~/layer/binaries && mkdir v6.1.1 && cd v6.1.1 && wget https://github.com/tell
 
 # upgrade binary v6.1.2
 cd ~/layer/binaries && mkdir v6.1.2 && cd v6.1.2 && wget https://github.com/tellor-io/layer/releases/download/v6.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
+# upgrade binary v6.1.3
+cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
