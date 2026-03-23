@@ -43,14 +43,14 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 ```sh
 # set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v6.1.3/layerd
+./cosmovisor init ~/layer/binaries/v6.1.4/layerd
 ```
 
 Add the current binary as an upgrade binary as well:
 
 ```shell
 # example if upgrade tag is v6.1.3:
-./cosmovisor add-upgrade v6.1.3 ~/layer/binaries/v6.1.3/layerd
+./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
 ```
 
 {% hint style="info" %}
