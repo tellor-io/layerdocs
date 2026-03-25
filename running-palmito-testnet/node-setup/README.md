@@ -136,6 +136,9 @@ cd ~/layer/binaries && mkdir v6.1.2 && cd v6.1.2 && wget https://github.com/tell
 # upgrade binary v6.1.3
 cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 
+# upgrade binary v6.1.4-palmito
+cd ~/layer/binaries && mkdir v6.1.4-palmito && cd v6.1.4-palmito && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+
 # upgrade binary v6.1.4
 cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
@@ -439,6 +442,18 @@ cd ~/layer/binaries/v6.1.1
 # At height 16864110 the node will stop syncing:
 # change directory
 cd ~/layer/binaries/v6.1.2
+
+# At height 17415040 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v6.1.3
+
+# At height 18783000 the node will stop syncing:
+# change directory
+cd ~/layer/binaries/v6.1.4-palmito
+
+## At height 18897574 the node should halt at your configured halt height.
+### NOTE: This is not a governance upgrade.
+cd ~/layer/binaries/v6.1.4
 ```
 {% endcode %}
 {% endtab %}
