@@ -5,39 +5,39 @@ icon: person-running-fast
 
 # Node Quick Start (testnet)
 
-### 1. Install Prerequisites:
+#### 1. Install Prerequisites:
 
-{% tabs %}
-{% tab title="Linux" %}
-jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
+```shellscript
+# Debian / Ubuntu:
+sudo apt install jq sed curl wget
 
-* **`jq` :** `sudo apt install jq`
-* **`sed` :** `sudo apt install sed`
-* **`curl`**: `sudo apt install curl`
-* **`wget`** : `sudo apt install wget`
-{% endtab %}
+# Arch (btw):
+sudo pacman -S jq sed curl wget
 
-{% tab title="MacOS" %}
-jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
-
-* **`jq`:** `brew install jq`
-* **`sed`:** `brew install sed`
-* **`wget`**`: brew install wget` &#x20;
-{% endtab %}
-{% endtabs %}
+# MACOS:
+brew install jq sed curl wget
+```
 
 Download the latest binary:
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.4 &#x26;&#x26; cd v6.1.4 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
+<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.5 &#x26;&#x26; cd v6.1.5 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
 </strong></code></pre>
 {% endtab %}
 
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Rasp.Pi / ARM64" %}
+{% code overflow="wrap" %}
+```shellscript
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
