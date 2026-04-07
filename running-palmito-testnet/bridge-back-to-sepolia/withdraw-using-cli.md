@@ -4,7 +4,7 @@ description: Exit tellor permissionlessly even if the front-end is down.
 
 # Withdraw Using CLI
 
-#### &#x31;**. Use the CLI to Request a Withdrawal**
+#### 1. Use the CLI to Request a Withdrawal
 
 In the following example command, our Tellor address is `tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5` and the ethereum address that we want to withdraw to is `0x7660794eF8f978Ea0922DC29B4d93e1fc94A`. (Adjust these two parameters to match your addresses.)
 
@@ -44,7 +44,7 @@ timestamp: "2025-05-02T16:11:27Z"
 
 There is a 12 hour delay for bridge requests to and from Tellor.
 
-#### 4. Find the timestamp of the aggregate report  using the query\_id from step 1:
+#### 4. Find the timestamp of the aggregate report using the query\_id from step 2:
 
 <pre class="language-sh" data-overflow="wrap"><code class="lang-sh"># layerd query oracle get-current-aggregate-report [query_id] [flags]
 <strong>./layerd query oracle get-current-aggregate-report &#x3C;your_query_id_from_step_2>
@@ -52,7 +52,7 @@ There is a 12 hour delay for bridge requests to and from Tellor.
 
 This will output information about the report. Copy the `timestamp` for step 4.
 
-**4. Request attestations for your withdraw request report:**
+**5. Request attestations for your withdraw request report:**
 
 {% code overflow="wrap" %}
 ```bash
@@ -65,4 +65,4 @@ This will output information about the report. Copy the `timestamp` for step 4.
 Behind the scenes, py-relayer is used to send attestation information back to the bridge contract on Sepolia. As long as gas costs on the network are not egregious, `withdrawFromLayer` will be called automatically!
 {% endhint %}
 
-**5.  Check your balance on Sepolia!**
+**6. Check your balance on Sepolia!**

@@ -65,7 +65,7 @@ curl -O  https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scrip
 {% endtab %}
 {% endtabs %}
 
-### <mark style="color:$info;">2.1 (optional) Edit the environment variables</mark>
+### <mark style="color:blue;">2.1 (optional) Edit the environment variables</mark>
 
 If you'd like to use a custom home directory, custom peers or RPCs you can configure those at the top of the script. The defaults are:
 

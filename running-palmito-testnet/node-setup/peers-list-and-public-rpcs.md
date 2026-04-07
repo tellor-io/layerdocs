@@ -8,7 +8,7 @@ description: The following peers list can be used for syncing `layertest-5`
 If you followed the Node Setup section of these docs, you already have the latest peers list.
 {% endhint %}
 
-In your `~/.layerd/config/config.toml` file:
+In your `~/.layer/config/config.toml` file:
 
 {% code overflow="wrap" %}
 ```json
@@ -20,9 +20,8 @@ persistent_peers = "8d19cdf430e491d6d6106863c4c466b75a17088a@52.53.241.143:26656
 
 RPC
 
-* [https://node-palmito.tellorlayer.com/rpc/<br>](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
+* [https://node-palmito.tellorlayer.com/rpc/](https://node-palmito.tellorlayer.com/rpc/)
 
 API:
 
-* [https://node-palmito.tellorlayer.com/](https://mainnet.tellorlayer.com/rpc/https://mainnet.tellorlayer.com)
-
+* [https://node-palmito.tellorlayer.com/](https://node-palmito.tellorlayer.com/)
