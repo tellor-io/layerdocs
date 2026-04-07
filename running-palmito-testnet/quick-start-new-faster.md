@@ -39,7 +39,7 @@ wget https://raw.githubusercontent.com/tellor-io/layer/refs/heads/main/scripts/s
 
 The script has two arguments `[NETWORK]` and `ACCOUNT_NAME` :
 
-* "NETWORK": (required)  `palmito` for `layertest-4` -OR- `mainnet` for `tellor-1`
+* "NETWORK": (required)  `palmito` for `layertest-5` -OR- `mainnet` for `tellor-1`
 * "ACCOUNT\_NAME":  (optional) Set to any name you would like for your initial layer node account.
 
 Run the script with the following command:

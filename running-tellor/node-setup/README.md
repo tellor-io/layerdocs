@@ -13,14 +13,8 @@ Operating a **validator:**
 
 * Modern cpu with at least 8 cores / threads
 * ram: 32 gb + (16gb swap space recommended) 
-* storage: 1000gb+ @ NVME gen3+
+* storage: 1000gb+ @ NVME gen4
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
-
-### _<mark style="color:green;">Check the</mark>_ [_<mark style="color:green;">Quick Start</mark>_](../node-setup-quick-start.md) _<mark style="color:green;">section for installers:</mark>_
-
-{% content-ref url="../node-setup-quick-start.md" %}
-[node-setup-quick-start.md](../node-setup-quick-start.md)
-{% endcontent-ref %}
 
 ### Software Prerequisites
 
@@ -28,22 +22,21 @@ Operating a **validator:**
 {% tab title="Linux" %}
 jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
 
-* **`jq` :** `sudo apt install jq`
-* **`sed` :** `sudo apt install sed`
-* **`curl`**: `sudo apt install curl`
-* **`wget`** : `sudo apt install wget`&#x20;
-* `Go version  1.22` : Use the default install instructions [here](https://go.dev/doc/install).
-* `make` : `sudo apt install build-essential`
+```bash
+sudo apt install jq yq sed curl wget build-essential
+```
+Install go if you want to build binaries from the layer repo:
+* `Go version 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
 {% endtab %}
 
 {% tab title="MacOS" %}
 jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
 
-* **`jq`:** `brew install jq`
-* **`sed`:** `brew install sed`
-* **`wget`**`: brew install wget`&#x20;
+```bash
+brew install jq yq sed wget && xcode-select --install
+```
+
 * `Go ≥ 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
-* `make` : `xcode-select --install`&#x20;
 {% endtab %}
 {% endtabs %}
 
@@ -72,18 +65,24 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 
 {% tabs %}
 {% tab title="Linux" %}
-<pre class="language-sh" data-overflow="wrap"><code class="lang-sh"><strong>mkdir -p ~/layer/binaries &#x26;&#x26; cd ~/layer/binaries &#x26;&#x26; mkdir v6.1.3 &#x26;&#x26; cd v6.1.3 &#x26;&#x26; wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz &#x26;&#x26; tar -xvzf layer_Linux_x86_64.tar.gz
-</strong></code></pre>
+```sh
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+```
+{% endtab %}
+
+{% tab title="Linux ARM64" %}
+```sh
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+```
 {% endtab %}
 
 {% tab title="MacOS" %}
-{% code overflow="wrap" %}
 ```sh
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
+{% endtab %}
 
 Initialize .layer folder in your home directory:
 

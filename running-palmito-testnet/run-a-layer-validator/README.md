@@ -7,7 +7,7 @@ icon: binary-circle-check
 
 ## Prerequisites
 
-You will need a [node that's fully synced](/broken/pages/OzHKVqI8SaLRc9qfBb3m) and [an account that has a balance](../../running-tellor/manage-accounts.md) (loya).
+You will need a [node that's fully synced](../node-setup/README.md) and [an account that has a balance](../manage-accounts.md) (loya).
 
 #### Create your Validator:
 
@@ -28,7 +28,7 @@ balance:
 ```
 
 {% hint style="success" %}
-<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](/broken/pages/4O73QKXdoE47vF80Fxmc) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
+<mark style="color:blue;">**If you need testnet TRB, send us a message in the public**</mark> [<mark style="color:blue;">**Discord**</mark>](https://discord.gg/HX76jMhvG6) <mark style="color:blue;">**(#testing-layer channel)!**</mark> \ <mark style="color:blue;">**Note: You will need to**</mark> [<mark style="color:blue;">**bridge the funds**</mark>](../../bridging-trb/README.md) <mark style="color:blue;">**once they are received on Sepolia.**</mark>
 {% endhint %}
 
 #### 2)  Retrieve your Node's Pubkey
@@ -72,7 +72,7 @@ Edit or add the following code:
 }
 ```
 
-* Edit `"pubkey"` to match yours from step 4.
+* Edit `"pubkey"` to match yours from step 2.
 * Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
 * Edit `"moniker"` with a name you choose for your validator node.
 * Edit identity, website, security, and details with your identifying information. (optional)
@@ -93,7 +93,7 @@ Run the following command to create-validator:
 
 {% code overflow="wrap" %}
 ```bash
-./layerd tx staking create-validator ./validator.json --chain-id tellor-1 --from YOUR_ACCOUNT_NAME --gas 300000 --fees 8loya --yes
+./layerd tx staking create-validator ./validator.json --chain-id layertest-5 --from YOUR_ACCOUNT_NAME --gas 300000 --fees 8loya --yes
 ```
 {% endcode %}
 
@@ -115,4 +115,4 @@ If `status` is `1`, It means that you are not bonded. This can happen If you acc
 If `status` is `2`, It means that your validator is jailed. If this happens, check if the node process is running on your host machine.&#x20;
 {% endhint %}
 
-You can unjail with steps shown in the [next section.](../../running-tellor/run-the-data-reporter/)
+You can unjail with steps shown in the [next section.](../run-the-data-reporter/)

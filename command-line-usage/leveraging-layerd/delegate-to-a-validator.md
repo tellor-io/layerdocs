@@ -10,6 +10,6 @@ Be sure to select a validator that you trust!
 ```sh
 # layerd tx staking delegate [validator-addr] [amount] [flags]
 # example delegating 12 TRB to tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6
-./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6 12000000loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-4 --node https://node-palmito.tellorlayer.com/rpc/
+./layerd tx staking delegate tellorvaloper1dct4uwgcfjxqaphjm33n9fycxdz2m6 12000000loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-5 --node https://node-palmito.tellorlayer.com/rpc/
 ```
 {% endcode %}
