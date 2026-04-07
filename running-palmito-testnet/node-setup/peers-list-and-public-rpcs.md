@@ -1,5 +1,5 @@
 ---
-description: The following peers list can be used for syncing `layertest-4`
+description: The following peers list can be used for syncing `layertest-5`
 ---
 
 # Peers List & Public RPCs

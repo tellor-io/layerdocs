@@ -23,7 +23,7 @@ For in-depth information about the design, checkout the [Tellor tech paper](http
 [Broken link](/broken/pages/Pe4IW2P0OSDraf0cWra8)
 {% endcontent-ref %}
 
-### Palmito Testnet (layertest-4)
+### Palmito Testnet (layertest-5)
 
 Palmito is the current testnet equivalent for testing tellor operation and functionaity.
 

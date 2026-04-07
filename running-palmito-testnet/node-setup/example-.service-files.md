@@ -39,7 +39,7 @@ After=network-online.target
 User=USERNAME
 Group=USERNAME
 WorkingDirectory=/home/USERNAME/layer
-ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 Restart=always
 RestartSec=10
 Environment="ETH_RPC_URL=https://your.sepolia.rpc_url"

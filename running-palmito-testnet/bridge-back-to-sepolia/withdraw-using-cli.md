@@ -11,7 +11,7 @@ In the following example command, our Tellor address is `tellor1suuc9d5dr5stps5t
 {% code overflow="wrap" %}
 ```sh
 # layerd tx bridge withdraw-tokens [creator] [recipient] [amount] [flags]
-./layerd tx bridge withdraw-tokens tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5 7660794eF8f978Ea0922DC29B4d93e1fc94A 69010069loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-4
+./layerd tx bridge withdraw-tokens tellor1suuc9d5dr5stps5tzjv5d95ur02827ardn5 7660794eF8f978Ea0922DC29B4d93e1fc94A 69010069loya --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id layertest-5
 ```
 {% endcode %}
 
@@ -57,7 +57,7 @@ This will output information about the report. Copy the `timestamp` for step 4.
 {% code overflow="wrap" %}
 ```bash
 # layerd tx bridge request-attestations [creator] [query_id] [timestamp] [flags]
-./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-4 --fees 50loya --yes
+./layerd tx bridge request-attestations $TELLOR_ADDRESS <query_id_from_step2> <timestamp_from_step_3> --from $ACCOUNT_NAME --chain-id layertest-5 --fees 50loya --yes
 ```
 {% endcode %}
 

@@ -17,7 +17,7 @@ Use the `layerd` cli register and initialize your reporter configuration. Commis
 {% code overflow="wrap" %}
 ```bash
 # create-reporter [commission-rate] [min-tokens-required] [moniker] [flags]
-./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-4 --fees 10loya --yes
+./layerd tx reporter create-reporter 0.05 1000000 REPORTER_MONIKER --from YOUR_ACCOUNT_NAME --chain-id layertest-5 --fees 10loya --yes
 ```
 {% endcode %}
 
@@ -80,7 +80,7 @@ _Note: The API keys are not required, but reporters should consider setting them
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
 
@@ -99,7 +99,7 @@ Here is an example start command for a reporter who wants to automatically unbon
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
+./reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
 ```
 {% endcode %}
 

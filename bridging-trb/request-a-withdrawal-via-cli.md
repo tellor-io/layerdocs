@@ -22,6 +22,6 @@ Full example requesting a withdrawal of 23 TRB:
 
 {% code overflow="wrap" %}
 ```sh
-./layerd tx bridge withdraw-tokens tellor1qw46ez58fjmp29f4r0a66278fyrhc4n4px9xyv 0xEcEFCC185418D7266E67C8a6374E580a187C0D1d 23000000loya --from ACCOUNT_NAME --fees 7loya --chain-id tellor-1 # or layertest-4 for testnet TRB
+./layerd tx bridge withdraw-tokens tellor1qw46ez58fjmp29f4r0a66278fyrhc4n4px9xyv 0xEcEFCC185418D7266E67C8a6374E580a187C0D1d 23000000loya --from ACCOUNT_NAME --fees 7loya --chain-id tellor-1 # or layertest-5 for testnet TRB
 ```
 {% endcode %}

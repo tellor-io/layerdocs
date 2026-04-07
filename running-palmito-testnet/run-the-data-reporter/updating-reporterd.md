@@ -48,6 +48,6 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 
 {% code overflow="wrap" %}
 ```sh
-./reporterd --chain-id layertest-4 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
