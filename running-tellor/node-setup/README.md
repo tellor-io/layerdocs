@@ -12,11 +12,9 @@ Operating a node for a personal RPC can be done usin most modern computers. Even
 Operating a **validator:**
 
 * Modern cpu with at least 8 cores / threads
-* ram: 32 gb + 16gb swap space
+* ram: 32 gb + (16gb swap space recommended) 
 * storage: 1000gb+ @ NVME gen3+
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
-
-_Note: The memory requirement (32gb) is a minimum that is important to consider if you are planning to operate continuously as a validator. We have tested upgrades with oracle data store migrations that weren't possible on 16gb machines even with swap space._
 
 ### _<mark style="color:green;">Check the</mark>_ [_<mark style="color:green;">Quick Start</mark>_](../node-setup-quick-start.md) _<mark style="color:green;">section for installers:</mark>_
 
