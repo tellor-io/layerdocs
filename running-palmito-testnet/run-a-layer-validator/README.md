@@ -11,11 +11,11 @@ You will need a [node that's fully synced](../node-setup/README.md) and [an acco
 
 #### Create your Validator:
 
-1\) Change directory to `~/layer/binaries/v6.1.4` and check if your address has funds:
+1\) Check if your account has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v6.1.4 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -38,7 +38,7 @@ This is a unique identifier for a node running on your computer:
 <pre class="language-bash"><code class="lang-bash"><strong>./layerd comet show-validator
 </strong></code></pre>
 
-This returns your validator pubkey.  It should look like this:
+This returns your validator pubkey. It should look like this:
 
 ```bash
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"FX9cKNl+QmxtLcL926P5yJqZw7YyuSX3HQAZboz3TjM="}
@@ -54,11 +54,11 @@ Create (or edit) the validator.json file:
 nano validator.json
 ```
 
-Edit or add the following code:
+Edit or add the following code. Always double check that the pubkey matches the output that you got in step 2:
 
 ```json
 {
-    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c+EuycPpudgiyVl6guYG9oyPSImHHJz1z0Pg4ODKveo="},
+    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"c1234EuycPpuasdfVlasdfoyPSImHHJz1z0ODKveo="},
     "amount": "69666420loya",
     "moniker": "yourmoniker",
     "identity": "optional identity signature (ex. UPort or Keybase)",
@@ -68,11 +68,11 @@ Edit or add the following code:
     "commission-rate": "0.1",
     "commission-max-rate": "0.2",
     "commission-max-change-rate": "0.01",
-    "min-self-delegation": "1"
+    "min-self-delegation": "2"
 }
 ```
 
-* Edit `"pubkey"` to match yours from step 2.
+* Edit `"pubkey"` to match yours from step 2. (important!)
 * Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
 * Edit `"moniker"` with a name you choose for your validator node.
 * Edit identity, website, security, and details with your identifying information. (optional)
