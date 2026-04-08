@@ -8,7 +8,7 @@ description: Steps for updating your reporter daemon.
 It's important to keep your Tellor reporter software up-to-date with all the latest feeds so that you can maximize rewards. This is done separately from chain (layerd) upgrades
 {% endhint %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 **Upcoming v6.1.4 Chain Upgrade** 🚀
 
 Hi everyone!
