@@ -62,27 +62,27 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 ## Upgrades
 
-When there's an upgrade coming, download the new binary and add it to cosmovisor. Replace `v6.1.4` with the actual upgrade tag:
+When there's an upgrade coming, download the new binary and add it to cosmovisor. Replace `v6.1.5` with the actual upgrade tag:
 
 {% tabs %}
 {% tab title="Linux" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+mkdir -p ~/layer/binaries/v6.1.5 && cd ~/layer/binaries/v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+./cosmovisor add-upgrade v6.1.5 ~/layer/binaries/v6.1.5/layerd
 ```
 {% endtab %}
 
 {% tab title="MacOS" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
-./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+mkdir -p ~/layer/binaries/v6.1.5 && cd ~/layer/binaries/v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.5 ~/layer/binaries/v6.1.5/layerd
 ```
 {% endtab %}
 
 {% tab title="Linux ARM64" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
-./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+mkdir -p ~/layer/binaries/v6.1.5 && cd ~/layer/binaries/v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.5 ~/layer/binaries/v6.1.5/layerd
 ```
 {% endtab %}
 {% endtabs %}

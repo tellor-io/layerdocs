@@ -9,13 +9,13 @@ icon: binary-circle-check
 
 You will need a [node that's fully synced](../node-setup/) and [an account that has a balance](../manage-accounts.md) (loya).
 
-## Creating your Validator
+## Create your Validator
 
-1\) Change directory to `~/layer/binaries/v6.1.1` and check if your address has funds. You will need to have at least 1 TRB to stake a validator on tellor layer:
+1\) Check if your address has funds:
 
 {% code overflow="wrap" %}
 ```bash
-cd ~/layer/binaries/v6.1.1 && ./layerd query bank balance YOUR_ACCOUNT_NAME loya
+./layerd query bank balance YOUR_ACCOUNT_NAME loya
 ```
 {% endcode %}
 
@@ -68,7 +68,7 @@ Edit or add the following code:
 }
 ```
 
-* Edit `"pubkey"` to match yours from step 4.
+* Edit `"pubkey"` to match yours from step 2. (important!)
 * Edit `"amount"` to be the amount of testnet TRB that you would like to stake with 6 decimals and the "loya" denom. (For example: if you want to stake 99 TRB use `"amount": "99000000loya"`)
 * Edit `"moniker"` with a name you choose for your validator node.
 * Edit identity, website, security, and details with your identifying information. (optional)

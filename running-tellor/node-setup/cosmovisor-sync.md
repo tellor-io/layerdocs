@@ -1,28 +1,36 @@
 ---
-description: Cosmovisor is a binary manager that can perform upgrades automatically.
+description: Setup steps for cosmovisor gang.
 ---
 
-# Cosmovisor Sync
+# Cosmovisor
 
-## Prerequisites:
+Cosmovisor is a binary manager that can perform upgrades automatically. It can be configured to automatically download binaries, but this is not recommended! 
 
-A Tellor node machine configured like [this](/broken/pages/OzHKVqI8SaLRc9qfBb3m) is not required, but different setups may require different commands from the ones shown below.
+## Download and configure Cosmovisor
 
-## Build and configure Cosmovisor
+1. Download the latest cosmovisor binary [cosmovisor v1.5.0](https://github.com/cosmos/cosmos-sdk/releases/tag/cosmovisor%2Fv1.5.0) binary:
 
-1. **Clone the** cosmos repo somewhere on your node machine and change directory to `cosmos-sdk`
-
+{% tabs %}
+{% tab title="Linux" %}
 ```sh
-git clone https://github.com/cosmos/cosmos-sdk && cd cosmos-sdk/tools/cosmovisor
+wget https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv1.5.0/cosmovisor-v1.5.0-linux-amd64.tar.gz && tar -xvzf cosmovisor-v1.5.0-linux-amd64.tar.gz
 ```
+{% endtab %}
 
-2. Build cosmovisor:
-
+{% tab title="MacOS" %}
 ```sh
-go build ./cmd/cosmovisor
+wget https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv1.5.0/cosmovisor-v1.5.0-darwin-amd64.tar.gz && tar -xvzf cosmovisor-v1.5.0-darwin-amd64.tar.gz
 ```
+{% endtab %}
 
-3. Add the following to the end of your `~/.bashrc` or `~/.zshrc` file:
+{% tab title="Linux ARM64" %}
+```sh
+wget https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv1.5.0/cosmovisor-v1.5.0-linux-arm64.tar.gz && tar -xvzf cosmovisor-v1.5.0-linux-arm64.tar.gz
+```
+{% endtab %}
+{% endtabs %}
+
+2. Add the following to the end of your `~/.bashrc` or `~/.zshrc` file:
 
 ```
 # cosmovisor
@@ -37,21 +45,14 @@ export DAEMON_PREUPGRADE_MAX_RETRIES=0
 
 Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
-4. Initialize cosmovisor and add all the of the upgrades that you downloaded during [node setup](/broken/pages/OzHKVqI8SaLRc9qfBb3m). Change the file paths in the command to match the correct folder path to each binary:
+3. Initialize cosmovisor:
 
-```shell
-# set up cosmovisor. Each command is done seperatly.
-./cosmovisor init ~/layer/binaries/v4.0.3/layerd
-./cosmovisor add-upgrade v5.0.0 ~/layer/binaries/v5.0.0/layerd
-./cosmovisor add-upgrade v5.1.0 ~/layer/binaries/v5.1.0/layerd
-./cosmovisor add-upgrade v5.1.1 ~/layer/binaries/v5.1.1/layerd
-./cosmovisor add-upgrade v5.1.2 ~/layer/binaries/v5.1.2/layerd
-./cosmovisor add-upgrade v6.0.0 ~/layer/binaries/v6.0.0/layerd
-./cosmovisor add-upgrade v6.1.0 ~/layer/binaries/v6.1.0-fix/layerd
-./cosmovisor add-upgrade v6.1.1 ~/layer/binaries/v6.1.1/layerd
+```sh
+# Initialize cosmovisor.
+./cosmovisor init ~/layer/binaries/v6.1.5/layerd
 ```
 
-6. To start your node with cosmovisor managing upgrades:
+4. Start your node with cosmovisor:
 
 {% code overflow="wrap" %}
 ```sh
@@ -59,4 +60,29 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 ```
 {% endcode %}
 
-Make sure to do `add-upgrade` in advance of future Tellor upgrades to make use of cosmovisor's upgrade automation!
+## Upgrades
+
+When there's an upgrade coming, download the new binary and add it to cosmovisor. Replace `v6.1.4` with the actual upgrade tag:
+
+{% tabs %}
+{% tab title="Linux" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+```
+{% endtab %}
+
+{% tab title="MacOS" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+```
+{% endtab %}
+
+{% tab title="Linux ARM64" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.4 && cd ~/layer/binaries/v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.4 ~/layer/binaries/v6.1.4/layerd
+```
+{% endtab %}
+{% endtabs %}
