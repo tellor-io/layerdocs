@@ -20,6 +20,7 @@ WorkingDirectory=/home/USERNAME/path/to/layer
 ExecStart=/home/USERNAME/path/to/layerd start --home /home/USERNAME/.layer --keyring-backend="test" --key-name=ACCOUNT_NAME  --api.enable --api.swagger
 Restart=always
 RestartSec=10
+Environment="TOKEN_BRIDGE_V2_ADDRESS=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 
 [Install]
 WantedBy=multi-user.target
@@ -42,7 +43,7 @@ RestartSec=10
 Environment="ETH_RPC_URL=https://your.ethereum.rpc_url"
 Environment="ETH_RPC_URL_PRIMARY=https://your.ethereum.rpc_url" # again
 Environment="ETH_RPC_URL_FALLBACK=https://your.fallback.ethereum.rpc_url"
-Environment="TOKEN_BRIDGE_CONTRACT="
+Environment="TOKEN_BRIDGE_CONTRACT=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E" # Mainnet TRBBridgeV2
 Environment="WITHDRAW_FREQUENCY=3600"
 Environment="REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1_your_address"
 Environment="CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY"
@@ -77,6 +78,7 @@ Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_POLL_INTERVAL=300ms"
 Environment="UNSAFE_SKIP_BACKUP=true"
 Environment="DAEMON_PREUPGRADE_MAX_RETRIES=0"
+Environment="TOKEN_BRIDGE_V2_ADDRESS=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 
 
 [Install]
