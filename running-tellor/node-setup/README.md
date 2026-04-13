@@ -66,19 +66,19 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% tabs %}
 {% tab title="Linux" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="Linux ARM64" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="MacOS" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endtab %}
 {% endtabs %}
@@ -157,7 +157,7 @@ Add these lines to the bottom of the file. Remember to replace the example `ETH_
 export ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
 export ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
 export ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x5589e306b1920F009979a50B88caE32aecD471E4"
+export TOKEN_BRIDGE_CONTRACT="0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -386,6 +386,13 @@ cd ~/layer/binaries/v6.1.1
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 # change directory
 cd ~/layer/binaries/v6.1.3
+# resume syncing...
+
+# the node will stop syncing at v6.1.4 upgrade height
+# Download the v6.1.4 binary 
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# change directory
+cd ~/layer/binaries/v6.1.4
 # resume syncing...
 ```
 {% endcode %}

@@ -66,7 +66,7 @@ Be sure to configure these variables here or in your shell. (The .env file is re
 ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
 ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
 ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
-TOKEN_BRIDGE_CONTRACT="0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"
+TOKEN_BRIDGE_CONTRACT="0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 WITHDRAW_FREQUENCY=3600
 REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks..."
 CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
