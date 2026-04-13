@@ -9,19 +9,19 @@ It's important to keep your Tellor reporter software up-to-date with all the lat
 {% endhint %}
 
 {% hint style="warning" %}
-**Upcoming v6.1.4 Chain Upgrade** 🚀
+**Upcoming v6.1.5 Chain Upgrade** 🚀
 
 Hi everyone!
 
-The v6.1.4 chain upgrade is scheduled for **Monday, April 13, 2026**.&#x20;
+The v6.1.5 chain upgrade is scheduled for **Tuesday, April 14, 2026**.&#x20;
 
 Countdown site here: https://layer-node.com/gov-proposals/mainnet
 
 **What to do:**
 
-1. **Upgrade your reporter clients to v0.1.6** before the upgrade date to ensure everything runs smoothly.
-2. **Pause your bridge usage** from 24 hours before until 24 hours after the upgrade to avoid losing funds!
-3. **Watch the** [**Discord**](https://discord.gg/vYJ7STXe) for the new TRBBridgeV2 contract address. Once announced, you'll need to update your reporter's bridge contract setting so operations can resume quickly.
+1. **Upgrade your reporter clients to v0.1.7 ASAP**
+2. **Pause your bridge usage** Wait for us to announce that bridge is back up!
+3. **Watch the** [**Discord**](https://discord.gg/vYJ7STXe) update the bridge contract to be 0x6ec401744008f4B018Ed9A36f76e6629799Ee50E in your reporter's environment.
 
 Thanks for staying on top of this! Let us know if you have any questions.
 {% endhint %}
@@ -48,7 +48,7 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.6/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -56,7 +56,7 @@ cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.6/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
