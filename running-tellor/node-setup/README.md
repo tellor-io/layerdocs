@@ -66,19 +66,19 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% tabs %}
 {% tab title="Linux" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="Linux ARM64" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="MacOS" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5&& cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endtab %}
 {% endtabs %}
@@ -320,8 +320,6 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 `13280690 for upgrade v6.1.0`
 
-`13590000 for upgrade v6.1.1`
-
 ... and so on!
 
 &#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
@@ -393,6 +391,13 @@ cd ~/layer/binaries/v6.1.3
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 # change directory
 cd ~/layer/binaries/v6.1.4
+# resume syncing...
+
+# the node will stop syncing at v6.1.5 upgrade height
+# Download the v6.1.5 binary 
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# change directory
+cd ~/layer/binaries/v6.1.5
 # resume syncing...
 ```
 {% endcode %}
