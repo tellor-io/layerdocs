@@ -12,5 +12,5 @@ The following command can be used to change your reporter selection:
 ```
 {% endcode %}
 
-Note: To prevent bridge manipulation, reporters are not allowed to do `switch-reporter` for reporter addresses that have reported data in the passed 21 days.
+Note: To prevent bridge manipulation, reporters are not allowed to do `switch-reporter` for reporter addresses that have reported data in the past 21 days.
 
