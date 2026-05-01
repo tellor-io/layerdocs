@@ -8,11 +8,11 @@ icon: pen
 ## Prerequisites
 
 * A working[ node](../node-quick-start-testnet.md).
-* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.&#x20;
+* An account for creating a reporter that has either [created](../run-a-layer-validator/) or [delegated](../../command-line-usage/leveraging-layerd/delegate-to-a-validator.md) to a validator.
 
 #### 1) Configure a Reporter on Tellor
 
-Use the `layerd` cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:&#x20;
+Use the `layerd` cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:
 
 {% code overflow="wrap" %}
 ```bash
@@ -24,7 +24,7 @@ Use the `layerd` cli register and initialize your reporter configuration. Commis
 Parameters:
 
 * A (example) `commission-rate` of `0.05` means that you get 5% of rewards from your selectors.
-* A (example)  `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
+* A (example) `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
 * Choose a `REPORTER_MONIKER` that you love! (It does not need to be the same as your validator moniker.)
 
 #### 2) Check if your reporter was created successfully:
@@ -64,7 +64,7 @@ Be sure to configure these variables here or in your shell. (The .env file is re
 ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
 ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
 ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
-TOKEN_BRIDGE_CONTRACT="0x62733e63499a25E35844c91275d4c3bdb159D29d"
+TOKEN_BRIDGE_CONTRACT="0x55355157703A44f7516FBB831333317E98944e32"
 WITHDRAW_FREQUENCY=3600
 REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks...
 CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
@@ -88,7 +88,7 @@ Note: Optional flags may be used to establish a stream of profit taking for your
 
 {% hint style="info" %}
 **Optional flags for auto-unbonding:**\
-`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).       &#x20;
+`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).
 
 `--auto-unbonding-amount` : The amount of TRB (in loya) which you would like to auto-unbond.
 
