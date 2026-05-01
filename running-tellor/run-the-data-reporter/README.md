@@ -14,7 +14,7 @@ To create a reporter on Tellor Layer, you must first "stake" your address one of
 
 #### 1) Configure a Reporter on Tellor
 
-Use the `layerd` cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:&#x20;
+Use the `layerd` cli register and initialize your reporter configuration. Commission-rate and min-tokens-required are shown at safe values, but can be adjusted (now or later) for personal preference:
 
 {% code overflow="wrap" %}
 ```bash
@@ -26,7 +26,7 @@ Use the `layerd` cli register and initialize your reporter configuration. Commis
 Parameters:
 
 * A (example) `commision-rate` of `0.05` means that you get 5% of rewards from your selectors.
-* A (example)  `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
+* A (example) `min-tokens-required` value of `1000000` prevents spam by requiring that selectors have at least 1 TRB in their wallet. This can be changed later.
 * Choose a `REPORTER_MONIKER` that you love! (It does not need to be the same as your validator moniker.)
 
 #### 2) Check if your reporter was created successfully:
@@ -43,7 +43,7 @@ If your reporter was created successfully, this will output your reporter inform
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.8/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -51,7 +51,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.8/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -88,7 +88,7 @@ Note: Optional flags may be used to establish a stream of profit taking for your
 
 {% hint style="info" %}
 **Optinal flags for auto-unbonding:**\
-`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).       &#x20;
+`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).
 
 `--auto-unbonding-ammount` : The amount of TRB (in loya) which you would like to auto-unbond.
 
