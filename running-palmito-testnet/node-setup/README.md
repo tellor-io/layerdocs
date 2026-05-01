@@ -7,12 +7,12 @@ icon: rectangle-terminal
 
 ## Recommended Hardware Specs
 
-Operating a node for a personal RPC can be done using most modern computers.&#x20;
+Operating a node for a personal RPC can be done using most modern computers.
 
 For running a validator, _more power_ is recommended:
 
 * Modern cpu with at least 8 cores / threads
-* ram: 32 gb + (16gb swap space recommended) 
+* ram: 32 gb + (16gb swap space recommended)
 * storage: 1000gb+ @ NVME gen4
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
@@ -20,17 +20,19 @@ For running a validator, _more power_ is recommended:
 
 {% tabs %}
 {% tab title="Linux" %}
-jq, yq, sed, curl, wget, make, and **Go** are required for running the various config scripts and commands in this guide:&#x20;
+jq, yq, sed, curl, wget, make, and **Go** are required for running the various config scripts and commands in this guide:
 
 ```bash
 sudo apt install jq yq sed curl wget build-essential
 ```
+
 Install go if you want to build binaries from the layer repo:
+
 * `Go version 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
 {% endtab %}
 
 {% tab title="MacOS" %}
-jq, yq, sed, and wget are required for running the various commands and config scripts in this guide:&#x20;
+jq, yq, sed, and wget are required for running the various commands and config scripts in this guide:
 
 ```bash
 brew install jq yq sed wget && xcode-select --install
@@ -41,8 +43,8 @@ brew install jq yq sed wget && xcode-select --install
 {% endtabs %}
 
 {% hint style="success" %}
-* Commands shown should just work while logged in as a user (not root).&#x20;
-* If you are using an older Mac with an intel chip, the linux versions (amd64) in step 1 below may be used. (just remember to use the mac commands!)&#x20;
+* Commands shown should just work while logged in as a user (not root).
+* If you are using an older Mac with an intel chip, the linux versions (amd64) in step 1 below may be used. (just remember to use the mac commands!)
 * If on raspberry pi or similar, use the binary downloads for "**arm64**".
 {% endhint %}
 
@@ -56,7 +58,7 @@ There are two ways to get a node running on **layertest-5**:
 ## 1. Download and Organize the `layerd` Binary(s)
 
 {% hint style="warning" %}
-**Be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**&#x20;
+**Be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**
 {% endhint %}
 
 {% tabs %}
@@ -80,22 +82,19 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% endtab %}
 {% endtabs %}
 
-Initialize .layer folder in your home directory:
-`layerd init [moniker] [flags]`
+Initialize .layer folder in your home directory: `layerd init [moniker] [flags]`
+
 ```sh
 ./layerd init layer --chain-id layertest-5
 ```
 {% endtab %}
 {% endtabs %}
 
-## 2. Set System Variables
+## 2. Set System Variables for Layerd
 
 A Layer node uses the following variables:
 
-* <mark style="color:green;">**TOKEN\_BRIDGE\_CONTRACT**</mark>: the token bridge contract address.
-* <mark style="color:green;">**ETH\_RPC\_URL**</mark>: A reliable Sepolia RPC URL.
-* <mark style="color:green;">**ETH\_RPC\_URL\_PRIMARY**</mark>: Sepolia RPC url for the reporter daemon (can be the same).
-* <mark style="color:green;">**ETH\_RPC\_URL\_FALLBACK**</mark>: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
+* TOKEN\_BRIDGE\_V2\_ADDRESS: the token bridge contract address.
 
 Edit .bashrc or .zshrc file with a text editor like nano:
 
@@ -116,10 +115,7 @@ nano ~/.zshrc
 Add these lines to the bottom of the file. Remember to replace the example `ETH_RPC_URL` with your actual Sepolia testnet RPC url, and if you're going to run a reporter, replace the `REPORTERS_VALIDATOR_ADDRESS` with your own as well.
 
 ```bash
-export ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
-export ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
-export ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x55355157703A44f7516FBB831333317E98944e32"
+export TOKEN_BRIDGE_V2_ADDRESS="0x55355157703A44f7516FBB831333317E98944e32"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -142,12 +138,11 @@ source ~/.zshrc
 
 ## 3. Edit Chain Configuration for Tellor.
 
-We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.&#x20;
+We need to open up the tellor layer config files and change some variables. You can use any local text editor like code, vim, or nano.
 
 _**Note: All variables not shown can be safely left as is.**_
 
-To open the API up to the local network or set a custom port:
-In `~/.layer/config/app.toml`:
+To open the API up to the local network or set a custom port: In `~/.layer/config/app.toml`:
 
 ```sh
 # Address defines the API server to listen on.
@@ -164,7 +159,9 @@ chain-id = "layertest-5"
 # Set your chosen keyring backend (optional).
 keyring-backend = "test"
 ```
+
 In `~/.layer/config/config.toml`:
+
 ```sh
 #...
 # TCP or UNIX socket address for the RPC server to listen on (optional)
@@ -182,6 +179,7 @@ persistent_peers = "ac7c10dc3de67c4394271c564671eeed4ac6f0e0@34.229.148.107:2665
 timeout_commit = "1s"
 #...
 ```
+
 Note: Peer connection errors can be normal for a few minutes after start.
 
 ## 4. Sync the Node
@@ -192,7 +190,7 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 
 {% tabs %}
 {% tab title="State Sync" %}
-**We need to make a few more config edits to make sure your state sync goes smoothly.**&#x20;
+**We need to make a few more config edits to make sure your state sync goes smoothly.**
 
 1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://node-palmito.tellorlayer.com/rpc/` . Copy and paste this entire block of commands into a terminal and hit enter:
 
@@ -203,7 +201,7 @@ echo $TRUSTED_HEIGHT $TRUSTED_HASH
 
 </code></pre>
 
-The output should be something like:&#x20;
+The output should be something like:
 
 ```sh
 trusted_height: 3785000

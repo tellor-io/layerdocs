@@ -12,7 +12,7 @@ Operating a node for a personal RPC can be done usin most modern computers. Even
 Operating a **validator:**
 
 * Modern cpu with at least 8 cores / threads
-* ram: 32 gb + (16gb swap space recommended) 
+* ram: 32 gb + (16gb swap space recommended)
 * storage: 1000gb+ @ NVME gen4
 * network: 500mb/s DL, 100mb/s UL (the faster the better)
 
@@ -20,17 +20,19 @@ Operating a **validator:**
 
 {% tabs %}
 {% tab title="Linux" %}
-jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
+jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:
 
 ```bash
 sudo apt install jq yq sed curl wget build-essential
 ```
+
 Install go if you want to build binaries from the layer repo:
+
 * `Go version 1.22` : Use the default install instructions [here](https://go.dev/doc/install).
 {% endtab %}
 
 {% tab title="MacOS" %}
-jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:&#x20;
+jq, yq, sed, curl, wget, make, and **Go** are required for running the various commands and config scripts and commands in this guide:
 
 ```bash
 brew install jq yq sed wget && xcode-select --install
@@ -41,8 +43,8 @@ brew install jq yq sed wget && xcode-select --install
 {% endtabs %}
 
 {% hint style="success" %}
-* Commands shown should just work while logged in as a user (using root is not recommended).&#x20;
-* **I**f you are using an older Mac with an intel chip, the linux versions (amd64) in step 1 below may be used. (just remember to use the mac commands!)&#x20;
+* Commands shown should just work while logged in as a user (using root is not recommended).
+* **I**f you are using an older Mac with an intel chip, the linux versions (amd64) in step 1 below may be used. (just remember to use the mac commands!)
 * If on raspberry pi or similar, use the binary downloads for "**arm64**".
 {% endhint %}
 
@@ -56,11 +58,9 @@ There are two options for starting a new tellor-1 node:
 ## 1. Download and Organize the `layerd` Binary(s)
 
 {% hint style="info" %}
-**As you progress through the steps, be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**&#x20;
+**As you progress through the steps, be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**
 {% endhint %}
 
-{% tabs %}
-{% tab title="State Sync" %}
 First, download the binary from the [Tellor Github](https://github.com/tellor-io/layer/tags).
 
 {% tabs %}
@@ -82,16 +82,13 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5&& cd v6.1.5 && 
 ```
 {% endtab %}
 {% endtabs %}
-{% endtab %}
 
 Initialize .layer folder in your home directory:
 
 ```sh
 ./layerd init layer --chain-id tellor-1
 ```
-{% endtab %}
 
-{% tab title="Genesis sync" %}
 Download the binaries from the [Tellor Github](https://github.com/tellor-io/layer/tags).
 
 {% tabs %}
@@ -123,17 +120,12 @@ cd ~/layer/binaries/v4.0.3
 # initialize chain configs
 ./layerd init layer --chain-id tellor-1
 ```
-{% endtab %}
-{% endtabs %}
 
 ## 2. Set System Variables
 
 A Layer node uses the following variables:
 
-* <mark style="color:green;">**TOKEN\_BRIDGE\_CONTRACT**</mark>: the token bridge contract address.
-* <mark style="color:green;">**ETH\_RPC\_URL**</mark>: A reliable Ethereum RPC URL.
-* <mark style="color:green;">**ETH\_RPC\_URL\_PRIMARY**</mark>: Ethereum RPC url for the reporter daemon (can be the same).
-* <mark style="color:green;">**ETH\_RPC\_URL\_FALLBACK**</mark>: A second RPC url for calling the bridge contract if the primary RPC fails to respond.
+* TOKEN\_BRIDGE\_V2\_ADDRESS: the token bridge contract address.
 
 Set the environment variables so that they are set in new terminal windows by default. Open your .bashrc or .zshrc file with a text editor like nano:
 
@@ -154,10 +146,7 @@ nano ~/.zshrc
 Add these lines to the bottom of the file. Remember to replace the example `ETH_RPC_URL` with your actual Ethereum RPC url, and if you're going to run a reporter, replace the `REPORTERS_VALIDATOR_ADDRESS` with your own as well.
 
 ```bash
-export ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
-export ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
-export ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
-export TOKEN_BRIDGE_CONTRACT="0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
+export TOKEN_BRIDGE_V2_ADDRESS="0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 ```
 
 Exit nano with `ctrl^x` then enter `y` to save the changes.
@@ -236,7 +225,7 @@ Choose the tab depending on whether or not you are doing a genesis sync, or a st
 
 {% tabs %}
 {% tab title="State Sync" %}
-**We need to make a few more config edits to make sure your state sync goes smoothly.**&#x20;
+**We need to make a few more config edits to make sure your state sync goes smoothly.**
 
 1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://mainnet.tellorlayer.com/rpc/` . Copy and paste this entire block of commands into a terminal and hit enter:
 
@@ -248,7 +237,7 @@ echo $TRUSTED_HEIGHT $TRUSTED_HASH
 
 ```
 
-The output should be something like:&#x20;
+The output should be something like:
 
 ```sh
 trusted height: 3785000
@@ -296,7 +285,7 @@ Some errors related to peer connections can be expected even if the snapshot syn
 {% endtab %}
 
 {% tab title="Genesis Sync" %}
-#### Start your layer node with the command:
+**Start your layer node with the command:**
 
 ```bash
 ./layerd start --key-name YOUR_ACCOUNT_NAME
@@ -304,13 +293,13 @@ Some errors related to peer connections can be expected even if the snapshot syn
 
 You should now see your log quickly downloading blocks!
 
-#### Upgrades
+**Upgrades**
 
 Your node will stop syncing at the following block height(s) for each binary upgrade:
 
-`1534900 for upgrade v5.0.0`&#x20;
+`1534900 for upgrade v5.0.0`
 
-`3891401 for upgrade v5.1.0`&#x20;
+`3891401 for upgrade v5.1.0`
 
 `6699035 for upgrade v5.1.1`
 
@@ -322,7 +311,7 @@ Your node will stop syncing at the following block height(s) for each binary upg
 
 ... and so on!
 
-&#x20;When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
+When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
 \
 Note: commands shown are for amd64 (linux).
 
