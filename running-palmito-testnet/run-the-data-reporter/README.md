@@ -108,3 +108,20 @@ You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafan
 {% endhint %}
 
 Congratulations on becoming a Tellor Reporter! 🎉
+
+#### 5.5 Additional Configuration for Coingekco
+
+Currenly (layer-daemons / `reporterd` version [v0.1.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.1.8)) there is an additional configuration step to avoid rate limiting from the coingecko api. After starting reporterd the first time, stop your reporter and edit the custom query config file:
+
+```shellscript
+nano .layer/config/custom_query_config.toml
+```
+
+Replace the coingecko `url_template` with the pro api endpoint. Be sure to replace YOUR\_CG\_API\_KEY with your actual api key:
+
+```berry
+[endpoints]
+    [endpoints.coingecko]
+    url_template = "https://pro-api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd&x_cg_pro_api_key=YOUR_CG_API_KEY"
+```
+
