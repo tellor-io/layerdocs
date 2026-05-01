@@ -114,7 +114,7 @@ Congratulations on becoming a Tellor Reporter! 🎉
 Currenly (layer-daemons / `reporterd` version [v0.1.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.1.8)) there is an additional configuration step to avoid rate limiting from the coingecko api. After starting reporterd the first time, stop your reporter and edit the custom query config file:
 
 ```shellscript
-nano .layer/config/custom_query_config.toml
+nano ~/.layer/config/custom_query_config.toml
 ```
 
 Replace the coingecko `url_template` with the pro api endpoint. Be sure to replace YOUR\_CG\_API\_KEY with your actual api key:
