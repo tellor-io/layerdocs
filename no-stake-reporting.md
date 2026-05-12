@@ -1,5 +1,6 @@
 ---
 description: Report data to the chain. No stake required.
+hidden: true
 icon: door-open
 ---
 
