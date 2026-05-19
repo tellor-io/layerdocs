@@ -17,7 +17,7 @@ _Your file paths may be different. Remember to adjust as needed to remove the fi
 {% code overflow="wrap" %}
 ```sh
 rm -rf ~/layer/binaries/reporter/reporterd
-rm -rf ~/layer/binaries/reporter/readme.md
+rm -rf ~/layer/binaries/reporter/README.md
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml

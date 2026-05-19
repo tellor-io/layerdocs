@@ -17,7 +17,7 @@ _Be sure to set the correct paths to these files if your setup is different:_
 {% code overflow="wrap" %}
 ```sh
 rm ~/layer/binaries/reporter/reporterd
-rm ~/layer/binaries/reporter/readme.md
+rm ~/layer/binaries/reporter/README.md
 rm ~/.layer/config/market_params.toml
 rm ~/.layer/config/custom_query_config.toml
 rm ~/.layer/config/pricefeed_exchange_config.toml
