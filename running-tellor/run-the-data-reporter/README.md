@@ -63,7 +63,6 @@ Be sure to configure these variables here or in your shell. (The .env file is re
 
 {% code overflow="wrap" %}
 ```sh
-ETH_RPC_URL="wss://a.good.ethereum.rpc.url"
 ETH_RPC_URL_PRIMARY="wss://a.good.ethereum.rpc.url"
 ETH_RPC_URL_FALLBACK="https://another.ethereum.rpc.url"
 TOKEN_BRIDGE_CONTRACT="0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"

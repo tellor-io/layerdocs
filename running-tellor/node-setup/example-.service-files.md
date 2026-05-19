@@ -40,7 +40,6 @@ WorkingDirectory=/home/USERNAME/path/to/layer
 ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 Restart=always
 RestartSec=10
-Environment="ETH_RPC_URL=https://your.ethereum.rpc_url"
 Environment="ETH_RPC_URL_PRIMARY=https://your.ethereum.rpc_url" # again
 Environment="ETH_RPC_URL_FALLBACK=https://your.fallback.ethereum.rpc_url"
 Environment="TOKEN_BRIDGE_CONTRACT=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E" # Mainnet TRBBridgeV2

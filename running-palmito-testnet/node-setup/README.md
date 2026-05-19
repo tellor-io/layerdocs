@@ -112,7 +112,7 @@ nano ~/.zshrc
 {% endtab %}
 {% endtabs %}
 
-Add these lines to the bottom of the file. Remember to replace the example `ETH_RPC_URL` with your actual Sepolia testnet RPC url, and if you're going to run a reporter, replace the `REPORTERS_VALIDATOR_ADDRESS` with your own as well.
+Add this line to the bottom of the file.
 
 ```bash
 export TOKEN_BRIDGE_V2_ADDRESS="0x55355157703A44f7516FBB831333317E98944e32"

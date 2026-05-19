@@ -42,7 +42,6 @@ WorkingDirectory=/home/USERNAME/layer
 ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 Restart=always
 RestartSec=10
-Environment="ETH_RPC_URL=https://your.sepolia.rpc_url"
 Environment="ETH_RPC_URL_PRIMARY=https://your.sepolia.rpc_url"
 Environment="ETH_RPC_URL_FALLBACK=https://your.sepolia.fallback_rpc_url"
 Environment="TOKEN_BRIDGE_CONTRACT=0x5acb5977f35b1A91C4fE0F4386eB669E046776F2"

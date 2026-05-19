@@ -61,7 +61,6 @@ Be sure to configure these variables here or in your shell. (The .env file is re
 
 {% code overflow="wrap" %}
 ```sh
-ETH_RPC_URL="wss://a.good.sepolia.rpc.url"
 ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
 ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
 TOKEN_BRIDGE_CONTRACT="0x55355157703A44f7516FBB831333317E98944e32"
