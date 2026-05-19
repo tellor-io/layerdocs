@@ -41,7 +41,7 @@ If your reporter was created successfully, this will output your reporter inform
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.8/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -49,7 +49,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.1.8/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -70,6 +70,7 @@ CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
 SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY
 INFURA_API_KEY=YOUR_INFURA_API_KEY
 ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
+CGPRO_API_KEY=CG-YOUR_COINGECKO_PRO_KEY
 ```
 {% endcode %}
 
@@ -79,7 +80,7 @@ _Note: The API keys are not required, but reporters should consider setting them
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+./reporterd --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
 ```
 {% endcode %}
 
@@ -98,7 +99,7 @@ Here is an example start command for a reporter who wants to automatically unbon
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --chain-id layertest-5 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
+./reporterd --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
 ```
 {% endcode %}
 
@@ -110,7 +111,7 @@ Congratulations on becoming a Tellor Reporter! 🎉
 
 #### 5.5 Additional Configuration for Coingekco
 
-Currenly (layer-daemons / `reporterd` version [v0.1.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.1.8)) there is an additional configuration step to avoid rate limiting from the coingecko api. After starting reporterd the first time, stop your reporter and edit the custom query config file:
+Currenly (layer-daemons / `reporterd` version [v0.2.0](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.0)) there is an additional configuration step to avoid rate limiting from the coingecko api. After starting reporterd the first time, stop your reporter and edit the custom query config file:
 
 ```shellscript
 nano ~/.layer/config/custom_query_config.toml
