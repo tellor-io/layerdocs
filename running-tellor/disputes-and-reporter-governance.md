@@ -9,7 +9,7 @@ icon: gavel
 
 ### Overview:
 
-Tellor reporters are subject to novel dispute mechanisms designed to ensure data integrity. If questionable data is identified or a reporter is suspected of acting maliciously, any participant holding TRB on the network can initiate a dispute. This open and transparent process empowers the community to govern reporters collectively.&#x20;
+Tellor reporters are subject to novel dispute mechanisms designed to ensure data integrity. If questionable data is identified or a reporter is suspected of acting maliciously, any participant holding TRB on the network can initiate a dispute. This open and transparent process empowers the community to govern reporters collectively.
 
 Here's how it works:
 
@@ -28,7 +28,7 @@ Dispute information can be queried using the following cli commands:
 ### Dispute Categories:
 
 * <mark style="color:yellow;">**Warning**</mark>: The dispute fee / slashing amount is set at 1% of the reporter's bonded tokens. This is similar to the penalty for simple inactivity as a validator. The reporter will be jailed, but they may call \`unjail\` immediately to start reporting again with slightly reduced power while the dispute is settled.
-* <mark style="color:orange;">**Minor**</mark>:  The dispute fee / slashing amount is set a 5% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.&#x20;
+* <mark style="color:orange;">**Minor**</mark>: The dispute fee / slashing amount is set a 5% of the reporter's bonded tokens. The reporter is jailed for 10 minutes.
 * <mark style="color:red;">**Major**</mark>: The dispute fee / slashing amount is set equal to the amount bonded by the reporter. The reporter will be jailed forever unless the vote result is `against`.
 
 ## How to Propose a Dispute
@@ -51,7 +51,7 @@ layerd tx dispute propose-dispute [disputed-reporter] [report-meta-id] [report-q
 
 **\[fee]**: The amount of the dispute fee that you would like to pay while proposing the dispute. The minimum is 1 TRB (1000000loya) to prevent spam.\
 \
-&#x20;Setting the fee to any value that is larger than the required dispute fee will only remove the exact fee amount from your wallet or bond. for example, if the dispute fee is 12345loya and fee=999999999999loya, the amount taken to pay the dispute fee will be 12345loya.
+Setting the fee to any value that is larger than the required dispute fee will only remove the exact fee amount from your wallet or bond. for example, if the dispute fee is 12345loya and fee=999999999999loya, the amount taken to pay the dispute fee will be 12345loya.
 
 **\[pay-from-bond]**: set this to True if you want to use bonded tokens to pay the dispute fee. You might want to do this if you don't have enough free balance to pay the fee. Set this to "False" to use free balance only.
 
@@ -64,9 +64,9 @@ Full example:
 {% endcode %}
 
 {% hint style="warning" %}
-#### _<mark style="color:blue;">There is a 48 hour voting period followed by a 24 hour Challenge period after a dispute.</mark>_
+_<mark style="color:blue;">**There is a 48 hour voting period followed by a 24 hour Challenge period after a dispute.**</mark>_
 
-_<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call withdraw-fee-refund to claim any tokens that were awarded from the dispute. Also, all the reporters who voted on the dispute can call claim-reward to receive their share of 2.5% of the dispute fee!**</mark>_&#x20;
+_<mark style="color:blue;">**After 72 hours, the dispute is settled and the parties involved can call withdraw-fee-refund to claim any tokens that were awarded from the dispute. Also, all the reporters who voted on the dispute can call claim-reward to receive their share of 2.5% of the dispute fee!**</mark>_
 {% endhint %}
 
 ### Adding Funds to the Dispute Fee
@@ -92,9 +92,9 @@ If the dispute fee is not paid in full while the dispute is active, the dispute 
 
 There are three different choices when voting on a dispute:
 
-`vote-support:`  You support the disputer and believe that the reporter should be slashed. The disputer receives all of the reporter's tokens, and they are refunded the dispute fee minus 2.5% that was taken out for voter rewards.
+`vote-support:` You support the disputer and believe that the reporter should be slashed. The disputer receives all of the reporter's tokens, and they are refunded the dispute fee minus 2.5% that was taken out for voter rewards.
 
-`vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute. The reporter gets their tokens back minus 2.5% that was taken out for voter rewards.&#x20;
+`vote-against:` You support the reporter, and believe the disputer should lose their dispute fee as punishment for opening an unnecessary dispute. The reporter gets their tokens back minus 2.5% that was taken out for voter rewards.
 
 `vote-invalid:` It is not clear or not important if the reporter was wrong or malicious. The reporter gets all of their tokens back, and the disputer gets back the fee minus 2.5% that was taken out for voter rewards.
 
