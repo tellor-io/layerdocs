@@ -1,5 +1,6 @@
 ---
 description: A pull implementation for Tellor users
+icon: person-dolly-empty
 ---
 
 # Pull Oracle
