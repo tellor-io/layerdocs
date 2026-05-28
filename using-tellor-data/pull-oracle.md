@@ -26,7 +26,7 @@ This article combines the practical material from two places: the **using-tellor
 ### Install
 
 ```bash
-npm install using-tellor-pull ethers
+npm install usingtellorpull ethers
 ```
 
 ### Quick start (fetch and encode)
