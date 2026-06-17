@@ -36,6 +36,8 @@ If you are upgrading from a version before v0.2.5, update your environment varia
 
 Compare your `.env` against the [layer-daemons `env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/env.example) for the current variable names and defaults.
 
+Compare your `.service` file against the [example reporterd service file](../node-setup/example-.service-files.md) and update your `Environment` settings to match the current variable names and defaults.
+
 ### 4. Download the latest `reporterd` release
 
 Download [reporterd v0.2.5](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.5):
@@ -59,6 +61,8 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% endtabs %}
 
 ### 5. Restart your reporter
+
+Note: As of v0.2.5, the `--chain-id` flag has been removed. All other CLI flags are optional when configuration is provided via your `.env` or service file.
 
 {% code overflow="wrap" %}
 ```sh
