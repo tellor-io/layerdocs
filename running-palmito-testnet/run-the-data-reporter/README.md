@@ -37,11 +37,13 @@ If your reporter was created successfully, this will output your reporter inform
 
 #### 3) Download the latest `reporterd` binary:
 
+Download [reporterd v0.2.5](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.5):
+
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -49,79 +51,72 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-#### 4) Create .env
+#### 4) Create `.env`
 
-Be sure to configure these variables here or in your shell. (The .env file is required even if it's empty):
+`reporterd` loads environment variables from a `.env` file in the current working directory (or from `../.env` when run from a subdirectory). You can also set these in a [systemd service file](../node-setup/example-.service-files.md) instead.
+
+Copy [`env.example`](https://github.com/tellor-io/layer-daemons/blob/main/env.example) from layer-daemons and edit the values for your setup:
 
 {% code overflow="wrap" %}
 ```sh
-ETH_RPC_URL_PRIMARY="wss://a.good.sepolia.rpc.url"
-ETH_RPC_URL_FALLBACK="https://another.sepolia.rpc.url"
-TOKEN_BRIDGE_CONTRACT="0x55355157703A44f7516FBB831333317E98944e32"
-WITHDRAW_FREQUENCY=3600
-REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1egaks...
-CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY
-SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY
-INFURA_API_KEY=YOUR_INFURA_API_KEY
-ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
-CGPRO_API_KEY=CG-YOUR_COINGECKO_PRO_KEY
+cd ~/layer/binaries/reporter
+wget https://raw.githubusercontent.com/tellor-io/layer-daemons/refs/heads/main/env.example
+cp env.example .env
 ```
 {% endcode %}
 
-_Note: The API keys are not required, but reporters should consider setting them to enable reporting for all tipped feeds. This ensures maximum earnings._
+At minimum, set `LAYER_HOME`, `FROM`, `KEYRING_BACKEND`, `RPC_NODES`, `GRPC_NODES`, and your custom query API keys. Most CLI flags can be provided as environment variables by uppercasing the flag name and replacing `-` with `_` (for example, `--from` becomes `FROM`). Use `LAYER_HOME` for the Layer home directory instead of relying on the shell's `HOME`.
+
+On testnet, point `BRIDGE_CHAIN_RPC_NODES` at your Sepolia (or other bridge-chain) RPC endpoints. Because the bridge chain is not Ethereum mainnet, also set `ETH_MAINNET_RPC_NODES` so custom query contract reads use mainnet endpoints.
+
+_Note: API keys are not strictly required, but reporters should set them to enable reporting for all tipped feeds and maximize earnings._
+
+{% hint style="info" %}
+See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/README.md) and [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/env.example) for all available options, including auto-unbonding, price guard, and auto balance-to-keep bridge settings.
+{% endhint %}
 
 #### 5) Start the reporter:
 
-{% code overflow="wrap" %}
-```bash
-./reporterd --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
-```
-{% endcode %}
-
-Note: Optional flags may be used to establish a stream of profit taking for your operation:
-
-{% hint style="info" %}
-**Optional flags for auto-unbonding:**\
-`--auto-unbonding-frequency` : The frequency (in days) with which you would like to withdraw rewards (unlocked after 21 days).
-
-`--auto-unbonding-amount` : The amount of TRB (in loya) which you would like to auto-unbond.
-
-`--auto-unbonding-max-stake-percentage` : A safeguard against automatically unbonding too much. Set this to a percentage of your stake ( 0.01 for 1%)
-{% endhint %}
-
-Here is an example start command for a reporter who wants to automatically unbond 2.999 TRB (2999999loya) per day with a maximum set to 1% of their total stake:
+From the directory containing your `.env` file:
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657 --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
+cd ~/layer/binaries/reporter && ./reporterd
 ```
 {% endcode %}
+
+If you prefer CLI flags instead of `.env`, you can still pass them explicitly. Environment variables take precedence over matching flags when both are set:
+
+{% code overflow="wrap" %}
+```bash
+./reporterd --grpc-addr 127.0.0.1:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://127.0.0.1:26657
+```
+{% endcode %}
+
+Here is an example start command for a reporter who wants to automatically unbond 2.999 TRB (2999999 loya) per day with a maximum set to 1% of their total stake:
+
+{% code overflow="wrap" %}
+```bash
+./reporterd --auto-unbonding-frequency 1 --auto-unbonding-amount 2999999 --auto-unbonding-max-stake-percentage 0.01
+```
+{% endcode %}
+
+The same auto-unbonding settings can be set in `.env`:
+
+```sh
+AUTO_UNBONDING_FREQUENCY=1
+AUTO_UNBONDING_AMOUNT=2999999
+AUTO_UNBONDING_MAX_STAKE_PERCENTAGE=0.01
+```
 
 {% hint style="success" %}
 You can set up a grafana dashboard using [this\_guide](../../setting-up-a-grafana-dashboard-for-your-layer-node.md) to monitor things in Tellor such as average gas price for submitting a report, block times, total bonded tokens, etc.
 {% endhint %}
 
 Congratulations on becoming a Tellor Reporter! 🎉
-
-#### 5.5 Additional Configuration for Coingekco
-
-Currenly (layer-daemons / `reporterd` version [v0.2.0](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.0)) there is an additional configuration step to avoid rate limiting from the coingecko api. After starting reporterd the first time, stop your reporter and edit the custom query config file:
-
-```shellscript
-nano ~/.layer/config/custom_query_config.toml
-```
-
-Replace the coingecko `url_template` with the pro api endpoint. Be sure to replace YOUR\_CG\_API\_KEY with your actual api key:
-
-```berry
-[endpoints]
-    [endpoints.coingecko]
-    url_template = "https://pro-api.coingecko.com/api/v3/simple/price?ids={coin_id}&vs_currencies=usd&x_cg_pro_api_key=YOUR_CG_API_KEY"
-```
-

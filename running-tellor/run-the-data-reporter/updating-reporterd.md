@@ -24,13 +24,27 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 ```
 {% endcode %}
 
-### 3. Download the latest `reporterd` release
+### 3. Update your `.env` or service file
+
+If you are upgrading from a version before v0.2.5, update your environment variables to match the current format. Key changes:
+
+* `ETH_RPC_URL_PRIMARY` / `ETH_RPC_URL_FALLBACK` → `BRIDGE_CHAIN_RPC_NODES` (comma-separated list)
+* `TOKEN_BRIDGE_CONTRACT` → removed; use `TOKEN_BRIDGE_TEST_CONTRACT` only if you need a custom bridge contract override
+* Layer connectivity → `RPC_NODES` and `GRPC_NODES` (comma-separated primary and fallbacks)
+* Reporter identity → `LAYER_HOME`, `FROM`, `KEYRING_BACKEND` (and `KEYRING_PASSWORD_FILE` when using `file` keyring)
+* On testnet with a non-mainnet bridge chain → add `ETH_MAINNET_RPC_NODES`
+
+Compare your `.env` against the [layer-daemons `env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/env.example) for the current variable names and defaults.
+
+### 4. Download the latest `reporterd` release
+
+Download [reporterd v0.2.5](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.5):
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -38,16 +52,16 @@ cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.0/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-### 4. Restart your reporter
+### 5. Restart your reporter
 
 {% code overflow="wrap" %}
 ```sh
-./reporterd --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+cd ~/layer/binaries/reporter && ./reporterd
 ```
 {% endcode %}
