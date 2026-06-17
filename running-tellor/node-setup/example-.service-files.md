@@ -36,23 +36,37 @@ After=network-online.target
 [Service]
 User=USERNAME
 Group=USERNAME
-WorkingDirectory=/home/USERNAME/path/to/layer
-ExecStart=/home/path/to/layer/daemons/bin/reporterd --chain-id tellor-1 --grpc-addr 0.0.0.0:9090 --from ACCOUNT_NAME --home /home/USERNAME/.layer --keyring-backend test --node tcp://0.0.0.0:26657
+WorkingDirectory=/home/USERNAME/layer/binaries/reporter
+ExecStart=/home/USERNAME/layer/binaries/reporter/reporterd
 Restart=always
 RestartSec=10
-Environment="ETH_RPC_URL_PRIMARY=https://your.ethereum.rpc_url" # again
-Environment="ETH_RPC_URL_FALLBACK=https://your.fallback.ethereum.rpc_url"
-Environment="TOKEN_BRIDGE_CONTRACT=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E" # Mainnet TRBBridgeV2
-Environment="WITHDRAW_FREQUENCY=3600"
+# Reporter identity
+Environment="LAYER_HOME=/home/USERNAME/.layer"
+Environment="FROM=ACCOUNT_NAME"
+Environment="KEYRING_BACKEND=test"
+# Environment="KEYRING_PASSWORD_FILE=/etc/layer-daemons/reporter-keyring-password"  # required when KEYRING_BACKEND=file
+Environment="RPC_NODES=tcp://127.0.0.1:26657"
+Environment="GRPC_NODES=127.0.0.1:9090"
+Environment="BRIDGE_CHAIN_RPC_NODES=https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY,https://sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
+Environment="ETHEREUM_RPC_NODES=https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY,https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
 Environment="REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1_your_address"
+Environment="WITHDRAW_FREQUENCY=43200"
 Environment="CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY"
+Environment="CGPRO_API_KEY=YOUR_COINGECKO_PRO_API_KEY"
 Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
 Environment="INFURA_API_KEY=YOUR_INFURA_API_KEY"
 Environment="ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY"
-Environment="CGPRO_API_KEY=CG-YOUR_COINGECKO_PRO_KEY"
 
 [Install]
 WantedBy=multi-user.target
+```
+
+When using `KEYRING_BACKEND=file`, also set `KEYRING_PASSWORD_FILE` to a password file readable only by the service user. See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/README.md#keyring-password-file) for setup details.
+
+Alternatively, you can load all reporter settings from a file:
+
+```sh
+EnvironmentFile=/home/USERNAME/layer/binaries/reporter/.env
 ```
 
 For running a layer validator with cosmovisor:
@@ -85,4 +99,3 @@ Environment="TOKEN_BRIDGE_V2_ADDRESS=0x6ec401744008f4B018Ed9A36f76e6629799Ee50E"
 WantedBy=multi-user.target
 ```
 {% endcode %}
-
