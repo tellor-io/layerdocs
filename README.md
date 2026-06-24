@@ -15,7 +15,7 @@ For in-depth information about the design, checkout the [Tellor tech paper](http
 
 ### Tellor-1
 
-**`tellor-1` is the tellor mainnet chain-id. Over a year in the making, this is a custom oracle chain for coming to consensus on subjective data.** The network is open for anyone to participate with no barriors to participation other than bridging and staking TRB ([ERC20](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf)).
+**`tellor-1` is the tellor mainnet chain-id. Over a year in the making, this is a custom oracle chain for coming to consensus on subjective data.** The network is open for anyone to participate with no barriers to participation other than bridging and staking TRB ([ERC20](https://etherscan.io/token/0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0?a=0x8cfc184c877154a8f9ffe0fe75649dbe5e2dbebf)).
 
 {% content-ref url="https://app.gitbook.com/s/s90SVtIdiQ8dmMsqriIa/running-tellor" %}
 [Running Tellor](https://app.gitbook.com/s/s90SVtIdiQ8dmMsqriIa/running-tellor)
