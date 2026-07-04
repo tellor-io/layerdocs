@@ -338,6 +338,5 @@ For production security guidance, use the [Tellor documentation](https://docs.te
 
 * **Library:** [tellor-io/UsingTellorPull](https://github.com/tellor-io/UsingTellorPull) (npm **using-tellor-pull**)
 * **Sample:** [tellor-io/SampleTellorUserPull](https://github.com/tellor-io/SampleTellorUserPull)
-* **Related structure:** [sample-tellor-layer-pull](https://github.com/tellor-io/sample-tellor-layer-pull)
 
 _Maintainers and community: see the GitHub repos for issues; Tellor_ [_Discord_](https://discord.gg/teAMSZAfJZ) _for contributions. Tellor Inc._
