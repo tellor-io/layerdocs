@@ -124,13 +124,13 @@ The relayer will try to submit oracle data to the user contract using a function
 ) external;
 </code></pre>
 
-See the [Verifying Data Authenticity](https://docs.tellor.io/layer-docs/using-tellor-data/integrating-tellor-data#verifying-data-authenticity) section in the docs for more information on setting up your custom contracts.
+See the [Verifying Data Authenticity](https://docs.tellor.io/tellor/using-tellor-data/integrating-tellor-data#verifying-data-authenticity) section in the docs for more information on setting up your custom contracts.
 
 ### Setup and Run the Relayer
 
 The relayer is used to get oracle data from tellor and submit it to your user contract.
 
-Follow the [setup instructions for the relayer](https://docs.tellor.io/layer-docs/using-tellor-data/relay-data-to-evm-chains). We recommend you set your `ETH_PRIVATE_KEY` in the relayer .env file, using the same evm address you used to deploy the contracts in the steps above. Only the deployer address can initialize the TellorDataBridge contract, but any address can run the relayer after initialization. You should also set the `WEB3_PROVIDER_URL`.
+Follow the [setup instructions for the relayer](https://docs.tellor.io/tellor/using-tellor-data/relay-data-to-evm-chains). We recommend you set your `ETH_PRIVATE_KEY` in the relayer .env file, using the same evm address you used to deploy the contracts in the steps above. Only the deployer address can initialize the TellorDataBridge contract, but any address can run the relayer after initialization. You should also set the `WEB3_PROVIDER_URL`.
 
 #### Initialize TellorDataBridge
 
