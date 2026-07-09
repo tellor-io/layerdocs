@@ -46,10 +46,6 @@
 * [Withdraw TRB (to Sepolia)](running-palmito-testnet/bridge-back-to-sepolia/README.md)
   * [Withdraw Using CLI](running-palmito-testnet/bridge-back-to-sepolia/withdraw-using-cli.md)
 
-***
-
-* [No-Stake Reporting](no-stake-reporting.md)
-
 ## Command Line Usage
 
 * [Leveraging layerd](command-line-usage/leveraging-layerd/README.md)
