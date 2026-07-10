@@ -28,6 +28,6 @@ icon: address-book
 #### **Mainnet**
 
 * DataBridge: [0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65](https://basescan.org/address/0xFfa3393BE1E4b442fff6cD0df0794B0031e9CF65)
-* DataBank: [0x01694d2C99415b736285a6f334248330c2BCdA35](https://sagaevm.sagaexplorer.io/address/0x01694d2C99415b736285a6f334248330c2BCdA35?tab=index)
+* DataBank: [0x5589e306b1920F009979a50B88caE32aecD471E4](https://basescan.org/address/0x5589e306b1920f009979a50b88cae32aecd471e4)
 
 </details>
