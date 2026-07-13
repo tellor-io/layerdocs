@@ -26,17 +26,6 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 
 ### 3. Update your `.env` or service file
 
-If you are upgrading from v0.2.5 or earlier, update your environment variables to match the current format. Key changes:
-
-* `ETH_RPC_URL_PRIMARY` / `ETH_RPC_URL_FALLBACK` → `BRIDGE_CHAIN_RPC_NODES` (comma-separated list)
-* `TOKEN_BRIDGE_CONTRACT` → removed; use `TOKEN_BRIDGE_TEST_CONTRACT` only if you need a custom bridge contract override
-* Layer connectivity → `RPC_NODES` and `GRPC_NODES` (comma-separated primary and fallbacks)
-* Reporter identity → `LAYER_HOME`, `FROM`, `KEYRING_BACKEND` (and `KEYRING_PASSWORD_FILE` when using `file` keyring)
-* On testnet with a non-mainnet bridge chain → add `ETH_MAINNET_RPC_NODES`
-* Remote signer → optionally set `REMOTE_SIGNER_ADDR`, plus `REMOTE_SIGNER_CA_CERT`, `REMOTE_SIGNER_CLIENT_CERT`, and `REMOTE_SIGNER_CLIENT_KEY` when using TLS/mTLS
-* Dispute monitor → optionally set `DISPUTE_MONITOR_ENABLED=true`, `API_URLS`, `DISPUTE_IGNORE_IDS`, and `DISPUTE_CHECK_INTERVAL`
-* Custom query cache → optionally set `CUSTOM_QUERY_CACHE_TTL` to a Go duration such as `3s`, or `0` to disable
-
 Compare your `.env` against the [layer-daemons `env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) for the current variable names and defaults.
 
 Compare your `.service` file against the [example reporterd service file](../node-setup/example-.service-files.md) and update your `Environment` settings to match the current variable names and defaults.
