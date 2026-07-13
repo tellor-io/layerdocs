@@ -47,8 +47,8 @@ Environment="KEYRING_BACKEND=test"
 # Environment="KEYRING_PASSWORD_FILE=/etc/layer-daemons/reporter-keyring-password"  # required when KEYRING_BACKEND=file
 Environment="RPC_NODES=tcp://127.0.0.1:26657"
 Environment="GRPC_NODES=127.0.0.1:9090"
-Environment="BRIDGE_CHAIN_RPC_NODES=https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY,https://sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
-Environment="ETHEREUM_RPC_NODES=https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY,https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
+Environment="BRIDGE_CHAIN_RPC_NODES=https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY,https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
+Environment="ETH_MAINNET_RPC_NODES=https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY,https://eth-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY"
 Environment="REPORTERS_VALIDATOR_ADDRESS=tellorvaloper1_your_address"
 Environment="WITHDRAW_FREQUENCY=43200"
 Environment="CMC_PRO_API_KEY=YOUR_COINMARKETCAP_API_KEY"
@@ -56,12 +56,20 @@ Environment="CGPRO_API_KEY=YOUR_COINGECKO_PRO_API_KEY"
 Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
 Environment="INFURA_API_KEY=YOUR_INFURA_API_KEY"
 Environment="ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY"
+# Optional v0.2.7 settings:
+# Environment="REMOTE_SIGNER_ADDR=127.0.0.1:9191"
+# Environment="REMOTE_SIGNER_CA_CERT=/etc/layer-daemons/remote-signer-ca.pem"
+# Environment="REMOTE_SIGNER_CLIENT_CERT=/etc/layer-daemons/remote-signer-client.pem"
+# Environment="REMOTE_SIGNER_CLIENT_KEY=/etc/layer-daemons/remote-signer-client-key.pem"
+# Environment="DISPUTE_MONITOR_ENABLED=false"
+# Environment="API_URLS=http://localhost:1317"
+# Environment="CUSTOM_QUERY_CACHE_TTL=3s"
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-When using `KEYRING_BACKEND=file`, also set `KEYRING_PASSWORD_FILE` to a password file readable only by the service user. See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/README.md#keyring-password-file) for setup details.
+When using `KEYRING_BACKEND=file`, also set `KEYRING_PASSWORD_FILE` to a password file readable only by the service user. See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/README.md#keyring-password-file) for setup details.
 
 Alternatively, you can load all reporter settings from a file:
 
