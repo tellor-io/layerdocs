@@ -37,13 +37,13 @@ If your reporter was created successfully, this will output your reporter inform
 
 #### 3) Download the latest `reporterd` binary:
 
-Download [reporterd v0.2.5](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.5):
+Download [reporterd v0.2.7](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.7):
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -51,7 +51,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.5/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -61,24 +61,26 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 
 `reporterd` loads environment variables from a `.env` file in the current working directory (or from `../.env` when run from a subdirectory). You can also set these in a [systemd service file](../node-setup/example-.service-files.md) instead.
 
-Copy [`env.example`](https://github.com/tellor-io/layer-daemons/blob/main/env.example) from layer-daemons and edit the values for your setup:
+Copy [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) from layer-daemons and edit the values for your setup:
 
 {% code overflow="wrap" %}
 ```sh
 cd ~/layer/binaries/reporter
-wget https://raw.githubusercontent.com/tellor-io/layer-daemons/refs/heads/main/env.example
+wget https://raw.githubusercontent.com/tellor-io/layer-daemons/v0.2.7/env.example
 cp env.example .env
 ```
 {% endcode %}
 
-At minimum, set `LAYER_HOME`, `FROM`, `KEYRING_BACKEND`, `RPC_NODES`, `GRPC_NODES`, and your custom query API keys. Most CLI flags can be provided as environment variables by uppercasing the flag name and replacing `-` with `_` (for example, `--from` becomes `FROM`). Use `LAYER_HOME` for the Layer home directory instead of relying on the shell's `HOME`.
+At minimum, set `LAYER_HOME`, `FROM`, `KEYRING_BACKEND`, `RPC_NODES`, `GRPC_NODES`, and your custom query API keys. `RPC_NODES`, `GRPC_NODES`, `BRIDGE_CHAIN_RPC_NODES`, and `ETH_MAINNET_RPC_NODES` accept comma-separated endpoint lists, with the first endpoint used as the primary and later endpoints used as ordered fallbacks.
 
-On testnet, point `BRIDGE_CHAIN_RPC_NODES` at your Sepolia (or other bridge-chain) RPC endpoints. Because the bridge chain is not Ethereum mainnet, also set `ETH_MAINNET_RPC_NODES` so custom query contract reads use mainnet endpoints.
+Most CLI flags can be provided as environment variables by uppercasing the flag name and replacing `-` or `.` with `_` (for example, `--keyring-backend` becomes `KEYRING_BACKEND`). Use `LAYER_HOME` for the Layer home directory instead of relying on the shell's `HOME`. When using `KEYRING_BACKEND=file`, set `KEYRING_PASSWORD_FILE` to a file that contains the keyring password and is readable only by the service user.
+
+On testnet, point `BRIDGE_CHAIN_RPC_NODES` at your Sepolia (or other bridge-chain) RPC endpoints. Because the bridge chain is not Ethereum mainnet, also set `ETH_MAINNET_RPC_NODES` so custom query contract reads use mainnet endpoints. The built-in custom query templates also use `CMC_PRO_API_KEY`, `CGPRO_API_KEY`, `SUBGRAPH_API_KEY`, and, when `ETH_MAINNET_RPC_NODES` is unset, `INFURA_API_KEY` and `ALCHEMY_API_KEY`.
 
 _Note: API keys are not strictly required, but reporters should set them to enable reporting for all tipped feeds and maximize earnings._
 
 {% hint style="info" %}
-See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/README.md) and [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.5/env.example) for all available options, including auto-unbonding, price guard, and auto balance-to-keep bridge settings.
+See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/README.md) and [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) for all available options, including remote signer, dispute monitor, custom query cache, auto-unbonding, price guard, and auto balance-to-keep bridge settings.
 {% endhint %}
 
 #### 5) Start the reporter:
@@ -95,7 +97,7 @@ If you prefer CLI flags instead of `.env`, you can still pass them explicitly. E
 
 {% code overflow="wrap" %}
 ```bash
-./reporterd --grpc-addr 127.0.0.1:9090 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test --node tcp://127.0.0.1:26657
+./reporterd --grpc 127.0.0.1:9090 --node tcp://127.0.0.1:26657 --from ACCOUNT_NAME --home ~/.layer --keyring-backend test
 ```
 {% endcode %}
 
