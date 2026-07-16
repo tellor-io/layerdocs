@@ -5,7 +5,7 @@ icon: diagram-nested
 
 # Integrate Tellor on a New Chain
 
-In this guide, we will go through the steps of providing access to tellor data on a new chain. You do not have to perform these steps yourself, and the tellor team would be happy to help if you contact us on [Discord](https://discord.com/invite/tellor) or [this google form](https://docs.google.com/forms/d/e/1FAIpQLSc5YEerq5y5_YBiQg7ZwDVw76o_1KmRmqXvzjeZlfshNKTvaQ/viewform).&#x20;
+In this guide, we will go through the steps of providing access to tellor data on a new chain. You do not have to perform these steps yourself, and the tellor team would be happy to help if you contact us on [Discord](https://discord.com/invite/tellor).
 
 For those with a do-it-yourself attitude, this guide will involve:
 
@@ -113,7 +113,7 @@ YoloUser deployed to: 0xYOUR_TELLOR_USER_ADDRESS
 
 We will use `0xYOUR_TELLOR_USER_ADDRESS` when running the relayer below.
 
-**Custom User Contracts**&#x20;
+**Custom User Contracts**
 
 The relayer will try to submit oracle data to the user contract using a function with the following interface. If you are following this guide, but building your own custom user contract instead of using the YoloUser contract, please make sure your custom contract has a function with this interface:
 
