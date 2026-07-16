@@ -29,7 +29,7 @@ Set the \_amount to the amount of TRBP that you want to bridge, e.g. 10000000000
 
 Set the `_tip` to 10000000000000000 (0.01 TRB). This is a tip that can be claimed by any validator or reporter over on layer who is willing to pay the gas to claim your bridge request for you!
 
-Set `_layerRecipient` to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](https://docs.tellor.io/layer-docs/running-tellor-layer/public-testnet/manage-accounts).
+Set `_layerRecipient` to your tellor prefix address on layer. If you don't have an address yet, see steps to Create an account on Layer [here](https://docs.tellor.io/tellor/running-tellor/manage-accounts).
 
 <figure><img src="https://docs.tellor.io/~gitbook/image?url=https%3A%2F%2F2729899787-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fs90SVtIdiQ8dmMsqriIa%252Fuploads%252FTWQVieJBEBj2jfPXa887%252FScreenshot%25202025-02-06%2520at%252012.22.28%25E2%2580%25AFPM.png%3Falt%3Dmedia%26token%3D4c9762d2-d0fe-49fe-a9be-88c175e63614&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=92b3f40e&#x26;sv=2" alt=""><figcaption></figcaption></figure>
 
