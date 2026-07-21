@@ -60,3 +60,30 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 {% endcode %}
 
 Make sure to do `add-upgrade` in advance of future Tellor upgrades to make use of cosmovisor's upgrade automation!
+
+## Binary Upgrades With Cosmovisor
+
+When there's an upgrade coming, download the new binary and add it to cosmovisor. Replace `v6.1.6` with the actual upgrade tag if different:
+
+{% tabs %}
+{% tab title="Linux" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.6 && cd ~/layer/binaries/v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+./cosmovisor add-upgrade v6.1.6 ~/layer/binaries/v6.1.6/layerd
+```
+{% endtab %}
+
+{% tab title="MacOS" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.6 && cd ~/layer/binaries/v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.6 ~/layer/binaries/v6.1.6/layerd
+```
+{% endtab %}
+
+{% tab title="Linux ARM64" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.6 && cd ~/layer/binaries/v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+./cosmovisor add-upgrade v6.1.6 ~/layer/binaries/v6.1.6/layerd
+```
+{% endtab %}
+{% endtabs %}
