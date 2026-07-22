@@ -70,7 +70,7 @@ Tips can be used by anyone to request data. The tip command has three required a
 {% endcode %}
 
 {% hint style="danger" %}
-<mark style="color:blue;">**To prevent spam, Layer requires that a tip a provided for the data that's being reported.**</mark>
+<mark style="color:blue;">**To prevent spam, Tellor requires that a tip a provided for the data that's being reported.**</mark>
 {% endhint %}
 
 **Report a value optimistically (requires tipping first):**
@@ -85,4 +85,4 @@ layertest-5 --fees 1000loya --gas 400000
 ```
 {% endcode %}
 
-_**Note: The query\_data shown here is for usdc-usd-spot . To generate query\_data for the query that you need, check out the**_ [_**"querybuilder" tool here.**_](https://tellor.io/queryidstation/)&#x20;
+_**Note: The query\_data shown here is for usdc-usd-spot . To generate query\_data for the query that you need, check out the**_ [_**"querybuilder" tool here.**_](https://tellor.io/queryidstation/)
