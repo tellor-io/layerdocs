@@ -4,7 +4,7 @@ description: Just in case
 
 # Manual Generation of Bridge Query Data / IDs
 
-Navigate to [https://tellor.io/queryidstation/](https://tellor.io/queryidstation/).
+Navigate to [https://querybuilder.tellor.io](https://tellor.io/queryidstation/)[/](https://tellor.io/queryidstation/).
 
 _**This tool can be used to generate many different types of Query Data and Query Id for any Tellor data. Here's how to do it for Tellor bridge transactions.**_
 
@@ -15,4 +15,4 @@ _**This tool can be used to generate many different types of Query Data and Quer
 
 See image below:
 
-<figure><img src="../../.gitbook/assets/Screenshot From 2025-04-01 21-18-22.png" alt=""><figcaption><p>Great!</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot From 2025-04-01 21-18-22.png" alt=""><figcaption><p>Great!</p></figcaption></figure>
