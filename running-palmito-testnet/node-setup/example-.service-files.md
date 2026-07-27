@@ -58,7 +58,7 @@ Environment="CGPRO_API_KEY=YOUR_COINGECKO_PRO_API_KEY"
 Environment="SUBGRAPH_API_KEY=YOUR_GRAPH_API_KEY"
 Environment="INFURA_API_KEY=YOUR_INFURA_API_KEY"
 Environment="ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY"
-# Optional v0.2.7 settings:
+# Optional settings:
 # Environment="REMOTE_SIGNER_ADDR=127.0.0.1:9191"
 # Environment="REMOTE_SIGNER_CA_CERT=/etc/layer-daemons/remote-signer-ca.pem"
 # Environment="REMOTE_SIGNER_CLIENT_CERT=/etc/layer-daemons/remote-signer-client.pem"
@@ -72,7 +72,7 @@ WantedBy=multi-user.target
 ```
 {% endcode %}
 
-When using `KEYRING_BACKEND=file`, also set `KEYRING_PASSWORD_FILE` to a password file readable only by the service user. See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/README.md#keyring-password-file) for setup details.
+When using `KEYRING_BACKEND=file`, also set `KEYRING_PASSWORD_FILE` to a password file readable only by the service user. See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.8/README.md#keyring-password-file) for setup details.
 
 Alternatively, you can load all reporter settings from a file:
 
