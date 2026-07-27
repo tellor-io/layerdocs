@@ -26,19 +26,19 @@ rm ~/.layer/config/pricefeed_exchange_config.toml
 
 ### 3. Update your `.env` or service file
 
-Compare your `.env` against the [layer-daemons `env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) for the current variable names and defaults.
+Compare your `.env` against the [layer-daemons `env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.8/env.example) for the current variable names and defaults.
 
 Compare your `.service` file against the [example reporterd service file](../node-setup/example-.service-files.md) and update your `Environment` settings to match the current variable names and defaults.
 
 ### 4. Download the latest `reporterd` release
 
-Download [reporterd v0.2.7](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.7):
+Download [reporterd v0.2.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.8):
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.8/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -46,7 +46,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.8/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}

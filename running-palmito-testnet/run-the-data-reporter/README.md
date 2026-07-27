@@ -37,13 +37,13 @@ If your reporter was created successfully, this will output your reporter inform
 
 #### 3) Download the latest `reporterd` binary:
 
-Download [reporterd v0.2.7](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.7):
+Download [reporterd v0.2.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.8):
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.8/reporterd_Linux_x86_64.tar.gz && tar -xvzf reporterd_Linux_x86_64.tar.gz && rm reporterd_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -51,7 +51,7 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 {% tab title="Mac" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.7/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https://github.com/tellor-io/layer-daemons/releases/download/v0.2.8/reporterd_Darwin_arm64.tar.gz && tar -xvzf reporterd_Darwin_arm64.tar.gz && rm reporterd_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -61,12 +61,12 @@ mkdir -p ~/layer/binaries/reporter && cd ~/layer/binaries/reporter && wget https
 
 `reporterd` loads environment variables from a `.env` file in the current working directory (or from `../.env` when run from a subdirectory). You can also set these in a [systemd service file](../node-setup/example-.service-files.md) instead.
 
-Copy [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) from layer-daemons and edit the values for your setup:
+Copy [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.8/env.example) from layer-daemons and edit the values for your setup:
 
 {% code overflow="wrap" %}
 ```sh
 cd ~/layer/binaries/reporter
-wget https://raw.githubusercontent.com/tellor-io/layer-daemons/v0.2.7/env.example
+wget https://raw.githubusercontent.com/tellor-io/layer-daemons/v0.2.8/env.example
 cp env.example .env
 ```
 {% endcode %}
@@ -80,7 +80,7 @@ On testnet, point `BRIDGE_CHAIN_RPC_NODES` at your Sepolia (or other bridge-chai
 _Note: API keys are not strictly required, but reporters should set them to enable reporting for all tipped feeds and maximize earnings._
 
 {% hint style="info" %}
-See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/README.md) and [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.7/env.example) for all available options, including remote signer, dispute monitor, custom query cache, auto-unbonding, price guard, and auto balance-to-keep bridge settings.
+See the [layer-daemons README](https://github.com/tellor-io/layer-daemons/blob/v0.2.8/README.md) and [`env.example`](https://github.com/tellor-io/layer-daemons/blob/v0.2.8/env.example) for all available options, including remote signer, dispute monitor, custom query cache, auto-unbonding, price guard, and auto balance-to-keep bridge settings.
 {% endhint %}
 
 #### 5) Start the reporter:
