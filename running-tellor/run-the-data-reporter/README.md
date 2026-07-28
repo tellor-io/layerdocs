@@ -39,7 +39,7 @@ If your reporter was created successfully, this will output your reporter inform
 
 #### 3) Download the latest `reporterd` binary:
 
-Download [reporterd v0.2.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.8):
+ Download [reporterd v0.2.8](https://github.com/tellor-io/layer-daemons/releases/tag/v0.2.8):
 
 {% tabs %}
 {% tab title="Linux" %}
