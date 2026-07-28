@@ -48,14 +48,11 @@ brew install jq yq sed wget && xcode-select --install
 * If on raspberry pi or similar, use the binary downloads for "**arm64**".
 {% endhint %}
 
-## Choose How you will Sync your Node
+## Sync Method
 
-There are two options for starting a new tellor-1 node:
+These instructions use **state sync**: your node downloads a recent chain state snapshot from peers. This is the fastest way to get online, but you will not be able to query block info (like transactions) for blocks produced before the day of your sync.
 
-* **State sync**: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method is faster, but you will not be able to query block info (like transactions) for any blocks that were produced before the day of your sync. For a new setup state sync, the setup script works great!
-* **Genesis sync**: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long tellor-1 has been live.
-
-## 1. Download and Organize the `layerd` Binary(s)
+## 1. Download and Organize the `layerd` Binary
 
 {% hint style="info" %}
 **As you progress through the steps, be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**
@@ -86,38 +83,6 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 &&
 Initialize .layer folder in your home directory:
 
 ```sh
-./layerd init layer --chain-id tellor-1
-```
-
-Download the binaries from the [Tellor Github](https://github.com/tellor-io/layer/tags).
-
-{% tabs %}
-{% tab title="Linux" %}
-{% code overflow="wrap" %}
-```sh
-# genesis binary v4.0.3
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="MacOS" %}
-{% code overflow="wrap" %}
-```sh
-# genesis binary v4.0.3
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v4.0.3 && cd v4.0.3 && wget https://github.com/tellor-io/layer/releases/download/v4.0.3/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-Initialize the chain config files:
-
-```sh
-# change directory to ~/layer/binaries/v4.0.0
-cd ~/layer/binaries/v4.0.3
-
-# initialize chain configs
 ./layerd init layer --chain-id tellor-1
 ```
 
@@ -221,10 +186,6 @@ timeout_commit = "1s"
 
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally. This is not obvious for beginners. Try_ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _or tmux. More advanced setups can be achieved using_[ _systemd services_](example-.service-files.md)_._
 
-Choose the tab depending on whether or not you are doing a genesis sync, or a state sync:
-
-{% tabs %}
-{% tab title="State Sync" %}
 **We need to make a few more config edits to make sure your state sync goes smoothly.**
 
 1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://mainnet.tellorlayer.com/rpc/` . Copy and paste this entire block of commands into a terminal and hit enter:
@@ -282,123 +243,6 @@ The node should start up quickly and begin downloading a state snapshot from pee
 {% hint style="info" %}
 Some errors related to peer connections can be expected even if the snapshot sync is working properly. (e.g. "we need more peers", or "Failed to reconnect")
 {% endhint %}
-{% endtab %}
-
-{% tab title="Genesis Sync" %}
-**Start your layer node with the command:**
-
-```bash
-./layerd start --key-name YOUR_ACCOUNT_NAME
-```
-
-You should now see your log quickly downloading blocks!
-
-**Upgrades**
-
-Your node will stop syncing at the following block height(s) for each binary upgrade:
-
-`1534900 for upgrade v5.0.0`
-
-`3891401 for upgrade v5.1.0`
-
-`6699035 for upgrade v5.1.1`
-
-`8593590 for upgrade v5.1.2`
-
-`9908000 for upgrade v6.0.0`
-
-`13280690 for upgrade v6.1.0`
-
-... and so on!
-
-When the sync stops for an upgrade at the heights shown above, you will need to kill the `layerd` process and start it back up again on the corresponding upgraded binary.\
-\
-Note: commands shown are for amd64 (linux).
-
-{% code overflow="wrap" %}
-```sh
-# At height 1534900 the node will stop syncing:
-# Download the v5.0.0 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.0.0 && cd v5.0.0 && wget https://github.com/tellor-io/layer/releases/download/v5.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v5.0.0
-
-# TO RESUME SYNCING:
-./layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
-
-# At height 3891401 the node will stop syncing:
-# Download the v5.1.0 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.0 && cd v5.1.0 && wget https://github.com/tellor-io/layer/releases/download/v5.1.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v5.1.0
-
-
-# At height 6699035 the node will stop syncing:
-# Download the v5.1.1 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.1 && cd v5.1.1 && wget https://github.com/tellor-io/layer/releases/download/v5.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v5.1.1
-# resume syncing
-
-# At height 8593590 the node will stop syncing:
-# Download the v5.1.2 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v5.1.2 && cd v5.1.2 && wget https://github.com/tellor-io/layer/releases/download/v5.1.2/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v5.1.2
-# resume syncing..
-
-# At height 9908000 the nod.e will stop syncing:
-# Download the v6.0.0 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.0.0 && cd v6.0.0 && wget https://github.com/tellor-io/layer/releases/download/v6.0.0/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.0.0
-# resume syncing
-
-# At height 13280690 the node will stop syncing:
-# Download the v6.1.0-fix binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.0-fix && cd v6.1.0-fix && wget https://github.com/tellor-io/layer/releases/download/v6.1.0-fix/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.0-fix
-# resume syncing
-
-# At height 13590000 the node will stop syncing:
-# Download the v6.1.1 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.1 && cd v6.1.1 && wget https://github.com/tellor-io/layer/releases/download/v6.1.1/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.1
-# resume syncing...
-
-# the node will stop syncing at v6.1.3 upgrade height
-# Download the v6.1.3 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.3 && cd v6.1.3 && wget https://github.com/tellor-io/layer/releases/download/v6.1.3/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.3
-# resume syncing...
-
-# the node will stop syncing at v6.1.4 upgrade height
-# Download the v6.1.4 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.4 && cd v6.1.4 && wget https://github.com/tellor-io/layer/releases/download/v6.1.4/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.4
-# resume syncing...
-
-# the node will stop syncing at v6.1.5 upgrade height
-# Download the v6.1.5 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.5
-# resume syncing...
-
-# the node will stop syncing at v6.1.6 upgrade height
-# Download the v6.1.6 binary 
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
-# change directory
-cd ~/layer/binaries/v6.1.6
-# resume syncing...
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 To check if the node is fully synced, open a separate terminal window and run:
 

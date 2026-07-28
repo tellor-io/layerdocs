@@ -48,21 +48,16 @@ brew install jq yq sed wget && xcode-select --install
 * If on raspberry pi or similar, use the binary downloads for "**arm64**".
 {% endhint %}
 
-## Choose How you will Sync your Node
+## Sync Method
 
-There are two ways to get a node running on **layertest-5**:
+These instructions use **state sync**: your node downloads a recent chain state snapshot from peers. This is the fastest way to get online, but you will not be able to query block info (like transactions) for blocks produced before the day of your sync.
 
-* **State Sync**: Your node is configured with seeds and peers from which it will try to download recent chain state snapshots. This sync method is faster, but you will not be able to query block info (like transactions) for any blocks that were produced before the day of your sync.
-* **Genesis sync**: Your node will start with the genesis binary and sync the entire chain. A different binary will be needed for each upgrade since genesis. This sync method can take a long time depending on how long layertest-5 has been live.
-
-## 1. Download and Organize the `layerd` Binary(s)
+## 1. Download and Organize the `layerd` Binary
 
 {% hint style="warning" %}
 **Be sure to select the tabs that work for your setup! You will get errors if you use the linux commands on mac and vice-versa.**
 {% endhint %}
 
-{% tabs %}
-{% tab title="State Sync" %}
 First, download the binary from the [Tellor Github](https://github.com/tellor-io/layer/tags).
 
 {% tabs %}
@@ -87,8 +82,6 @@ Initialize .layer folder in your home directory: `layerd init [moniker] [flags]`
 ```sh
 ./layerd init layer --chain-id layertest-5
 ```
-{% endtab %}
-{% endtabs %}
 
 ## 2. Set System Variables for Layerd
 
@@ -186,10 +179,6 @@ Note: Peer connection errors can be normal for a few minutes after start.
 
 _<mark style="color:green;">**Before starting your node**</mark><mark style="color:green;">,</mark> it's a good idea to think about how you want to run it so that the process does not get killed accidentally. This is not obvious for beginners. Try_ [_GNU screen_](https://tellor.io/blog/how-to-manage-cli-applications-on-hosted-vms-with-screen/) _or tmux. More advanced setups can be achieved using systemd services._
 
-Choose the tab depending on whether or not you are doing a genesis sync, or a state sync:
-
-{% tabs %}
-{% tab title="State Sync" %}
 **We need to make a few more config edits to make sure your state sync goes smoothly.**
 
 1. To find a good **trusted height** to use for a snapshot sync, we need to find the height of a snapshot available from `https://node-palmito.tellorlayer.com/rpc/` . Copy and paste this entire block of commands into a terminal and hit enter:
@@ -246,5 +235,3 @@ The node should start up quickly and begin downloading snapshots from peers.
 {% hint style="info" %}
 Some errors related to peer connections can be expected even if the snapshot sync is working properly. (e.g. "we need more peers", or "Failed to reconnect")
 {% endhint %}
-{% endtab %}
-{% endtabs %}
