@@ -66,19 +66,19 @@ First, download the binary from the [Tellor Github](https://github.com/tellor-io
 {% tabs %}
 {% tab title="Linux" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="Linux ARM64" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endtab %}
 
 {% tab title="MacOS" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5&& cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endtab %}
 {% endtabs %}
@@ -387,6 +387,13 @@ cd ~/layer/binaries/v6.1.4
 mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.5 && cd v6.1.5 && wget https://github.com/tellor-io/layer/releases/download/v6.1.5/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 # change directory
 cd ~/layer/binaries/v6.1.5
+# resume syncing...
+
+# the node will stop syncing at v6.1.6 upgrade height
+# Download the v6.1.6 binary 
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+# change directory
+cd ~/layer/binaries/v6.1.6
 # resume syncing...
 ```
 {% endcode %}
