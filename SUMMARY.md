@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Whitepaper](whitepaper.md)
 * [Bridging TRB](bridging-trb/README.md)
   * [TRBBridge Contracts Reference](bridging-trb/trbbridge-contracts-reference.md)
   * [Etherscan Method (Deposits)](bridging-trb/etherscan-method-deposits.md)
