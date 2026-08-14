@@ -7,7 +7,7 @@ icon: person-dolly-empty
 
 ## Using Tellor Pull on EVM: library, flow, and sample borrow app
 
-Tellor Pull is for builders who need **oracle data inside the same transaction** as the user action—borrow, liquidate, resolve a market, and so on. Instead of relying on a stored on-chain value that someone else pushed earlier, you **pull** the latest attested report and proofs from Tellor Layer, attach them to the call, and your contract **verifies** via Tellor’s DataBridge and **uses** the value in one shot. That gives you fresher, user-driven reads without a separate “update oracle” step, and it maps cleanly to lending, stablecoins, and prediction markets where price or outcome must be atomic with the protocol logic.
+Tellor Pull is for builders who need **oracle data inside the same transaction** as the user action—borrow, liquidate, and so on. Instead of relying on a stored on-chain value that someone else pushed earlier, you **pull** the latest attested report and proofs from Tellor Layer, attach them to the call, and your contract **verifies** via Tellor’s DataBridge and **uses** the value in one shot. That gives you fresher, user-driven reads without a separate “update oracle” step, and it maps cleanly to lending, stablecoins, and prediction markets where price or outcome must be atomic with the protocol logic.
 
 This article combines the practical material from two places: the **using-tellor-pull** npm package from the [UsingTellorPull](https://github.com/tellor-io/UsingTellorPull) repository, and the [**SampleTellorUserPull**](https://github.com/tellor-io/SampleTellorUserPull) repo & reference app (React + Solidity borrow on Sepolia). Read it top-down for context, then use the sections as checklists for your own integration.
 
