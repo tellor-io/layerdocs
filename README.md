@@ -10,7 +10,7 @@ icon: hand-wave
 Tellor is a Layer 1 blockchain built for the purpose of coming to consensus on any subjective data. It is operated by an open public network of staked parties who are crypto-economically incentivized to honestly report requested data.
 
 {% hint style="info" %}
-For in-depth information about the design, checkout the [Tellor tech paper](https://github.com/tellor-io/layer/blob/main/TellorLayer%20-%20tech.pdf) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
+For in-depth information about the design, checkout the [Whitepaper](https://docs.tellor.io/tellor/whitepaper) and our [ADRs](https://github.com/tellor-io/layer/tree/main/adr).
 {% endhint %}
 
 ### Tellor-1
