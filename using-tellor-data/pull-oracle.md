@@ -17,7 +17,7 @@ This article combines the practical material from two places: the **using-tellor
 
 ### End-to-end flow
 
-* Your app uses the library to fetch attestation, validator set, and signatures from Tellor Layer and encode them for the EVM.
+* Your app uses the library to fetch attestation, validator set, and signatures from Tellor and encode them for the EVM.
 * If the DataBridge’s validator set is stale, you use `getValsetUpdatePayloads` to build `updateValidatorSet` transactions (skip relay) before oracle verification will succeed.
 * You pass `attestData`, `validators`, and `sigs` into your contract (for example as ABI-encoded calldata).
 * Your contract calls `dataBridge.verifyOracleData(...)` and uses the value in the same transaction.
