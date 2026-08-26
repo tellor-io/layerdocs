@@ -10,13 +10,13 @@ If you run your node with cosmovisor, follow the [Cosmovisor Sync](cosmovisor-sy
 
 ## 1. Download the new binary
 
-The new `layerd` binary version is `v6.1.6`. Choose the command for your machine:
+The new `layerd` binary version is `v6.1.7`. Choose the command for your machine:
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -24,7 +24,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 &&
 {% tab title="Linux ARM64" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -32,7 +32,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 &&
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 && wget https://github.com/tellor-io/layer/releases/download/v6.1.6/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -41,7 +41,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.6 && cd v6.1.6 &&
 Confirm the version:
 
 ```sh
-~/layer/binaries/v6.1.6/layerd version
+~/layer/binaries/v6.1.7/layerd version
 ```
 
 ## 2. (optional) Install it in `~/go/bin/layerd`
@@ -50,7 +50,7 @@ Copy the new binary into `~/go/bin`:
 
 ```sh
 mkdir -p ~/go/bin
-cp ~/layer/binaries/v6.1.6/layerd ~/go/bin/layerd
+cp ~/layer/binaries/v6.1.7/layerd ~/go/bin/layerd
 chmod +x ~/go/bin/layerd
 ```
 
@@ -86,7 +86,7 @@ The node will stop and wait for the upgraded binary when the upgrade height is r
 
 {% code overflow="wrap" %}
 ```sh
-~/layer/binaries/v6.1.6/layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
+~/layer/binaries/v6.1.7/layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
 ```
 {% endcode %}
 
@@ -94,7 +94,7 @@ If you run your node with systemd, update the `ExecStart` line in your `.service
 
 {% code overflow="wrap" %}
 ```sh
-ExecStart=/home/USERNAME/layer/binaries/v6.1.6/layerd start --home /home/USERNAME/.layer --keyring-backend="test" --key-name=ACCOUNT_NAME --api.enable --api.swagger
+ExecStart=/home/USERNAME/layer/binaries/v6.1.7/layerd start --home /home/USERNAME/.layer --keyring-backend="test" --key-name=ACCOUNT_NAME --api.enable --api.swagger
 ```
 {% endcode %}
 
