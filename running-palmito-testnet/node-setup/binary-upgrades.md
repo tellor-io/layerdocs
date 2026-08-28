@@ -6,7 +6,12 @@ description: Example commands for upgrading the layerd binary.
 
 Use these steps when Palmito reaches a planned chain upgrade and your node stops at the upgrade height.
 
-If you run your node with cosmovisor, follow the [Cosmovisor Sync](cosmovisor-sync.md) upgrade steps instead.
+There are two upgrade paths depending on how you run your node:
+
+- **Cosmovisor** — Download the new binary and register it with cosmovisor before the upgrade height. Cosmovisor swaps binaries and restarts the node automatically. See [Upgrading with Cosmovisor](#upgrading-with-cosmovisor) below.
+- **Manual or systemd** — Download the new binary, optionally install it to your PATH, and restart the node yourself. Follow sections 1–3 below.
+
+If you have not set up cosmovisor yet, see [Cosmovisor Sync](cosmovisor-sync.md).
 
 ## 1. Download the new binary
 
@@ -109,5 +114,53 @@ sudo journalctl -u layerd -f
 Replace `layerd` with the actual name of your service if it is different.
 
 {% hint style="info" %}
-Keep the old versioned binary directory until you are sure the node is running correctly after the upgrade. If you use cosmovisor, follow the cosmovisor upgrade flow instead of replacing `ExecStart` manually.
+Keep the old versioned binary directory until you are sure the node is running correctly after the upgrade.
+{% endhint %}
+
+## Upgrading with Cosmovisor
+
+If you run your node with cosmovisor (see [Cosmovisor Sync](cosmovisor-sync.md)), register the new binary before the upgrade height. Cosmovisor handles the swap and restart automatically — you do not need to update systemd or restart the process yourself.
+
+The new `layerd` binary version is `v6.1.7`. Choose the command for your machine:
+
+{% tabs %}
+{% tab title="Linux" %}
+{% code overflow="wrap" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Linux ARM64" %}
+{% code overflow="wrap" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="MacOS" %}
+{% code overflow="wrap" %}
+```sh
+mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+Confirm the version:
+
+```sh
+~/layer/binaries/v6.1.7/layerd version
+```
+
+Then register the upgrade with cosmovisor:
+
+```sh
+./cosmovisor add-upgrade v6.1.7 ~/layer/binaries/v6.1.7/layerd
+```
+
+{% hint style="info" %}
+Run `add-upgrade` before the chain reaches the upgrade height. Keep the old versioned binary directory until you are sure the node is running correctly after the upgrade.
 {% endhint %}
