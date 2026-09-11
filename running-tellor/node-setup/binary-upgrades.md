@@ -15,13 +15,13 @@ If you have not set up cosmovisor yet, see [Cosmovisor Sync](cosmovisor-sync.md)
 
 ## 1. Download the new binary
 
-The new `layerd` binary version is `v6.1.7`. Choose the command for your machine:
+The new `layerd` binary version is `v6.1.8`. Choose the command for your machine:
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.8 && cd v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -29,7 +29,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 &&
 {% tab title="Linux ARM64" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.8 && cd v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -37,7 +37,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 &&
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.8 && cd v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -46,7 +46,7 @@ mkdir -p ~/layer/binaries && cd ~/layer/binaries && mkdir v6.1.7 && cd v6.1.7 &&
 Confirm the version:
 
 ```sh
-~/layer/binaries/v6.1.7/layerd version
+~/layer/binaries/v6.1.8/layerd version
 ```
 
 ## 2. (optional) Install it in `~/go/bin/layerd`
@@ -55,7 +55,7 @@ Copy the new binary into `~/go/bin`:
 
 ```sh
 mkdir -p ~/go/bin
-cp ~/layer/binaries/v6.1.7/layerd ~/go/bin/layerd
+cp ~/layer/binaries/v6.1.8/layerd ~/go/bin/layerd
 chmod +x ~/go/bin/layerd
 ```
 
@@ -91,7 +91,7 @@ The node will stop and wait for the upgraded binary when the upgrade height is r
 
 {% code overflow="wrap" %}
 ```sh
-~/layer/binaries/v6.1.7/layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
+~/layer/binaries/v6.1.8/layerd start --home ~/.layer --key-name ACCOUNT_NAME --keyring-backend test --api.enable --api.swagger
 ```
 {% endcode %}
 
@@ -99,7 +99,7 @@ If you run your node with systemd, update the `ExecStart` line in your `.service
 
 {% code overflow="wrap" %}
 ```sh
-ExecStart=/home/USERNAME/layer/binaries/v6.1.7/layerd start --home /home/USERNAME/.layer --keyring-backend="test" --key-name=ACCOUNT_NAME --api.enable --api.swagger
+ExecStart=/home/USERNAME/layer/binaries/v6.1.8/layerd start --home /home/USERNAME/.layer --keyring-backend="test" --key-name=ACCOUNT_NAME --api.enable --api.swagger
 ```
 {% endcode %}
 
@@ -121,13 +121,13 @@ Keep the old versioned binary directory until you are sure the node is running c
 
 If you run your node with cosmovisor (see [Cosmovisor Sync](cosmovisor-sync.md)), register the new binary before the upgrade height. Cosmovisor handles the swap and restart automatically — you do not need to update systemd or restart the process yourself.
 
-The new `layerd` binary version is `v6.1.7`. Choose the command for your machine:
+The new `layerd` binary version is `v6.1.8`. Choose the command for your machine:
 
 {% tabs %}
 {% tab title="Linux" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
+mkdir -p ~/layer/binaries/v6.1.8 && cd ~/layer/binaries/v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Linux_x86_64.tar.gz && tar -xvzf layer_Linux_x86_64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -135,7 +135,7 @@ mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://g
 {% tab title="Linux ARM64" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
+mkdir -p ~/layer/binaries/v6.1.8 && cd ~/layer/binaries/v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Linux_arm64.tar.gz && tar -xvzf layer_Linux_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -143,7 +143,7 @@ mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://g
 {% tab title="MacOS" %}
 {% code overflow="wrap" %}
 ```sh
-mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://github.com/tellor-io/layer/releases/download/v6.1.7/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
+mkdir -p ~/layer/binaries/v6.1.8 && cd ~/layer/binaries/v6.1.8 && wget https://github.com/tellor-io/layer/releases/download/v6.1.8/layer_Darwin_arm64.tar.gz && tar -xvzf layer_Darwin_arm64.tar.gz
 ```
 {% endcode %}
 {% endtab %}
@@ -152,13 +152,13 @@ mkdir -p ~/layer/binaries/v6.1.7 && cd ~/layer/binaries/v6.1.7 && wget https://g
 Confirm the version:
 
 ```sh
-~/layer/binaries/v6.1.7/layerd version
+~/layer/binaries/v6.1.8/layerd version
 ```
 
 Then register the upgrade with cosmovisor:
 
 ```sh
-./cosmovisor add-upgrade v6.1.7 ~/layer/binaries/v6.1.7/layerd
+./cosmovisor add-upgrade v6.1.8 ~/layer/binaries/v6.1.8/layerd
 ```
 
 {% hint style="info" %}

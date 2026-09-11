@@ -49,7 +49,7 @@ Use  `source ~/.bashrc` or `source ~/.zshrc` to load the variables.
 
 ```sh
 # Initialize cosmovisor.
-./cosmovisor init ~/layer/binaries/v6.1.7/layerd
+./cosmovisor init ~/layer/binaries/v6.1.8/layerd
 ```
 
 4. Start your node with cosmovisor:
