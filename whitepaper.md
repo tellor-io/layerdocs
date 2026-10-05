@@ -27,6 +27,8 @@ All queries have an aggregation type associated with it (e.g. median, mode, aver
 
 Figure A: Tellor process from Tip to Data Aggregation.&#x20;
 
+<figure><img src=".gitbook/assets/2026-08-04_07.43.04.jpg" alt=""><figcaption></figcaption></figure>
+
 The reporting time frame begins once a queryId is tipped. All reporters can add their value to the submission array for inclusion in the aggregation and for distribution of the rewards. Tips received within the time frame are added to the initial tip. If no reports are submitted during the time frame, the time frame is restarted upon the next tip and the original tip is added to the new tip for that queryId.
 
 ### Cycle List
@@ -98,6 +100,8 @@ Tendermint uses a delegated proof-of-stake(dPoS) model where there is a set numb
 
 Figure B: Dual delegation
 
+<figure><img src=".gitbook/assets/2026-08-04_07.43.17.jpg" alt=""><figcaption></figcaption></figure>
+
 _Note: The delegated validator and the selected reporter can be different(A), the same(B), mix of yourself and others(C)._
 
 The reason for this dual delegation is that validator sets are capped in tendermint based systems, however we need to remove that cap to enable smaller and more reporters to help decentralize the data provider set. Additionally, the cost of bridging is directly tied to the validator set size (verifying signatures for the light client bridges), so a large validator set such as Ethereum is unfeasible for our intended uses (the need for fast, cheap bridging of data).
@@ -161,6 +165,8 @@ We know that some parties already have existing bridge solutions that they prefe
 In the future, it is likely that native or zero-knowledge bridges will be used to verify signatures, consensus, as well as inclusion of values. Tellor will be leaning on other teams currently specializing in cryptography research, but we fully expect that all bridges will be cheaper and faster using this method and should be operational within the next cycle.
 
 Figure C: Tellor process of aggregation, attestation, and relaying data to other chains.&#x20;
+
+<figure><img src=".gitbook/assets/tellorLayer_illustration_w_texture.png" alt=""><figcaption></figcaption></figure>
 
 Note: Staked reporters, staked validators, users and relayers, and data monitors are all permissionless roles.
 

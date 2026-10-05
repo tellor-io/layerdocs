@@ -121,6 +121,6 @@ If the sync is working, you will see your node quickly finding, downloading, and
 
 {% hint style="success" %}
 _**Notes:**_\
-&#xNAN;_**- "We need more peers..." messages are normal and can be ignored.**_\
-&#xNAN;_**- A statesync with good RPCs and Peers can still take an hour or more to start downloading blocks.**_
+_**- "We need more peers..." messages are normal and can be ignored.**_\
+_**- A statesync with good RPCs and Peers can still take an hour or more to start downloading blocks.**_
 {% endhint %}
