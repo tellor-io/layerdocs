@@ -159,4 +159,4 @@ A reporter does not receive the tip as spendable TRB. `withdraw-tip` moves escro
 
 ### Relaying Data
 
-Tipping the Tellor Netowrk incentivizes reporters to report the requested data onto the Tellor network. This data will then need to be relayed to the desired network, the steps to which can be found at [Relay Data to EVM Chains](https://docs.tellor.io/tellor/using-tellor-data/relay-data-to-evm-chains).
+Tipping the Tellor Network incentivizes reporters to report the requested data onto the Tellor network. This data will then need to be relayed to the desired network, the steps to which can be found at [Relay Data to EVM Chains](https://docs.tellor.io/tellor/using-tellor-data/relay-data-to-evm-chains).
