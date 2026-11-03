@@ -2,15 +2,15 @@
 description: >-
   Follow the steps to make a layer account that can be used to receive funds
   from the bridge for transacting on Tellor.
-icon: hand-holding-dollar
+icon: user-key
 ---
 
 # Managing Accounts
 
 {% hint style="info" %}
-<mark style="color:blue;">**Security Tips:**</mark>&#x20;
+<mark style="color:blue;">**Security Tips:**</mark>
 
-* When you create a new account with the `layerd keys add`  command, the output will include the mnemonic key. It is important to copy this key securely because it is the only time that mnemonic will be shown otherwise!
+* When you create a new account with the `layerd keys add` command, the output will include the mnemonic key. It is important to copy this key securely because it is the only time that mnemonic will be shown otherwise!
 * This guide uses the "test" backend for easy compatibility with the reporter daemon. For information about the different (more secure) options, check out these docs.
 * Always keep a secure backup of your initial configurations (including the Node key) just in case! A validator is difficult to recover without the node\_key, priv\_validator\_key, and priv\_validator\_state.
 * Never use an address that holds real funds for testing.
@@ -55,7 +55,7 @@ echo 'export TELLORVALOPER_ADDRESS=your_tellorvaloper_prefix_address' >> ~/.bash
 ```
 {% endcode %}
 
-Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)&#x20;
+Restart your terminal, or use `source ~/.bashrc` before you continue. (if Linux)
 
 Restart your terminal, or use `source ~/.zshrc` before you continue. (if mac)
 

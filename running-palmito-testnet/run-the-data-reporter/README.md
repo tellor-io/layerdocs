@@ -1,6 +1,6 @@
 ---
 description: Operate a Data Reporter!
-icon: pen
+icon: user-microphone
 ---
 
 # Run a Data Reporter (testnet)

@@ -2,7 +2,7 @@
 description: >-
   Relay oracle data, validator set, and bridge information updates back and
   forth between tellor and any EVM chain.
-icon: microchip
+icon: right-left-large
 ---
 
 # Relay Data to EVM Chains
@@ -107,4 +107,3 @@ To see all available options for each command:
 relayer --help
 relayer relay --help
 ```
-

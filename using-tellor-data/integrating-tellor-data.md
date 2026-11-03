@@ -1,9 +1,9 @@
 ---
 description: Safely integrate tellor oracle data into your contracts
-icon: ethereum
+icon: code-merge
 ---
 
-# Integrating Tellor Data
+# (Advanced) Integrating Tellor Data
 
 Integrating tellor data into a user contract involves two major aspects:
 
@@ -15,12 +15,12 @@ See the [SampleLayerUser repo](https://github.com/tellor-io/SampleLayerUser) for
 {% endhint %}
 
 {% hint style="info" %}
-See the [Contracts Reference](databridge-contracts-reference.md) page for deployed contract addresses. You are also welcome to deploy your own.
+See the [Contracts Reference](contracts-reference.md) page for deployed contract addresses. You are also welcome to deploy your own.
 {% endhint %}
 
 ### Verifying Data Authenticity
 
-Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The TellorDataBridge contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the TellorDataBridge contract for this authentication step.&#x20;
+Tellor uses validator attestations to verify that data came from tellor. If at least 2/3 of tellor validators (by stake power) signed some data, we consider that to be authentic tellor data. The TellorDataBridge contract is responsible for verifying data authenticity. It does this by keeping track of the tellor validator set and verifying that at least 2/3 of tellor validators signed the data. As a user contract, you only need to pass the attestation data, validator set, and signature info to the TellorDataBridge contract for this authentication step.
 
 We will install the usingtellorlayer npm package to gain access to the TellorDataBridge interface:
 

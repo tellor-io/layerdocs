@@ -1,6 +1,6 @@
 ---
 description: Record of EVM contracts for Tellor by network
-icon: address-book
+icon: books
 ---
 
 # Contracts Reference

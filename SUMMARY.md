@@ -10,9 +10,11 @@
 
 ## Using Tellor Data
 
-* [Contracts Reference](using-tellor-data/databridge-contracts-reference.md)
+* [Contracts Reference](using-tellor-data/contracts-reference.md)
+* [(Simple) Integrating Existing Feeds](using-tellor-data/simple-integrating-existing-feeds.md)
+* [(Advanced) Integrating Tellor Data](using-tellor-data/integrating-tellor-data.md)
+* [Tipping the Tellor Network](using-tellor-data/tipping-the-tellor-network.md)
 * [Relay Data to EVM Chains](using-tellor-data/relay-data-to-evm-chains.md)
-* [Integrating Tellor Data](using-tellor-data/integrating-tellor-data.md)
 * [Integrate Tellor on a New Chain](using-tellor-data/integrate-tellor-on-a-new-chain.md)
 * [Pull Oracle](using-tellor-data/pull-oracle.md)
 
