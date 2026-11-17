@@ -23,7 +23,7 @@ For in-depth information about the design, checkout the [Whitepaper](https://doc
 
 ### Palmito Testnet (layertest-5)
 
-Palmito is the current testnet equivalent for testing tellor operation and functionaity.
+Palmito is the current testnet equivalent for testing tellor operation and functionality.
 
 {% content-ref url="https://app.gitbook.com/s/s90SVtIdiQ8dmMsqriIa/running-palmito-testnet" %}
 [Running Palmito (testnet)](https://app.gitbook.com/s/s90SVtIdiQ8dmMsqriIa/running-palmito-testnet)
@@ -48,3 +48,11 @@ Reporters are individuals who read data from the internet (and/or any"real world
 
 * **Submitting values** for data requests (queries) that are subject to validation and disputes. \*Validators can be reporters but not all reporters will be validators.
 * **Monitoring submissions for accuracy**. A robust system of staking and slashing ensures that reporters (and users) are crypto-economically incentivized to monitor their data.
+
+### Just here to stake?
+
+You don't have to run any infrastructure to earn. Bridge your TRB to the chain, then delegate to a validator and select a reporter:
+
+{% content-ref url="bridging-trb/delegating-and-selecting.md" %}
+[delegating-and-selecting.md](bridging-trb/delegating-and-selecting.md)
+{% endcontent-ref %}

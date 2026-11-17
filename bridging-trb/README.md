@@ -58,3 +58,11 @@ If you want to make a withdrawal request using the layerd CLI:
 {% content-ref url="request-a-withdrawal-via-cli.md" %}
 [request-a-withdrawal-via-cli.md](request-a-withdrawal-via-cli.md)
 {% endcontent-ref %}
+
+### What's next?
+
+Now that your TRB is on the chain, start earning with it:
+
+{% content-ref url="delegating-and-selecting.md" %}
+[delegating-and-selecting.md](delegating-and-selecting.md)
+{% endcontent-ref %}

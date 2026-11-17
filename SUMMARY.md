@@ -1,8 +1,11 @@
 # Table of contents
 
+## Welcome to Tellor
+
 * [Introduction](README.md)
 * [Whitepaper](whitepaper.md)
 * [Bridging TRB](bridging-trb/README.md)
+  * [Delegating and Selecting](bridging-trb/delegating-and-selecting.md)
   * [TRBBridge Contracts Reference](bridging-trb/trbbridge-contracts-reference.md)
   * [Etherscan Method (Deposits)](bridging-trb/etherscan-method-deposits.md)
   * [Request a Withdrawal via CLI](bridging-trb/request-a-withdrawal-via-cli.md)
