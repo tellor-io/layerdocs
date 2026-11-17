@@ -50,6 +50,8 @@ To select a reporter from the command line:
 
 When you want your stake back, unbond it from your validator. Unbonded tokens take **21 days** to become liquid and spendable again:
 
+Delegations can be managed via the [hub's delegate page](https://hub.tellor.io). After connecting your keplr wallet, you can view and change your staking delegations via web interface. Unbonding can also be initiated via cli using the followinng command:
+
 {% code overflow="wrap" %}
 ```sh
 # layerd tx staking unbond [validator-addr] [amount] [flags]
