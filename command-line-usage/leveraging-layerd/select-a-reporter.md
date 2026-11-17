@@ -5,8 +5,8 @@ This is the command for stakers who back a reporter of their choice. For the ful
 {% code overflow="wrap" %}
 ```sh
 # layerd tx reporter select-reporter [reporter-address] [flags]
-# Example selecting reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q
-./layerd tx reporter select-reporter tellor148zgkh394d382g4rft3dhl2wx0g6r743vv4q --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id tellor-1 --node https://mainnet.tellorlayer.com/rpc/
+# Example selecting reporter tellor148zgkh394dexamplex0g6r743vv4q
+./layerd tx reporter select-reporter tellor148zgkh394dexamplex0g6r743vv4q --from YOUR_ACCOUNT_NAME --fees 5loya --chain-id tellor-1 --node https://mainnet.tellorlayer.com/rpc/
 ```
 {% endcode %}
 
